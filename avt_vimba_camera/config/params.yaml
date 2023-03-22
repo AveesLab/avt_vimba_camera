@@ -6,15 +6,15 @@
 /**:
   ros__parameters:
     feature/AcquisitionFrameCount: 1
-    feature/AcquisitionFrameRateAbs: 10.0
+    feature/AcquisitionFrameRateAbs: 33.3122 
     # feature/AcquisitionMode: Continuous
-    # feature/ActionDeviceKey: 0
-    # feature/ActionGroupKey: 0
-    # feature/ActionGroupMask: 0
+    feature/ActionDeviceKey: 0
+    feature/ActionGroupKey: 0
+    feature/ActionGroupMask: 0
     # feature/ActionSelector: 0
     # feature/BalanceRatioAbs: 2.33
     # feature/BalanceRatioSelector: Red
-    # feature/BalanceWhiteAuto: 'Off'
+    feature/BalanceWhiteAuto: 'On'
     # feature/BalanceWhiteAutoAdjustTol: 5
     # feature/BalanceWhiteAutoRate: 100
     # feature/BandwidthControlMode: StreamBytesPerSecond
@@ -38,7 +38,7 @@
     # feature/EventNotification: 'Off'
     # feature/EventSelector: AcquisitionStart
     # feature/EventsEnable1: 0
-    # feature/ExposureAuto: 'Off'
+    feature/ExposureAuto: 'On'
     # feature/ExposureAutoAdjustTol: 5
     # feature/ExposureAutoAlg: Mean
     # feature/ExposureAutoMax: 499997
@@ -47,7 +47,7 @@
     # feature/ExposureAutoRate: 100
     # feature/ExposureAutoTarget: 50
     # feature/ExposureMode: Timed
-    # feature/ExposureTimeAbs: 15005.0
+    feature/ExposureTimeAbs: 15000.0
     # feature/GVCPCmdRetries: 5
     # feature/GVCPCmdTimeout: 250
     # feature/GVSPBurstSize: 1
@@ -61,26 +61,26 @@
     # feature/GVSPTiltingSize: 100
     # feature/GVSPTimeout: 70
     # feature/Gain: 0.0
-    # feature/GainAuto: 'Off'
+    feature/GainAuto: 'On'
     # feature/GainAutoAdjustTol: 5
     # feature/GainAutoMax: 40.0
-    # feature/GainAutoMin: 0.0
+    feature/GainAutoMin: 0.0
     # feature/GainAutoOutliers: 0
     # feature/GainAutoRate: 100
     # feature/GainAutoTarget: 50
     # feature/GainSelector: All
-    # feature/Gamma: 1.0
+    feature/Gamma: 1.0
     # feature/GevHeartbeatInterval: 1450
     # feature/GevHeartbeatTimeout: 3000
     # feature/GevSCPSPacketSize: 9014
     # feature/Height: 1544
-    # feature/Hue: 0.0
+    feature/Hue: 0.0
     # feature/LUTEnable: false
     # feature/LUTIndex: 0
     # feature/LUTMode: Luminance
     # feature/LUTSelector: LUT1
     # feature/LUTValue: 4095
-    # feature/MulticastEnable: false
+    feature/MulticastEnable: true
     # feature/MulticastIPAddress: 823132143
     # feature/OffsetX: 0
     # feature/OffsetY: 0
@@ -90,7 +90,7 @@
     # feature/RecorderPreEventCount: 0
     # feature/ReverseX: false
     # feature/ReverseY: false
-    # feature/Saturation: 1.0
+    feature/Saturation: 1.0
     # feature/StreamBufferHandlingMode: Default
     # feature/StreamBytesPerSecond: 115000000
     # feature/StreamFrameRateConstrain: true
@@ -106,11 +106,11 @@
     # feature/SyncOutSelector: SyncOut1
     # feature/SyncOutSource: Exposing
     # feature/TriggerActivation: RisingEdge
-    # feature/TriggerDelayAbs: 0.0
-    # feature/TriggerMode: 'On'
+    feature/TriggerDelayAbs: 0.0
+    feature/TriggerMode: 'On'
     # feature/TriggerOverlap: 'Off'
-    # feature/TriggerSelector: FrameStart
-    feature/TriggerSource: FixedRate
+    feature/TriggerSelector: FrameStart
+    feature/TriggerSource: Freerun
     # feature/UserSetDefaultSelector: Default
     # feature/UserSetSelector: Default
     # feature/Width: 2064
