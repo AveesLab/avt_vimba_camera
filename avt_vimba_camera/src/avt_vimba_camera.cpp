@@ -244,13 +244,13 @@ CameraPtr AvtVimbaCamera::openCamera(const std::string& id_str)
   }
 
   // open camera
-  err = camera->Open(VmbAccessModeFull);
+  err = camera->Open(VmbAccessModeRead);
   while (err != VmbErrorSuccess && keepRunning)
   {
     if (keepRunning)
     {
       RCLCPP_WARN_STREAM(nh_->get_logger(), "Could not open camera. Retrying every two seconds ...");
-      err = camera->Open(VmbAccessModeFull);
+      err = camera->Open(VmbAccessModeRead);
       std::this_thread::sleep_for(std::chrono::milliseconds(2000));
     }
     else
