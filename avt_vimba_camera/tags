@@ -1,0 +1,1306 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AVT	include/VimbaCPP/Include/AncillaryData.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/BasicLockable.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/Camera.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/EnumEntry.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/Feature.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/FeatureContainer.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/FileLogger.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/Frame.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/ICameraFactory.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/ICameraListObserver.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/IFeatureObserver.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/IFrameObserver.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/IInterfaceListObserver.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/IRegisterDevice.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/Interface.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/LoggerDefines.h	/^    namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/Mutex.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/SharedPointer.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/SharedPointerDefines.h	/^    namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/SharedPointer_impl.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/UserLoggerDefines.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/VimbaCPPCommon.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Include/VimbaSystem.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/AncillaryData.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/BaseFeature.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/BaseFeature.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/BasicLockable.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/BoolFeature.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/BoolFeature.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/Camera.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/Clock.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/Clock.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/CommandFeature.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/CommandFeature.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/Condition.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/Condition.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/ConditionHelper.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/ConditionHelper.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/DefaultCameraFactory.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/DefaultCameraFactory.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/EnumEntry.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/EnumFeature.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/EnumFeature.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/Feature.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/FeatureContainer.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/FileLogger.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/FloatFeature.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/FloatFeature.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/Frame.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/FrameHandler.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/FrameHandler.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/FrameImpl.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/Helper.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/IntFeature.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/IntFeature.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/Interface.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/Mutex.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/MutexGuard.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/MutexGuard.h	/^namespace AVT$/;"	n
+AVT	include/VimbaCPP/Source/RawFeature.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/RawFeature.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/Semaphore.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/Semaphore.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/StringFeature.cpp	/^namespace AVT {$/;"	n	file:
+AVT	include/VimbaCPP/Source/StringFeature.h	/^namespace AVT {$/;"	n
+AVT	include/VimbaCPP/Source/VimbaSystem.cpp	/^namespace AVT {$/;"	n	file:
+AVT_IP_OR_MAC_ADDRESS	include/VimbaCPP/Source/Helper.h	/^char const * const AVT_IP_OR_MAC_ADDRESS = "IP_OR_MAC@";$/;"	m	namespace:AVT::VmbAPI
+AVT_VIMBA_API_H	include/avt_vimba_camera/avt_vimba_api.hpp	34;"	d
+AVT_VIMBA_CAMERA_H	include/avt_vimba_camera/avt_vimba_camera.hpp	34;"	d
+AVT_VIMBA_CAMERA_TRIGGER_H	include/avt_vimba_camera/trigger_node.hpp	2;"	d
+AVT_VMBAPI_ANCILLARYDATA_H	include/VimbaCPP/Include/AncillaryData.h	29;"	d
+AVT_VMBAPI_BASEFEATURE_H	include/VimbaCPP/Source/BaseFeature.h	29;"	d
+AVT_VMBAPI_BASICLOCKABLE	include/VimbaCPP/Include/BasicLockable.h	29;"	d
+AVT_VMBAPI_BOOLFEATURE_H	include/VimbaCPP/Source/BoolFeature.h	30;"	d
+AVT_VMBAPI_CAMERA_H	include/VimbaCPP/Include/Camera.h	29;"	d
+AVT_VMBAPI_CAMERA_HPP	include/VimbaCPP/Include/Camera.hpp	29;"	d
+AVT_VMBAPI_CLOCK	include/VimbaCPP/Source/Clock.h	30;"	d
+AVT_VMBAPI_COMMANDFEATURE_H	include/VimbaCPP/Source/CommandFeature.h	30;"	d
+AVT_VMBAPI_CONDITIONHELPER_H	include/VimbaCPP/Source/ConditionHelper.h	30;"	d
+AVT_VMBAPI_CONDITION_H	include/VimbaCPP/Source/Condition.h	30;"	d
+AVT_VMBAPI_CPPCOMMON_H	include/VimbaCPP/Include/VimbaCPPCommon.h	29;"	d
+AVT_VMBAPI_DEFAULTCAMERAFACTORY_H	include/VimbaCPP/Source/DefaultCameraFactory.h	32;"	d
+AVT_VMBAPI_ENUMENTRY_H	include/VimbaCPP/Include/EnumEntry.h	34;"	d
+AVT_VMBAPI_ENUMENTRY_HPP	include/VimbaCPP/Include/EnumEntry.hpp	29;"	d
+AVT_VMBAPI_ENUMFEATURE_H	include/VimbaCPP/Source/EnumFeature.h	30;"	d
+AVT_VMBAPI_FEATURECONTAINER_H	include/VimbaCPP/Include/FeatureContainer.h	29;"	d
+AVT_VMBAPI_FEATURECONTAINER_HPP	include/VimbaCPP/Include/FeatureContainer.hpp	30;"	d
+AVT_VMBAPI_FEATURE_H	include/VimbaCPP/Include/Feature.h	32;"	d
+AVT_VMBAPI_FEATURE_HPP	include/VimbaCPP/Include/Feature.hpp	29;"	d
+AVT_VMBAPI_FILELOGGER_H	include/VimbaCPP/Include/FileLogger.h	29;"	d
+AVT_VMBAPI_FLOATFEATURE_H	include/VimbaCPP/Source/FloatFeature.h	30;"	d
+AVT_VMBAPI_FRAMEHANDLER_H	include/VimbaCPP/Source/FrameHandler.h	29;"	d
+AVT_VMBAPI_FRAMEIMPL_H	include/VimbaCPP/Source/FrameImpl.h	31;"	d
+AVT_VMBAPI_FRAME_H	include/VimbaCPP/Include/Frame.h	29;"	d
+AVT_VMBAPI_HELPER_H	include/VimbaCPP/Source/Helper.h	30;"	d
+AVT_VMBAPI_ICAMERAFACTORY_H	include/VimbaCPP/Include/ICameraFactory.h	29;"	d
+AVT_VMBAPI_ICAMERALISTOBSERVER_H	include/VimbaCPP/Include/ICameraListObserver.h	29;"	d
+AVT_VMBAPI_IFEATUREOBSERVER_H	include/VimbaCPP/Include/IFeatureObserver.h	29;"	d
+AVT_VMBAPI_IFRAMEOBSERVER_H	include/VimbaCPP/Include/IFrameObserver.h	29;"	d
+AVT_VMBAPI_IINTERFACELISTOBSERVER_H	include/VimbaCPP/Include/IInterfaceListObserver.h	29;"	d
+AVT_VMBAPI_INTERFACE_H	include/VimbaCPP/Include/Interface.h	29;"	d
+AVT_VMBAPI_INTERFACE_HPP	include/VimbaCPP/Include/Interface.hpp	29;"	d
+AVT_VMBAPI_INTFEATURE_H	include/VimbaCPP/Source/IntFeature.h	30;"	d
+AVT_VMBAPI_IREGISTERDEVICE_H	include/VimbaCPP/Include/IRegisterDevice.h	29;"	d
+AVT_VMBAPI_LOGGERDEFINES_H	include/VimbaCPP/Include/LoggerDefines.h	29;"	d
+AVT_VMBAPI_MUTEX	include/VimbaCPP/Include/Mutex.h	29;"	d
+AVT_VMBAPI_MUTEXGUARD	include/VimbaCPP/Source/MutexGuard.h	30;"	d
+AVT_VMBAPI_RAWFEATURE_H	include/VimbaCPP/Source/RawFeature.h	30;"	d
+AVT_VMBAPI_SEMAPHORE	include/VimbaCPP/Source/Semaphore.h	30;"	d
+AVT_VMBAPI_SHAREDPOINTERDEFINES_H	include/VimbaCPP/Include/SharedPointerDefines.h	30;"	d
+AVT_VMBAPI_SHAREDPOINTER_H	include/VimbaCPP/Include/SharedPointer.h	31;"	d
+AVT_VMBAPI_SHAREDPOINTER_IMPL_H	include/VimbaCPP/Include/SharedPointer_impl.h	31;"	d
+AVT_VMBAPI_STRINGFEATURE_H	include/VimbaCPP/Source/StringFeature.h	30;"	d
+AVT_VMBAPI_SYSTEM_H	include/VimbaCPP/Include/VimbaSystem.h	29;"	d
+AVT_VMBAPI_USERLOGGERDEFINES_H	include/VimbaCPP/Include/UserLoggerDefines.h	29;"	d
+AVT_VMBAPI_USERSHAREDPOINTERDEFINES_H	include/VimbaCPP/Include/UserSharedPointerDefines.h	30;"	d
+AVT_VMBAPI_VERSION_H	include/VimbaCPP/Source/Version.h	2;"	d
+AVT_VMBAPI_VIMBASYSTEM_HPP	include/VimbaCPP/Include/VimbaSystem.hpp	29;"	d
+Acquire	include/VimbaCPP/Source/Semaphore.cpp	/^void Semaphore::Acquire()$/;"	f	class:AVT::VmbAPI::Semaphore
+AcquireImageHelper	include/VimbaCPP/Source/Camera.cpp	/^    AcquireImageHelper(Camera &Cam)$/;"	f	struct:AVT::VmbAPI::AcquireImageHelper
+AcquireImageHelper	include/VimbaCPP/Source/Camera.cpp	/^struct AcquireImageHelper$/;"	s	namespace:AVT::VmbAPI	file:
+AcquireMultipleImages	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::AcquireMultipleImages( FramePtrVector &rFrames, VmbUint32_t nTimeout )$/;"	f	class:Camera
+AcquireMultipleImages	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::AcquireMultipleImages( FramePtrVector &rFrames, VmbUint32_t nTimeout, VmbUint32_t &rNumFramesCompleted )$/;"	f	class:Camera
+AcquireMultipleImages	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::AcquireMultipleImages( FramePtr *pFrames, VmbUint32_t nSize, VmbUint32_t nTimeout, VmbUint32_t *pNumFramesCompleted )$/;"	f	class:AVT::VmbAPI::Camera
+AcquireSingleImage	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::AcquireSingleImage( FramePtr &rFrame, VmbUint32_t nTimeout )$/;"	f	class:AVT::VmbAPI::Camera
+AcquisitionStop	include/VimbaCPP/Source/Camera.cpp	/^        AcquisitionStop,$/;"	e	enum:AVT::VmbAPI::AcquireImageHelper::tear_down_tasks	file:
+AncillaryData	include/VimbaCPP/Include/AncillaryData.h	/^class AncillaryData : public FeatureContainer $/;"	c	namespace:AVT::VmbAPI
+AncillaryData	include/VimbaCPP/Source/AncillaryData.cpp	/^AncillaryData::AncillaryData( VmbFrame_t *pFrame )$/;"	f	class:AVT::VmbAPI::AncillaryData
+AncillaryData	include/VimbaCPP/Source/AncillaryData.cpp	/^AncillaryData::AncillaryData( const AncillaryData& )$/;"	f	class:AVT::VmbAPI::AncillaryData
+AncillaryData	include/VimbaCPP/Source/AncillaryData.cpp	/^AncillaryData::AncillaryData()$/;"	f	class:AVT::VmbAPI::AncillaryData
+AncillaryDataPtr	include/VimbaCPP/Include/SharedPointerDefines.h	/^    typedef SP_DECL( AncillaryData )            AncillaryDataPtr;$/;"	t	namespace:AVT::VmbAPI
+AncillaryDataPtr	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^typedef SP_DECL( AncillaryData ) AncillaryDataPtr;$/;"	t	namespace:AVT::VmbAPI
+AnnounceFrame	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::AnnounceFrame( const FramePtr &frame ) $/;"	f	class:AVT::VmbAPI::Camera
+AnnounceFrames	include/VimbaCPP/Source/Camera.cpp	/^    static VmbErrorType AnnounceFrames(Camera &Camera, FramePtr *pFrames, VmbUint32_t nFrameCount, VmbInt64_t nPayloadSize, VmbUint32_t &nFramesAnnounced)$/;"	f	struct:AVT::VmbAPI::AcquireImageHelper
+AnnounceFrames	include/VimbaCPP/Source/Camera.cpp	/^    static VmbErrorType AnnounceFrames(Camera &Camera, FramePtrVector &Frames, VmbUint32_t nBufferCount, VmbInt64_t nPayloadSize, const IFrameObserverPtr& Observer)$/;"	f	struct:AVT::VmbAPI::AcquireImageHelper
+AppendCamToMap	include/VimbaCPP/Source/VimbaSystem.cpp	/^void VimbaSystem::Impl::AppendCamToMap( VmbCameraInfo_t camInfo )$/;"	f	class:AVT::VmbAPI::VimbaSystem::Impl
+AppendFrameToVector	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::Impl::AppendFrameToVector( const FramePtr &rFrame )$/;"	f	class:AVT::VmbAPI::Camera::Impl
+AvtVimbaApi	include/avt_vimba_camera/avt_vimba_api.hpp	/^  AvtVimbaApi(const rclcpp::Logger& logger) : vs(VimbaSystem::GetInstance()), logger_(logger)$/;"	f	class:avt_vimba_camera::AvtVimbaApi
+AvtVimbaApi	include/avt_vimba_camera/avt_vimba_api.hpp	/^class AvtVimbaApi$/;"	c	namespace:avt_vimba_camera
+AvtVimbaCamera	include/avt_vimba_camera/avt_vimba_camera.hpp	/^class AvtVimbaCamera$/;"	c	namespace:avt_vimba_camera
+AvtVimbaCamera	src/avt_vimba_camera.cpp	/^AvtVimbaCamera::AvtVimbaCamera(rclcpp::Node::SharedPtr owner_node)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+BaseFeature	include/VimbaCPP/Source/BaseFeature.cpp	/^BaseFeature::BaseFeature( const BaseFeature& )$/;"	f	class:AVT::VmbAPI::BaseFeature
+BaseFeature	include/VimbaCPP/Source/BaseFeature.cpp	/^BaseFeature::BaseFeature( const VmbFeatureInfo_t *pFeatureInfo, FeatureContainer *pFeatureContainer )$/;"	f	class:AVT::VmbAPI::BaseFeature
+BaseFeature	include/VimbaCPP/Source/BaseFeature.cpp	/^BaseFeature::BaseFeature()$/;"	f	class:AVT::VmbAPI::BaseFeature
+BaseFeature	include/VimbaCPP/Source/BaseFeature.h	/^class BaseFeature : public virtual BasicLockable$/;"	c	namespace:AVT::VmbAPI
+BasicLockable	include/VimbaCPP/Include/BasicLockable.h	/^class BasicLockable$/;"	c	namespace:AVT::VmbAPI
+BasicLockable	include/VimbaCPP/Source/BasicLockable.cpp	/^BasicLockable::BasicLockable( MutexPtr pMutex )$/;"	f	class:AVT::VmbAPI::BasicLockable
+BasicLockable	include/VimbaCPP/Source/BasicLockable.cpp	/^BasicLockable::BasicLockable()$/;"	f	class:AVT::VmbAPI::BasicLockable
+BasicLockablePtr	include/VimbaCPP/Include/SharedPointerDefines.h	/^    typedef SP_DECL( BasicLockable ) BasicLockablePtr;$/;"	t	namespace:AVT::VmbAPI
+BasicLockablePtr	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^typedef SP_DECL( BasicLockable ) BasicLockablePtr;$/;"	t	namespace:AVT::VmbAPI
+BoolFeature	include/VimbaCPP/Source/BoolFeature.cpp	/^BoolFeature::BoolFeature( const VmbFeatureInfo_t *featureInfo, FeatureContainer* const pFeatureContainer )$/;"	f	class:AVT::VmbAPI::BoolFeature
+BoolFeature	include/VimbaCPP/Source/BoolFeature.h	/^class BoolFeature : public BaseFeature$/;"	c	namespace:AVT::VmbAPI
+CAMERA_NOT_FOUND	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  CAMERA_NOT_FOUND,$/;"	e	enum:avt_vimba_camera::CameraState
+Callback	include/avt_vimba_camera/frame_observer.hpp	/^  typedef std::function<void(const FramePtr vimba_frame_ptr)> Callback;$/;"	t	class:FrameObserver
+Camera	include/VimbaCPP/Include/Camera.h	/^class Camera : public FeatureContainer, public IRegisterDevice $/;"	c	namespace:AVT::VmbAPI
+Camera	include/VimbaCPP/Source/Camera.cpp	/^Camera::Camera( const Camera& )$/;"	f	class:AVT::VmbAPI::Camera
+Camera	include/VimbaCPP/Source/Camera.cpp	/^Camera::Camera( const char *pID,$/;"	f	class:AVT::VmbAPI::Camera
+Camera	include/VimbaCPP/Source/Camera.cpp	/^Camera::Camera()$/;"	f	class:AVT::VmbAPI::Camera
+CameraDiscoveryCallback	include/VimbaCPP/Source/VimbaSystem.cpp	/^void VMB_CALL VimbaSystem::Impl::CameraDiscoveryCallback( const VmbHandle_t \/*handle*\/, const char* \/*name*\/, void* \/*context*\/ )$/;"	f	class:AVT::VmbAPI::VimbaSystem::Impl
+CameraInfo	include/VimbaCPP/Source/Camera.cpp	/^    struct CameraInfo$/;"	s	struct:AVT::VmbAPI::Camera::Impl	file:
+CameraPtr	include/VimbaCPP/Include/SharedPointerDefines.h	/^    typedef SP_DECL( Camera ) CameraPtr;$/;"	t	namespace:AVT::VmbAPI
+CameraPtr	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^typedef SP_DECL( Camera ) CameraPtr;$/;"	t	namespace:AVT::VmbAPI
+CameraPtrMap	include/VimbaCPP/Source/VimbaSystem.cpp	/^typedef std::map<std::string, CameraPtr> CameraPtrMap;$/;"	t	namespace:AVT::VmbAPI	file:
+CameraPtrVector	include/VimbaCPP/Include/Camera.h	/^typedef std::vector<CameraPtr> CameraPtrVector;$/;"	t	namespace:AVT::VmbAPI
+CameraState	include/avt_vimba_camera/avt_vimba_camera.hpp	/^enum CameraState$/;"	g	namespace:avt_vimba_camera
+Clock	include/VimbaCPP/Source/Clock.cpp	/^Clock::Clock()$/;"	f	class:AVT::VmbAPI::Clock
+Clock	include/VimbaCPP/Source/Clock.h	/^class Clock$/;"	c	namespace:AVT::VmbAPI
+Close	include/VimbaCPP/Source/AncillaryData.cpp	/^VmbError_t AncillaryData::Close()$/;"	f	class:AVT::VmbAPI::AncillaryData
+Close	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::Close()$/;"	f	class:AVT::VmbAPI::Camera
+Close	include/VimbaCPP/Source/Interface.cpp	/^VmbErrorType Interface::Close() $/;"	f	class:AVT::VmbAPI::Interface
+CommandFeature	include/VimbaCPP/Source/CommandFeature.cpp	/^CommandFeature::CommandFeature( const VmbFeatureInfo_t *featureInfo, FeatureContainer *pFeatureContainer )$/;"	f	class:AVT::VmbAPI::CommandFeature
+CommandFeature	include/VimbaCPP/Source/CommandFeature.h	/^class CommandFeature : public BaseFeature $/;"	c	namespace:AVT::VmbAPI
+Condition	include/VimbaCPP/Source/Condition.cpp	/^Condition::Condition()$/;"	f	class:AVT::VmbAPI::Condition
+Condition	include/VimbaCPP/Source/Condition.h	/^class Condition$/;"	c	namespace:AVT::VmbAPI
+ConditionHelper	include/VimbaCPP/Source/ConditionHelper.cpp	/^ConditionHelper::ConditionHelper()$/;"	f	class:AVT::VmbAPI::ConditionHelper
+ConditionHelper	include/VimbaCPP/Source/ConditionHelper.h	/^class ConditionHelper$/;"	c	namespace:AVT::VmbAPI
+ConstAncillaryDataPtr	include/VimbaCPP/Include/SharedPointerDefines.h	/^    typedef SP_DECL( const AncillaryData )      ConstAncillaryDataPtr;$/;"	t	namespace:AVT::VmbAPI
+ConstAncillaryDataPtr	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^typedef SP_DECL( const AncillaryData ) ConstAncillaryDataPtr;$/;"	t	namespace:AVT::VmbAPI
+CreateCamera	include/VimbaCPP/Source/DefaultCameraFactory.cpp	/^CameraPtr DefaultCameraFactory::CreateCamera(   const char *pCameraID,$/;"	f	class:AVT::VmbAPI::DefaultCameraFactory
+DefaultCameraFactory	include/VimbaCPP/Source/DefaultCameraFactory.h	/^class DefaultCameraFactory : public virtual ICameraFactory$/;"	c	namespace:AVT::VmbAPI
+ERROR	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  ERROR,$/;"	e	enum:avt_vimba_camera::CameraState
+EndCapture	include/VimbaCPP/Source/Camera.cpp	/^        EndCapture,$/;"	e	enum:AVT::VmbAPI::AcquireImageHelper::tear_down_tasks	file:
+EndCapture	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::EndCapture() $/;"	f	class:AVT::VmbAPI::Camera
+EnterReadLock	include/VimbaCPP/Source/ConditionHelper.cpp	/^bool ConditionHelper::EnterReadLock( BasicLockable &rLockable )$/;"	f	class:AVT::VmbAPI::ConditionHelper
+EnterReadLock	include/VimbaCPP/Source/ConditionHelper.cpp	/^bool ConditionHelper::EnterReadLock( MutexPtr &pMutex )$/;"	f	class:AVT::VmbAPI::ConditionHelper
+EnterWriteLock	include/VimbaCPP/Source/ConditionHelper.cpp	/^bool ConditionHelper::EnterWriteLock( BasicLockable &rLockable, bool bExclusive )$/;"	f	class:AVT::VmbAPI::ConditionHelper
+EnterWriteLock	include/VimbaCPP/Source/ConditionHelper.cpp	/^bool ConditionHelper::EnterWriteLock( MutexPtr &pMutex, bool bExclusive )$/;"	f	class:AVT::VmbAPI::ConditionHelper
+EnumEntry	include/VimbaCPP/Include/EnumEntry.h	/^class EnumEntry$/;"	c	namespace:AVT::VmbAPI
+EnumEntry	include/VimbaCPP/Source/EnumEntry.cpp	/^EnumEntry::EnumEntry(   const char              *pStrName,$/;"	f	class:AVT::VmbAPI::EnumEntry
+EnumEntry	include/VimbaCPP/Source/EnumEntry.cpp	/^EnumEntry::EnumEntry( const EnumEntry &other)$/;"	f	class:AVT::VmbAPI::EnumEntry
+EnumEntry	include/VimbaCPP/Source/EnumEntry.cpp	/^EnumEntry::EnumEntry()$/;"	f	class:AVT::VmbAPI::EnumEntry
+EnumEntryVector	include/VimbaCPP/Include/VimbaCPPCommon.h	/^typedef std::vector<EnumEntry>      EnumEntryVector;$/;"	t	namespace:AVT::VmbAPI
+EnumFeature	include/VimbaCPP/Source/EnumFeature.cpp	/^EnumFeature::EnumFeature( const VmbFeatureInfo_t *featureInfo, FeatureContainer* const pFeatureContainer )$/;"	f	class:AVT::VmbAPI::EnumFeature
+EnumFeature	include/VimbaCPP/Source/EnumFeature.h	/^class EnumFeature : public BaseFeature $/;"	c	namespace:AVT::VmbAPI
+ExitReadLock	include/VimbaCPP/Source/ConditionHelper.cpp	/^void ConditionHelper::ExitReadLock( BasicLockable &rLockable )$/;"	f	class:AVT::VmbAPI::ConditionHelper
+ExitReadLock	include/VimbaCPP/Source/ConditionHelper.cpp	/^void ConditionHelper::ExitReadLock( MutexPtr &pMutex )$/;"	f	class:AVT::VmbAPI::ConditionHelper
+ExitWriteLock	include/VimbaCPP/Source/ConditionHelper.cpp	/^void ConditionHelper::ExitWriteLock( BasicLockable &rLockable )$/;"	f	class:AVT::VmbAPI::ConditionHelper
+ExitWriteLock	include/VimbaCPP/Source/ConditionHelper.cpp	/^void ConditionHelper::ExitWriteLock( MutexPtr &pMutex )$/;"	f	class:AVT::VmbAPI::ConditionHelper
+FORMAT_ERROR	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  FORMAT_ERROR,$/;"	e	enum:avt_vimba_camera::CameraState
+FRAME_HDL	include/VimbaCPP/Source/FrameHandler.h	/^enum { FRAME_HDL=0, };$/;"	e	enum:AVT::VmbAPI::__anon1
+FRAME_OBSERVER_H	include/avt_vimba_camera/frame_observer.hpp	34;"	d
+Feature	include/VimbaCPP/Include/Feature.h	/^class Feature$/;"	c	namespace:AVT::VmbAPI
+Feature	include/VimbaCPP/Source/Feature.cpp	/^Feature::Feature( const Feature& )$/;"	f	class:AVT::VmbAPI::Feature
+Feature	include/VimbaCPP/Source/Feature.cpp	/^Feature::Feature( const VmbFeatureInfo_t *pFeatureInfo, FeatureContainer *pFeatureContainer )$/;"	f	class:AVT::VmbAPI::Feature
+Feature	include/VimbaCPP/Source/Feature.cpp	/^Feature::Feature()$/;"	f	class:AVT::VmbAPI::Feature
+FeatureContainer	include/VimbaCPP/Include/FeatureContainer.h	/^class FeatureContainer : public virtual BasicLockable$/;"	c	namespace:AVT::VmbAPI
+FeatureContainer	include/VimbaCPP/Source/FeatureContainer.cpp	/^FeatureContainer::FeatureContainer( const FeatureContainer& )$/;"	f	class:AVT::VmbAPI::FeatureContainer
+FeatureContainer	include/VimbaCPP/Source/FeatureContainer.cpp	/^FeatureContainer::FeatureContainer()$/;"	f	class:AVT::VmbAPI::FeatureContainer
+FeatureContainerPtr	include/VimbaCPP/Include/SharedPointerDefines.h	/^    typedef SP_DECL( FeatureContainer ) FeatureContainerPtr;$/;"	t	namespace:AVT::VmbAPI
+FeatureContainerPtr	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^typedef SP_DECL( FeatureContainer ) FeatureContainerPtr;$/;"	t	namespace:AVT::VmbAPI
+FeatureInfo	include/VimbaCPP/Source/BaseFeature.h	/^    struct FeatureInfo$/;"	s	class:AVT::VmbAPI::BaseFeature
+FeaturePtr	include/VimbaCPP/Include/SharedPointerDefines.h	/^    typedef SP_DECL( Feature ) FeaturePtr;$/;"	t	namespace:AVT::VmbAPI
+FeaturePtr	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^typedef SP_DECL( Feature ) FeaturePtr;$/;"	t	namespace:AVT::VmbAPI
+FeaturePtrMap	include/VimbaCPP/Include/Feature.h	/^typedef std::map<std::string, FeaturePtr> FeaturePtrMap;$/;"	t	namespace:AVT::VmbAPI
+FeaturePtrVector	include/VimbaCPP/Include/Feature.h	/^typedef std::vector<FeaturePtr> FeaturePtrVector;$/;"	t	namespace:AVT::VmbAPI
+FileLogger	include/VimbaCPP/Include/FileLogger.h	/^class FileLogger$/;"	c	namespace:AVT::VmbAPI
+FileLogger	include/VimbaCPP/Source/FileLogger.cpp	/^FileLogger::FileLogger( const FileLogger& )$/;"	f	class:AVT::VmbAPI::FileLogger
+FileLogger	include/VimbaCPP/Source/FileLogger.cpp	/^FileLogger::FileLogger( const char *pFileName, bool bAppend )$/;"	f	class:AVT::VmbAPI::FileLogger
+FloatFeature	include/VimbaCPP/Source/FloatFeature.cpp	/^FloatFeature::FloatFeature( const VmbFeatureInfo_t *featureInfo, FeatureContainer* const pFeatureContainer )$/;"	f	class:AVT::VmbAPI::FloatFeature
+FloatFeature	include/VimbaCPP/Source/FloatFeature.h	/^class FloatFeature : public BaseFeature $/;"	c	namespace:AVT::VmbAPI
+FlushQueue	include/VimbaCPP/Source/Camera.cpp	/^        FlushQueue,$/;"	e	enum:AVT::VmbAPI::AcquireImageHelper::tear_down_tasks	file:
+FlushQueue	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::FlushQueue()$/;"	f	class:AVT::VmbAPI::Camera
+Frame	include/VimbaCPP/Include/Frame.h	/^class Frame $/;"	c	namespace:AVT::VmbAPI
+Frame	include/VimbaCPP/Source/Frame.cpp	/^Frame::Frame( Frame& )$/;"	f	class:AVT::VmbAPI::Frame
+Frame	include/VimbaCPP/Source/Frame.cpp	/^Frame::Frame( VmbInt64_t nBufferSize )$/;"	f	class:AVT::VmbAPI::Frame
+Frame	include/VimbaCPP/Source/Frame.cpp	/^Frame::Frame( VmbUchar_t *pBuffer, VmbInt64_t nBufferSize )$/;"	f	class:AVT::VmbAPI::Frame
+Frame	include/VimbaCPP/Source/Frame.cpp	/^Frame::Frame()    $/;"	f	class:AVT::VmbAPI::Frame
+FrameDoneCallback	include/VimbaCPP/Source/FrameHandler.cpp	/^void VMB_CALL FrameHandler::FrameDoneCallback( const VmbHandle_t \/*handle*\/, VmbFrame_t *pVmbFrame )$/;"	f	class:AVT::VmbAPI::FrameHandler
+FrameHandler	include/VimbaCPP/Source/FrameHandler.cpp	/^FrameHandler::FrameHandler( FramePtr pFrame, IFrameObserverPtr pFrameObserver )$/;"	f	class:AVT::VmbAPI::FrameHandler
+FrameHandler	include/VimbaCPP/Source/FrameHandler.h	/^class FrameHandler$/;"	c	namespace:AVT::VmbAPI
+FrameHandlerPtr	include/VimbaCPP/Include/SharedPointerDefines.h	/^    typedef SP_DECL( FrameHandler ) FrameHandlerPtr;$/;"	t	namespace:AVT::VmbAPI
+FrameHandlerPtr	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^typedef SP_DECL( FrameHandler ) FrameHandlerPtr;$/;"	t	namespace:AVT::VmbAPI
+FrameHandlerPtrVector	include/VimbaCPP/Source/FrameHandler.h	/^typedef std::vector<FrameHandlerPtr> FrameHandlerPtrVector;$/;"	t	namespace:AVT::VmbAPI
+FrameObserver	include/avt_vimba_camera/frame_observer.hpp	/^class FrameObserver : virtual public IFrameObserver$/;"	c
+FrameObserver	src/frame_observer.cpp	/^FrameObserver::FrameObserver(CameraPtr cam_ptr, Callback callback)$/;"	f	class:FrameObserver
+FramePtr	include/VimbaCPP/Include/SharedPointerDefines.h	/^    typedef SP_DECL( Frame ) FramePtr;$/;"	t	namespace:AVT::VmbAPI
+FramePtr	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^typedef SP_DECL( Frame ) FramePtr;$/;"	t	namespace:AVT::VmbAPI
+FramePtrVector	include/VimbaCPP/Include/Frame.h	/^typedef std::vector<FramePtr> FramePtrVector;$/;"	t	namespace:AVT::VmbAPI
+FrameReceived	src/frame_observer.cpp	/^void FrameObserver::FrameReceived(const FramePtr vimba_frame_ptr)$/;"	f	class:FrameObserver
+GetAbsTime	include/VimbaCPP/Source/Clock.cpp	/^double Clock::GetAbsTime()$/;"	f	class:AVT::VmbAPI::Clock
+GetAffectedFeatures	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetAffectedFeatures( FeaturePtrVector &rAffectedFeatures )$/;"	f	class:Feature
+GetAffectedFeatures	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetAffectedFeatures( FeaturePtr *pAffectedFeatures, VmbUint32_t &rnSize )$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetAffectedFeatures	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetAffectedFeatures( FeaturePtr *pAffectedFeatures, VmbUint32_t &rnSize )$/;"	f	class:AVT::VmbAPI::Feature
+GetAncillaryData	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetAncillaryData( AncillaryDataPtr &rAncillaryData )$/;"	f	class:AVT::VmbAPI::Frame
+GetAncillaryData	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetAncillaryData( ConstAncillaryDataPtr &rAncillaryData ) const$/;"	f	class:AVT::VmbAPI::Frame
+GetAncillarySize	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetAncillarySize( VmbUint32_t &rnAncillarySize ) const$/;"	f	class:AVT::VmbAPI::Frame
+GetBuffer	include/VimbaCPP/Source/AncillaryData.cpp	/^VmbErrorType AncillaryData::GetBuffer( VmbUchar_t* &rpValue )$/;"	f	class:AVT::VmbAPI::AncillaryData
+GetBuffer	include/VimbaCPP/Source/AncillaryData.cpp	/^VmbErrorType AncillaryData::GetBuffer( const VmbUchar_t* &rpValue ) const$/;"	f	class:AVT::VmbAPI::AncillaryData
+GetBuffer	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetBuffer( VmbUchar_t* &rpBuffer )$/;"	f	class:AVT::VmbAPI::Frame
+GetBuffer	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetBuffer( const VmbUchar_t* &rpBuffer ) const$/;"	f	class:AVT::VmbAPI::Frame
+GetBufferSize	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetBufferSize( VmbUint32_t &rnBufferSize ) const$/;"	f	class:AVT::VmbAPI::Frame
+GetCameraByID	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::GetCameraByID( const char *pStrID, CameraPtr &rCamera )$/;"	f	class:AVT::VmbAPI::VimbaSystem
+GetCameraPtrByHandle	include/VimbaCPP/Source/VimbaSystem.cpp	/^CameraPtr VimbaSystem::GetCameraPtrByHandle( const VmbHandle_t handle ) const$/;"	f	class:AVT::VmbAPI::VimbaSystem
+GetCameras	include/VimbaCPP/Include/VimbaSystem.hpp	/^inline VmbErrorType VimbaSystem::GetCameras( CameraPtrVector &rCameras )$/;"	f	class:VimbaSystem
+GetCameras	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::GetCameras( CameraPtr *pCameras, VmbUint32_t &rnSize )$/;"	f	class:AVT::VmbAPI::VimbaSystem
+GetCategory	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetCategory( std::string &rStrCategory ) const$/;"	f	class:Feature
+GetCategory	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetCategory( char * const pStrCategory, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetCategory	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetCategory( char * const pStrCategory, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetDataType	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetDataType( VmbFeatureDataType &reDataType ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetDataType	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetDataType( VmbFeatureDataType &reDataType ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetDescription	include/VimbaCPP/Include/EnumEntry.hpp	/^inline VmbErrorType EnumEntry::GetDescription( std::string &rStrDescription ) const$/;"	f	class:EnumEntry
+GetDescription	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetDescription( std::string &rStrDescription ) const$/;"	f	class:Feature
+GetDescription	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetDescription( char * const pStrDescription, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetDescription	include/VimbaCPP/Source/EnumEntry.cpp	/^    VmbErrorType GetDescription( char * const pStrDescription, VmbUint32_t &rnSize ) const$/;"	f	struct:AVT::VmbAPI::EnumEntry::PrivateImpl
+GetDescription	include/VimbaCPP/Source/EnumEntry.cpp	/^VmbErrorType EnumEntry::GetDescription( char * const pStrDescription, VmbUint32_t &rnSize ) const$/;"	f	class:AVT::VmbAPI::EnumEntry
+GetDescription	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetDescription( char * const pStrDescription, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetDisplayName	include/VimbaCPP/Include/EnumEntry.hpp	/^inline VmbErrorType EnumEntry::GetDisplayName( std::string &rStrDisplayName ) const$/;"	f	class:EnumEntry
+GetDisplayName	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetDisplayName( std::string &rStrDisplayName ) const$/;"	f	class:Feature
+GetDisplayName	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetDisplayName( char * const pStrDisplayName, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetDisplayName	include/VimbaCPP/Source/EnumEntry.cpp	/^    VmbErrorType GetDisplayName( char * const pStrDisplayName, VmbUint32_t &rnSize ) const$/;"	f	struct:AVT::VmbAPI::EnumEntry::PrivateImpl
+GetDisplayName	include/VimbaCPP/Source/EnumEntry.cpp	/^VmbErrorType EnumEntry::GetDisplayName( char * const pStrDisplayName, VmbUint32_t &rnSize ) const$/;"	f	class:AVT::VmbAPI::EnumEntry
+GetDisplayName	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetDisplayName( char * const pStrDisplayName, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetEntries	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetEntries( EnumEntryVector &rEntries )$/;"	f	class:Feature
+GetEntries	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetEntries( EnumEntry * \/*pEnumEntries*\/, VmbUint32_t & \/*size*\/ )$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetEntries	include/VimbaCPP/Source/EnumFeature.cpp	/^VmbErrorType EnumFeature::GetEntries( EnumEntry *pEntries, VmbUint32_t &rnSize )$/;"	f	class:AVT::VmbAPI::EnumFeature
+GetEntries	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetEntries( EnumEntry *pEnumEntries, VmbUint32_t &rnSize )$/;"	f	class:AVT::VmbAPI::Feature
+GetEntry	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetEntry( EnumEntry & \/*entry*\/, const char * \/*pStrEntryName*\/ ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetEntry	include/VimbaCPP/Source/EnumFeature.cpp	/^VmbErrorType EnumFeature::GetEntry( EnumEntry &rEntry, const char * pStrEntryName ) const$/;"	f	class:AVT::VmbAPI::EnumFeature
+GetEntry	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetEntry( EnumEntry &entry, const char *pStrEntryName ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetFeatureByName	include/VimbaCPP/Source/FeatureContainer.cpp	/^VmbErrorType FeatureContainer::GetFeatureByName( const char *name, FeaturePtr &rFeature )$/;"	f	class:AVT::VmbAPI::FeatureContainer
+GetFeatureValueInt	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType GetFeatureValueInt( Camera&cam,const char* name, VmbInt64_t &val)$/;"	f	namespace:AVT::VmbAPI
+GetFeatures	include/VimbaCPP/Include/FeatureContainer.hpp	/^inline VmbErrorType FeatureContainer::GetFeatures( FeaturePtrVector &features )$/;"	f	class:FeatureContainer
+GetFeatures	include/VimbaCPP/Source/FeatureContainer.cpp	/^VmbErrorType FeatureContainer::GetFeatures( FeaturePtr *pFeatures, VmbUint32_t &rnSize )$/;"	f	class:AVT::VmbAPI::FeatureContainer
+GetFlags	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetFlags( VmbFeatureFlagsType &reFlags ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetFlags	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetFlags( VmbFeatureFlagsType &reFlags ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetFrame	include/VimbaCPP/Source/FrameHandler.cpp	/^FramePtr FrameHandler::GetFrame() const$/;"	f	class:AVT::VmbAPI::FrameHandler
+GetFrameID	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetFrameID( VmbUint64_t &rnFrameID ) const$/;"	f	class:AVT::VmbAPI::Frame
+GetHandle	include/VimbaCPP/Source/FeatureContainer.cpp	/^VmbHandle_t FeatureContainer::GetHandle() const$/;"	f	class:AVT::VmbAPI::FeatureContainer
+GetHeight	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetHeight( VmbUint32_t &rnHeight ) const$/;"	f	class:AVT::VmbAPI::Frame
+GetID	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::GetID( std::string &rStrID ) const$/;"	f	class:Camera
+GetID	include/VimbaCPP/Include/Interface.hpp	/^inline VmbErrorType Interface::GetID( std::string &rStrID ) const$/;"	f	class:Interface
+GetID	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::GetID( char * const pStrID, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Camera
+GetID	include/VimbaCPP/Source/Interface.cpp	/^VmbErrorType Interface::GetID( char * const pStrID, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Interface
+GetImage	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetImage( VmbUchar_t* &rpBuffer )$/;"	f	class:AVT::VmbAPI::Frame
+GetImage	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetImage( const VmbUchar_t* &rpBuffer ) const$/;"	f	class:AVT::VmbAPI::Frame
+GetImageSize	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetImageSize( VmbUint32_t &rnImageSize ) const$/;"	f	class:AVT::VmbAPI::Frame
+GetIncrement	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetIncrement( VmbInt64_t & \/*rnIncrement*\/ ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetIncrement	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetIncrement( double & \/*rnIncrement*\/ ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetIncrement	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetIncrement( VmbInt64_t &rnIncrement ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetIncrement	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetIncrement( double &rnIncrement ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetIncrement	include/VimbaCPP/Source/FloatFeature.cpp	/^VmbErrorType FloatFeature::GetIncrement( double &rnIncrement ) const$/;"	f	class:AVT::VmbAPI::FloatFeature
+GetIncrement	include/VimbaCPP/Source/IntFeature.cpp	/^VmbErrorType IntFeature::GetIncrement( VmbInt64_t &rnIncrement ) const$/;"	f	class:AVT::VmbAPI::IntFeature
+GetInstance	include/VimbaCPP/Source/VimbaSystem.cpp	/^VimbaSystem &VimbaSystem::GetInstance()$/;"	f	class:AVT::VmbAPI::VimbaSystem
+GetInterfaceByID	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::GetInterfaceByID( const char *pStrID, InterfacePtr &rInterface )$/;"	f	class:AVT::VmbAPI::VimbaSystem
+GetInterfaceID	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::GetInterfaceID( std::string &rStrInterfaceID ) const$/;"	f	class:Camera
+GetInterfaceID	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::GetInterfaceID( char * const pStrInterfaceID, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Camera
+GetInterfaceList	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::Impl::GetInterfaceList( std::vector<VmbInterfaceInfo_t> &rInterfaceInfos )$/;"	f	class:AVT::VmbAPI::VimbaSystem::Impl
+GetInterfaceType	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::GetInterfaceType( VmbInterfaceType &reInterfaceType ) const$/;"	f	class:AVT::VmbAPI::Camera
+GetInterfaces	include/VimbaCPP/Include/VimbaSystem.hpp	/^inline VmbErrorType VimbaSystem::GetInterfaces( InterfacePtrVector &rInterfaces )$/;"	f	class:VimbaSystem
+GetInterfaces	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::GetInterfaces( InterfacePtr *pInterfaces, VmbUint32_t &rnSize )$/;"	f	class:AVT::VmbAPI::VimbaSystem
+GetLogger	include/VimbaCPP/Source/VimbaSystem.cpp	/^Logger VimbaSystem::GetLogger() const$/;"	f	class:AVT::VmbAPI::VimbaSystem
+GetModel	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::GetModel( std::string &rStrModel ) const$/;"	f	class:Camera
+GetModel	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::GetModel( char * const pStrModel, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Camera
+GetMutex	include/VimbaCPP/Source/BasicLockable.cpp	/^MutexPtr& BasicLockable::GetMutex()$/;"	f	class:AVT::VmbAPI::BasicLockable
+GetMutex	include/VimbaCPP/Source/BasicLockable.cpp	/^const MutexPtr& BasicLockable::GetMutex() const$/;"	f	class:AVT::VmbAPI::BasicLockable
+GetName	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::GetName( std::string &rStrName ) const$/;"	f	class:Camera
+GetName	include/VimbaCPP/Include/EnumEntry.hpp	/^inline VmbErrorType EnumEntry::GetName( std::string &rStrName ) const$/;"	f	class:EnumEntry
+GetName	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetName( std::string &rStrName ) const$/;"	f	class:Feature
+GetName	include/VimbaCPP/Include/Interface.hpp	/^inline VmbErrorType Interface::GetName( std::string &rStrName ) const$/;"	f	class:Interface
+GetName	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetName( char * const pStrName, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetName	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::GetName( char * const pStrName, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Camera
+GetName	include/VimbaCPP/Source/EnumEntry.cpp	/^    VmbErrorType GetName( char * const pStrName, VmbUint32_t &rnSize ) const$/;"	f	struct:AVT::VmbAPI::EnumEntry::PrivateImpl
+GetName	include/VimbaCPP/Source/EnumEntry.cpp	/^VmbErrorType EnumEntry::GetName( char * const pStrName, VmbUint32_t &rnSize ) const$/;"	f	class:AVT::VmbAPI::EnumEntry
+GetName	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetName( char * const pStrName, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetName	include/VimbaCPP/Source/Interface.cpp	/^VmbErrorType Interface::GetName( char * const pStrName, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Interface
+GetObserver	include/VimbaCPP/Source/Frame.cpp	/^bool Frame::GetObserver( IFrameObserverPtr &rObserver ) const$/;"	f	class:AVT::VmbAPI::Frame
+GetOffsetX	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetOffsetX( VmbUint32_t &rnOffsetX ) const$/;"	f	class:AVT::VmbAPI::Frame
+GetOffsetY	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetOffsetY( VmbUint32_t &rnOffsetY ) const$/;"	f	class:AVT::VmbAPI::Frame
+GetPermittedAccess	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::GetPermittedAccess( VmbAccessModeType &rePermittedAccess ) const$/;"	f	class:AVT::VmbAPI::Camera
+GetPermittedAccess	include/VimbaCPP/Source/Interface.cpp	/^VmbErrorType Interface::GetPermittedAccess( VmbAccessModeType &reAccessMode ) const$/;"	f	class:AVT::VmbAPI::Interface
+GetPixelFormat	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetPixelFormat( VmbPixelFormatType &rPixelFormat ) const$/;"	f	class:AVT::VmbAPI::Frame
+GetPollingTime	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetPollingTime( VmbUint32_t &rnPollingTime ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetPollingTime	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetPollingTime( VmbUint32_t &rnPollingTime ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetRange	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetRange( VmbInt64_t & \/*rnMinimum*\/, VmbInt64_t & \/*rnMaximum*\/ ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetRange	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetRange( double & \/*rfMinimum*\/, double & \/*rfMaximum*\/ ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetRange	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetRange( VmbInt64_t &rnMinimum, VmbInt64_t &rnMaximum ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetRange	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetRange( double &rfMinimum, double &rfMaximum ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetRange	include/VimbaCPP/Source/FloatFeature.cpp	/^VmbErrorType FloatFeature::GetRange( double &rfMinimum, double &rfMaximum ) const$/;"	f	class:AVT::VmbAPI::FloatFeature
+GetRange	include/VimbaCPP/Source/IntFeature.cpp	/^VmbErrorType IntFeature::GetRange( VmbInt64_t &rnMinimum, VmbInt64_t &rnMaximum ) const$/;"	f	class:AVT::VmbAPI::IntFeature
+GetReceiveStatus	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetReceiveStatus( VmbFrameStatusType &rStatus ) const$/;"	f	class:AVT::VmbAPI::Frame
+GetRepresentation	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetRepresentation( std::string &rStrRepresentation ) const$/;"	f	class:Feature
+GetRepresentation	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetRepresentation( char * const pStrRepresentation, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetRepresentation	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetRepresentation( char * const pStrRepresentation, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetSFNCNamespace	include/VimbaCPP/Include/EnumEntry.hpp	/^inline VmbErrorType EnumEntry::GetSFNCNamespace( std::string &rStrNamespace ) const$/;"	f	class:EnumEntry
+GetSFNCNamespace	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetSFNCNamespace( std::string &rStrSFNCNamespace ) const$/;"	f	class:Feature
+GetSFNCNamespace	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetSFNCNamespace( char * const pStrSFNCNamespace, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetSFNCNamespace	include/VimbaCPP/Source/EnumEntry.cpp	/^    VmbErrorType GetSFNCNamespace( char * const pStrNamespace, VmbUint32_t &rnSize ) const$/;"	f	struct:AVT::VmbAPI::EnumEntry::PrivateImpl
+GetSFNCNamespace	include/VimbaCPP/Source/EnumEntry.cpp	/^VmbErrorType EnumEntry::GetSFNCNamespace( char * const pStrNamespace, VmbUint32_t &rnSize ) const$/;"	f	class:AVT::VmbAPI::EnumEntry
+GetSFNCNamespace	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetSFNCNamespace( char * const pStrSFNCNamespace, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetSelectedFeatures	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetSelectedFeatures( FeaturePtrVector &rSelectedFeatures )$/;"	f	class:Feature
+GetSelectedFeatures	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetSelectedFeatures( FeaturePtr *pSelectedFeatures, VmbUint32_t &rnSize )$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetSelectedFeatures	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetSelectedFeatures( FeaturePtr *pSelectedFeatures, VmbUint32_t &rnSize )$/;"	f	class:AVT::VmbAPI::Feature
+GetSerialNumber	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::GetSerialNumber( std::string &rStrSerial ) const$/;"	f	class:Camera
+GetSerialNumber	include/VimbaCPP/Include/Interface.hpp	/^inline VmbErrorType Interface::GetSerialNumber( std::string &rStrSerial ) const$/;"	f	class:Interface
+GetSerialNumber	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::GetSerialNumber( char * const pStrSerial, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Camera
+GetSerialNumber	include/VimbaCPP/Source/Interface.cpp	/^VmbErrorType Interface::GetSerialNumber( char * const pStrSerial, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Interface
+GetSize	include/VimbaCPP/Source/AncillaryData.cpp	/^VmbErrorType AncillaryData::GetSize( VmbUint32_t &nSize ) const$/;"	f	class:AVT::VmbAPI::AncillaryData
+GetTask	include/VimbaCPP/Source/Camera.cpp	/^    tear_down_tasks GetTask()$/;"	f	struct:AVT::VmbAPI::AcquireImageHelper	file:
+GetTempPath	include/VimbaCPP/Source/FileLogger.cpp	/^std::string FileLogger::GetTempPath()$/;"	f	class:AVT::VmbAPI::FileLogger
+GetTime	include/VimbaCPP/Source/Clock.cpp	/^double Clock::GetTime() const$/;"	f	class:AVT::VmbAPI::Clock
+GetTimestamp	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetTimestamp( VmbUint64_t &rnTimestamp ) const$/;"	f	class:AVT::VmbAPI::Frame
+GetToolTip	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetToolTip( std::string &rStrToolTip ) const$/;"	f	class:Feature
+GetToolTip	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetToolTip( char * const pStrToolTip, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetToolTip	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetToolTip( char * const pStrToolTip, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetTooltip	include/VimbaCPP/Include/EnumEntry.hpp	/^inline VmbErrorType EnumEntry::GetTooltip( std::string &rStrTooltip ) const$/;"	f	class:EnumEntry
+GetTooltip	include/VimbaCPP/Source/EnumEntry.cpp	/^    VmbErrorType GetTooltip( char * const pStrTooltip, VmbUint32_t &rnSize ) const$/;"	f	struct:AVT::VmbAPI::EnumEntry::PrivateImpl
+GetTooltip	include/VimbaCPP/Source/EnumEntry.cpp	/^VmbErrorType EnumEntry::GetTooltip( char * const pStrTooltip, VmbUint32_t &rnSize ) const$/;"	f	class:AVT::VmbAPI::EnumEntry
+GetType	include/VimbaCPP/Source/Interface.cpp	/^VmbErrorType Interface::GetType( VmbInterfaceType &reType ) const$/;"	f	class:AVT::VmbAPI::Interface
+GetUnit	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetUnit( std::string &rStrUnit ) const$/;"	f	class:Feature
+GetUnit	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetUnit( char * const pStrUnit, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetUnit	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetUnit( char * const pStrUnit, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetValue	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetValue( UcharVector &rValue ) const$/;"	f	class:Feature
+GetValue	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetValue( UcharVector &rValue, VmbUint32_t &rnSizeFilled ) const$/;"	f	class:Feature
+GetValue	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetValue( std::string &rStrValue ) const$/;"	f	class:Feature
+GetValue	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetValue( VmbInt64_t & \/*rnValue*\/ ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetValue	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetValue( VmbUchar_t * \/*pValue*\/, VmbUint32_t & \/*rnSize*\/, VmbUint32_t & \/*rnSizeFilled*\/ ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetValue	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetValue( bool & \/*rbValue*\/ ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetValue	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetValue( char * const \/*pStrValue*\/, VmbUint32_t & \/*length*\/ ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetValue	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetValue( double & \/*rfValue*\/) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetValue	include/VimbaCPP/Source/BoolFeature.cpp	/^VmbErrorType BoolFeature::GetValue( bool &rbValue ) const$/;"	f	class:AVT::VmbAPI::BoolFeature
+GetValue	include/VimbaCPP/Source/EnumEntry.cpp	/^    VmbErrorType GetValue( VmbInt64_t &rnValue ) const$/;"	f	struct:AVT::VmbAPI::EnumEntry::PrivateImpl
+GetValue	include/VimbaCPP/Source/EnumEntry.cpp	/^VmbErrorType EnumEntry::GetValue( VmbInt64_t &rnValue ) const$/;"	f	class:AVT::VmbAPI::EnumEntry
+GetValue	include/VimbaCPP/Source/EnumFeature.cpp	/^VmbErrorType EnumFeature::GetValue( VmbInt64_t &rnValue ) const$/;"	f	class:AVT::VmbAPI::EnumFeature
+GetValue	include/VimbaCPP/Source/EnumFeature.cpp	/^VmbErrorType EnumFeature::GetValue( char * const pStrValue, VmbUint32_t &rnSize ) const$/;"	f	class:AVT::VmbAPI::EnumFeature
+GetValue	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetValue( VmbInt64_t &rnValue ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetValue	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetValue( VmbUchar_t *pValue, VmbUint32_t &rnSize, VmbUint32_t &rnSizeFilled ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetValue	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetValue( bool &rbValue ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetValue	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetValue( char * const pStrValue, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetValue	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetValue( double &rfValue) const$/;"	f	class:AVT::VmbAPI::Feature
+GetValue	include/VimbaCPP/Source/FloatFeature.cpp	/^VmbErrorType FloatFeature::GetValue( double &rfValue ) const$/;"	f	class:AVT::VmbAPI::FloatFeature
+GetValue	include/VimbaCPP/Source/IntFeature.cpp	/^VmbErrorType IntFeature::GetValue( VmbInt64_t &rnValue ) const$/;"	f	class:AVT::VmbAPI::IntFeature
+GetValue	include/VimbaCPP/Source/RawFeature.cpp	/^VmbErrorType RawFeature::GetValue( VmbUchar_t *pValue, VmbUint32_t &rnSize, VmbUint32_t &rnSizeFilled ) const$/;"	f	class:AVT::VmbAPI::RawFeature
+GetValue	include/VimbaCPP/Source/StringFeature.cpp	/^VmbErrorType StringFeature::GetValue( char * const pStrValue, VmbUint32_t &rnLength ) const$/;"	f	class:AVT::VmbAPI::StringFeature
+GetValues	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetValues( Int64Vector &rValues )$/;"	f	class:Feature
+GetValues	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::GetValues( StringVector &rValues )$/;"	f	class:Feature
+GetValues	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetValues( VmbInt64_t * \/*pnValues*\/, VmbUint32_t & \/*rnSize*\/ )$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetValues	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetValues( const char ** \/*pStrValues*\/, VmbUint32_t & \/*rnSize*\/ )$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetValues	include/VimbaCPP/Source/EnumFeature.cpp	/^VmbErrorType EnumFeature::GetValues( VmbInt64_t *pValues, VmbUint32_t &rnSize )$/;"	f	class:AVT::VmbAPI::EnumFeature
+GetValues	include/VimbaCPP/Source/EnumFeature.cpp	/^VmbErrorType EnumFeature::GetValues( const char **pRange, VmbUint32_t &rnSize )$/;"	f	class:AVT::VmbAPI::EnumFeature
+GetValues	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetValues( VmbInt64_t *pnValues, VmbUint32_t &rnSize )$/;"	f	class:AVT::VmbAPI::Feature
+GetValues	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetValues( const char **pStrValues, VmbUint32_t &rnSize )$/;"	f	class:AVT::VmbAPI::Feature
+GetVisibility	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::GetVisibility( VmbFeatureVisibilityType &reVisibility ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+GetVisibility	include/VimbaCPP/Source/EnumEntry.cpp	/^    VmbErrorType GetVisibility( VmbFeatureVisibilityType &rVisibility ) const$/;"	f	struct:AVT::VmbAPI::EnumEntry::PrivateImpl
+GetVisibility	include/VimbaCPP/Source/EnumEntry.cpp	/^VmbErrorType EnumEntry::GetVisibility( VmbFeatureVisibilityType &rVisibility ) const$/;"	f	class:AVT::VmbAPI::EnumEntry
+GetVisibility	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::GetVisibility( VmbFeatureVisibilityType &reVisibility ) const$/;"	f	class:AVT::VmbAPI::Feature
+GetWidth	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::GetWidth( VmbUint32_t &rnWidth ) const$/;"	f	class:AVT::VmbAPI::Frame
+HasIncrement	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::HasIncrement( VmbBool_t & \/*incrementSupported*\/) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+HasIncrement	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::HasIncrement( VmbBool_t &incrementSupported) const$/;"	f	class:AVT::VmbAPI::Feature
+HasIncrement	include/VimbaCPP/Source/FloatFeature.cpp	/^VmbErrorType FloatFeature::HasIncrement( VmbBool_t &incrementSupported ) const$/;"	f	class:AVT::VmbAPI::FloatFeature
+HasIncrement	include/VimbaCPP/Source/IntFeature.cpp	/^VmbErrorType IntFeature::HasIncrement( VmbBool_t & incrementSupported) const$/;"	f	class:AVT::VmbAPI::IntFeature
+ICameraFactory	include/VimbaCPP/Include/ICameraFactory.h	/^class ICameraFactory $/;"	c	namespace:AVT::VmbAPI
+ICameraFactoryPtr	include/VimbaCPP/Include/SharedPointerDefines.h	/^    typedef SP_DECL( ICameraFactory ) ICameraFactoryPtr;$/;"	t	namespace:AVT::VmbAPI
+ICameraFactoryPtr	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^typedef SP_DECL( ICameraFactory ) ICameraFactoryPtr;$/;"	t	namespace:AVT::VmbAPI
+ICameraListObserver	include/VimbaCPP/Include/ICameraListObserver.h	/^    IMEXPORT ICameraListObserver( const ICameraListObserver& ) { \/* No copy ctor *\/ }$/;"	f	class:AVT::VmbAPI::ICameraListObserver
+ICameraListObserver	include/VimbaCPP/Include/ICameraListObserver.h	/^    IMEXPORT ICameraListObserver() { \/*No default ctor*\/ }$/;"	f	class:AVT::VmbAPI::ICameraListObserver
+ICameraListObserver	include/VimbaCPP/Include/ICameraListObserver.h	/^class ICameraListObserver $/;"	c	namespace:AVT::VmbAPI
+ICameraListObserverPtr	include/VimbaCPP/Include/SharedPointerDefines.h	/^    typedef SP_DECL( ICameraListObserver ) ICameraListObserverPtr;$/;"	t	namespace:AVT::VmbAPI
+ICameraListObserverPtr	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^typedef SP_DECL( ICameraListObserver ) ICameraListObserverPtr;$/;"	t	namespace:AVT::VmbAPI
+ICameraListObserverPtrVector	include/VimbaCPP/Include/ICameraListObserver.h	/^typedef std::vector<ICameraListObserverPtr> ICameraListObserverPtrVector;$/;"	t	namespace:AVT::VmbAPI
+IDLE	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  IDLE,$/;"	e	enum:avt_vimba_camera::CameraState
+IFeatureObserver	include/VimbaCPP/Include/IFeatureObserver.h	/^    IMEXPORT IFeatureObserver( const IFeatureObserver& ) { \/* No copy ctor *\/ }$/;"	f	class:AVT::VmbAPI::IFeatureObserver
+IFeatureObserver	include/VimbaCPP/Include/IFeatureObserver.h	/^    IMEXPORT IFeatureObserver() {}$/;"	f	class:AVT::VmbAPI::IFeatureObserver
+IFeatureObserver	include/VimbaCPP/Include/IFeatureObserver.h	/^class IFeatureObserver $/;"	c	namespace:AVT::VmbAPI
+IFeatureObserverPtr	include/VimbaCPP/Include/SharedPointerDefines.h	/^    typedef SP_DECL( IFeatureObserver ) IFeatureObserverPtr;$/;"	t	namespace:AVT::VmbAPI
+IFeatureObserverPtr	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^typedef SP_DECL( IFeatureObserver ) IFeatureObserverPtr;$/;"	t	namespace:AVT::VmbAPI
+IFeatureObserverPtrVector	include/VimbaCPP/Include/IFeatureObserver.h	/^typedef std::vector<IFeatureObserverPtr> IFeatureObserverPtrVector;$/;"	t	namespace:AVT::VmbAPI
+IFrameObserver	include/VimbaCPP/Include/IFrameObserver.h	/^    IFrameObserver() { \/* No default ctor *\/ }$/;"	f	class:AVT::VmbAPI::IFrameObserver
+IFrameObserver	include/VimbaCPP/Include/IFrameObserver.h	/^    IMEXPORT IFrameObserver( CameraPtr pCamera ) : m_pCamera( pCamera ) {}$/;"	f	class:AVT::VmbAPI::IFrameObserver
+IFrameObserver	include/VimbaCPP/Include/IFrameObserver.h	/^    IMEXPORT IFrameObserver( IFrameObserver& ) { \/* No copy ctor *\/ }$/;"	f	class:AVT::VmbAPI::IFrameObserver
+IFrameObserver	include/VimbaCPP/Include/IFrameObserver.h	/^class IFrameObserver $/;"	c	namespace:AVT::VmbAPI
+IFrameObserverPtr	include/VimbaCPP/Include/SharedPointerDefines.h	/^    typedef SP_DECL( IFrameObserver ) IFrameObserverPtr;$/;"	t	namespace:AVT::VmbAPI
+IFrameObserverPtr	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^typedef SP_DECL( IFrameObserver ) IFrameObserverPtr;$/;"	t	namespace:AVT::VmbAPI
+IInterfaceListObserver	include/VimbaCPP/Include/IInterfaceListObserver.h	/^    IMEXPORT IInterfaceListObserver( const IInterfaceListObserver& ) { \/* No copy ctor *\/ }$/;"	f	class:AVT::VmbAPI::IInterfaceListObserver
+IInterfaceListObserver	include/VimbaCPP/Include/IInterfaceListObserver.h	/^    IMEXPORT IInterfaceListObserver() {};$/;"	f	class:AVT::VmbAPI::IInterfaceListObserver
+IInterfaceListObserver	include/VimbaCPP/Include/IInterfaceListObserver.h	/^class IInterfaceListObserver $/;"	c	namespace:AVT::VmbAPI
+IInterfaceListObserverPtr	include/VimbaCPP/Include/SharedPointerDefines.h	/^    typedef SP_DECL( IInterfaceListObserver ) IInterfaceListObserverPtr;$/;"	t	namespace:AVT::VmbAPI
+IInterfaceListObserverPtr	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^typedef SP_DECL( IInterfaceListObserver ) IInterfaceListObserverPtr;$/;"	t	namespace:AVT::VmbAPI
+IInterfaceListObserverPtrVector	include/VimbaCPP/Include/IInterfaceListObserver.h	/^typedef std::vector<IInterfaceListObserverPtr> IInterfaceListObserverPtrVector;$/;"	t	namespace:AVT::VmbAPI
+IMAGE_CHUNK_TRAILER_LENGTH	include/VimbaCPP/Source/AncillaryData.cpp	30;"	d	file:
+IMEXPORT	include/VimbaCPP/Include/VimbaCPPCommon.h	33;"	d
+IMEXPORT	include/VimbaCPP/Include/VimbaCPPCommon.h	35;"	d
+IMEXPORT	include/VimbaCPP/Include/VimbaCPPCommon.h	37;"	d
+IMEXPORT	include/VimbaCPP/Include/VimbaCPPCommon.h	40;"	d
+IMEXPORT	include/VimbaCPP/Include/VimbaCPPCommon.h	42;"	d
+IMEXPORTC	include/VimbaC/Include/VimbaC.h	54;"	d
+IMEXPORTC	include/VimbaC/Include/VimbaC.h	56;"	d
+IMEXPORTC	include/VimbaC/Include/VimbaC.h	58;"	d
+IMEXPORTC	include/VimbaC/Include/VimbaC.h	71;"	d
+IMEXPORTC	include/VimbaC/Include/VimbaC.h	73;"	d
+IMEXPORTC	include/VimbaC/Include/VimbaC.h	84;"	d
+IRegisterDevice	include/VimbaCPP/Include/IRegisterDevice.h	/^class IRegisterDevice $/;"	c	namespace:AVT::VmbAPI
+Impl	include/VimbaCPP/Source/AncillaryData.cpp	/^struct AncillaryData::Impl$/;"	s	class:AVT::VmbAPI::AncillaryData	file:
+Impl	include/VimbaCPP/Source/BaseFeature.cpp	/^struct BaseFeature::Impl$/;"	s	class:AVT::VmbAPI::BaseFeature	file:
+Impl	include/VimbaCPP/Source/Camera.cpp	/^struct Camera::Impl$/;"	s	class:AVT::VmbAPI::Camera	file:
+Impl	include/VimbaCPP/Source/FeatureContainer.cpp	/^struct FeatureContainer::Impl$/;"	s	class:AVT::VmbAPI::FeatureContainer	file:
+Impl	include/VimbaCPP/Source/FrameImpl.h	/^struct Frame::Impl$/;"	s	class:AVT::VmbAPI::Frame
+Impl	include/VimbaCPP/Source/Interface.cpp	/^struct Interface::Impl$/;"	s	class:AVT::VmbAPI::Interface	file:
+Impl	include/VimbaCPP/Source/VimbaSystem.cpp	/^struct VimbaSystem::Impl$/;"	s	class:AVT::VmbAPI::VimbaSystem	file:
+Init	include/VimbaCPP/Source/Frame.cpp	/^void Frame::Impl::Init()$/;"	f	class:AVT::VmbAPI::Frame::Impl
+InitializeAddress	src/trigger_node.cpp	/^void TriggerNode::InitializeAddress()$/;"	f	class:trigger::TriggerNode
+Int64Vector	include/VimbaCPP/Include/VimbaCPPCommon.h	/^typedef std::vector<VmbInt64_t>     Int64Vector;$/;"	t	namespace:AVT::VmbAPI
+IntFeature	include/VimbaCPP/Source/IntFeature.cpp	/^IntFeature::IntFeature( const VmbFeatureInfo_t *featureInfo, FeatureContainer* const pFeatureContainer )$/;"	f	class:AVT::VmbAPI::IntFeature
+IntFeature	include/VimbaCPP/Source/IntFeature.h	/^class IntFeature : public BaseFeature $/;"	c	namespace:AVT::VmbAPI
+Interface	include/VimbaCPP/Include/Interface.h	/^class Interface : public FeatureContainer$/;"	c	namespace:AVT::VmbAPI
+Interface	include/VimbaCPP/Source/Interface.cpp	/^Interface::Interface( const Interface& )$/;"	f	class:AVT::VmbAPI::Interface
+Interface	include/VimbaCPP/Source/Interface.cpp	/^Interface::Interface()$/;"	f	class:AVT::VmbAPI::Interface
+Interface	include/VimbaCPP/Source/Interface.cpp	/^Interface::Interface(const VmbInterfaceInfo_t *pInterfaceInfo)$/;"	f	class:AVT::VmbAPI::Interface
+InterfaceDiscoveryCallback	include/VimbaCPP/Source/VimbaSystem.cpp	/^void VMB_CALL VimbaSystem::Impl::InterfaceDiscoveryCallback( const VmbHandle_t \/*handle*\/, const char * \/*name*\/, void * \/*context*\/ )$/;"	f	class:AVT::VmbAPI::VimbaSystem::Impl
+InterfaceInfo	include/VimbaCPP/Source/Interface.cpp	/^    struct InterfaceInfo$/;"	s	struct:AVT::VmbAPI::Interface::Impl	file:
+InterfacePtr	include/VimbaCPP/Include/SharedPointerDefines.h	/^    typedef SP_DECL( Interface ) InterfacePtr;$/;"	t	namespace:AVT::VmbAPI
+InterfacePtr	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^typedef SP_DECL( Interface ) InterfacePtr;$/;"	t	namespace:AVT::VmbAPI
+InterfacePtrMap	include/VimbaCPP/Source/VimbaSystem.cpp	/^typedef std::map<std::string, InterfacePtr> InterfacePtrMap;$/;"	t	namespace:AVT::VmbAPI	file:
+InterfacePtrVector	include/VimbaCPP/Include/VimbaSystem.h	/^typedef std::vector<InterfacePtr> InterfacePtrVector;$/;"	t	namespace:AVT::VmbAPI
+InvalidationCallback	include/VimbaCPP/Source/BaseFeature.cpp	/^void VMB_CALL BaseFeature::Impl::InvalidationCallback( const VmbHandle_t handle, const char * \/*name*\/, void *context )$/;"	f	class:AVT::VmbAPI::BaseFeature::Impl
+IsCommandDone	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::IsCommandDone( bool & \/*bIsDone*\/ ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+IsCommandDone	include/VimbaCPP/Source/CommandFeature.cpp	/^VmbErrorType CommandFeature::IsCommandDone( bool &rbIsDone ) const$/;"	f	class:AVT::VmbAPI::CommandFeature
+IsCommandDone	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::IsCommandDone( bool &bIsDone ) const$/;"	f	class:AVT::VmbAPI::Feature
+IsIPAddress	include/VimbaCPP/Source/VimbaSystem.cpp	/^bool VimbaSystem::Impl::IsIPAddress( const char *pStrID )$/;"	f	class:AVT::VmbAPI::VimbaSystem::Impl
+IsReadable	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::IsReadable( bool &rbIsReadable )$/;"	f	class:AVT::VmbAPI::BaseFeature
+IsReadable	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::IsReadable( bool &rbIsReadable )$/;"	f	class:AVT::VmbAPI::Feature
+IsStreamable	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::IsStreamable( bool &rbIsStreamable ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+IsStreamable	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::IsStreamable( bool &rbIsStreamable ) const$/;"	f	class:AVT::VmbAPI::Feature
+IsValueAvailable	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::IsValueAvailable( const VmbInt64_t \/*nValue*\/, bool & \/*bAvailable*\/ ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+IsValueAvailable	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::IsValueAvailable( const char * \/*pStrValue*\/, bool & \/*bAvailable*\/ ) const$/;"	f	class:AVT::VmbAPI::BaseFeature
+IsValueAvailable	include/VimbaCPP/Source/EnumFeature.cpp	/^VmbErrorType EnumFeature::IsValueAvailable( const VmbInt64_t nValue, bool &rbAvailable ) const$/;"	f	class:AVT::VmbAPI::EnumFeature
+IsValueAvailable	include/VimbaCPP/Source/EnumFeature.cpp	/^VmbErrorType EnumFeature::IsValueAvailable( const char *pStrValue, bool &bAvailable ) const$/;"	f	class:AVT::VmbAPI::EnumFeature
+IsValueAvailable	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::IsValueAvailable( const VmbInt64_t nValue, bool &rbAvailable ) const$/;"	f	class:AVT::VmbAPI::Feature
+IsValueAvailable	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::IsValueAvailable( const char *pStrValue, bool &rbAvailable ) const$/;"	f	class:AVT::VmbAPI::Feature
+IsWritable	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::IsWritable( bool &rbIsWritable )$/;"	f	class:AVT::VmbAPI::BaseFeature
+IsWritable	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::IsWritable( bool &rbIsWritable )$/;"	f	class:AVT::VmbAPI::Feature
+LOGGER_DECL	include/VimbaCPP/Include/LoggerDefines.h	40;"	d
+LOGGER_DECL	include/VimbaCPP/Include/UserLoggerDefines.h	42;"	d
+LOGGER_DEF	include/VimbaCPP/Include/LoggerDefines.h	41;"	d
+LOGGER_DEF	include/VimbaCPP/Include/UserLoggerDefines.h	43;"	d
+LOGGER_LOG	include/VimbaCPP/Include/LoggerDefines.h	42;"	d
+LOGGER_LOG	include/VimbaCPP/Include/UserLoggerDefines.h	44;"	d
+LOG_FREE_TEXT	include/VimbaCPP/Include/LoggerDefines.h	56;"	d
+LoadCameraSettings	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::LoadCameraSettings( std::string strFileName, VmbFeaturePersistSettings_t *pSettings ) const$/;"	f	class:Camera
+LoadCameraSettings	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::LoadCameraSettings( const char * const pStrFileName, VmbFeaturePersistSettings_t *pSettings ) const$/;"	f	class:AVT::VmbAPI::Camera
+LoadParams	src/trigger_node.cpp	/^void TriggerNode::LoadParams()$/;"	f	class:trigger::TriggerNode
+LoadSaveSettingsSetup	include/VimbaCPP/Source/Camera.cpp	/^void Camera::LoadSaveSettingsSetup( VmbFeaturePersist_t persistType, VmbUint32_t maxIterations, VmbUint32_t loggingLevel )$/;"	f	class:AVT::VmbAPI::Camera
+Lock	include/VimbaCPP/Include/BasicLockable.h	/^    void Lock()$/;"	f	class:AVT::VmbAPI::BasicLockable
+Lock	include/VimbaCPP/Source/Mutex.cpp	/^void Mutex::Lock()$/;"	f	class:AVT::VmbAPI::Mutex
+LockableMap	include/VimbaCPP/Source/Helper.h	/^class LockableMap : public virtual BasicLockable$/;"	c	namespace:AVT::VmbAPI
+LockableVector	include/VimbaCPP/Source/Helper.h	/^class LockableVector : public virtual BasicLockable$/;"	c	namespace:AVT::VmbAPI
+Log	include/VimbaCPP/Source/FileLogger.cpp	/^void FileLogger::Log( const std::string &rStrMessage )$/;"	f	class:AVT::VmbAPI::FileLogger
+Logger	include/VimbaCPP/Include/LoggerDefines.h	/^    typedef LOGGER_DECL* Logger;$/;"	t	namespace:AVT::VmbAPI
+Logger	include/VimbaCPP/Include/UserLoggerDefines.h	/^typedef LOGGER_DECL* Logger;$/;"	t	namespace:AVT::VmbAPI
+MONO_CAMERA_H	include/avt_vimba_camera/mono_camera_node.hpp	34;"	d
+Map	include/VimbaCPP/Source/Helper.h	/^    std::map<T1, T2> Map;$/;"	m	class:AVT::VmbAPI::LockableMap
+MonoCameraNode	include/avt_vimba_camera/mono_camera_node.hpp	/^class MonoCameraNode : public rclcpp::Node$/;"	c	namespace:avt_vimba_camera
+MonoCameraNode	src/mono_camera_node.cpp	/^MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam_(std::shared_ptr<rclcpp::Node>(dynamic_cast<rclcpp::Node * >(this)))$/;"	f	class:avt_vimba_camera::MonoCameraNode
+Mutex	include/VimbaCPP/Include/Mutex.h	/^class Mutex$/;"	c	namespace:AVT::VmbAPI
+Mutex	include/VimbaCPP/Source/FrameHandler.h	/^    MutexPtr&               Mutex() { return m_pMutex; }$/;"	f	class:AVT::VmbAPI::FrameHandler
+Mutex	include/VimbaCPP/Source/Mutex.cpp	/^Mutex::Mutex( bool bInitLock )$/;"	f	class:AVT::VmbAPI::Mutex
+Mutex	include/VimbaCPP/Source/Mutex.cpp	/^Mutex::Mutex( const Mutex& )$/;"	f	class:AVT::VmbAPI::Mutex
+MutexGuard	include/VimbaCPP/Source/MutexGuard.cpp	/^MutexGuard::MutexGuard( BasicLockablePtr pLockable )$/;"	f	class:AVT::VmbAPI::MutexGuard
+MutexGuard	include/VimbaCPP/Source/MutexGuard.cpp	/^MutexGuard::MutexGuard( MutexPtr &pMutex )$/;"	f	class:AVT::VmbAPI::MutexGuard
+MutexGuard	include/VimbaCPP/Source/MutexGuard.cpp	/^MutexGuard::MutexGuard( const BasicLockable &rLockable )$/;"	f	class:AVT::VmbAPI::MutexGuard
+MutexGuard	include/VimbaCPP/Source/MutexGuard.cpp	/^MutexGuard::MutexGuard()$/;"	f	class:AVT::VmbAPI::MutexGuard
+MutexGuard	include/VimbaCPP/Source/MutexGuard.h	/^class MutexGuard$/;"	c	namespace:AVT::VmbAPI
+MutexPtr	include/VimbaCPP/Include/SharedPointerDefines.h	/^    typedef SP_DECL( Mutex ) MutexPtr;$/;"	t	namespace:AVT::VmbAPI
+MutexPtr	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^typedef SP_DECL( Mutex ) MutexPtr;$/;"	t	namespace:AVT::VmbAPI
+OK	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  OK$/;"	e	enum:avt_vimba_camera::CameraState
+OPENING	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  OPENING,$/;"	e	enum:avt_vimba_camera::CameraState
+Open	include/VimbaCPP/Source/AncillaryData.cpp	/^VmbErrorType AncillaryData::Open()$/;"	f	class:AVT::VmbAPI::AncillaryData
+Open	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::Open( VmbAccessModeType eAccessMode )$/;"	f	class:AVT::VmbAPI::Camera
+Open	include/VimbaCPP/Source/Interface.cpp	/^VmbErrorType Interface::Open()$/;"	f	class:AVT::VmbAPI::Interface
+OpenCameraByID	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::OpenCameraByID( const char *pStrID, VmbAccessModeType eAccessMode, CameraPtr &rCamera )$/;"	f	class:AVT::VmbAPI::VimbaSystem
+OpenInterfaceByID	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::OpenInterfaceByID( const char *pStrID, InterfacePtr &rInterface )$/;"	f	class:AVT::VmbAPI::VimbaSystem
+PARAM_NAMESPACE	include/avt_vimba_camera/avt_vimba_camera.hpp	/^const std::string PARAM_NAMESPACE = "feature\/";$/;"	m	namespace:avt_vimba_camera
+Prepare	include/VimbaCPP/Source/Camera.cpp	/^    VmbErrorType Prepare(FramePtr &pFrame, VmbInt64_t PayloadSize)$/;"	f	struct:AVT::VmbAPI::AcquireImageHelper
+Prepare	include/VimbaCPP/Source/Camera.cpp	/^    VmbErrorType Prepare(FramePtr *pFrames, VmbUint32_t nFrameCount, VmbInt64_t nPayloadSize, VmbUint32_t &nFramesQueued )$/;"	f	struct:AVT::VmbAPI::AcquireImageHelper
+PrepareActionCommand	src/trigger_node.cpp	/^bool TriggerNode::PrepareActionCommand()$/;"	f	class:trigger::TriggerNode
+PrivateImpl	include/VimbaCPP/Source/EnumEntry.cpp	/^    PrivateImpl(    const char              *pStrName,$/;"	f	struct:AVT::VmbAPI::EnumEntry::PrivateImpl
+PrivateImpl	include/VimbaCPP/Source/EnumEntry.cpp	/^struct EnumEntry::PrivateImpl$/;"	s	class:AVT::VmbAPI::EnumEntry	file:
+Protect	include/VimbaCPP/Source/MutexGuard.cpp	/^void MutexGuard::Protect(  )$/;"	f	class:AVT::VmbAPI::MutexGuard
+QueryVersion	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::QueryVersion( VmbVersionInfo_t &rVersion )$/;"	f	class:AVT::VmbAPI::VimbaSystem
+QueueFrame	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::QueueFrame( const FramePtr &frame )$/;"	f	class:AVT::VmbAPI::Camera
+RawFeature	include/VimbaCPP/Source/RawFeature.cpp	/^RawFeature::RawFeature( const VmbFeatureInfo_t *featureInfo, FeatureContainer *pFeatureContainer )$/;"	f	class:AVT::VmbAPI::RawFeature
+RawFeature	include/VimbaCPP/Source/RawFeature.h	/^class RawFeature : public BaseFeature $/;"	c	namespace:AVT::VmbAPI
+ReadMemory	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::ReadMemory( const VmbUint64_t &rAddress, UcharVector &rBuffer ) const$/;"	f	class:Camera
+ReadMemory	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::ReadMemory( const VmbUint64_t &rAddress, UcharVector &rBuffer, VmbUint32_t &rCompletedReads ) const$/;"	f	class:Camera
+ReadMemory	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::ReadMemory( const VmbUint64_t address, VmbUchar_t *pBuffer, VmbUint32_t nBufferSize, VmbUint32_t *pSizeComplete ) const$/;"	f	class:AVT::VmbAPI::Camera
+ReadRegisters	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::ReadRegisters( const Uint64Vector &rAddresses, Uint64Vector &rBuffer ) const$/;"	f	class:Camera
+ReadRegisters	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::ReadRegisters( const Uint64Vector &rAddresses, Uint64Vector &rBuffer, VmbUint32_t &rCompletedReads ) const$/;"	f	class:Camera
+ReadRegisters	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::ReadRegisters( const VmbUint64_t *pAddressArray, VmbUint32_t nAddressSize, VmbUint64_t *pDataArray, VmbUint32_t *pCompletedReads ) const$/;"	f	class:AVT::VmbAPI::Camera
+RegisterCameraFactory	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::RegisterCameraFactory( const ICameraFactoryPtr &cameraFactory )$/;"	f	class:AVT::VmbAPI::VimbaSystem
+RegisterCameraListObserver	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::RegisterCameraListObserver( const ICameraListObserverPtr &rObserver )$/;"	f	class:AVT::VmbAPI::VimbaSystem
+RegisterInterfaceListObserver	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::RegisterInterfaceListObserver( const IInterfaceListObserverPtr &rObserver )$/;"	f	class:AVT::VmbAPI::VimbaSystem
+RegisterObserver	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::RegisterObserver( const IFeatureObserverPtr &rObserver )$/;"	f	class:AVT::VmbAPI::BaseFeature
+RegisterObserver	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::RegisterObserver( const IFeatureObserverPtr &rObserver )$/;"	f	class:AVT::VmbAPI::Feature
+RegisterObserver	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::RegisterObserver( const IFrameObserverPtr &rObserver )$/;"	f	class:AVT::VmbAPI::Frame
+Release	include/VimbaCPP/Source/MutexGuard.cpp	/^bool MutexGuard::Release()$/;"	f	class:AVT::VmbAPI::MutexGuard
+Release	include/VimbaCPP/Source/Semaphore.cpp	/^void Semaphore::Release()$/;"	f	class:AVT::VmbAPI::Semaphore
+Reset	include/VimbaCPP/Source/Clock.cpp	/^void Clock::Reset()$/;"	f	class:AVT::VmbAPI::Clock
+Reset	include/VimbaCPP/Source/FeatureContainer.cpp	/^void FeatureContainer::Reset()$/;"	f	class:AVT::VmbAPI::FeatureContainer
+ResetFeatureContainer	include/VimbaCPP/Source/BaseFeature.cpp	/^void BaseFeature::ResetFeatureContainer()$/;"	f	class:AVT::VmbAPI::BaseFeature
+ResetFeatureContainer	include/VimbaCPP/Source/Feature.cpp	/^void Feature::ResetFeatureContainer()$/;"	f	class:AVT::VmbAPI::Feature
+RevokeAllFrames	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::RevokeAllFrames() $/;"	f	class:AVT::VmbAPI::Camera
+RevokeFrame	include/VimbaCPP/Source/Camera.cpp	/^        RevokeFrame,$/;"	e	enum:AVT::VmbAPI::AcquireImageHelper::tear_down_tasks	file:
+RevokeFrame	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::RevokeFrame( const FramePtr &frame )$/;"	f	class:AVT::VmbAPI::Camera
+RevokeHandle	include/VimbaCPP/Source/FeatureContainer.cpp	/^void FeatureContainer::RevokeHandle()$/;"	f	class:AVT::VmbAPI::FeatureContainer
+RunCommand	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::RunCommand() $/;"	f	class:AVT::VmbAPI::BaseFeature
+RunCommand	include/VimbaCPP/Source/CommandFeature.cpp	/^VmbErrorType CommandFeature::RunCommand() $/;"	f	class:AVT::VmbAPI::CommandFeature
+RunCommand	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::RunCommand() $/;"	f	class:AVT::VmbAPI::Feature
+RunFeatureCommand	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType RunFeatureCommand( Camera&cam,const char* name)$/;"	f	namespace:AVT::VmbAPI
+SP_ACCESS	include/VimbaCPP/Include/SharedPointerDefines.h	49;"	d
+SP_ACCESS	include/VimbaCPP/Include/UserSharedPointerDefines.h	66;"	d
+SP_DECL	include/VimbaCPP/Include/SharedPointerDefines.h	44;"	d
+SP_DECL	include/VimbaCPP/Include/UserSharedPointerDefines.h	56;"	d
+SP_DYN_CAST	include/VimbaCPP/Include/SharedPointerDefines.h	50;"	d
+SP_DYN_CAST	include/VimbaCPP/Include/UserSharedPointerDefines.h	68;"	d
+SP_ISEQUAL	include/VimbaCPP/Include/SharedPointerDefines.h	47;"	d
+SP_ISEQUAL	include/VimbaCPP/Include/UserSharedPointerDefines.h	62;"	d
+SP_ISNULL	include/VimbaCPP/Include/SharedPointerDefines.h	48;"	d
+SP_ISNULL	include/VimbaCPP/Include/UserSharedPointerDefines.h	64;"	d
+SP_RESET	include/VimbaCPP/Include/SharedPointerDefines.h	46;"	d
+SP_RESET	include/VimbaCPP/Include/UserSharedPointerDefines.h	60;"	d
+SP_SET	include/VimbaCPP/Include/SharedPointerDefines.h	45;"	d
+SP_SET	include/VimbaCPP/Include/UserSharedPointerDefines.h	58;"	d
+SaveCameraSettings	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::SaveCameraSettings( std::string strFileName, VmbFeaturePersistSettings_t *pSettings ) const$/;"	f	class:Camera
+SaveCameraSettings	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::SaveCameraSettings( const char * const pStrFileName, VmbFeaturePersistSettings_t *pSettings ) const$/;"	f	class:AVT::VmbAPI::Camera
+Semaphore	include/VimbaCPP/Source/Semaphore.cpp	/^Semaphore::Semaphore( const Semaphore& )$/;"	f	class:AVT::VmbAPI::Semaphore
+Semaphore	include/VimbaCPP/Source/Semaphore.cpp	/^Semaphore::Semaphore( int nInit, int nMax )$/;"	f	class:AVT::VmbAPI::Semaphore
+Semaphore	include/VimbaCPP/Source/Semaphore.h	/^class Semaphore$/;"	c	namespace:AVT::VmbAPI
+SendActionCommand	src/trigger_node.cpp	/^void TriggerNode::SendActionCommand()$/;"	f	class:trigger::TriggerNode
+SetHandle	include/VimbaCPP/Source/FeatureContainer.cpp	/^void FeatureContainer::SetHandle( const VmbHandle_t handle )$/;"	f	class:AVT::VmbAPI::FeatureContainer
+SetIntFeatureValue	src/trigger_node.cpp	/^bool TriggerNode::SetIntFeatureValue(const std::string& name, int64_t value)$/;"	f	class:trigger::TriggerNode
+SetStartTime	include/VimbaCPP/Source/Clock.cpp	/^void Clock::SetStartTime( double dStartTime )$/;"	f	class:AVT::VmbAPI::Clock
+SetStartTime	include/VimbaCPP/Source/Clock.cpp	/^void Clock::SetStartTime()$/;"	f	class:AVT::VmbAPI::Clock
+SetValue	include/VimbaCPP/Include/Feature.hpp	/^inline VmbErrorType Feature::SetValue( const UcharVector &rValue )$/;"	f	class:Feature
+SetValue	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::SetValue( bool \/*bValue*\/ )$/;"	f	class:AVT::VmbAPI::BaseFeature
+SetValue	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::SetValue( const VmbInt32_t & \/*rnValue*\/ )$/;"	f	class:AVT::VmbAPI::BaseFeature
+SetValue	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::SetValue( const VmbInt64_t & \/*rnValue*\/ )$/;"	f	class:AVT::VmbAPI::BaseFeature
+SetValue	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::SetValue( const VmbUchar_t * \/*pValue*\/, VmbUint32_t \/*nSize*\/ )$/;"	f	class:AVT::VmbAPI::BaseFeature
+SetValue	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::SetValue( const char * \/*pStrValue*\/ )$/;"	f	class:AVT::VmbAPI::BaseFeature
+SetValue	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::SetValue( const double & \/*rfValue*\/ )$/;"	f	class:AVT::VmbAPI::BaseFeature
+SetValue	include/VimbaCPP/Source/BoolFeature.cpp	/^VmbErrorType BoolFeature::SetValue( bool bValue )$/;"	f	class:AVT::VmbAPI::BoolFeature
+SetValue	include/VimbaCPP/Source/EnumFeature.cpp	/^VmbErrorType EnumFeature::SetValue( const VmbInt64_t &rnValue )$/;"	f	class:AVT::VmbAPI::EnumFeature
+SetValue	include/VimbaCPP/Source/EnumFeature.cpp	/^VmbErrorType EnumFeature::SetValue( const char *pStrValue )$/;"	f	class:AVT::VmbAPI::EnumFeature
+SetValue	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::SetValue( bool bValue )$/;"	f	class:AVT::VmbAPI::Feature
+SetValue	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::SetValue( const VmbInt32_t &rnValue )$/;"	f	class:AVT::VmbAPI::Feature
+SetValue	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::SetValue( const VmbInt64_t &rnValue )$/;"	f	class:AVT::VmbAPI::Feature
+SetValue	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::SetValue( const VmbUchar_t *pValue, VmbUint32_t nSize )$/;"	f	class:AVT::VmbAPI::Feature
+SetValue	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::SetValue( const char *pStrValue )$/;"	f	class:AVT::VmbAPI::Feature
+SetValue	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::SetValue( const double &rfValue )$/;"	f	class:AVT::VmbAPI::Feature
+SetValue	include/VimbaCPP/Source/FloatFeature.cpp	/^VmbErrorType FloatFeature::SetValue( const double &rfValue ) $/;"	f	class:AVT::VmbAPI::FloatFeature
+SetValue	include/VimbaCPP/Source/IntFeature.cpp	/^VmbErrorType IntFeature::SetValue( const VmbInt64_t &rnValue )$/;"	f	class:AVT::VmbAPI::IntFeature
+SetValue	include/VimbaCPP/Source/RawFeature.cpp	/^VmbErrorType RawFeature::SetValue( const VmbUchar_t *pValue, VmbUint32_t nSize )$/;"	f	class:AVT::VmbAPI::RawFeature
+SetValue	include/VimbaCPP/Source/StringFeature.cpp	/^VmbErrorType StringFeature::SetValue( const char *pStrValue ) $/;"	f	class:AVT::VmbAPI::StringFeature
+SetupFrame	include/VimbaCPP/Source/Camera.cpp	/^    static VmbErrorType SetupFrame(FramePtr &pFrame, VmbInt64_t PayloadSize)$/;"	f	struct:AVT::VmbAPI::AcquireImageHelper	file:
+Shutdown	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::Shutdown()$/;"	f	class:AVT::VmbAPI::VimbaSystem
+Signal	include/VimbaCPP/Source/Condition.cpp	/^void Condition::Signal( bool bSingle )$/;"	f	class:AVT::VmbAPI::Condition
+Sleep	include/VimbaCPP/Source/Clock.cpp	/^void Clock::Sleep(double dTime)$/;"	f	class:AVT::VmbAPI::Clock
+SleepAbs	include/VimbaCPP/Source/Clock.cpp	/^void Clock::SleepAbs(double dAbsTime)$/;"	f	class:AVT::VmbAPI::Clock
+SleepMS	include/VimbaCPP/Source/Clock.cpp	/^void Clock::SleepMS(unsigned long nTimeMS)$/;"	f	class:AVT::VmbAPI::Clock
+StartCapture	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::StartCapture() $/;"	f	class:AVT::VmbAPI::Camera
+StartContinuousImageAcquisition	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::StartContinuousImageAcquisition( int nBufferCount, const IFrameObserverPtr &rObserver )$/;"	f	class:AVT::VmbAPI::Camera
+Startup	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::Startup()$/;"	f	class:AVT::VmbAPI::VimbaSystem
+StopContinuousImageAcquisition	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::StopContinuousImageAcquisition()$/;"	f	class:AVT::VmbAPI::Camera
+StringFeature	include/VimbaCPP/Source/StringFeature.cpp	/^StringFeature::StringFeature( const VmbFeatureInfo_t *featureInfo, FeatureContainer* const pFeatureContainer )$/;"	f	class:AVT::VmbAPI::StringFeature
+StringFeature	include/VimbaCPP/Source/StringFeature.h	/^class StringFeature : public BaseFeature $/;"	c	namespace:AVT::VmbAPI
+StringVector	include/VimbaCPP/Include/VimbaCPPCommon.h	/^typedef std::vector<std::string>    StringVector;$/;"	t	namespace:AVT::VmbAPI
+TearDown	include/VimbaCPP/Source/Camera.cpp	/^    VmbErrorType TearDown()$/;"	f	struct:AVT::VmbAPI::AcquireImageHelper
+TimerCb	src/trigger_node.cpp	/^void TriggerNode::TimerCb()$/;"	f	class:trigger::TriggerNode
+TriggerCb	src/trigger_node.cpp	/^void TriggerNode::TriggerCb(const std_msgs::msg::Bool::SharedPtr msg)$/;"	f	class:trigger::TriggerNode
+TriggerNode	include/avt_vimba_camera/trigger_node.hpp	/^class TriggerNode : public rclcpp::Node$/;"	c	namespace:trigger
+TriggerNode	src/trigger_node.cpp	/^TriggerNode::TriggerNode() : Node("trigger"), vimba_system_(AVT::VmbAPI::VimbaSystem::GetInstance())$/;"	f	class:trigger::TriggerNode
+UcharVector	include/VimbaCPP/Include/VimbaCPPCommon.h	/^typedef std::vector<VmbUchar_t>     UcharVector;$/;"	t	namespace:AVT::VmbAPI
+Uint64Vector	include/VimbaCPP/Include/VimbaCPPCommon.h	/^typedef std::vector<VmbUint64_t>    Uint64Vector;$/;"	t	namespace:AVT::VmbAPI
+Unlock	include/VimbaCPP/Include/BasicLockable.h	/^    void Unlock()$/;"	f	class:AVT::VmbAPI::BasicLockable
+Unlock	include/VimbaCPP/Source/Mutex.cpp	/^void Mutex::Unlock()$/;"	f	class:AVT::VmbAPI::Mutex
+UnregisterCameraFactory	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::UnregisterCameraFactory()$/;"	f	class:AVT::VmbAPI::VimbaSystem
+UnregisterCameraListObserver	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::UnregisterCameraListObserver( const ICameraListObserverPtr &rObserver )$/;"	f	class:AVT::VmbAPI::VimbaSystem
+UnregisterInterfaceListObserver	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::UnregisterInterfaceListObserver( const IInterfaceListObserverPtr &rObserver )$/;"	f	class:AVT::VmbAPI::VimbaSystem
+UnregisterObserver	include/VimbaCPP/Source/BaseFeature.cpp	/^VmbErrorType BaseFeature::UnregisterObserver( const IFeatureObserverPtr &rObserver )$/;"	f	class:AVT::VmbAPI::BaseFeature
+UnregisterObserver	include/VimbaCPP/Source/Feature.cpp	/^VmbErrorType Feature::UnregisterObserver( const IFeatureObserverPtr &rObserver )$/;"	f	class:AVT::VmbAPI::Feature
+UnregisterObserver	include/VimbaCPP/Source/Frame.cpp	/^VmbErrorType Frame::UnregisterObserver()$/;"	f	class:AVT::VmbAPI::Frame
+UpdateCameraList	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::Impl::UpdateCameraList()$/;"	f	class:AVT::VmbAPI::VimbaSystem::Impl
+UpdateInterfaceList	include/VimbaCPP/Source/VimbaSystem.cpp	/^VmbErrorType VimbaSystem::Impl::UpdateInterfaceList()$/;"	f	class:AVT::VmbAPI::VimbaSystem::Impl
+UpdateTriggerOpenStateChanged	include/VimbaCPP/Include/VimbaCPPCommon.h	/^    UpdateTriggerOpenStateChanged    = 3            \/\/ The possible opening mode of a camera has changed (e.g., because it was opened by another application)$/;"	e	enum:AVT::VmbAPI::UpdateTriggerType
+UpdateTriggerPluggedIn	include/VimbaCPP/Include/VimbaCPPCommon.h	/^    UpdateTriggerPluggedIn           = 0,           \/\/ A new camera was discovered by Vimba$/;"	e	enum:AVT::VmbAPI::UpdateTriggerType
+UpdateTriggerPluggedOut	include/VimbaCPP/Include/VimbaCPPCommon.h	/^    UpdateTriggerPluggedOut          = 1,           \/\/ A camera has disappeared from the bus$/;"	e	enum:AVT::VmbAPI::UpdateTriggerType
+UpdateTriggerType	include/VimbaCPP/Include/VimbaCPPCommon.h	/^enum UpdateTriggerType$/;"	g	namespace:AVT::VmbAPI
+VIMBACPP_VERSION_MAJOR	include/VimbaCPP/Source/Version.h	4;"	d
+VIMBACPP_VERSION_MINOR	include/VimbaCPP/Source/Version.h	5;"	d
+VIMBACPP_VERSION_PATCH	include/VimbaCPP/Source/Version.h	6;"	d
+VIMBAC_H_INCLUDE_	include/VimbaC/Include/VimbaC.h	29;"	d
+VMBCOMMONTYPES_H_INCLUDE_	include/VimbaC/Include/VmbCommonTypes.h	29;"	d
+VMBINFINITE	include/VimbaC/Include/VimbaC.h	99;"	d
+VMB_CALL	include/VimbaC/Include/VimbaC.h	63;"	d
+VMB_CALL	include/VimbaC/Include/VimbaC.h	66;"	d
+VMB_CALL	include/VimbaC/Include/VimbaC.h	78;"	d
+VMB_CALL	include/VimbaC/Include/VimbaC.h	81;"	d
+VMB_CALL	include/VimbaC/Include/VimbaC.h	86;"	d
+Vector	include/VimbaCPP/Source/Helper.h	/^    std::vector<T> Vector;$/;"	m	class:AVT::VmbAPI::LockableVector
+VimbaSystem	include/VimbaCPP/Include/VimbaSystem.h	/^class VimbaSystem : public FeatureContainer$/;"	c	namespace:AVT::VmbAPI
+VimbaSystem	include/VimbaCPP/Source/VimbaSystem.cpp	/^VimbaSystem::VimbaSystem( const VimbaSystem& )$/;"	f	class:AVT::VmbAPI::VimbaSystem
+VimbaSystem	include/VimbaCPP/Source/VimbaSystem.cpp	/^VimbaSystem::VimbaSystem()$/;"	f	class:AVT::VmbAPI::VimbaSystem
+VmbAPI	include/VimbaCPP/Include/AncillaryData.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/BasicLockable.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/Camera.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/EnumEntry.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/Feature.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/FeatureContainer.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/FileLogger.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/Frame.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/ICameraFactory.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/ICameraListObserver.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/IFeatureObserver.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/IFrameObserver.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/IInterfaceListObserver.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/IRegisterDevice.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/Interface.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/LoggerDefines.h	/^    namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/Mutex.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/SharedPointer.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/SharedPointerDefines.h	/^    namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/SharedPointer_impl.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/UserLoggerDefines.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/UserSharedPointerDefines.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/VimbaCPPCommon.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Include/VimbaSystem.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/AncillaryData.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/BaseFeature.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/BaseFeature.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/BasicLockable.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/BoolFeature.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/BoolFeature.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/Camera.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/Clock.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/Clock.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/CommandFeature.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/CommandFeature.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/Condition.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/Condition.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/ConditionHelper.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/ConditionHelper.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/DefaultCameraFactory.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/DefaultCameraFactory.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/EnumEntry.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/EnumFeature.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/EnumFeature.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/Feature.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/FeatureContainer.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/FileLogger.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/FloatFeature.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/FloatFeature.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/Frame.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/FrameHandler.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/FrameHandler.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/FrameImpl.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/Helper.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/IntFeature.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/IntFeature.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/Interface.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/Mutex.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/MutexGuard.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/MutexGuard.h	/^namespace VmbAPI$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/RawFeature.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/RawFeature.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/Semaphore.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/Semaphore.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/StringFeature.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAPI	include/VimbaCPP/Source/StringFeature.h	/^namespace VmbAPI {$/;"	n	namespace:AVT
+VmbAPI	include/VimbaCPP/Source/VimbaSystem.cpp	/^namespace VmbAPI {$/;"	n	namespace:AVT	file:
+VmbAccessModeConfig	include/VimbaC/Include/VimbaC.h	/^    VmbAccessModeConfig     = 4,            \/\/ Configuration access (GeV)$/;"	e	enum:VmbAccessModeType
+VmbAccessModeFull	include/VimbaC/Include/VimbaC.h	/^    VmbAccessModeFull       = 1,            \/\/ Read and write access$/;"	e	enum:VmbAccessModeType
+VmbAccessModeLite	include/VimbaC/Include/VimbaC.h	/^    VmbAccessModeLite       = 8,            \/\/ Read and write access without feature access (only addresses)$/;"	e	enum:VmbAccessModeType
+VmbAccessModeNone	include/VimbaC/Include/VimbaC.h	/^    VmbAccessModeNone       = 0,            \/\/ No access$/;"	e	enum:VmbAccessModeType
+VmbAccessModeRead	include/VimbaC/Include/VimbaC.h	/^    VmbAccessModeRead       = 2,            \/\/ Read-only access$/;"	e	enum:VmbAccessModeType
+VmbAccessModeType	include/VimbaC/Include/VimbaC.h	/^typedef enum VmbAccessModeType$/;"	g
+VmbAccessModeType	include/VimbaC/Include/VimbaC.h	/^} VmbAccessModeType;$/;"	t	typeref:enum:VmbAccessModeType
+VmbAccessMode_t	include/VimbaC/Include/VimbaC.h	/^typedef VmbUint32_t VmbAccessMode_t;        \/\/ Type for an AccessMode; for values see VmbAccessModeType$/;"	t
+VmbBoolFalse	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbBoolFalse = 0,$/;"	e	enum:VmbBoolVal
+VmbBoolTrue	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbBoolTrue = 1,$/;"	e	enum:VmbBoolVal
+VmbBoolVal	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef enum VmbBoolVal$/;"	g
+VmbBoolVal	include/VimbaC/Include/VmbCommonTypes.h	/^    } VmbBoolVal;$/;"	t	typeref:enum:VmbBoolVal
+VmbBool_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef bool                VmbBool_t;$/;"	t
+VmbBool_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef char                VmbBool_t;      \/\/ 1 means true and 0 means false$/;"	t
+VmbCameraInfo_t	include/VimbaC/Include/VimbaC.h	/^} VmbCameraInfo_t;$/;"	t	typeref:struct:__anon3
+VmbErrorApiNotStarted	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorApiNotStarted   = -2,           \/\/ VmbStartup() was not called before the current command$/;"	e	enum:VmbErrorType
+VmbErrorBadHandle	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorBadHandle       = -4,           \/\/ The given handle is not valid$/;"	e	enum:VmbErrorType
+VmbErrorBadParameter	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorBadParameter    = -7,           \/\/ One of the parameters is invalid (usually an illegal pointer)$/;"	e	enum:VmbErrorType
+VmbErrorDeviceNotOpen	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorDeviceNotOpen   = -5,           \/\/ Device was not opened for usage$/;"	e	enum:VmbErrorType
+VmbErrorIO	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorIO              = -20,          \/\/ Low level IO error in transport layer$/;"	e	enum:VmbErrorType
+VmbErrorIncomplete	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorIncomplete      = -19,          \/\/ The current operation was not completed (e.g. a multiple registers read or write)$/;"	e	enum:VmbErrorType
+VmbErrorInternalFault	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorInternalFault   = -1,           \/\/ Unexpected fault in VimbaC or driver$/;"	e	enum:VmbErrorType
+VmbErrorInvalidAccess	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorInvalidAccess   = -6,           \/\/ Operation is invalid with the current access mode$/;"	e	enum:VmbErrorType
+VmbErrorInvalidCall	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorInvalidCall     = -15,          \/\/ Call is invalid in the current context (e.g. callback)$/;"	e	enum:VmbErrorType
+VmbErrorInvalidValue	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorInvalidValue    = -11,          \/\/ The value is not valid; either out of bounds or not an increment of the minimum$/;"	e	enum:VmbErrorType
+VmbErrorMoreData	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorMoreData        = -9,           \/\/ More data available in a string\/list than space is provided$/;"	e	enum:VmbErrorType
+VmbErrorNoTL	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorNoTL            = -16,          \/\/ No transport layers are found $/;"	e	enum:VmbErrorType
+VmbErrorNotFound	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorNotFound        = -3,           \/\/ The designated instance (camera, feature etc.) cannot be found$/;"	e	enum:VmbErrorType
+VmbErrorNotImplemented	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorNotImplemented  = -17,          \/\/ API feature is not implemented$/;"	e	enum:VmbErrorType
+VmbErrorNotSupported	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorNotSupported    = -18,          \/\/ API feature is not supported$/;"	e	enum:VmbErrorType
+VmbErrorOther	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorOther           = -13,          \/\/ Other error$/;"	e	enum:VmbErrorType
+VmbErrorResources	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorResources       = -14,          \/\/ Resources not available (e.g. memory)$/;"	e	enum:VmbErrorType
+VmbErrorStructSize	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorStructSize      = -8,           \/\/ The given struct size is not valid for this version of the API$/;"	e	enum:VmbErrorType
+VmbErrorSuccess	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorSuccess         =  0,           \/\/ No error$/;"	e	enum:VmbErrorType
+VmbErrorTimeout	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorTimeout         = -12,          \/\/ Timeout during wait$/;"	e	enum:VmbErrorType
+VmbErrorType	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef enum VmbErrorType$/;"	g
+VmbErrorType	include/VimbaC/Include/VmbCommonTypes.h	/^    } VmbErrorType;$/;"	t	typeref:enum:VmbErrorType
+VmbErrorWrongType	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbErrorWrongType       = -10,          \/\/ Wrong feature type for this access function $/;"	e	enum:VmbErrorType
+VmbError_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef VmbInt32_t VmbError_t;              \/\/ Type for an error returned by API methods; for values see VmbErrorType$/;"	t
+VmbFeatureDataBool	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureDataBool        = 5,          \/\/ Boolean feature$/;"	e	enum:VmbFeatureDataType
+VmbFeatureDataCommand	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureDataCommand     = 6,          \/\/ Command feature$/;"	e	enum:VmbFeatureDataType
+VmbFeatureDataEnum	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureDataEnum        = 3,          \/\/ Enumeration feature$/;"	e	enum:VmbFeatureDataType
+VmbFeatureDataFloat	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureDataFloat       = 2,          \/\/ 64 bit floating point feature$/;"	e	enum:VmbFeatureDataType
+VmbFeatureDataInt	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureDataInt         = 1,          \/\/ 64 bit integer feature$/;"	e	enum:VmbFeatureDataType
+VmbFeatureDataNone	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureDataNone        = 8,          \/\/ Feature with no data$/;"	e	enum:VmbFeatureDataType
+VmbFeatureDataRaw	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureDataRaw         = 7,          \/\/ Raw (direct register access) feature$/;"	e	enum:VmbFeatureDataType
+VmbFeatureDataString	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureDataString      = 4,          \/\/ String feature$/;"	e	enum:VmbFeatureDataType
+VmbFeatureDataType	include/VimbaC/Include/VimbaC.h	/^typedef enum VmbFeatureDataType$/;"	g
+VmbFeatureDataType	include/VimbaC/Include/VimbaC.h	/^} VmbFeatureDataType;$/;"	t	typeref:enum:VmbFeatureDataType
+VmbFeatureDataUnknown	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureDataUnknown     = 0,          \/\/ Unknown feature type$/;"	e	enum:VmbFeatureDataType
+VmbFeatureData_t	include/VimbaC/Include/VimbaC.h	/^typedef VmbUint32_t VmbFeatureData_t;       \/\/ Data type for a Feature; for values see VmbFeatureDataType$/;"	t
+VmbFeatureEnumEntry	include/VimbaC/Include/VimbaC.h	/^typedef struct VmbFeatureEnumEntry$/;"	s
+VmbFeatureEnumEntry_t	include/VimbaC/Include/VimbaC.h	/^} VmbFeatureEnumEntry_t;$/;"	t	typeref:struct:VmbFeatureEnumEntry
+VmbFeatureFlagsModifyWrite	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureFlagsModifyWrite  = 16,       \/\/ Value may change after a write$/;"	e	enum:VmbFeatureFlagsType
+VmbFeatureFlagsNone	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureFlagsNone         = 0,        \/\/ No additional information is provided$/;"	e	enum:VmbFeatureFlagsType
+VmbFeatureFlagsRead	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureFlagsRead         = 1,        \/\/ Static info about read access. Current status depends on access mode, check with VmbFeachtureAccessQuery()$/;"	e	enum:VmbFeatureFlagsType
+VmbFeatureFlagsType	include/VimbaC/Include/VimbaC.h	/^typedef enum VmbFeatureFlagsType$/;"	g
+VmbFeatureFlagsType	include/VimbaC/Include/VimbaC.h	/^} VmbFeatureFlagsType;$/;"	t	typeref:enum:VmbFeatureFlagsType
+VmbFeatureFlagsVolatile	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureFlagsVolatile     = 8,        \/\/ Value may change at any time$/;"	e	enum:VmbFeatureFlagsType
+VmbFeatureFlagsWrite	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureFlagsWrite        = 2,        \/\/ Static info about write access. Current status depends on access mode, check with VmbFeachtureAccessQuery()$/;"	e	enum:VmbFeatureFlagsType
+VmbFeatureFlags_t	include/VimbaC/Include/VimbaC.h	/^typedef VmbUint32_t VmbFeatureFlags_t;      \/\/ Type for Feature flags; for values see VmbFeatureFlagsType$/;"	t
+VmbFeatureInfo	include/VimbaC/Include/VimbaC.h	/^typedef struct VmbFeatureInfo$/;"	s
+VmbFeatureInfo_t	include/VimbaC/Include/VimbaC.h	/^} VmbFeatureInfo_t;$/;"	t	typeref:struct:VmbFeatureInfo
+VmbFeaturePersistAll	include/VimbaC/Include/VimbaC.h	/^    VmbFeaturePersistAll        = 0,        \/\/ Save all features to XML, including look-up tables$/;"	e	enum:VmbFeaturePersistType
+VmbFeaturePersistNoLUT	include/VimbaC/Include/VimbaC.h	/^    VmbFeaturePersistNoLUT      = 2         \/\/ Save all features except look-up tables (default)$/;"	e	enum:VmbFeaturePersistType
+VmbFeaturePersistSettings_t	include/VimbaC/Include/VimbaC.h	/^} VmbFeaturePersistSettings_t;$/;"	t	typeref:struct:__anon5
+VmbFeaturePersistStreamable	include/VimbaC/Include/VimbaC.h	/^    VmbFeaturePersistStreamable = 1,        \/\/ Save only features marked as streamable, excluding look-up tables$/;"	e	enum:VmbFeaturePersistType
+VmbFeaturePersistType	include/VimbaC/Include/VimbaC.h	/^typedef enum VmbFeaturePersistType$/;"	g
+VmbFeaturePersistType	include/VimbaC/Include/VimbaC.h	/^} VmbFeaturePersistType;$/;"	t	typeref:enum:VmbFeaturePersistType
+VmbFeaturePersist_t	include/VimbaC/Include/VimbaC.h	/^typedef VmbUint32_t VmbFeaturePersist_t;    \/\/ Type for feature persistence; for values see VmbFeaturePersistType$/;"	t
+VmbFeatureVisibilityBeginner	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureVisibilityBeginner     = 1,   \/\/ Feature is visible in feature list (beginner level)$/;"	e	enum:VmbFeatureVisibilityType
+VmbFeatureVisibilityExpert	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureVisibilityExpert       = 2,   \/\/ Feature is visible in feature list (expert level)$/;"	e	enum:VmbFeatureVisibilityType
+VmbFeatureVisibilityGuru	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureVisibilityGuru         = 3,   \/\/ Feature is visible in feature list (guru level)$/;"	e	enum:VmbFeatureVisibilityType
+VmbFeatureVisibilityInvisible	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureVisibilityInvisible    = 4,   \/\/ Feature is not visible in feature list$/;"	e	enum:VmbFeatureVisibilityType
+VmbFeatureVisibilityType	include/VimbaC/Include/VimbaC.h	/^typedef enum VmbFeatureVisibilityType$/;"	g
+VmbFeatureVisibilityType	include/VimbaC/Include/VimbaC.h	/^} VmbFeatureVisibilityType;$/;"	t	typeref:enum:VmbFeatureVisibilityType
+VmbFeatureVisibilityUnknown	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureVisibilityUnknown      = 0,   \/\/ Feature visibility is not known$/;"	e	enum:VmbFeatureVisibilityType
+VmbFeatureVisibility_t	include/VimbaC/Include/VimbaC.h	/^typedef VmbUint32_t VmbFeatureVisibility_t; \/\/ Type for Feature visibility; for values see VmbFeatureVisibilityType$/;"	t
+VmbFrameCallback	include/VimbaC/Include/VimbaC.h	/^typedef void (VMB_CALL *VmbFrameCallback)( const VmbHandle_t  cameraHandle, VmbFrame_t*  pFrame );$/;"	t
+VmbFrameFlagsDimension	include/VimbaC/Include/VimbaC.h	/^    VmbFrameFlagsDimension  = 1,            \/\/ Frame's dimension is provided$/;"	e	enum:VmbFrameFlagsType
+VmbFrameFlagsFrameID	include/VimbaC/Include/VimbaC.h	/^    VmbFrameFlagsFrameID    = 4,            \/\/ Frame's ID is provided$/;"	e	enum:VmbFrameFlagsType
+VmbFrameFlagsNone	include/VimbaC/Include/VimbaC.h	/^    VmbFrameFlagsNone       = 0,            \/\/ No additional information is provided$/;"	e	enum:VmbFrameFlagsType
+VmbFrameFlagsOffset	include/VimbaC/Include/VimbaC.h	/^    VmbFrameFlagsOffset     = 2,            \/\/ Frame's offset is provided (ROI)$/;"	e	enum:VmbFrameFlagsType
+VmbFrameFlagsTimestamp	include/VimbaC/Include/VimbaC.h	/^    VmbFrameFlagsTimestamp  = 8,            \/\/ Frame's timestamp is provided$/;"	e	enum:VmbFrameFlagsType
+VmbFrameFlagsType	include/VimbaC/Include/VimbaC.h	/^typedef enum VmbFrameFlagsType$/;"	g
+VmbFrameFlagsType	include/VimbaC/Include/VimbaC.h	/^} VmbFrameFlagsType;$/;"	t	typeref:enum:VmbFrameFlagsType
+VmbFrameFlags_t	include/VimbaC/Include/VimbaC.h	/^typedef VmbUint32_t VmbFrameFlags_t;        \/\/ Type for Frame flags; for values see VmbFrameFlagsType$/;"	t
+VmbFrameStatusComplete	include/VimbaC/Include/VimbaC.h	/^    VmbFrameStatusComplete       =  0,      \/\/ Frame has been completed without errors$/;"	e	enum:VmbFrameStatusType
+VmbFrameStatusIncomplete	include/VimbaC/Include/VimbaC.h	/^    VmbFrameStatusIncomplete     = -1,      \/\/ Frame could not be filled to the end$/;"	e	enum:VmbFrameStatusType
+VmbFrameStatusInvalid	include/VimbaC/Include/VimbaC.h	/^    VmbFrameStatusInvalid        = -3,      \/\/ Frame buffer was invalid$/;"	e	enum:VmbFrameStatusType
+VmbFrameStatusTooSmall	include/VimbaC/Include/VimbaC.h	/^    VmbFrameStatusTooSmall       = -2,      \/\/ Frame buffer was too small$/;"	e	enum:VmbFrameStatusType
+VmbFrameStatusType	include/VimbaC/Include/VimbaC.h	/^typedef enum VmbFrameStatusType$/;"	g
+VmbFrameStatusType	include/VimbaC/Include/VimbaC.h	/^} VmbFrameStatusType;$/;"	t	typeref:enum:VmbFrameStatusType
+VmbFrameStatus_t	include/VimbaC/Include/VimbaC.h	/^typedef VmbInt32_t VmbFrameStatus_t;        \/\/ Type for the frame status; for values see VmbFrameStatusType$/;"	t
+VmbFrame_t	include/VimbaC/Include/VimbaC.h	/^} VmbFrame_t;$/;"	t	typeref:struct:__anon4
+VmbHandle_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef void*               VmbHandle_t;$/;"	t
+VmbInt16_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef __int16             VmbInt16_t;$/;"	t
+VmbInt16_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef short               VmbInt16_t;$/;"	t
+VmbInt32_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef __int32             VmbInt32_t;$/;"	t
+VmbInt32_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef int                 VmbInt32_t;$/;"	t
+VmbInt64_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef __int64             VmbInt64_t;$/;"	t
+VmbInt64_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef long long           VmbInt64_t;$/;"	t
+VmbInt8_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef __int8              VmbInt8_t;$/;"	t
+VmbInt8_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef signed char         VmbInt8_t;$/;"	t
+VmbInterfaceCL	include/VimbaC/Include/VimbaC.h	/^    VmbInterfaceCL           = 4,           \/\/ Camera Link$/;"	e	enum:VmbInterfaceType
+VmbInterfaceCSI2	include/VimbaC/Include/VimbaC.h	/^    VmbInterfaceCSI2         = 5,           \/\/ CSI-2$/;"	e	enum:VmbInterfaceType
+VmbInterfaceEthernet	include/VimbaC/Include/VimbaC.h	/^    VmbInterfaceEthernet     = 2,           \/\/ GigE$/;"	e	enum:VmbInterfaceType
+VmbInterfaceFirewire	include/VimbaC/Include/VimbaC.h	/^    VmbInterfaceFirewire     = 1,           \/\/ 1394$/;"	e	enum:VmbInterfaceType
+VmbInterfaceInfo_t	include/VimbaC/Include/VimbaC.h	/^} VmbInterfaceInfo_t;$/;"	t	typeref:struct:__anon2
+VmbInterfaceType	include/VimbaC/Include/VimbaC.h	/^typedef enum VmbInterfaceType$/;"	g
+VmbInterfaceType	include/VimbaC/Include/VimbaC.h	/^} VmbInterfaceType;$/;"	t	typeref:enum:VmbInterfaceType
+VmbInterfaceUnknown	include/VimbaC/Include/VimbaC.h	/^    VmbInterfaceUnknown      = 0,           \/\/ Interface is not known to this version of the API$/;"	e	enum:VmbInterfaceType
+VmbInterfaceUsb	include/VimbaC/Include/VimbaC.h	/^    VmbInterfaceUsb          = 3,           \/\/ USB 3.0$/;"	e	enum:VmbInterfaceType
+VmbInterface_t	include/VimbaC/Include/VimbaC.h	/^typedef VmbUint32_t VmbInterface_t;         \/\/ Type for an Interface; for values see VmbInterfaceType$/;"	t
+VmbInvalidationCallback	include/VimbaC/Include/VimbaC.h	/^typedef void (VMB_CALL *VmbInvalidationCallback)( const VmbHandle_t  handle, const char*  name, void*  pUserContext );$/;"	t
+VmbPixelColor	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelColor =         0x02000000      \/\/ Pixel bearing color information$/;"	e	enum:VmbPixelType
+VmbPixelFormatArgb8	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatArgb8               = VmbPixelColor | VmbPixelOccupy32Bit | 0x0016,  \/\/ ARGB, 8 bits x 4 (PFNC:RGBa8)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerBG10	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerBG10           = VmbPixelMono  | VmbPixelOccupy16Bit | 0x000F,  \/\/ Bayer-color, 10 bits in 16 bits, starting with BG line (PFNC:BayerBG10)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerBG10p	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerBG10p          = VmbPixelMono  | VmbPixelOccupy10Bit | 0x0052,  \/\/ Bayer-color, 4x10 bits continuously packed in 40 bits, starting with BG line (PFNC:BayerBG10p)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerBG12	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerBG12           = VmbPixelMono  | VmbPixelOccupy16Bit | 0x0013,  \/\/ Bayer-color, 12 bits in 16 bits, starting with BG line (PFNC:BayerBG12)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerBG12Packed	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerBG12Packed     = VmbPixelMono  | VmbPixelOccupy12Bit | 0x002D,  \/\/ Bayer-color, 2x12 bits in 24 bits, starting with BG line (GEV:BayerBG12Packed)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerBG12p	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerBG12p          = VmbPixelMono  | VmbPixelOccupy12Bit | 0x0053,  \/\/ Bayer-color, 2x12 bits continuously packed in 24 bits, starting with BG line (PFNC:BayerBG12p)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerBG16	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerBG16           = VmbPixelMono  | VmbPixelOccupy16Bit | 0x0031,  \/\/ Bayer-color, 16 bits, starting with BG line (PFNC:BayerBG16)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerBG8	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerBG8            = VmbPixelMono  | VmbPixelOccupy8Bit  | 0x000B,  \/\/ Bayer-color, 8 bits, starting with BG line (PFNC:BayerBG8)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerGB10	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerGB10           = VmbPixelMono  | VmbPixelOccupy16Bit | 0x000E,  \/\/ Bayer-color, 10 bits in 16 bits, starting with GB line (PFNC:BayerGB10)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerGB10p	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerGB10p          = VmbPixelMono  | VmbPixelOccupy10Bit | 0x0054,  \/\/ Bayer-color, 4x10 bits continuously packed in 40 bits, starting with GB line (PFNC:BayerGB10p)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerGB12	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerGB12           = VmbPixelMono  | VmbPixelOccupy16Bit | 0x0012,  \/\/ Bayer-color, 12 bits in 16 bits, starting with GB line (PFNC:BayerGB12)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerGB12Packed	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerGB12Packed     = VmbPixelMono  | VmbPixelOccupy12Bit | 0x002C,  \/\/ Bayer-color, 2x12 bits in 24 bits, starting with GB line (GEV:BayerGB12Packed)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerGB12p	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerGB12p          = VmbPixelMono  | VmbPixelOccupy12Bit | 0x0055,  \/\/ Bayer-color, 2x12 bits continuously packed in 24 bits, starting with GB line (PFNC:BayerGB12p)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerGB16	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerGB16           = VmbPixelMono  | VmbPixelOccupy16Bit | 0x0030,  \/\/ Bayer-color, 16 bits, starting with GB line (PFNC:BayerGB16)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerGB8	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerGB8            = VmbPixelMono  | VmbPixelOccupy8Bit  | 0x000A,  \/\/ Bayer-color, 8 bits, starting with GB line (PFNC:BayerGB8)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerGR10	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerGR10           = VmbPixelMono  | VmbPixelOccupy16Bit | 0x000C,  \/\/ Bayer-color, 10 bits in 16 bits, starting with GR line (PFNC:BayerGR10)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerGR10p	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerGR10p          = VmbPixelMono  | VmbPixelOccupy10Bit | 0x0056,  \/\/ Bayer-color, 4x10 bits continuously packed in 40 bits, starting with GR line (PFNC:BayerGR10p)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerGR12	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerGR12           = VmbPixelMono  | VmbPixelOccupy16Bit | 0x0010,  \/\/ Bayer-color, 12 bits in 16 bits, starting with GR line (PFNC:BayerGR12)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerGR12Packed	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerGR12Packed     = VmbPixelMono  | VmbPixelOccupy12Bit | 0x002A,  \/\/ Bayer-color, 2x12 bits in 24 bits, starting with GR line (GEV:BayerGR12Packed)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerGR12p	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerGR12p          = VmbPixelMono  | VmbPixelOccupy12Bit | 0x0057,  \/\/ Bayer-color, 2x12 bits continuously packed in 24 bits, starting with GR line (PFNC:BayerGR12p)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerGR16	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerGR16           = VmbPixelMono  | VmbPixelOccupy16Bit | 0x002E,  \/\/ Bayer-color, 16 bits, starting with GR line (PFNC:BayerGR16)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerGR8	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerGR8            = VmbPixelMono  | VmbPixelOccupy8Bit  | 0x0008,  \/\/ Bayer-color, 8 bits, starting with GR line (PFNC:BayerGR8)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerRG10	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerRG10           = VmbPixelMono  | VmbPixelOccupy16Bit | 0x000D,  \/\/ Bayer-color, 10 bits in 16 bits, starting with RG line (PFNC:BayerRG10)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerRG10p	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerRG10p          = VmbPixelMono  | VmbPixelOccupy10Bit | 0x0058,  \/\/ Bayer-color, 4x10 bits continuously packed in 40 bits, starting with RG line (PFNC:BayerRG10p)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerRG12	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerRG12           = VmbPixelMono  | VmbPixelOccupy16Bit | 0x0011,  \/\/ Bayer-color, 12 bits in 16 bits, starting with RG line (PFNC:BayerRG12)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerRG12Packed	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerRG12Packed     = VmbPixelMono  | VmbPixelOccupy12Bit | 0x002B,  \/\/ Bayer-color, 2x12 bits in 24 bits, starting with RG line (GEV:BayerRG12Packed)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerRG12p	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerRG12p          = VmbPixelMono  | VmbPixelOccupy12Bit | 0x0059,  \/\/ Bayer-color, 2x12 bits continuously packed in 24 bits, starting with RG line (PFNC:BayerRG12p)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerRG16	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerRG16           = VmbPixelMono  | VmbPixelOccupy16Bit | 0x002F,  \/\/ Bayer-color, 16 bits, starting with RG line (PFNC:BayerRG16)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBayerRG8	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBayerRG8            = VmbPixelMono  | VmbPixelOccupy8Bit  | 0x0009,  \/\/ Bayer-color, 8 bits, starting with RG line (PFNC:BayerRG8)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBgr10	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBgr10               = VmbPixelColor | VmbPixelOccupy48Bit | 0x0019,  \/\/ BGR, 10 bits in 16 bits x 3 (PFNC:BGR10)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBgr12	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBgr12               = VmbPixelColor | VmbPixelOccupy48Bit | 0x001B,  \/\/ BGR, 12 bits in 16 bits x 3 (PFNC:BGR12)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBgr14	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBgr14               = VmbPixelColor | VmbPixelOccupy48Bit | 0x004A,  \/\/ BGR, 14 bits in 16 bits x 3 (PFNC:BGR14)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBgr16	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBgr16               = VmbPixelColor | VmbPixelOccupy48Bit | 0x004B,  \/\/ BGR, 16 bits x 3 (PFNC:BGR16)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBgr8	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBgr8                = VmbPixelColor | VmbPixelOccupy24Bit | 0x0015,  \/\/ BGR, 8 bits x 3 (PFNC:Bgr8)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBgra10	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBgra10              = VmbPixelColor | VmbPixelOccupy64Bit | 0x004C,  \/\/ BGRA, 10 bits in 16 bits x 4$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBgra12	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBgra12              = VmbPixelColor | VmbPixelOccupy64Bit | 0x004E,  \/\/ BGRA, 12 bits in 16 bits x 4$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBgra14	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBgra14              = VmbPixelColor | VmbPixelOccupy64Bit | 0x0050,  \/\/ BGRA, 14 bits in 16 bits x 4$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBgra16	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBgra16              = VmbPixelColor | VmbPixelOccupy64Bit | 0x0051,  \/\/ BGRA, 16 bits x 4$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatBgra8	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatBgra8               = VmbPixelColor | VmbPixelOccupy32Bit | 0x0017,  \/\/ BGRA, 8 bits x 4 (PFNC:BGRa8)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatLast	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatLast,$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatMono10	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatMono10              = VmbPixelMono  | VmbPixelOccupy16Bit | 0x0003,  \/\/ Monochrome, 10 bits in 16 bits (PFNC:Mono10)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatMono10p	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatMono10p             = VmbPixelMono  | VmbPixelOccupy10Bit | 0x0046,  \/\/ Monochrome, 4x10 bits continuously packed in 40 bits (PFNC:Mono10p)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatMono12	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatMono12              = VmbPixelMono  | VmbPixelOccupy16Bit | 0x0005,  \/\/ Monochrome, 12 bits in 16 bits (PFNC:Mono12)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatMono12Packed	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatMono12Packed        = VmbPixelMono  | VmbPixelOccupy12Bit | 0x0006,  \/\/ Monochrome, 2x12 bits in 24 bits (GEV:Mono12Packed)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatMono12p	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatMono12p             = VmbPixelMono  | VmbPixelOccupy12Bit | 0x0047,  \/\/ Monochrome, 2x12 bits continuously packed in 24 bits (PFNC:Mono12p)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatMono14	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatMono14              = VmbPixelMono  | VmbPixelOccupy16Bit | 0x0025,  \/\/ Monochrome, 14 bits in 16 bits (PFNC:Mono14)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatMono16	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatMono16              = VmbPixelMono  | VmbPixelOccupy16Bit | 0x0007,  \/\/ Monochrome, 16 bits (PFNC:Mono16)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatMono8	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatMono8               = VmbPixelMono  | VmbPixelOccupy8Bit  | 0x0001,  \/\/ Monochrome, 8 bits (PFNC:Mono8)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatRgb10	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatRgb10               = VmbPixelColor | VmbPixelOccupy48Bit | 0x0018,  \/\/ RGB, 10 bits in 16 bits x 3 (PFNC:RGB10)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatRgb12	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatRgb12               = VmbPixelColor | VmbPixelOccupy48Bit | 0x001A,  \/\/ RGB, 12 bits in 16 bits x 3 (PFNC:RGB12)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatRgb14	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatRgb14               = VmbPixelColor | VmbPixelOccupy48Bit | 0x005E,  \/\/ RGB, 14 bits in 16 bits x 3 (PFNC:RGB14)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatRgb16	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatRgb16               = VmbPixelColor | VmbPixelOccupy48Bit | 0x0033,  \/\/ RGB, 16 bits x 3 (PFNC:RGB16)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatRgb8	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatRgb8                = VmbPixelColor | VmbPixelOccupy24Bit | 0x0014,  \/\/ RGB, 8 bits x 3 (PFNC:RGB8)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatRgba10	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatRgba10              = VmbPixelColor | VmbPixelOccupy64Bit | 0x005F,  \/\/ RGBA, 10 bits in 16 bits x 4$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatRgba12	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatRgba12              = VmbPixelColor | VmbPixelOccupy64Bit | 0x0061,  \/\/ RGBA, 12 bits in 16 bits x 4$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatRgba14	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatRgba14              = VmbPixelColor | VmbPixelOccupy64Bit | 0x0063,  \/\/ RGBA, 14 bits in 16 bits x 4$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatRgba16	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatRgba16              = VmbPixelColor | VmbPixelOccupy64Bit | 0x0064,  \/\/ RGBA, 16 bits x 4$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatRgba8	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatRgba8               = VmbPixelFormatArgb8,                           \/\/ RGBA, 8 bits x 4, legacy name$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatType	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef enum VmbPixelFormatType$/;"	g
+VmbPixelFormatType	include/VimbaC/Include/VmbCommonTypes.h	/^    } VmbPixelFormatType;$/;"	t	typeref:enum:VmbPixelFormatType
+VmbPixelFormatYCbCr411_8_CbYYCrYY	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatYCbCr411_8_CbYYCrYY = VmbPixelColor | VmbPixelOccupy12Bit | 0x003C,  \/\/ Y´CbCr 411 with 8 bits (PFNC:YCbCr411_8_CbYYCrYY) - identical to VmbPixelFormatYuv411$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatYCbCr422_8_CbYCrY	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatYCbCr422_8_CbYCrY   = VmbPixelColor | VmbPixelOccupy16Bit | 0x0043,  \/\/ Y´CbCr 422 with 8 bits (PFNC:YCbCr422_8_CbYCrY) - identical to VmbPixelFormatYuv422$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatYCbCr8_CbYCr	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatYCbCr8_CbYCr        = VmbPixelColor | VmbPixelOccupy24Bit | 0x003A,  \/\/ Y´CbCr 444 with 8 bits (PFNC:YCbCr8_CbYCr) - identical to VmbPixelFormatYuv444$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatYuv411	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatYuv411              = VmbPixelColor | VmbPixelOccupy12Bit | 0x001E,  \/\/ YUV 411 with 8 bits (GEV:YUV411Packed)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatYuv422	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatYuv422              = VmbPixelColor | VmbPixelOccupy16Bit | 0x001F,  \/\/ YUV 422 with 8 bits (GEV:YUV422Packed)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormatYuv444	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelFormatYuv444              = VmbPixelColor | VmbPixelOccupy24Bit | 0x0020,  \/\/ YUV 444 with 8 bits (GEV:YUV444Packed)$/;"	e	enum:VmbPixelFormatType
+VmbPixelFormat_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef VmbUint32_t VmbPixelFormat_t;       \/\/ Type for the pixel format; for values see VmbPixelFormatType$/;"	t
+VmbPixelMono	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelMono  =         0x01000000,     \/\/ Monochrome pixel$/;"	e	enum:VmbPixelType
+VmbPixelOccupy10Bit	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelOccupy10Bit =   0x000A0000,     \/\/ Pixel effectively occupies 10 bits$/;"	e	enum:VmbPixelOccupyType
+VmbPixelOccupy12Bit	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelOccupy12Bit =   0x000C0000,     \/\/ Pixel effectively occupies 12 bits$/;"	e	enum:VmbPixelOccupyType
+VmbPixelOccupy14Bit	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelOccupy14Bit =   0x000E0000,     \/\/ Pixel effectively occupies 14 bits$/;"	e	enum:VmbPixelOccupyType
+VmbPixelOccupy16Bit	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelOccupy16Bit =   0x00100000,     \/\/ Pixel effectively occupies 16 bits$/;"	e	enum:VmbPixelOccupyType
+VmbPixelOccupy24Bit	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelOccupy24Bit =   0x00180000,     \/\/ Pixel effectively occupies 24 bits$/;"	e	enum:VmbPixelOccupyType
+VmbPixelOccupy32Bit	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelOccupy32Bit =   0x00200000,     \/\/ Pixel effectively occupies 32 bits$/;"	e	enum:VmbPixelOccupyType
+VmbPixelOccupy48Bit	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelOccupy48Bit =   0x00300000,     \/\/ Pixel effectively occupies 48 bits$/;"	e	enum:VmbPixelOccupyType
+VmbPixelOccupy64Bit	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelOccupy64Bit =   0x00400000,     \/\/ Pixel effectively occupies 48 bits$/;"	e	enum:VmbPixelOccupyType
+VmbPixelOccupy8Bit	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbPixelOccupy8Bit  =   0x00080000,     \/\/ Pixel effectively occupies 8 bits$/;"	e	enum:VmbPixelOccupyType
+VmbPixelOccupyType	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef enum VmbPixelOccupyType$/;"	g
+VmbPixelOccupyType	include/VimbaC/Include/VmbCommonTypes.h	/^    } VmbPixelOccupyType;$/;"	t	typeref:enum:VmbPixelOccupyType
+VmbPixelType	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef enum VmbPixelType$/;"	g
+VmbPixelType	include/VimbaC/Include/VmbCommonTypes.h	/^    } VmbPixelType;$/;"	t	typeref:enum:VmbPixelType
+VmbUchar_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef unsigned char       VmbUchar_t;$/;"	t
+VmbUint16_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef unsigned __int16    VmbUint16_t;$/;"	t
+VmbUint16_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef unsigned short      VmbUint16_t;$/;"	t
+VmbUint32_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef unsigned __int32    VmbUint32_t;$/;"	t
+VmbUint32_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef unsigned int        VmbUint32_t;$/;"	t
+VmbUint64_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef unsigned __int64    VmbUint64_t;$/;"	t
+VmbUint64_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef unsigned long long  VmbUint64_t;$/;"	t
+VmbUint8_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef unsigned __int8     VmbUint8_t;$/;"	t
+VmbUint8_t	include/VimbaC/Include/VmbCommonTypes.h	/^    typedef unsigned char       VmbUint8_t;$/;"	t
+VmbVersionInfo_t	include/VimbaC/Include/VmbCommonTypes.h	/^    } VmbVersionInfo_t;$/;"	t	typeref:struct:__anon6
+Wait	include/VimbaCPP/Source/Condition.cpp	/^void Condition::Wait( const BasicLockable &rLockable )$/;"	f	class:AVT::VmbAPI::Condition
+Wait	include/VimbaCPP/Source/Condition.cpp	/^void Condition::Wait( const MutexPtr &rMutex )$/;"	f	class:AVT::VmbAPI::Condition
+WriteMemory	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::WriteMemory( const VmbUint64_t &rAddress, const UcharVector &rBuffer )$/;"	f	class:Camera
+WriteMemory	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::WriteMemory( const VmbUint64_t &rAddress, const UcharVector &rBuffer, VmbUint32_t &rCompletedWrites )$/;"	f	class:Camera
+WriteMemory	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::WriteMemory( const VmbUint64_t address, const VmbUchar_t *pBuffer, VmbUint32_t nBufferSize, VmbUint32_t *pSizeComplete )$/;"	f	class:AVT::VmbAPI::Camera
+WriteRegisters	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::WriteRegisters( const Uint64Vector &rAddresses, const Uint64Vector &rBuffer )$/;"	f	class:Camera
+WriteRegisters	include/VimbaCPP/Include/Camera.hpp	/^inline VmbErrorType Camera::WriteRegisters( const Uint64Vector &rAddresses, const Uint64Vector &rBuffer, VmbUint32_t &rCompletedWrites )$/;"	f	class:Camera
+WriteRegisters	include/VimbaCPP/Source/Camera.cpp	/^VmbErrorType Camera::WriteRegisters( const VmbUint64_t *pAddressArray, VmbUint32_t nAddressSize, const VmbUint64_t *pDataArray, VmbUint32_t *pCompletedWrites )$/;"	f	class:AVT::VmbAPI::Camera
+_instance	include/VimbaCPP/Include/VimbaSystem.h	/^    static VimbaSystem _instance;$/;"	m	class:AVT::VmbAPI::VimbaSystem
+_instance	include/VimbaCPP/Source/VimbaSystem.cpp	/^VimbaSystem VimbaSystem::_instance;$/;"	m	class:AVT::VmbAPI::VimbaSystem	file:
+accessModeToString	include/avt_vimba_camera/avt_vimba_api.hpp	/^  std::string accessModeToString(VmbAccessModeType modeType)$/;"	f	class:avt_vimba_camera::AvtVimbaApi
+action_device_key_	include/avt_vimba_camera/trigger_node.hpp	/^  int64_t action_device_key_;$/;"	m	class:trigger::TriggerNode
+action_group_key_	include/avt_vimba_camera/trigger_node.hpp	/^  int64_t action_group_key_;$/;"	m	class:trigger::TriggerNode
+action_group_mask_	include/avt_vimba_camera/trigger_node.hpp	/^  int64_t action_group_mask_;$/;"	m	class:trigger::TriggerNode
+ancillarySize	include/VimbaC/Include/VimbaC.h	/^    VmbUint32_t         ancillarySize;      \/\/ Size of the ancillary data inside the data buffer$/;"	m	struct:__anon4
+api_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  AvtVimbaApi api_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+api_	include/avt_vimba_camera/mono_camera_node.hpp	/^  AvtVimbaApi api_;$/;"	m	class:avt_vimba_camera::MonoCameraNode
+avt_vimba_camera	include/avt_vimba_camera/avt_vimba_api.hpp	/^namespace avt_vimba_camera$/;"	n
+avt_vimba_camera	include/avt_vimba_camera/avt_vimba_camera.hpp	/^namespace avt_vimba_camera$/;"	n
+avt_vimba_camera	include/avt_vimba_camera/mono_camera_node.hpp	/^namespace avt_vimba_camera$/;"	n
+avt_vimba_camera	src/avt_vimba_camera.cpp	/^namespace avt_vimba_camera$/;"	n	file:
+avt_vimba_camera	src/mono_camera_node.cpp	/^namespace avt_vimba_camera$/;"	n	file:
+buffer	include/VimbaC/Include/VimbaC.h	/^    void*               buffer;             \/\/ Comprises image and ancillary data$/;"	m	struct:__anon4
+bufferSize	include/VimbaC/Include/VimbaC.h	/^    VmbUint32_t         bufferSize;         \/\/ Size of the data buffer$/;"	m	struct:__anon4
+callback_	include/avt_vimba_camera/frame_observer.hpp	/^  Callback callback_;$/;"	m	class:FrameObserver
+cam_	include/avt_vimba_camera/mono_camera_node.hpp	/^  AvtVimbaCamera cam_;$/;"	m	class:avt_vimba_camera::MonoCameraNode
+cam_info_features_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  std::set<std::string> cam_info_features_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+cam_ptr_	include/avt_vimba_camera/frame_observer.hpp	/^  CameraPtr cam_ptr_;$/;"	m	class:FrameObserver
+cameraIdString	include/VimbaC/Include/VimbaC.h	/^    const char*     cameraIdString;         \/\/ Unique identifier for each camera$/;"	m	struct:__anon3
+cameraIdString	include/VimbaCPP/Source/Camera.cpp	/^        std::string     cameraIdString;             \/\/ Unique identifier for each camera$/;"	m	struct:AVT::VmbAPI::Camera::Impl::CameraInfo	file:
+cameraIdStringGigE	include/VimbaCPP/Source/Camera.cpp	/^        std::string     cameraIdStringGigE;         \/\/ GigE cameras can also be opened by IP or MAC address$/;"	m	struct:AVT::VmbAPI::Camera::Impl::CameraInfo	file:
+cameraName	include/VimbaC/Include/VimbaC.h	/^    const char*     cameraName;             \/\/ Name of the camera$/;"	m	struct:__anon3
+cameraName	include/VimbaCPP/Source/Camera.cpp	/^        std::string     cameraName;                 \/\/ Name of the camera$/;"	m	struct:AVT::VmbAPI::Camera::Impl::CameraInfo	file:
+camera_info_pub_	include/avt_vimba_camera/mono_camera_node.hpp	/^  image_transport::CameraPublisher camera_info_pub_;$/;"	m	class:avt_vimba_camera::MonoCameraNode
+camera_info_url_	include/avt_vimba_camera/mono_camera_node.hpp	/^  std::string camera_info_url_;$/;"	m	class:avt_vimba_camera::MonoCameraNode
+camera_state_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  CameraState camera_state_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+category	include/VimbaC/Include/VimbaC.h	/^    const char*             category;               \/\/ Category this feature can be found in$/;"	m	struct:VmbFeatureInfo
+category	include/VimbaCPP/Source/BaseFeature.h	/^        std::string                     category;               \/\/ Category this feature can be found in$/;"	m	struct:AVT::VmbAPI::BaseFeature::FeatureInfo
+clock_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  rclcpp::Clock clock_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+clock_	include/avt_vimba_camera/trigger_node.hpp	/^  rclcpp::Clock clock_;$/;"	m	class:trigger::TriggerNode
+config_mutex_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  std::mutex config_mutex_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+configureFeature	src/avt_vimba_camera.cpp	/^void AvtVimbaCamera::configureFeature(const std::string& feature_str, const Vimba_Type& val_in, Std_Type& val_out)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+configureFeature	src/avt_vimba_camera.cpp	/^void AvtVimbaCamera::configureFeature(const std::string& feature_str, const std::string& val_in, std::string& val_out)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+context	include/VimbaC/Include/VimbaC.h	/^    void*               context[4];         \/\/ 4 void pointers that can be employed by the user (e.g. for storing handles)$/;"	m	struct:__anon4
+createParamFromFeature	src/avt_vimba_camera.cpp	/^bool AvtVimbaCamera::createParamFromFeature(const FeaturePtr feature, std::string& feature_name, bool& is_writable)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+dec	include/VimbaCPP/Include/SharedPointer_impl.h	/^    void ref_count<T>::dec()$/;"	f	class:AVT::VmbAPI::ref_count
+description	include/VimbaC/Include/VimbaC.h	/^    const char*             description;            \/\/ Longer description$/;"	m	struct:VmbFeatureInfo
+description	include/VimbaC/Include/VimbaC.h	/^    const char*             description;    \/\/ Longer description$/;"	m	struct:VmbFeatureEnumEntry
+description	include/VimbaCPP/Source/BaseFeature.h	/^        std::string                     description;            \/\/ Longer description$/;"	m	struct:AVT::VmbAPI::BaseFeature::FeatureInfo
+destination_ip_	include/avt_vimba_camera/trigger_node.hpp	/^  struct in_addr destination_ip_;$/;"	m	class:trigger::TriggerNode	typeref:struct:trigger::TriggerNode::in_addr
+diagnostic_msg_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  std::string diagnostic_msg_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+displayName	include/VimbaC/Include/VimbaC.h	/^    const char*             displayName;            \/\/ Feature name to be used in GUIs$/;"	m	struct:VmbFeatureInfo
+displayName	include/VimbaC/Include/VimbaC.h	/^    const char*             displayName;    \/\/ Enumeration entry name to be used in GUIs$/;"	m	struct:VmbFeatureEnumEntry
+displayName	include/VimbaCPP/Source/BaseFeature.h	/^        std::string                     displayName;            \/\/ Feature name to be used in GUIs$/;"	m	struct:AVT::VmbAPI::BaseFeature::FeatureInfo
+dynamic_cast_tag	include/VimbaCPP/Include/SharedPointer.h	/^    struct dynamic_cast_tag$/;"	s	namespace:AVT::VmbAPI
+dynamic_pointer_cast	include/VimbaCPP/Include/SharedPointer_impl.h	/^    shared_ptr<T> dynamic_pointer_cast(const shared_ptr<T2> &rSharedPointer)$/;"	f	namespace:AVT::VmbAPI
+errorCodeToMessage	include/avt_vimba_camera/avt_vimba_api.hpp	/^  std::string errorCodeToMessage(VmbErrorType error)$/;"	f	class:avt_vimba_camera::AvtVimbaApi
+featureDataType	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureData_t        featureDataType;        \/\/ Data type of this feature$/;"	m	struct:VmbFeatureInfo
+featureDataType	include/VimbaCPP/Source/BaseFeature.h	/^        VmbFeatureData_t                featureDataType;        \/\/ Data type of this feature$/;"	m	struct:AVT::VmbAPI::BaseFeature::FeatureInfo
+featureFlags	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureFlags_t       featureFlags;           \/\/ Access flags for this feature$/;"	m	struct:VmbFeatureInfo
+featureFlags	include/VimbaCPP/Source/BaseFeature.h	/^        VmbFeatureFlags_t               featureFlags;           \/\/ Access flags for this feature$/;"	m	struct:AVT::VmbAPI::BaseFeature::FeatureInfo
+force_stopped_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  bool force_stopped_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+frameCallback	src/avt_vimba_camera.cpp	/^void AvtVimbaCamera::frameCallback(const FramePtr vimba_frame_ptr)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+frameCallback	src/mono_camera_node.cpp	/^void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)$/;"	f	class:avt_vimba_camera::MonoCameraNode
+frameCallbackFunc	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  typedef std::function<void(const FramePtr)> frameCallbackFunc;$/;"	t	class:avt_vimba_camera::AvtVimbaCamera
+frameID	include/VimbaC/Include/VimbaC.h	/^    VmbUint64_t         frameID;            \/\/ Unique ID of this frame in this stream$/;"	m	struct:__anon4
+frameToImage	include/avt_vimba_camera/avt_vimba_api.hpp	/^  bool frameToImage(const FramePtr vimba_frame_ptr, sensor_msgs::msg::Image& image)$/;"	f	class:avt_vimba_camera::AvtVimbaApi
+frame_id_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  std::string frame_id_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+frame_id_	include/avt_vimba_camera/mono_camera_node.hpp	/^  std::string frame_id_;$/;"	m	class:avt_vimba_camera::MonoCameraNode
+frame_obs_ptr_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  SP_DECL(FrameObserver) frame_obs_ptr_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+gVimbaHandle	include/VimbaC/Include/VimbaC.h	/^static const VmbHandle_t  gVimbaHandle = (VmbHandle_t)1;$/;"	v
+get	include/VimbaCPP/Include/SharedPointer_impl.h	/^    T* shared_ptr<T>::get() const$/;"	f	class:AVT::VmbAPI::shared_ptr
+getBinningOrDecimationX	src/avt_vimba_camera.cpp	/^int AvtVimbaCamera::getBinningOrDecimationX()$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+getBinningOrDecimationY	src/avt_vimba_camera.cpp	/^int AvtVimbaCamera::getBinningOrDecimationY()$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+getCameraInfo	src/avt_vimba_camera.cpp	/^sensor_msgs::msg::CameraInfo AvtVimbaCamera::getCameraInfo()$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+getCameraState	src/avt_vimba_camera.cpp	/^CameraState AvtVimbaCamera::getCameraState() const$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+getCurrentState	src/avt_vimba_camera.cpp	/^void AvtVimbaCamera::getCurrentState(diagnostic_updater::DiagnosticStatusWrapper& stat)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+getDeviceTemp	src/avt_vimba_camera.cpp	/^double AvtVimbaCamera::getDeviceTemp()$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+getFeatureValue	src/avt_vimba_camera.cpp	/^bool AvtVimbaCamera::getFeatureValue(const std::string& feature_str, T& val)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+getFeatureValue	src/avt_vimba_camera.cpp	/^bool AvtVimbaCamera::getFeatureValue(const std::string& feature_str, std::string& val)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+getImageHeight	src/avt_vimba_camera.cpp	/^int AvtVimbaCamera::getImageHeight()$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+getImageWidth	src/avt_vimba_camera.cpp	/^int AvtVimbaCamera::getImageWidth()$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+getSensorHeight	src/avt_vimba_camera.cpp	/^int AvtVimbaCamera::getSensorHeight()$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+getSensorWidth	src/avt_vimba_camera.cpp	/^int AvtVimbaCamera::getSensorWidth()$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+getTimestamp	src/avt_vimba_camera.cpp	/^double AvtVimbaCamera::getTimestamp()$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+getTimestampRealTime	src/avt_vimba_camera.cpp	/^double AvtVimbaCamera::getTimestampRealTime(VmbUint64_t timestamp_ticks)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+guid_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  std::string guid_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+guid_	include/avt_vimba_camera/mono_camera_node.hpp	/^  std::string guid_;$/;"	m	class:avt_vimba_camera::MonoCameraNode
+hasAffectedFeatures	include/VimbaC/Include/VimbaC.h	/^    VmbBool_t               hasAffectedFeatures;    \/\/ Indicates if the feature potentially affects other features$/;"	m	struct:VmbFeatureInfo
+hasAffectedFeatures	include/VimbaCPP/Source/BaseFeature.h	/^        bool                            hasAffectedFeatures;    \/\/ true if the feature selects or invalidates other features$/;"	m	struct:AVT::VmbAPI::BaseFeature::FeatureInfo
+hasSelectedFeatures	include/VimbaC/Include/VimbaC.h	/^    VmbBool_t               hasSelectedFeatures;    \/\/ Indicates if the feature selects other features$/;"	m	struct:VmbFeatureInfo
+hasSelectedFeatures	include/VimbaCPP/Source/BaseFeature.h	/^        bool                            hasSelectedFeatures;    \/\/ true if the feature selects other features$/;"	m	struct:AVT::VmbAPI::BaseFeature::FeatureInfo
+height	include/VimbaC/Include/VimbaC.h	/^    VmbUint32_t         height;             \/\/ Height of an image$/;"	m	struct:__anon4
+imageSize	include/VimbaC/Include/VimbaC.h	/^    VmbUint32_t         imageSize;          \/\/ Size of the image data inside the data buffer$/;"	m	struct:__anon4
+inc	include/VimbaCPP/Include/SharedPointer_impl.h	/^    void ref_count<T>::inc()$/;"	f	class:AVT::VmbAPI::ref_count
+info_man_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  std::shared_ptr<camera_info_manager::CameraInfoManager> info_man_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+info_man_	include/avt_vimba_camera/mono_camera_node.hpp	/^  std::shared_ptr<camera_info_manager::CameraInfoManager> info_man_;$/;"	m	class:avt_vimba_camera::MonoCameraNode
+initConfig	src/avt_vimba_camera.cpp	/^void AvtVimbaCamera::initConfig()$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+intValue	include/VimbaC/Include/VimbaC.h	/^    VmbInt64_t              intValue;       \/\/ Integer value of this enumeration entry$/;"	m	struct:VmbFeatureEnumEntry
+interfaceIdString	include/VimbaC/Include/VimbaC.h	/^    const char*     interfaceIdString;      \/\/ Unique identifier for each interface$/;"	m	struct:__anon2
+interfaceIdString	include/VimbaC/Include/VimbaC.h	/^    const char*     interfaceIdString;      \/\/ Unique value for each interface or bus$/;"	m	struct:__anon3
+interfaceIdString	include/VimbaCPP/Source/Camera.cpp	/^        std::string     interfaceIdString;          \/\/ Unique value for each interface or bus$/;"	m	struct:AVT::VmbAPI::Camera::Impl::CameraInfo	file:
+interfaceIdString	include/VimbaCPP/Source/Interface.cpp	/^        std::string         interfaceIdString;     \/\/ Unique identifier for each interface$/;"	m	struct:AVT::VmbAPI::Interface::Impl::InterfaceInfo	file:
+interfaceName	include/VimbaC/Include/VimbaC.h	/^    const char*     interfaceName;          \/\/ Interface name, given by the transport layer$/;"	m	struct:__anon2
+interfaceName	include/VimbaCPP/Source/Interface.cpp	/^        std::string         interfaceName;         \/\/ Interface name, given by the transport layer$/;"	m	struct:AVT::VmbAPI::Interface::Impl::InterfaceInfo	file:
+interfaceToString	include/avt_vimba_camera/avt_vimba_api.hpp	/^  std::string interfaceToString(VmbInterfaceType interfaceType)$/;"	f	class:avt_vimba_camera::AvtVimbaApi
+interfaceType	include/VimbaC/Include/VimbaC.h	/^    VmbInterface_t  interfaceType;          \/\/ Interface type, see VmbInterfaceType$/;"	m	struct:__anon2
+interfaceType	include/VimbaCPP/Source/Interface.cpp	/^        VmbInterface_t      interfaceType;         \/\/ Interface type$/;"	m	struct:AVT::VmbAPI::Interface::Impl::InterfaceInfo	file:
+interface_ptr_	include/avt_vimba_camera/trigger_node.hpp	/^  AVT::VmbAPI::InterfacePtr interface_ptr_;$/;"	m	class:trigger::TriggerNode
+ip_	include/avt_vimba_camera/mono_camera_node.hpp	/^  std::string ip_;$/;"	m	class:avt_vimba_camera::MonoCameraNode
+isOpened	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  bool isOpened()$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+isStreamable	include/VimbaC/Include/VimbaC.h	/^    VmbBool_t               isStreamable;           \/\/ Indicates if a feature can be stored to \/ loaded from a file$/;"	m	struct:VmbFeatureInfo
+isStreamable	include/VimbaCPP/Source/BaseFeature.h	/^        bool                            isStreamable;           \/\/ Feature can be stored or loaded from\/into a file$/;"	m	struct:AVT::VmbAPI::BaseFeature::FeatureInfo
+keepRunning	src/avt_vimba_camera.cpp	/^static volatile int keepRunning = 1;$/;"	m	namespace:avt_vimba_camera	file:
+listAvailableCameras	include/avt_vimba_camera/avt_vimba_api.hpp	/^  void listAvailableCameras()$/;"	f	class:avt_vimba_camera::AvtVimbaApi
+loadCameraSettings	src/avt_vimba_camera.cpp	/^bool AvtVimbaCamera::loadCameraSettings(const std::string& filename)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+loadParams	src/mono_camera_node.cpp	/^void MonoCameraNode::loadParams()$/;"	f	class:avt_vimba_camera::MonoCameraNode
+loadSrvCallback	src/mono_camera_node.cpp	/^void MonoCameraNode::loadSrvCallback(const std::shared_ptr<rmw_request_id_t> request_header,$/;"	f	class:avt_vimba_camera::MonoCameraNode
+load_srv_	include/avt_vimba_camera/mono_camera_node.hpp	/^  rclcpp::Service<avt_vimba_camera_msgs::srv::LoadSettings>::SharedPtr load_srv_;$/;"	m	class:avt_vimba_camera::MonoCameraNode
+logger_	include/avt_vimba_camera/avt_vimba_api.hpp	/^  rclcpp::Logger logger_;$/;"	m	class:avt_vimba_camera::AvtVimbaApi
+loggingLevel	include/VimbaC/Include/VimbaC.h	/^    VmbUint32_t         loggingLevel;       \/\/ Determines level of detail for load\/save settings logging$/;"	m	struct:__anon5
+m_Camera	include/VimbaCPP/Source/Camera.cpp	/^    Camera&                                 m_Camera;$/;"	m	struct:AVT::VmbAPI::AcquireImageHelper	file:
+m_EnumEntries	include/VimbaCPP/Source/EnumFeature.h	/^    EnumEntryVector m_EnumEntries;$/;"	m	class:AVT::VmbAPI::EnumFeature
+m_EnumIntValues	include/VimbaCPP/Source/EnumFeature.h	/^    Int64Vector     m_EnumIntValues;$/;"	m	class:AVT::VmbAPI::EnumFeature
+m_EnumStringValues	include/VimbaCPP/Source/EnumFeature.h	/^    StringVector    m_EnumStringValues;$/;"	m	class:AVT::VmbAPI::EnumFeature
+m_File	include/VimbaCPP/Include/FileLogger.h	/^    std::ofstream   m_File;$/;"	m	class:AVT::VmbAPI::FileLogger
+m_Mutex	include/VimbaCPP/Include/Mutex.h	/^    pthread_mutex_t m_Mutex;$/;"	m	class:AVT::VmbAPI::Mutex
+m_Mutex	include/VimbaCPP/Include/SharedPointer.h	/^        Mutex           m_Mutex;$/;"	m	class:AVT::VmbAPI::ref_count
+m_ReadCondition	include/VimbaCPP/Source/ConditionHelper.h	/^    Condition                           m_ReadCondition;$/;"	m	class:AVT::VmbAPI::ConditionHelper
+m_Semaphore	include/VimbaCPP/Source/Condition.h	/^    SP_DECL( Semaphore )    m_Semaphore;        \/\/ A binary semaphore (non recursive mutex)$/;"	m	class:AVT::VmbAPI::Condition
+m_Semaphore	include/VimbaCPP/Source/Semaphore.h	/^    sem_t           m_Semaphore;$/;"	m	class:AVT::VmbAPI::Semaphore
+m_Tasks	include/VimbaCPP/Source/Camera.cpp	/^    task_storage                            m_Tasks;        \/\/ storage for cleanup tasks$/;"	m	struct:AVT::VmbAPI::AcquireImageHelper	file:
+m_Visibility	include/VimbaCPP/Source/EnumEntry.cpp	/^    VmbFeatureVisibilityType    m_Visibility;$/;"	m	struct:AVT::VmbAPI::EnumEntry::PrivateImpl	file:
+m_WriteCondition	include/VimbaCPP/Source/ConditionHelper.h	/^    Condition                           m_WriteCondition;$/;"	m	class:AVT::VmbAPI::ConditionHelper
+m_affectedFeatures	include/VimbaCPP/Source/BaseFeature.cpp	/^    FeaturePtrVector m_affectedFeatures;$/;"	m	struct:AVT::VmbAPI::BaseFeature::Impl	file:
+m_bAffectedFeaturesFetched	include/VimbaCPP/Source/BaseFeature.cpp	/^    bool m_bAffectedFeaturesFetched;$/;"	m	struct:AVT::VmbAPI::BaseFeature::Impl	file:
+m_bAllFeaturesFetched	include/VimbaCPP/Source/FeatureContainer.cpp	/^    bool                m_bAllFeaturesFetched;$/;"	m	struct:AVT::VmbAPI::FeatureContainer::Impl	file:
+m_bAllowQueueFrame	include/VimbaCPP/Source/Camera.cpp	/^    bool                            m_bAllowQueueFrame;$/;"	m	struct:AVT::VmbAPI::Camera::Impl	file:
+m_bAlreadyAnnounced	include/VimbaCPP/Source/FrameImpl.h	/^    bool                m_bAlreadyAnnounced;$/;"	m	struct:AVT::VmbAPI::Frame::Impl
+m_bAlreadyQueued	include/VimbaCPP/Source/FrameImpl.h	/^    bool                m_bAlreadyQueued;$/;"	m	struct:AVT::VmbAPI::Frame::Impl
+m_bExclusive	include/VimbaCPP/Source/ConditionHelper.h	/^    bool                                m_bExclusive;$/;"	m	class:AVT::VmbAPI::ConditionHelper
+m_bGeVDiscoveryAutoOn	include/VimbaCPP/Source/VimbaSystem.cpp	/^    bool                                            m_bGeVDiscoveryAutoOn;$/;"	m	struct:AVT::VmbAPI::VimbaSystem::Impl	file:
+m_bGeVTLPresent	include/VimbaCPP/Source/VimbaSystem.cpp	/^    bool                                            m_bGeVTLPresent;$/;"	m	struct:AVT::VmbAPI::VimbaSystem::Impl	file:
+m_bIsUserBuffer	include/VimbaCPP/Source/FrameImpl.h	/^    bool                m_bIsUserBuffer;$/;"	m	struct:AVT::VmbAPI::Frame::Impl
+m_bIsWritingList	include/VimbaCPP/Source/ConditionHelper.h	/^    bool                                m_bIsWritingList;$/;"	m	class:AVT::VmbAPI::ConditionHelper
+m_bLocked	include/VimbaCPP/Source/Condition.h	/^    bool                    m_bLocked;$/;"	m	class:AVT::VmbAPI::Condition
+m_bSelectedFeaturesFetched	include/VimbaCPP/Source/BaseFeature.cpp	/^    bool m_bSelectedFeaturesFetched;$/;"	m	struct:AVT::VmbAPI::BaseFeature::Impl	file:
+m_cameraInfo	include/VimbaCPP/Source/Camera.cpp	/^    } m_cameraInfo;$/;"	m	struct:AVT::VmbAPI::Camera::Impl	typeref:struct:AVT::VmbAPI::Camera::Impl::CameraInfo	file:
+m_cameraObservers	include/VimbaCPP/Source/VimbaSystem.cpp	/^    LockableVector<ICameraListObserverPtr>          m_cameraObservers;$/;"	m	struct:AVT::VmbAPI::VimbaSystem::Impl	file:
+m_cameraObserversConditionHelper	include/VimbaCPP/Source/VimbaSystem.cpp	/^    ConditionHelper                                 m_cameraObserversConditionHelper;$/;"	m	struct:AVT::VmbAPI::VimbaSystem::Impl	file:
+m_cameras	include/VimbaCPP/Source/VimbaSystem.cpp	/^    LockableMap<std::string, CameraPtr>             m_cameras;$/;"	m	struct:AVT::VmbAPI::VimbaSystem::Impl	file:
+m_camerasConditionHelper	include/VimbaCPP/Source/VimbaSystem.cpp	/^    ConditionHelper                                 m_camerasConditionHelper;$/;"	m	struct:AVT::VmbAPI::VimbaSystem::Impl	file:
+m_conditionHelper	include/VimbaCPP/Source/BaseFeature.cpp	/^    ConditionHelper m_conditionHelper;$/;"	m	struct:AVT::VmbAPI::BaseFeature::Impl	file:
+m_conditionHelper	include/VimbaCPP/Source/Camera.cpp	/^    ConditionHelper                 m_conditionHelper;$/;"	m	struct:AVT::VmbAPI::Camera::Impl	file:
+m_dStartTime	include/VimbaCPP/Source/Clock.h	/^    double m_dStartTime;$/;"	m	class:AVT::VmbAPI::Clock
+m_eInterfaceType	include/VimbaCPP/Source/Camera.cpp	/^    VmbInterfaceType m_eInterfaceType;              \/\/ The type of the interface the camera is connected to$/;"	m	struct:AVT::VmbAPI::Camera::Impl	file:
+m_featureInfo	include/VimbaCPP/Source/BaseFeature.h	/^    FeatureInfo m_featureInfo;$/;"	m	class:AVT::VmbAPI::BaseFeature
+m_features	include/VimbaCPP/Source/FeatureContainer.cpp	/^    FeaturePtrMap       m_features;$/;"	m	struct:AVT::VmbAPI::FeatureContainer::Impl	file:
+m_frame	include/VimbaCPP/Source/FrameImpl.h	/^    VmbFrame_t          m_frame;$/;"	m	struct:AVT::VmbAPI::Frame::Impl
+m_frameHandlers	include/VimbaCPP/Source/Camera.cpp	/^    LockableVector<FrameHandlerPtr> m_frameHandlers;$/;"	m	struct:AVT::VmbAPI::Camera::Impl	file:
+m_hMutex	include/VimbaCPP/Include/Mutex.h	/^    HANDLE          m_hMutex;$/;"	m	class:AVT::VmbAPI::Mutex
+m_hSemaphore	include/VimbaCPP/Source/Semaphore.h	/^    HANDLE          m_hSemaphore;$/;"	m	class:AVT::VmbAPI::Semaphore
+m_handle	include/VimbaCPP/Source/FeatureContainer.cpp	/^    VmbHandle_t         m_handle;$/;"	m	struct:AVT::VmbAPI::FeatureContainer::Impl	file:
+m_interfaceInfo	include/VimbaCPP/Source/Interface.cpp	/^    } m_interfaceInfo;$/;"	m	struct:AVT::VmbAPI::Interface::Impl	typeref:struct:AVT::VmbAPI::Interface::Impl::InterfaceInfo	file:
+m_interfaceObservers	include/VimbaCPP/Source/VimbaSystem.cpp	/^    LockableVector<IInterfaceListObserverPtr>       m_interfaceObservers;$/;"	m	struct:AVT::VmbAPI::VimbaSystem::Impl	file:
+m_interfaceObserversConditionHelper	include/VimbaCPP/Source/VimbaSystem.cpp	/^    ConditionHelper                                 m_interfaceObserversConditionHelper;$/;"	m	struct:AVT::VmbAPI::VimbaSystem::Impl	file:
+m_interfaces	include/VimbaCPP/Source/VimbaSystem.cpp	/^    LockableMap<std::string, InterfacePtr>          m_interfaces;$/;"	m	struct:AVT::VmbAPI::VimbaSystem::Impl	file:
+m_interfacesConditionHelper	include/VimbaCPP/Source/VimbaSystem.cpp	/^    ConditionHelper                                 m_interfacesConditionHelper;$/;"	m	struct:AVT::VmbAPI::VimbaSystem::Impl	file:
+m_loggingLevel	include/VimbaCPP/Include/Camera.h	/^    VmbUint32_t m_loggingLevel;$/;"	m	class:AVT::VmbAPI::Camera
+m_loggingLevel	include/VimbaCPP/Source/Camera.cpp	/^    VmbInt32_t                      m_loggingLevel;$/;"	m	struct:AVT::VmbAPI::Camera::Impl	file:
+m_maxIterations	include/VimbaCPP/Include/Camera.h	/^    VmbUint32_t m_maxIterations;$/;"	m	class:AVT::VmbAPI::Camera
+m_maxIterations	include/VimbaCPP/Source/Camera.cpp	/^    VmbInt32_t                      m_maxIterations;$/;"	m	struct:AVT::VmbAPI::Camera::Impl	file:
+m_nCount	include/VimbaCPP/Include/SharedPointer.h	/^        long            m_nCount;$/;"	m	class:AVT::VmbAPI::ref_count
+m_nNumListReads	include/VimbaCPP/Source/ConditionHelper.h	/^    int                                 m_nNumListReads;$/;"	m	class:AVT::VmbAPI::ConditionHelper
+m_nReleaseNumber	include/VimbaCPP/Source/Condition.h	/^    unsigned long           m_nReleaseNumber;$/;"	m	class:AVT::VmbAPI::Condition
+m_nValue	include/VimbaCPP/Source/EnumEntry.cpp	/^    VmbInt64_t                  m_nValue;$/;"	m	struct:AVT::VmbAPI::EnumEntry::PrivateImpl	file:
+m_nWaiterNumber	include/VimbaCPP/Source/Condition.h	/^    unsigned long           m_nWaiterNumber;$/;"	m	class:AVT::VmbAPI::Condition
+m_observers	include/VimbaCPP/Source/BaseFeature.cpp	/^    LockableVector<IFeatureObserverPtr> m_observers;$/;"	m	struct:AVT::VmbAPI::BaseFeature::Impl	file:
+m_observersConditionHelper	include/VimbaCPP/Source/BaseFeature.cpp	/^    ConditionHelper m_observersConditionHelper;$/;"	m	struct:AVT::VmbAPI::BaseFeature::Impl	file:
+m_pBuffer	include/VimbaCPP/Source/FrameImpl.h	/^    VmbUchar_t          *m_pBuffer;$/;"	m	struct:AVT::VmbAPI::Frame::Impl
+m_pCamera	include/VimbaCPP/Include/IFrameObserver.h	/^    CameraPtr m_pCamera;$/;"	m	class:AVT::VmbAPI::IFrameObserver
+m_pCameraFactory	include/VimbaCPP/Source/VimbaSystem.cpp	/^    ICameraFactoryPtr                               m_pCameraFactory;$/;"	m	struct:AVT::VmbAPI::VimbaSystem::Impl	file:
+m_pFeatureContainer	include/VimbaCPP/Source/BaseFeature.h	/^    FeatureContainer *m_pFeatureContainer;$/;"	m	class:AVT::VmbAPI::BaseFeature
+m_pFrame	include/VimbaCPP/Source/AncillaryData.cpp	/^    VmbFrame_t  *m_pFrame;$/;"	m	struct:AVT::VmbAPI::AncillaryData::Impl	file:
+m_pFrame	include/VimbaCPP/Source/FrameHandler.h	/^    FramePtr                m_pFrame;$/;"	m	class:AVT::VmbAPI::FrameHandler
+m_pImpl	include/VimbaCPP/Include/AncillaryData.h	/^    Impl *m_pImpl;$/;"	m	class:AVT::VmbAPI::AncillaryData
+m_pImpl	include/VimbaCPP/Include/Camera.h	/^    Impl *m_pImpl;$/;"	m	class:AVT::VmbAPI::Camera
+m_pImpl	include/VimbaCPP/Include/EnumEntry.h	/^    PrivateImpl           *m_pImpl;$/;"	m	class:AVT::VmbAPI::EnumEntry
+m_pImpl	include/VimbaCPP/Include/Feature.h	/^    BaseFeature *m_pImpl;$/;"	m	class:AVT::VmbAPI::Feature
+m_pImpl	include/VimbaCPP/Include/FeatureContainer.h	/^    Impl *m_pImpl;$/;"	m	class:AVT::VmbAPI::FeatureContainer
+m_pImpl	include/VimbaCPP/Include/Frame.h	/^    Impl *m_pImpl;$/;"	m	class:AVT::VmbAPI::Frame
+m_pImpl	include/VimbaCPP/Include/Interface.h	/^    Impl *m_pImpl;$/;"	m	class:AVT::VmbAPI::Interface
+m_pImpl	include/VimbaCPP/Include/VimbaSystem.h	/^    Impl *m_pImpl;$/;"	m	class:AVT::VmbAPI::VimbaSystem
+m_pImpl	include/VimbaCPP/Source/BaseFeature.h	/^    Impl *m_pImpl;$/;"	m	class:AVT::VmbAPI::BaseFeature
+m_pLogger	include/VimbaCPP/Source/VimbaSystem.cpp	/^    Logger                                          m_pLogger;$/;"	m	struct:AVT::VmbAPI::VimbaSystem::Impl	file:
+m_pMutex	include/VimbaCPP/Include/BasicLockable.h	/^    MutexPtr m_pMutex;$/;"	m	class:AVT::VmbAPI::BasicLockable
+m_pMutex	include/VimbaCPP/Include/FileLogger.h	/^    MutexPtr        m_pMutex;$/;"	m	class:AVT::VmbAPI::FileLogger
+m_pMutex	include/VimbaCPP/Source/FrameHandler.h	/^    MutexPtr                m_pMutex;$/;"	m	class:AVT::VmbAPI::FrameHandler
+m_pMutex	include/VimbaCPP/Source/MutexGuard.h	/^    Mutex  *m_pMutex;$/;"	m	class:AVT::VmbAPI::MutexGuard
+m_pObject	include/VimbaCPP/Include/SharedPointer.h	/^        T                           *m_pObject;$/;"	m	class:AVT::VmbAPI::shared_ptr
+m_pObject	include/VimbaCPP/Include/SharedPointer.h	/^        T               *m_pObject;$/;"	m	class:AVT::VmbAPI::ref_count
+m_pObserver	include/VimbaCPP/Source/FrameHandler.h	/^    IFrameObserverPtr       m_pObserver;$/;"	m	class:AVT::VmbAPI::FrameHandler
+m_pObserver	include/VimbaCPP/Source/FrameImpl.h	/^    IFrameObserverPtr   m_pObserver;$/;"	m	struct:AVT::VmbAPI::Frame::Impl
+m_pObserverMutex	include/VimbaCPP/Source/FrameImpl.h	/^    MutexPtr            m_pObserverMutex;$/;"	m	struct:AVT::VmbAPI::Frame::Impl
+m_pQueueFrameMutex	include/VimbaCPP/Source/Camera.cpp	/^    MutexPtr                        m_pQueueFrameMutex;$/;"	m	struct:AVT::VmbAPI::Camera::Impl	file:
+m_pRefCount	include/VimbaCPP/Include/SharedPointer.h	/^        AVT::VmbAPI::ref_count_base *m_pRefCount;$/;"	m	class:AVT::VmbAPI::shared_ptr
+m_persistType	include/VimbaCPP/Include/Camera.h	/^    VmbFeaturePersist_t m_persistType;$/;"	m	class:AVT::VmbAPI::Camera
+m_persistType	include/VimbaCPP/Source/Camera.cpp	/^    VmbFeaturePersist_t             m_persistType;$/;"	m	struct:AVT::VmbAPI::Camera::Impl	file:
+m_selectedFeatures	include/VimbaCPP/Source/BaseFeature.cpp	/^    FeaturePtrVector m_selectedFeatures;$/;"	m	struct:AVT::VmbAPI::BaseFeature::Impl	file:
+m_strDescription	include/VimbaCPP/Source/EnumEntry.cpp	/^    std::string                 m_strDescription;$/;"	m	struct:AVT::VmbAPI::EnumEntry::PrivateImpl	file:
+m_strDisplayName	include/VimbaCPP/Source/EnumEntry.cpp	/^    std::string                 m_strDisplayName;$/;"	m	struct:AVT::VmbAPI::EnumEntry::PrivateImpl	file:
+m_strName	include/VimbaCPP/Source/EnumEntry.cpp	/^    std::string                 m_strName;$/;"	m	struct:AVT::VmbAPI::EnumEntry::PrivateImpl	file:
+m_strNamespace	include/VimbaCPP/Source/EnumEntry.cpp	/^    std::string                 m_strNamespace;$/;"	m	struct:AVT::VmbAPI::EnumEntry::PrivateImpl	file:
+m_strTooltip	include/VimbaCPP/Source/EnumEntry.cpp	/^    std::string                 m_strTooltip;$/;"	m	struct:AVT::VmbAPI::EnumEntry::PrivateImpl	file:
+main	src/exec/mono_camera_exec.cpp	/^int main(int argc, char** argv)$/;"	f
+main	src/exec/trigger_exec.cpp	/^int main(int argc, char** argv)$/;"	f
+major	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbUint32_t             major;          \/\/ Major version number$/;"	m	struct:__anon6
+maxIterations	include/VimbaC/Include/VimbaC.h	/^    VmbUint32_t         maxIterations;      \/\/ Number of iterations when loading settings$/;"	m	struct:__anon5
+minor	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbUint32_t             minor;          \/\/ Minor version number$/;"	m	struct:__anon6
+modelName	include/VimbaC/Include/VimbaC.h	/^    const char*     modelName;              \/\/ Model name$/;"	m	struct:__anon3
+modelName	include/VimbaCPP/Source/Camera.cpp	/^        std::string     modelName;                  \/\/ Model name$/;"	m	struct:AVT::VmbAPI::Camera::Impl::CameraInfo	file:
+name	include/VimbaC/Include/VimbaC.h	/^    const char*             name;                   \/\/ Name used in the API$/;"	m	struct:VmbFeatureInfo
+name	include/VimbaC/Include/VimbaC.h	/^    const char*             name;           \/\/ Name used in the API$/;"	m	struct:VmbFeatureEnumEntry
+name	include/VimbaCPP/Source/BaseFeature.h	/^        std::string                     name;                   \/\/ Verbose name$/;"	m	struct:AVT::VmbAPI::BaseFeature::FeatureInfo
+nh_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  rclcpp::Node::SharedPtr nh_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+offsetX	include/VimbaC/Include/VimbaC.h	/^    VmbUint32_t         offsetX;            \/\/ Horizontal offset of an image$/;"	m	struct:__anon4
+offsetY	include/VimbaC/Include/VimbaC.h	/^    VmbUint32_t         offsetY;            \/\/ Vertical offset of an image$/;"	m	struct:__anon4
+on_init_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  bool on_init_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+on_init_config_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  bool on_init_config_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+openCamera	src/avt_vimba_camera.cpp	/^CameraPtr AvtVimbaCamera::openCamera(const std::string& id_str)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+opened_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  bool opened_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+operator !=	include/VimbaCPP/Include/SharedPointer_impl.h	/^    bool operator!=(const shared_ptr<T1>& sp1, const shared_ptr<T2>& sp2)$/;"	f	namespace:AVT::VmbAPI
+operator *	include/VimbaCPP/Include/SharedPointer_impl.h	/^    T& shared_ptr<T>::operator * () const$/;"	f	class:AVT::VmbAPI::shared_ptr
+operator ->	include/VimbaCPP/Include/SharedPointer_impl.h	/^    T* shared_ptr<T>::operator -> () const$/;"	f	class:AVT::VmbAPI::shared_ptr
+operator =	include/VimbaCPP/Include/IInterfaceListObserver.h	/^    IMEXPORT IInterfaceListObserver& operator=( const IInterfaceListObserver& ) { \/* No assignment operator *\/ return *this; }$/;"	f	class:AVT::VmbAPI::IInterfaceListObserver
+operator =	include/VimbaCPP/Include/SharedPointer_impl.h	/^    ref_count<T>& ref_count<T>::operator = (const ref_count &rRefCount)$/;"	f	class:AVT::VmbAPI::ref_count
+operator =	include/VimbaCPP/Include/SharedPointer_impl.h	/^    shared_ptr<T>& shared_ptr<T>::operator = (const shared_ptr &rSharedPointer)$/;"	f	class:AVT::VmbAPI::shared_ptr
+operator =	include/VimbaCPP/Include/SharedPointer_impl.h	/^    shared_ptr<T>& shared_ptr<T>::operator = (const shared_ptr<T2> &rSharedPointer)$/;"	f	class:AVT::VmbAPI::shared_ptr
+operator =	include/VimbaCPP/Source/AncillaryData.cpp	/^AncillaryData& AncillaryData::operator=( const AncillaryData& )$/;"	f	class:AVT::VmbAPI::AncillaryData
+operator =	include/VimbaCPP/Source/Camera.cpp	/^Camera& Camera::operator=( const Camera& )$/;"	f	class:AVT::VmbAPI::Camera
+operator =	include/VimbaCPP/Source/EnumEntry.cpp	/^EnumEntry& EnumEntry::operator=( const EnumEntry&other)$/;"	f	class:AVT::VmbAPI::EnumEntry
+operator =	include/VimbaCPP/Source/FeatureContainer.cpp	/^FeatureContainer& FeatureContainer::operator=( const FeatureContainer& )$/;"	f	class:AVT::VmbAPI::FeatureContainer
+operator =	include/VimbaCPP/Source/FileLogger.cpp	/^FileLogger& FileLogger::operator=( const FileLogger& )$/;"	f	class:AVT::VmbAPI::FileLogger
+operator =	include/VimbaCPP/Source/Frame.cpp	/^Frame& Frame::operator=( const Frame& )$/;"	f	class:AVT::VmbAPI::Frame
+operator =	include/VimbaCPP/Source/Interface.cpp	/^Interface& Interface::operator=( const Interface& )$/;"	f	class:AVT::VmbAPI::Interface
+operator =	include/VimbaCPP/Source/Mutex.cpp	/^Mutex& Mutex::operator=( const Mutex& )$/;"	f	class:AVT::VmbAPI::Mutex
+operator =	include/VimbaCPP/Source/Semaphore.cpp	/^Semaphore& Semaphore::operator=( const Semaphore& )$/;"	f	class:AVT::VmbAPI::Semaphore
+operator =	include/VimbaCPP/Source/VimbaSystem.cpp	/^VimbaSystem& VimbaSystem::operator=( const VimbaSystem& )$/;"	f	class:AVT::VmbAPI::VimbaSystem
+operator ==	include/VimbaCPP/Include/SharedPointer_impl.h	/^    bool operator==(const shared_ptr<T1>& sp1, const shared_ptr<T2>& sp2)$/;"	f	namespace:AVT::VmbAPI
+operator unspecified_bool_type	include/VimbaCPP/Include/SharedPointer.h	/^        operator unspecified_bool_type () const$/;"	f	class:AVT::VmbAPI::shared_ptr
+param_sub_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  rclcpp::node_interfaces::OnSetParametersCallbackHandle::SharedPtr param_sub_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+parameterCallback	src/avt_vimba_camera.cpp	/^AvtVimbaCamera::parameterCallback(const std::vector<rclcpp::Parameter>& parameters)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+patch	include/VimbaC/Include/VmbCommonTypes.h	/^        VmbUint32_t             patch;          \/\/ Patch version number$/;"	m	struct:__anon6
+permittedAccess	include/VimbaC/Include/VimbaC.h	/^    VmbAccessMode_t permittedAccess;        \/\/ Used access mode, see VmbAccessModeType$/;"	m	struct:__anon2
+permittedAccess	include/VimbaC/Include/VimbaC.h	/^    VmbAccessMode_t permittedAccess;        \/\/ Used access mode, see VmbAccessModeType$/;"	m	struct:__anon3
+permittedAccess	include/VimbaCPP/Source/Interface.cpp	/^        VmbAccessMode_t     permittedAccess;       \/\/ Used access mode, see VmbAccessMode_t$/;"	m	struct:AVT::VmbAPI::Interface::Impl::InterfaceInfo	file:
+persistType	include/VimbaC/Include/VimbaC.h	/^    VmbFeaturePersist_t persistType;        \/\/ Type of features that are to be saved$/;"	m	struct:__anon5
+pixelFormat	include/VimbaC/Include/VimbaC.h	/^    VmbPixelFormat_t    pixelFormat;        \/\/ Pixel format of the image$/;"	m	struct:__anon4
+pollingTime	include/VimbaC/Include/VimbaC.h	/^    VmbUint32_t             pollingTime;            \/\/ Predefined polling time for volatile features$/;"	m	struct:VmbFeatureInfo
+pollingTime	include/VimbaCPP/Source/BaseFeature.h	/^        VmbUint32_t                     pollingTime;            \/\/ Predefined polling time for volatile features$/;"	m	struct:AVT::VmbAPI::BaseFeature::FeatureInfo
+ptp_offset_	include/avt_vimba_camera/mono_camera_node.hpp	/^  int32_t ptp_offset_;$/;"	m	class:avt_vimba_camera::MonoCameraNode
+receiveFlags	include/VimbaC/Include/VimbaC.h	/^    VmbFrameFlags_t     receiveFlags;       \/\/ Flags indicating which additional frame information is available$/;"	m	struct:__anon4
+receiveStatus	include/VimbaC/Include/VimbaC.h	/^    VmbFrameStatus_t    receiveStatus;      \/\/ Resulting status of the receive operation$/;"	m	struct:__anon4
+ref_count	include/VimbaCPP/Include/SharedPointer.h	/^    class ref_count : public virtual AVT::VmbAPI::ref_count_base$/;"	c	namespace:AVT::VmbAPI
+ref_count	include/VimbaCPP/Include/SharedPointer_impl.h	/^    ref_count<T>::ref_count(T *pObject)$/;"	f	class:AVT::VmbAPI::ref_count
+ref_count	include/VimbaCPP/Include/SharedPointer_impl.h	/^    ref_count<T>::ref_count(const ref_count &rRefCount)$/;"	f	class:AVT::VmbAPI::ref_count
+ref_count_base	include/VimbaCPP/Include/SharedPointer.h	/^    class ref_count_base$/;"	c	namespace:AVT::VmbAPI
+representation	include/VimbaC/Include/VimbaC.h	/^    const char*             representation;         \/\/ Representation of a numeric feature$/;"	m	struct:VmbFeatureInfo
+representation	include/VimbaCPP/Source/BaseFeature.h	/^        std::string                     representation;         \/\/ Representation of a numeric feature$/;"	m	struct:AVT::VmbAPI::BaseFeature::FeatureInfo
+reset	include/VimbaCPP/Include/SharedPointer_impl.h	/^    void shared_ptr<T>::reset()$/;"	f	class:AVT::VmbAPI::shared_ptr
+reset	include/VimbaCPP/Include/SharedPointer_impl.h	/^    void shared_ptr<T>::reset(T2 *pObject)$/;"	f	class:AVT::VmbAPI::shared_ptr
+runCommand	src/avt_vimba_camera.cpp	/^bool AvtVimbaCamera::runCommand(const std::string& command_str)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+saveCameraSettings	src/avt_vimba_camera.cpp	/^bool AvtVimbaCamera::saveCameraSettings(const std::string& filename)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+saveSrvCallback	src/mono_camera_node.cpp	/^void MonoCameraNode::saveSrvCallback(const std::shared_ptr<rmw_request_id_t> request_header,$/;"	f	class:avt_vimba_camera::MonoCameraNode
+save_srv_	include/avt_vimba_camera/mono_camera_node.hpp	/^  rclcpp::Service<avt_vimba_camera_msgs::srv::SaveSettings>::SharedPtr save_srv_;$/;"	m	class:avt_vimba_camera::MonoCameraNode
+serialString	include/VimbaC/Include/VimbaC.h	/^    const char*     serialString;           \/\/ Serial number$/;"	m	struct:__anon2
+serialString	include/VimbaC/Include/VimbaC.h	/^    const char*     serialString;           \/\/ Serial number$/;"	m	struct:__anon3
+serialString	include/VimbaCPP/Source/Camera.cpp	/^        std::string     serialString;               \/\/ Serial number$/;"	m	struct:AVT::VmbAPI::Camera::Impl::CameraInfo	file:
+serialString	include/VimbaCPP/Source/Interface.cpp	/^        std::string         serialString;          \/\/ Serial number$/;"	m	struct:AVT::VmbAPI::Interface::Impl::InterfaceInfo	file:
+setCallback	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  void setCallback(frameCallbackFunc callback)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+setFeatureValue	src/avt_vimba_camera.cpp	/^VmbErrorType AvtVimbaCamera::setFeatureValue(const std::string& feature_str, const T& val)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+setForceStop	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  void setForceStop(bool force_stop)$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+sfncNamespace	include/VimbaC/Include/VimbaC.h	/^    const char*             sfncNamespace;          \/\/ Namespace this feature resides in$/;"	m	struct:VmbFeatureInfo
+sfncNamespace	include/VimbaC/Include/VimbaC.h	/^    const char*             sfncNamespace;  \/\/ Namespace this feature resides in$/;"	m	struct:VmbFeatureEnumEntry
+sfncNamespace	include/VimbaCPP/Source/BaseFeature.h	/^        std::string                     sfncNamespace;          \/\/ Namespace this feature resides in$/;"	m	struct:AVT::VmbAPI::BaseFeature::FeatureInfo
+shared_ptr	include/VimbaCPP/Include/SharedPointer.h	/^    class shared_ptr$/;"	c	namespace:AVT::VmbAPI
+shared_ptr	include/VimbaCPP/Include/SharedPointer_impl.h	/^    shared_ptr<T>::shared_ptr()$/;"	f	class:AVT::VmbAPI::shared_ptr
+shared_ptr	include/VimbaCPP/Include/SharedPointer_impl.h	/^    shared_ptr<T>::shared_ptr(T2 *pObject)$/;"	f	class:AVT::VmbAPI::shared_ptr
+shared_ptr	include/VimbaCPP/Include/SharedPointer_impl.h	/^    shared_ptr<T>::shared_ptr(const shared_ptr &rSharedPointer)$/;"	f	class:AVT::VmbAPI::shared_ptr
+shared_ptr	include/VimbaCPP/Include/SharedPointer_impl.h	/^    shared_ptr<T>::shared_ptr(const shared_ptr<T2> &rSharedPointer)$/;"	f	class:AVT::VmbAPI::shared_ptr
+shared_ptr	include/VimbaCPP/Include/SharedPointer_impl.h	/^    shared_ptr<T>::shared_ptr(const shared_ptr<T2> &rSharedPointer, dynamic_cast_tag)$/;"	f	class:AVT::VmbAPI::shared_ptr
+start	include/avt_vimba_camera/avt_vimba_api.hpp	/^  void start()$/;"	f	class:avt_vimba_camera::AvtVimbaApi
+start	src/avt_vimba_camera.cpp	/^void AvtVimbaCamera::start(const std::string& ip_str, const std::string& guid_str, const std::string& frame_id,$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+start	src/mono_camera_node.cpp	/^void MonoCameraNode::start()$/;"	f	class:avt_vimba_camera::MonoCameraNode
+startImaging	src/avt_vimba_camera.cpp	/^void AvtVimbaCamera::startImaging()$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+startSrvCallback	src/mono_camera_node.cpp	/^void MonoCameraNode::startSrvCallback(const std::shared_ptr<rmw_request_id_t> request_header,$/;"	f	class:avt_vimba_camera::MonoCameraNode
+start_srv_	include/avt_vimba_camera/mono_camera_node.hpp	/^  rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr start_srv_;$/;"	m	class:avt_vimba_camera::MonoCameraNode
+stop	src/avt_vimba_camera.cpp	/^void AvtVimbaCamera::stop()$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+stopImaging	src/avt_vimba_camera.cpp	/^void AvtVimbaCamera::stopImaging()$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+stopSrvCallback	src/mono_camera_node.cpp	/^void MonoCameraNode::stopSrvCallback(const std::shared_ptr<rmw_request_id_t> request_header,$/;"	f	class:avt_vimba_camera::MonoCameraNode
+stop_srv_	include/avt_vimba_camera/mono_camera_node.hpp	/^  rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr stop_srv_;$/;"	m	class:avt_vimba_camera::MonoCameraNode
+streaming_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  bool streaming_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+swap	include/VimbaCPP/Include/SharedPointer_impl.h	/^    void shared_ptr<T>::swap(T2 &rValue1, T2 &rValue2)$/;"	f	class:AVT::VmbAPI::shared_ptr
+swap	include/VimbaCPP/Include/SharedPointer_impl.h	/^    void shared_ptr<T>::swap(shared_ptr &rSharedPointer)$/;"	f	class:AVT::VmbAPI::shared_ptr
+task_storage	include/VimbaCPP/Source/Camera.cpp	/^    typedef std::vector<tear_down_tasks>    task_storage;$/;"	t	struct:AVT::VmbAPI::AcquireImageHelper	file:
+tear_down_tasks	include/VimbaCPP/Source/Camera.cpp	/^    enum tear_down_tasks$/;"	g	struct:AVT::VmbAPI::AcquireImageHelper	file:
+this_type	include/VimbaCPP/Include/SharedPointer.h	/^        typedef shared_ptr<T> this_type;$/;"	t	class:AVT::VmbAPI::shared_ptr
+timer_period_	include/avt_vimba_camera/trigger_node.hpp	/^  double timer_period_;$/;"	m	class:trigger::TriggerNode
+timestamp	include/VimbaC/Include/VimbaC.h	/^    VmbUint64_t         timestamp;          \/\/ Timestamp set by the camera$/;"	m	struct:__anon4
+tooltip	include/VimbaC/Include/VimbaC.h	/^    const char*             tooltip;                \/\/ Short description, e.g. for a tooltip$/;"	m	struct:VmbFeatureInfo
+tooltip	include/VimbaC/Include/VimbaC.h	/^    const char*             tooltip;        \/\/ Short description, e.g. for a tooltip$/;"	m	struct:VmbFeatureEnumEntry
+tooltip	include/VimbaCPP/Source/BaseFeature.h	/^        std::string                     tooltip;                \/\/ Short description$/;"	m	struct:AVT::VmbAPI::BaseFeature::FeatureInfo
+trigger	include/avt_vimba_camera/trigger_node.hpp	/^namespace trigger$/;"	n
+trigger	src/trigger_node.cpp	/^namespace trigger$/;"	n	file:
+trigger_src_	include/avt_vimba_camera/trigger_node.hpp	/^  std::string trigger_src_;$/;"	m	class:trigger::TriggerNode
+trigger_sub_	include/avt_vimba_camera/trigger_node.hpp	/^  rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr trigger_sub_;$/;"	m	class:trigger::TriggerNode
+trigger_timer_	include/avt_vimba_camera/trigger_node.hpp	/^  rclcpp::TimerBase::SharedPtr trigger_timer_;$/;"	m	class:trigger::TriggerNode
+unique	include/VimbaCPP/Include/SharedPointer_impl.h	/^    bool shared_ptr<T>::unique() const$/;"	f	class:AVT::VmbAPI::shared_ptr
+unit	include/VimbaC/Include/VimbaC.h	/^    const char*             unit;                   \/\/ Measuring unit as given in the XML file$/;"	m	struct:VmbFeatureInfo
+unit	include/VimbaCPP/Source/BaseFeature.h	/^        std::string                     unit;                   \/\/ Measuring unit as given in the XML file$/;"	m	struct:AVT::VmbAPI::BaseFeature::FeatureInfo
+unspecified_bool_type	include/VimbaCPP/Include/SharedPointer.h	/^        typedef T* this_type::*unspecified_bool_type;$/;"	t	class:AVT::VmbAPI::shared_ptr::this_type
+updateCameraInfo	src/avt_vimba_camera.cpp	/^void AvtVimbaCamera::updateCameraInfo()$/;"	f	class:avt_vimba_camera::AvtVimbaCamera
+updater_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  diagnostic_updater::Updater updater_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+use_count	include/VimbaCPP/Include/SharedPointer_impl.h	/^    long ref_count<T>::use_count() const$/;"	f	class:AVT::VmbAPI::ref_count
+use_count	include/VimbaCPP/Include/SharedPointer_impl.h	/^    long shared_ptr<T>::use_count() const$/;"	f	class:AVT::VmbAPI::shared_ptr
+use_measurement_time_	include/avt_vimba_camera/mono_camera_node.hpp	/^  bool use_measurement_time_;$/;"	m	class:avt_vimba_camera::MonoCameraNode
+userFrameCallback	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  frameCallbackFunc userFrameCallback;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+vimba_camera_ptr_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  CameraPtr vimba_camera_ptr_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+vimba_frame_ptr_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  FramePtr vimba_frame_ptr_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+vimba_system_	include/avt_vimba_camera/trigger_node.hpp	/^  AVT::VmbAPI::VimbaSystem& vimba_system_;$/;"	m	class:trigger::TriggerNode
+vimba_timestamp_tick_freq_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  VmbInt64_t vimba_timestamp_tick_freq_ = 1;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+visibility	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureVisibility_t  visibility;             \/\/ GUI visibility$/;"	m	struct:VmbFeatureInfo
+visibility	include/VimbaC/Include/VimbaC.h	/^    VmbFeatureVisibility_t  visibility;     \/\/ GUI visibility$/;"	m	struct:VmbFeatureEnumEntry
+visibility	include/VimbaCPP/Source/BaseFeature.h	/^        VmbFeatureVisibility_t          visibility;             \/\/ GUI visibility$/;"	m	struct:AVT::VmbAPI::BaseFeature::FeatureInfo
+vs	include/avt_vimba_camera/avt_vimba_api.hpp	/^  VimbaSystem& vs;$/;"	m	class:avt_vimba_camera::AvtVimbaApi
+width	include/VimbaC/Include/VimbaC.h	/^    VmbUint32_t         width;              \/\/ Width of an image$/;"	m	struct:__anon4
+writable_features_	include/avt_vimba_camera/avt_vimba_camera.hpp	/^  std::map<std::string, bool> writable_features_;$/;"	m	class:avt_vimba_camera::AvtVimbaCamera
+~AcquireImageHelper	include/VimbaCPP/Source/Camera.cpp	/^    ~AcquireImageHelper()$/;"	f	struct:AVT::VmbAPI::AcquireImageHelper
+~AncillaryData	include/VimbaCPP/Source/AncillaryData.cpp	/^AncillaryData::~AncillaryData()$/;"	f	class:AVT::VmbAPI::AncillaryData
+~BaseFeature	include/VimbaCPP/Source/BaseFeature.cpp	/^BaseFeature::~BaseFeature()$/;"	f	class:AVT::VmbAPI::BaseFeature
+~BasicLockable	include/VimbaCPP/Source/BasicLockable.cpp	/^BasicLockable::~BasicLockable()$/;"	f	class:AVT::VmbAPI::BasicLockable
+~Camera	include/VimbaCPP/Source/Camera.cpp	/^Camera::~Camera()$/;"	f	class:AVT::VmbAPI::Camera
+~Clock	include/VimbaCPP/Source/Clock.cpp	/^Clock::~Clock()$/;"	f	class:AVT::VmbAPI::Clock
+~EnumEntry	include/VimbaCPP/Source/EnumEntry.cpp	/^EnumEntry::~EnumEntry()$/;"	f	class:AVT::VmbAPI::EnumEntry
+~Feature	include/VimbaCPP/Source/Feature.cpp	/^Feature::~Feature()$/;"	f	class:AVT::VmbAPI::Feature
+~FeatureContainer	include/VimbaCPP/Source/FeatureContainer.cpp	/^FeatureContainer::~FeatureContainer()$/;"	f	class:AVT::VmbAPI::FeatureContainer
+~FileLogger	include/VimbaCPP/Source/FileLogger.cpp	/^FileLogger::~FileLogger()$/;"	f	class:AVT::VmbAPI::FileLogger
+~Frame	include/VimbaCPP/Source/Frame.cpp	/^Frame::~Frame()$/;"	f	class:AVT::VmbAPI::Frame
+~FrameObserver	include/avt_vimba_camera/frame_observer.hpp	/^  ~FrameObserver(){};$/;"	f	class:FrameObserver
+~ICameraFactory	include/VimbaCPP/Include/ICameraFactory.h	/^    IMEXPORT virtual ~ICameraFactory() {}$/;"	f	class:AVT::VmbAPI::ICameraFactory
+~ICameraListObserver	include/VimbaCPP/Include/ICameraListObserver.h	/^    IMEXPORT virtual ~ICameraListObserver() {}$/;"	f	class:AVT::VmbAPI::ICameraListObserver
+~IFeatureObserver	include/VimbaCPP/Include/IFeatureObserver.h	/^    IMEXPORT virtual ~IFeatureObserver() {}$/;"	f	class:AVT::VmbAPI::IFeatureObserver
+~IFrameObserver	include/VimbaCPP/Include/IFrameObserver.h	/^    IMEXPORT virtual ~IFrameObserver() {}$/;"	f	class:AVT::VmbAPI::IFrameObserver
+~IInterfaceListObserver	include/VimbaCPP/Include/IInterfaceListObserver.h	/^    IMEXPORT virtual ~IInterfaceListObserver() {}$/;"	f	class:AVT::VmbAPI::IInterfaceListObserver
+~IRegisterDevice	include/VimbaCPP/Include/IRegisterDevice.h	/^    virtual ~IRegisterDevice() {};$/;"	f	class:AVT::VmbAPI::IRegisterDevice
+~Interface	include/VimbaCPP/Source/Interface.cpp	/^Interface::~Interface()$/;"	f	class:AVT::VmbAPI::Interface
+~MonoCameraNode	src/mono_camera_node.cpp	/^MonoCameraNode::~MonoCameraNode()$/;"	f	class:avt_vimba_camera::MonoCameraNode
+~Mutex	include/VimbaCPP/Source/Mutex.cpp	/^Mutex::~Mutex()$/;"	f	class:AVT::VmbAPI::Mutex
+~MutexGuard	include/VimbaCPP/Source/MutexGuard.cpp	/^MutexGuard::~MutexGuard()$/;"	f	class:AVT::VmbAPI::MutexGuard
+~Semaphore	include/VimbaCPP/Source/Semaphore.cpp	/^Semaphore::~Semaphore()$/;"	f	class:AVT::VmbAPI::Semaphore
+~TriggerNode	src/trigger_node.cpp	/^TriggerNode::~TriggerNode()$/;"	f	class:trigger::TriggerNode
+~VimbaSystem	include/VimbaCPP/Source/VimbaSystem.cpp	/^VimbaSystem::~VimbaSystem()$/;"	f	class:AVT::VmbAPI::VimbaSystem
+~ref_count	include/VimbaCPP/Include/SharedPointer_impl.h	/^    ref_count<T>::~ref_count()$/;"	f	class:AVT::VmbAPI::ref_count
+~ref_count_base	include/VimbaCPP/Include/SharedPointer.h	/^        virtual ~ref_count_base() {;}$/;"	f	class:AVT::VmbAPI::ref_count_base
+~shared_ptr	include/VimbaCPP/Include/SharedPointer_impl.h	/^    shared_ptr<T>::~shared_ptr()$/;"	f	class:AVT::VmbAPI::shared_ptr

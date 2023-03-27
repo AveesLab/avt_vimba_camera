@@ -110,6 +110,7 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
       }
       img.header.frame_id = ci.header.frame_id;
       img.header.stamp = ci.header.stamp;
+      RCLCPP_INFO(this->get_logger(), "Publish Image");
       camera_info_pub_.publish(img, ci);
     }
     else

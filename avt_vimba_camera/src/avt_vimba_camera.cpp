@@ -134,7 +134,7 @@ void AvtVimbaCamera::start(const std::string& ip_str, const std::string& guid_st
   if (cam_int_type == VmbInterfaceEthernet)
   {
     runCommand("GVSPAdjustPacketSize");
-  }
+  }  
 
   std::string trigger_source;
   getFeatureValue("TriggerSource", trigger_source);
@@ -163,25 +163,41 @@ void AvtVimbaCamera::startImaging()
   if (!streaming_)
   {
     // Start streaming
-    VmbErrorType err = vimba_camera_ptr_->StartContinuousImageAcquisition(3, IFrameObserverPtr(frame_obs_ptr_));
-    if (err == VmbErrorSuccess)
+//    VmbErrorType err = vimba_camera_ptr_->StartContinuousImageAcquisition(3, IFrameObserverPtr(frame_obs_ptr_));
+    FeaturePtr pFeature;
+    VmbInt64_t nPLS;
+    FramePtrVector frames(3);
+    vimba_camera_ptr_->GetFeatureByName("PayloadSize", pFeature);
+    pFeature->GetValue(nPLS);
+    for (FramePtrVector::iterator iter=frames.begin(); frames.end()!=iter; ++iter)
     {
-      diagnostic_msg_ = "Starting continuous image acquisition";
-      RCLCPP_INFO_STREAM(nh_->get_logger(), "Starting continuous image acquisition ...");
-      streaming_ = true;
-      camera_state_ = OK;
+      (*iter).reset(new Frame(nPLS));
+      (*iter)->RegisterObserver(IFrameObserverPtr(frame_obs_ptr_));
+      vimba_camera_ptr_->AnnounceFrame(*iter);
     }
-    else
+    vimba_camera_ptr_->StartCapture();
+    for (FramePtrVector::iterator iter=frames.begin(); frames.end()!=iter; ++iter)
     {
-      diagnostic_msg_ = "Could not start continuous image acquisition. Error: " + api_.errorCodeToMessage(err);
-      RCLCPP_ERROR_STREAM(nh_->get_logger(), "Could not start continuous image acquisition. "
-                                                 << "\n Error: " << api_.errorCodeToMessage(err));
-      camera_state_ = ERROR;
-    }
-  }
-  else
-  {
-    RCLCPP_WARN_STREAM(nh_->get_logger(), "Start imaging called, but the camera is already imaging.");
+      vimba_camera_ptr_->QueueFrame(*iter);
+    } 
+//    if (err == VmbErrorSuccess)
+//    {
+//      diagnostic_msg_ = "Starting continuous image acquisition";
+//      RCLCPP_INFO_STREAM(nh_->get_logger(), "Starting continuous image acquisition ...");
+//      streaming_ = true;
+//      camera_state_ = OK;
+//    }
+//    else
+//    {
+//      diagnostic_msg_ = "Could not start continuous image acquisition. Error: " + api_.errorCodeToMessage(err);
+//      RCLCPP_ERROR_STREAM(nh_->get_logger(), "Could not start continuous image acquisition. "
+//                                                 << "\n Error: " << api_.errorCodeToMessage(err));
+//      camera_state_ = ERROR;
+//    }
+//  }
+//  else
+//  {
+//    RCLCPP_WARN_STREAM(nh_->get_logger(), "Start imaging called, but the camera is already imaging.");
   }
   updater_.force_update();
 }
@@ -244,7 +260,12 @@ CameraPtr AvtVimbaCamera::openCamera(const std::string& id_str)
   }
 
   // open camera
-  err = camera->Open(VmbAccessModeRead);
+  err = camera->Open(VmbAccessModeFull);
+  if (err != VmbErrorSuccess)
+  {
+    RCLCPP_WARN_STREAM(nh_->get_logger(), "Could not open camera. Switch access mode to read");
+    err = camera->Open(VmbAccessModeRead);
+  }
   while (err != VmbErrorSuccess && keepRunning)
   {
     if (keepRunning)

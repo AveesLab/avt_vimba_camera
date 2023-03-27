@@ -14,7 +14,7 @@
     # feature/ActionSelector: 0
     # feature/BalanceRatioAbs: 2.33
     # feature/BalanceRatioSelector: Red
-    feature/BalanceWhiteAuto: 'On'
+    feature/BalanceWhiteAuto: 'Continuous'
     # feature/BalanceWhiteAutoAdjustTol: 5
     # feature/BalanceWhiteAutoRate: 100
     # feature/BandwidthControlMode: StreamBytesPerSecond
@@ -25,7 +25,7 @@
     # feature/ChunkModeActive: false
     # feature/ColorTransformationMode: 'Off'
     # feature/ColorTransformationSelector: RGBtoRGB
-    # feature/ColorTransformationValue: 1.0
+    feature/ColorTransformationValue: 1.0
     # feature/ColorTransformationValueSelector: Gain00
     # feature/DSPSubregionBottom: 1544
     # feature/DSPSubregionLeft: 0
@@ -38,7 +38,7 @@
     # feature/EventNotification: 'Off'
     # feature/EventSelector: AcquisitionStart
     # feature/EventsEnable1: 0
-    feature/ExposureAuto: 'On'
+    feature/ExposureAuto: 'Continuous'
     # feature/ExposureAutoAdjustTol: 5
     # feature/ExposureAutoAlg: Mean
     # feature/ExposureAutoMax: 499997
@@ -51,8 +51,8 @@
     # feature/GVCPCmdRetries: 5
     # feature/GVCPCmdTimeout: 250
     # feature/GVSPBurstSize: 1
-    # feature/GVSPDriver: Socket
-    # feature/GVSPHostReceiveBufferSize: 67108864
+    feature/GVSPDriver: Filter
+    feature/GVSPHostReceiveBufferSize: 26214400
     # feature/GVSPMaxLookBack: 30
     # feature/GVSPMaxRequests: 1
     # feature/GVSPMaxWaitSize: 100
@@ -61,7 +61,7 @@
     # feature/GVSPTiltingSize: 100
     # feature/GVSPTimeout: 70
     # feature/Gain: 0.0
-    feature/GainAuto: 'On'
+    feature/GainAuto: 'Continuous'
     # feature/GainAutoAdjustTol: 5
     # feature/GainAutoMax: 40.0
     feature/GainAutoMin: 0.0
@@ -107,7 +107,7 @@
     # feature/SyncOutSource: Exposing
     # feature/TriggerActivation: RisingEdge
     feature/TriggerDelayAbs: 0.0
-    feature/TriggerMode: 'On'
+    feature/TriggerMode: 'Off'
     # feature/TriggerOverlap: 'Off'
     feature/TriggerSelector: FrameStart
     feature/TriggerSource: Freerun
