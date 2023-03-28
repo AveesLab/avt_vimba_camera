@@ -162,42 +162,73 @@ void AvtVimbaCamera::startImaging()
 {
   if (!streaming_)
   {
+    VmbErrorType err;
     // Start streaming
-//    VmbErrorType err = vimba_camera_ptr_->StartContinuousImageAcquisition(3, IFrameObserverPtr(frame_obs_ptr_));
-    FeaturePtr pFeature;
-    VmbInt64_t nPLS;
-    FramePtrVector frames(3);
-    vimba_camera_ptr_->GetFeatureByName("PayloadSize", pFeature);
-    pFeature->GetValue(nPLS);
-    for (FramePtrVector::iterator iter=frames.begin(); frames.end()!=iter; ++iter)
+    if (access_type_ == VmbAccessModeFull)
     {
-      (*iter).reset(new Frame(nPLS));
-      (*iter)->RegisterObserver(IFrameObserverPtr(frame_obs_ptr_));
-      vimba_camera_ptr_->AnnounceFrame(*iter);
+      err = vimba_camera_ptr_->StartContinuousImageAcquisition(3, IFrameObserverPtr(frame_obs_ptr_));
+ 
+      if (err == VmbErrorSuccess)
+      {
+        diagnostic_msg_ = "Starting continuous image acquisition";
+        RCLCPP_INFO_STREAM(nh_->get_logger(), "Starting continuous image acquisition ...");
+        streaming_ = true;
+        camera_state_ = OK;
+      }
+      else
+      {
+        diagnostic_msg_ = "Could not start continuous image acquisition. Error: " + api_.errorCodeToMessage(err);
+        RCLCPP_ERROR_STREAM(nh_->get_logger(), "Could not start continuous image acquisition. "
+                                                   << "\n Error: " << api_.errorCodeToMessage(err));
+        camera_state_ = ERROR;
+      }  
     }
-    vimba_camera_ptr_->StartCapture();
-    for (FramePtrVector::iterator iter=frames.begin(); frames.end()!=iter; ++iter)
+    else if (access_type_ == VmbAccessModeRead)
     {
-      vimba_camera_ptr_->QueueFrame(*iter);
-    } 
-//    if (err == VmbErrorSuccess)
-//    {
-//      diagnostic_msg_ = "Starting continuous image acquisition";
-//      RCLCPP_INFO_STREAM(nh_->get_logger(), "Starting continuous image acquisition ...");
-//      streaming_ = true;
-//      camera_state_ = OK;
-//    }
-//    else
-//    {
-//      diagnostic_msg_ = "Could not start continuous image acquisition. Error: " + api_.errorCodeToMessage(err);
-//      RCLCPP_ERROR_STREAM(nh_->get_logger(), "Could not start continuous image acquisition. "
-//                                                 << "\n Error: " << api_.errorCodeToMessage(err));
-//      camera_state_ = ERROR;
-//    }
-//  }
-//  else
-//  {
-//    RCLCPP_WARN_STREAM(nh_->get_logger(), "Start imaging called, but the camera is already imaging.");
+      FeaturePtr pFeature;
+      VmbInt64_t nPLS;
+      FramePtrVector frames(3);
+
+      err = vimba_camera_ptr_->GetFeatureByName("PayloadSize", pFeature);
+
+      if (err == VmbErrorSuccess)
+      {
+        pFeature->GetValue(nPLS);
+        for (FramePtrVector::iterator iter=frames.begin(); frames.end()!=iter; ++iter)
+        {
+          (*iter).reset(new Frame(nPLS));
+          (*iter)->RegisterObserver(IFrameObserverPtr(frame_obs_ptr_));
+          vimba_camera_ptr_->AnnounceFrame(*iter);
+        }
+  
+        // Start the capture engine (API)
+        err = vimba_camera_ptr_->StartCapture();
+        if (err == VmbErrorSuccess)
+        {
+          for (FramePtrVector::iterator iter=frames.begin(); frames.end()!=iter; ++iter)
+          {
+            // Put frame into the frame queue
+            vimba_camera_ptr_->QueueFrame(*iter);
+          }
+        }
+        else
+        {
+          diagnostic_msg_ = "Could not start capture engine. Error: " + api_.errorCodeToMessage(err);
+          RCLCPP_ERROR_STREAM(nh_->get_logger(), "Could not start capture engine. " << "\n Error: " << api_.errorCodeToMessage(err));
+          camera_state_ = ERROR;       
+        }
+      }
+      else
+      {
+        diagnostic_msg_ = "Could not get value. Error: " + api_.errorCodeToMessage(err);
+        RCLCPP_ERROR_STREAM(nh_->get_logger(), "Could not get value. " << "\n Error: " << api_.errorCodeToMessage(err));
+        camera_state_ = ERROR; 
+      }
+    }
+  }
+  else
+  {
+    RCLCPP_WARN_STREAM(nh_->get_logger(), "Start imaging called, but the camera is already imaging.");
   }
   updater_.force_update();
 }
@@ -265,22 +296,29 @@ CameraPtr AvtVimbaCamera::openCamera(const std::string& id_str)
   {
     RCLCPP_WARN_STREAM(nh_->get_logger(), "Could not open camera. Switch access mode to read");
     err = camera->Open(VmbAccessModeRead);
+ 
+    while (err != VmbErrorSuccess && keepRunning)
+    {
+      if (keepRunning)
+      {
+        RCLCPP_WARN_STREAM(nh_->get_logger(), "Could not open camera. Retrying every two seconds ...");
+        err = camera->Open(VmbAccessModeRead);
+        std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+      }
+      else
+      {
+        RCLCPP_ERROR_STREAM(nh_->get_logger(),
+                            "Could not open camera " << id_str << "\n Error: " << api_.errorCodeToMessage(err));
+        camera_state_ = CAMERA_NOT_FOUND;
+        return camera;
+      }
+    }
+
+    access_type_ = VmbAccessModeRead;
   }
-  while (err != VmbErrorSuccess && keepRunning)
+  else
   {
-    if (keepRunning)
-    {
-      RCLCPP_WARN_STREAM(nh_->get_logger(), "Could not open camera. Retrying every two seconds ...");
-      err = camera->Open(VmbAccessModeRead);
-      std::this_thread::sleep_for(std::chrono::milliseconds(2000));
-    }
-    else
-    {
-      RCLCPP_ERROR_STREAM(nh_->get_logger(),
-                          "Could not open camera " << id_str << "\n Error: " << api_.errorCodeToMessage(err));
-      camera_state_ = CAMERA_NOT_FOUND;
-      return camera;
-    }
+    access_type_ = VmbAccessModeFull;
   }
 
   std::string cam_id, cam_name;

@@ -130,6 +130,7 @@ private:
   std::mutex config_mutex_;
 
   CameraState camera_state_;
+  VmbAccessModeType access_type_;
   bool opened_;
   bool streaming_;
   bool force_stopped_;
