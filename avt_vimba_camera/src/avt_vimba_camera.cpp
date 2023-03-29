@@ -237,20 +237,55 @@ void AvtVimbaCamera::stopImaging()
 {
   if (streaming_ || on_init_)
   {
-    VmbErrorType err = vimba_camera_ptr_->StopContinuousImageAcquisition();
-    if (err == VmbErrorSuccess)
+    VmbErrorType err;
+    if (access_type_ == VmbAccessModeFull)
     {
-      diagnostic_msg_ = "Acquisition stopped";
-      RCLCPP_INFO_STREAM(nh_->get_logger(), "Acquisition stoppped ...");
-      streaming_ = false;
-      camera_state_ = IDLE;
+      err = vimba_camera_ptr_->StopContinuousImageAcquisition();
+      if (err == VmbErrorSuccess)
+      {
+        diagnostic_msg_ = "Acquisition stopped";
+        RCLCPP_INFO_STREAM(nh_->get_logger(), "Acquisition stoppped ...");
+        streaming_ = false;
+        camera_state_ = IDLE;
+      }
+      else
+      {
+        diagnostic_msg_ = "Could not stop image acquisition. Error: " + api_.errorCodeToMessage(err);
+        RCLCPP_ERROR_STREAM(nh_->get_logger(), "Could not stop image acquisition."
+                                                   << "\n Error: " << api_.errorCodeToMessage(err));
+        camera_state_ = ERROR;
+      }
     }
     else
     {
-      diagnostic_msg_ = "Could not stop image acquisition. Error: " + api_.errorCodeToMessage(err);
-      RCLCPP_ERROR_STREAM(nh_->get_logger(), "Could not stop image acquisition."
-                                                 << "\n Error: " << api_.errorCodeToMessage(err));
-      camera_state_ = ERROR;
+      err = vimba_camera_ptr_->EndCapture();
+      if (err == VmbErrorSuccess)
+      {
+        err = vimba_camera_ptr_->FlushQueue();
+        if (err == VmbErrorSuccess)
+        {
+          err = vimba_camera_ptr_->RevokeAllFrames();
+          if (err == VmbErrorSuccess)
+          {
+            FramePtrVector frames(3);
+            for (FramePtrVector::iterator iter = frames.begin(); frames.end() != iter; ++iter)
+            {
+              (*iter)->UnregisterObserver();
+            }
+            diagnostic_msg_ = "Acquisition stopped";
+            RCLCPP_INFO_STREAM(nh_->get_logger(), "Acquisition stoppped ...");
+            streaming_ = false;
+            camera_state_ = IDLE;
+          }
+        }
+      }
+      if (err != VmbErrorSuccess)
+      {
+        diagnostic_msg_ = "Could not stop image acquisition. Error: " + api_.errorCodeToMessage(err);
+        RCLCPP_ERROR_STREAM(nh_->get_logger(), "Could not stop image acquisition."
+                                                   << "\n Error: " << api_.errorCodeToMessage(err));
+        camera_state_ = ERROR; 
+      }
     }
   }
   else
