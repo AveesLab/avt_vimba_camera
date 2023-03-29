@@ -187,14 +187,14 @@ void AvtVimbaCamera::startImaging()
     {
       FeaturePtr pFeature;
       VmbInt64_t nPLS;
-      FramePtrVector frames(3);
+      vimba_frames_.resize(3);
 
       err = vimba_camera_ptr_->GetFeatureByName("PayloadSize", pFeature);
 
       if (err == VmbErrorSuccess)
       {
         pFeature->GetValue(nPLS);
-        for (FramePtrVector::iterator iter=frames.begin(); frames.end()!=iter; ++iter)
+        for (FramePtrVector::iterator iter = vimba_frames_.begin(); vimba_frames_.end()!=iter; ++iter)
         {
           (*iter).reset(new Frame(nPLS));
           (*iter)->RegisterObserver(IFrameObserverPtr(frame_obs_ptr_));
@@ -205,7 +205,7 @@ void AvtVimbaCamera::startImaging()
         err = vimba_camera_ptr_->StartCapture();
         if (err == VmbErrorSuccess)
         {
-          for (FramePtrVector::iterator iter=frames.begin(); frames.end()!=iter; ++iter)
+          for (FramePtrVector::iterator iter = vimba_frames_.begin(); vimba_frames_.end()!=iter; ++iter)
           {
             // Put frame into the frame queue
             vimba_camera_ptr_->QueueFrame(*iter);
@@ -267,8 +267,7 @@ void AvtVimbaCamera::stopImaging()
           err = vimba_camera_ptr_->RevokeAllFrames();
           if (err == VmbErrorSuccess)
           {
-            FramePtrVector frames(3);
-            for (FramePtrVector::iterator iter = frames.begin(); frames.end() != iter; ++iter)
+            for (FramePtrVector::iterator iter = vimba_frames_.begin(); vimba_frames_.end() != iter; ++iter)
             {
               (*iter)->UnregisterObserver();
             }

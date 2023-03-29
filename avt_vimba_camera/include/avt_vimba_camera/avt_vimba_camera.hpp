@@ -123,6 +123,8 @@ private:
   CameraPtr vimba_camera_ptr_;
   // Current frame
   FramePtr vimba_frame_ptr_;
+  // frame buffer
+  FramePtrVector vimba_frames_;
   // Tick frequency of the on-board clock. Equal to 1 GHz when PTP is in use.
   VmbInt64_t vimba_timestamp_tick_freq_ = 1;
 
