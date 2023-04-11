@@ -9,7 +9,12 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic)
 endif()
 
+# Find required packages
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+
 find_package(ament_cmake_auto REQUIRED)
+find_package(cv_bridge REQUIRED)
 
 ament_auto_find_build_dependencies()
 

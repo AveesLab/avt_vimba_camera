@@ -6,7 +6,7 @@
 /**:
   ros__parameters:
     feature/AcquisitionFrameCount: 1
-    feature/AcquisitionFrameRateAbs: 33.3122 
+    feature/AcquisitionFrameRateAbs: 20.
     # feature/AcquisitionMode: Continuous
     feature/ActionDeviceKey: 0
     feature/ActionGroupKey: 0
@@ -35,7 +35,7 @@
     # feature/DecimationVertical: 1
     # feature/DeviceTemperatureSelector: Main
     # feature/DeviceUserID: ''
-    # feature/EventNotification: 'Off'
+    feature/EventNotification: 'On'
     # feature/EventSelector: AcquisitionStart
     # feature/EventsEnable1: 0
     feature/ExposureAuto: 'Continuous'
@@ -86,7 +86,7 @@
     # feature/OffsetY: 0
     # feature/PixelFormat: BayerRG8
     # feature/PtpAcquisitionGateTime: 0
-    # feature/PtpMode: 'Off'
+    feature/PtpMode: 'Auto'
     # feature/RecorderPreEventCount: 0
     # feature/ReverseX: false
     # feature/ReverseY: false

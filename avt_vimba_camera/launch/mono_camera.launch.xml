@@ -3,10 +3,10 @@
   <!-- Driver parameters, these parameters affect the way the ROS driver works -->
   <arg name="name" default="camera"/>
   <arg name="frame_id" default="$(var name)"/>
-  <arg name="ip" default="169.254.1.1"/>
+  <arg name="ip" default="169.254.100.66"/>
   <arg name="guid" default=""/>
-  <arg name="use_measurement_time" default="false"/>
-  <arg name="ptp_offset" default="1"/>
+  <arg name="use_measurement_time" default="true"/>
+  <arg name="ptp_offset" default="0"/>
   <arg name="camera_info_url" default="file://$(find-pkg-share avt_vimba_camera)/calibrations/calibration_example.yaml"/>
   <arg name="image_proc" default="false"/>
 

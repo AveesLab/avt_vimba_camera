@@ -36,6 +36,13 @@
 #include <avt_vimba_camera_msgs/srv/load_settings.hpp>
 #include <avt_vimba_camera_msgs/srv/save_settings.hpp>
 
+// OpenCv
+#include <opencv2/imgproc/imgproc.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/objdetect/objdetect.hpp>
+#include <cv_bridge/cv_bridge.h>
+
+
 using namespace std::placeholders;
 
 namespace avt_vimba_camera
@@ -43,7 +50,7 @@ namespace avt_vimba_camera
 MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam_(std::shared_ptr<rclcpp::Node>(dynamic_cast<rclcpp::Node * >(this)))
 {
   // Set the image publisher before streaming
-  camera_info_pub_ = image_transport::create_camera_publisher(this, "~/image", rmw_qos_profile_system_default);
+  camera_info_pub_ = image_transport::create_camera_publisher(this, "~/image", rmw_qos_profile_sensor_data);
 
   // Set the frame callback
   cam_.setCallback(std::bind(&avt_vimba_camera::MonoCameraNode::frameCallback, this, _1));
@@ -95,23 +102,46 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     sensor_msgs::msg::Image img;
     if (api_.frameToImage(vimba_frame_ptr, img))
     {
-      sensor_msgs::msg::CameraInfo ci = cam_.getCameraInfo();
+      sensor_msgs::msg::CameraInfo::SharedPtr ci = std::make_shared<sensor_msgs::msg::CameraInfo>(cam_.getCameraInfo());
       // Note: getCameraInfo() doesn't fill in header frame_id or stamp
-      ci.header.frame_id = frame_id_;
+      ci->header.frame_id = frame_id_;
       if (use_measurement_time_)
       {
         VmbUint64_t frame_timestamp;
         vimba_frame_ptr->GetTimestamp(frame_timestamp);
-        ci.header.stamp = rclcpp::Time(cam_.getTimestampRealTime(frame_timestamp)) + rclcpp::Duration(ptp_offset_, 0);
+        ci->header.stamp = rclcpp::Time(cam_.getTimestampRealTime(frame_timestamp)) + rclcpp::Duration(ptp_offset_, 0);
+        RCLCPP_INFO(this->get_logger(), "capture time : %lf sec.", cam_.getTimestampRealTime(frame_timestamp) + rclcpp::Duration(ptp_offset_, 0).seconds());
       }
       else
       {
-        ci.header.stamp = ros_time;
+        ci->header.stamp = ros_time;
       }
-      img.header.frame_id = ci.header.frame_id;
-      img.header.stamp = ci.header.stamp;
+
+      img.header.frame_id = ci->header.frame_id;
+      img.header.stamp = ci->header.stamp;
+
+      VmbUint64_t frame_ID;
+      vimba_frame_ptr->GetFrameID(frame_ID);
+      RCLCPP_INFO(this->get_logger(), "Frame ID : %d .", frame_ID);
+
+//      cv_bridge::CvImagePtr cv_ptr;
+//      try
+//      {
+//        cv_ptr = cv_bridge::toCvCopy(img);
+//        cv::resize(cv_ptr->image, cv_ptr->image, cv::Size(640,480));
+//      }
+//      catch (cv::Exception & e)
+//      {
+//        RCLCPP_INFO(this->get_logger(), "cv_bridge exception: %s", e.what());
+//      }
+
+      rclcpp::Time ros_time = this->get_clock()->now();
+      img.header.frame_id = ci->header.frame_id;
+      img.header.stamp = ci->header.stamp;
+
       RCLCPP_INFO(this->get_logger(), "Publish Image");
-      camera_info_pub_.publish(img, ci);
+//      camera_info_pub_.publish(cv_ptr->toImageMsg(), ci);
+      camera_info_pub_.publish(img, *ci);
     }
     else
     {
