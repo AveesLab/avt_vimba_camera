@@ -31,6 +31,7 @@
 /// THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <thread>
+#include <cmath>
 
 #include <avt_vimba_camera/mono_camera_node.hpp>
 #include <avt_vimba_camera_msgs/srv/load_settings.hpp>
@@ -104,12 +105,12 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     {
       sensor_msgs::msg::CameraInfo::SharedPtr ci = std::make_shared<sensor_msgs::msg::CameraInfo>(cam_.getCameraInfo());
       // Note: getCameraInfo() doesn't fill in header frame_id or stamp
-      ci->header.frame_id = frame_id_;
+      ci->header.frame_id = "2";
       if (use_measurement_time_)
       {
         VmbUint64_t frame_timestamp;
         vimba_frame_ptr->GetTimestamp(frame_timestamp);
-        ci->header.stamp = rclcpp::Time(cam_.getTimestampRealTime(frame_timestamp)) + rclcpp::Duration(ptp_offset_, 0);
+        ci->header.stamp = rclcpp::Time(cam_.getTimestampRealTime(frame_timestamp) * 1.0e+9) + rclcpp::Duration(ptp_offset_, 0);
         RCLCPP_INFO(this->get_logger(), "capture time : %lf sec.", cam_.getTimestampRealTime(frame_timestamp) + rclcpp::Duration(ptp_offset_, 0).seconds());
       }
       else
