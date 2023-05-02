@@ -79,6 +79,7 @@ void MonoCameraNode::loadParams()
   frame_id_ = this->declare_parameter("frame_id", "");
   use_measurement_time_ = this->declare_parameter("use_measurement_time", false);
   ptp_offset_ = this->declare_parameter("ptp_offset", 0);
+  node_index_ = this->declare_parameter("node_index", 0);
 
   RCLCPP_INFO(this->get_logger(), "Parameters loaded");
 }
@@ -105,7 +106,7 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     {
       sensor_msgs::msg::CameraInfo::SharedPtr ci = std::make_shared<sensor_msgs::msg::CameraInfo>(cam_.getCameraInfo());
       // Note: getCameraInfo() doesn't fill in header frame_id or stamp
-      ci->header.frame_id = "2";
+      ci->header.frame_id = std::to_string(this->node_index_);
       if (use_measurement_time_)
       {
         VmbUint64_t frame_timestamp;
@@ -118,7 +119,7 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
         ci->header.stamp = ros_time;
       }
 
-      img.header.frame_id = ci->header.frame_id;
+      img.header.frame_id = std::to_string(this->node_index_);
       img.header.stamp = ci->header.stamp;
 
       VmbUint64_t frame_ID;
