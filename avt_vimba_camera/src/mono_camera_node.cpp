@@ -107,6 +107,7 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
       sensor_msgs::msg::CameraInfo::SharedPtr ci = std::make_shared<sensor_msgs::msg::CameraInfo>(cam_.getCameraInfo());
       // Note: getCameraInfo() doesn't fill in header frame_id or stamp
       ci->header.frame_id = std::to_string(this->node_index_);
+     
       if (use_measurement_time_)
       {
         VmbUint64_t frame_timestamp;
@@ -140,7 +141,7 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
       rclcpp::Time ros_time = this->get_clock()->now();
       img.header.frame_id = ci->header.frame_id;
       img.header.stamp = ci->header.stamp;
-
+      img.encoding = "bayer_bggr8";
       RCLCPP_INFO(this->get_logger(), "Publish Image");
 //      camera_info_pub_.publish(cv_ptr->toImageMsg(), ci);
       camera_info_pub_.publish(img, *ci);
