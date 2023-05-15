@@ -68,8 +68,11 @@ private:
   bool use_measurement_time_;
   int32_t ptp_offset_;
   int32_t node_index_;
+  bool use_image_transport_;
+  bool image_crop_;
 
   image_transport::CameraPublisher camera_info_pub_;
+  rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr image_publisher_;
   std::shared_ptr<camera_info_manager::CameraInfoManager> info_man_;
   
   rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr start_srv_;

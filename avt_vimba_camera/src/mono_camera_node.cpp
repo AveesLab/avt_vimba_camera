@@ -50,8 +50,12 @@ namespace avt_vimba_camera
 {
 MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam_(std::shared_ptr<rclcpp::Node>(dynamic_cast<rclcpp::Node * >(this)))
 {
+  // QoS
+  rclcpp::QoS system_qos = rclcpp::QoS(rclcpp::SystemDefaultsQoS());
+
   // Set the image publisher before streaming
   camera_info_pub_ = image_transport::create_camera_publisher(this, "~/image", rmw_qos_profile_sensor_data);
+  image_publisher_ = this->create_publisher<sensor_msgs::msg::Image>("~/raw_image", system_qos);
 
   // Set the frame callback
   cam_.setCallback(std::bind(&avt_vimba_camera::MonoCameraNode::frameCallback, this, _1));
@@ -80,6 +84,8 @@ void MonoCameraNode::loadParams()
   use_measurement_time_ = this->declare_parameter("use_measurement_time", false);
   ptp_offset_ = this->declare_parameter("ptp_offset", 0);
   node_index_ = this->declare_parameter("node_index", 0);
+  use_image_transport_ = this->declare_parameter("use_image_transport", true);
+  image_crop_ = this->declare_parameter("image_crop", false);
 
   RCLCPP_INFO(this->get_logger(), "Parameters loaded");
 }
@@ -99,58 +105,73 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
   rclcpp::Time ros_time = this->get_clock()->now();
 
   // getNumSubscribers() is not yet supported in Foxy, will be supported in later versions
-  // if (camera_info_pub_.getNumSubscribers() > 0)
+
+  sensor_msgs::msg::Image img;
+  if (api_.frameToImage(vimba_frame_ptr, img))
   {
-    sensor_msgs::msg::Image img;
-    if (api_.frameToImage(vimba_frame_ptr, img))
+    if (use_measurement_time_)
     {
-      sensor_msgs::msg::CameraInfo::SharedPtr ci = std::make_shared<sensor_msgs::msg::CameraInfo>(cam_.getCameraInfo());
-      // Note: getCameraInfo() doesn't fill in header frame_id or stamp
-      ci->header.frame_id = std::to_string(this->node_index_);
-     
-      if (use_measurement_time_)
-      {
-        VmbUint64_t frame_timestamp;
-        vimba_frame_ptr->GetTimestamp(frame_timestamp);
-        ci->header.stamp = rclcpp::Time(cam_.getTimestampRealTime(frame_timestamp) * 1.0e+9) + rclcpp::Duration(ptp_offset_, 0);
-        RCLCPP_INFO(this->get_logger(), "capture time : %lf sec.", cam_.getTimestampRealTime(frame_timestamp) + rclcpp::Duration(ptp_offset_, 0).seconds());
-      }
-      else
-      {
-        ci->header.stamp = ros_time;
-      }
-
       img.header.frame_id = std::to_string(this->node_index_);
-      img.header.stamp = ci->header.stamp;
 
-      VmbUint64_t frame_ID;
-      vimba_frame_ptr->GetFrameID(frame_ID);
-      RCLCPP_INFO(this->get_logger(), "Frame ID : %d .", frame_ID);
+      VmbUint64_t frame_timestamp;
+      vimba_frame_ptr->GetTimestamp(frame_timestamp);
+      img.header.stamp = rclcpp::Time(cam_.getTimestampRealTime(frame_timestamp) * 1.0e+9) + rclcpp::Duration(ptp_offset_, 0);
 
-//      cv_bridge::CvImagePtr cv_ptr;
-//      try
-//      {
-//        cv_ptr = cv_bridge::toCvCopy(img);
-//        cv::resize(cv_ptr->image, cv_ptr->image, cv::Size(640,480));
-//      }
-//      catch (cv::Exception & e)
-//      {
-//        RCLCPP_INFO(this->get_logger(), "cv_bridge exception: %s", e.what());
-//      }
-
-      rclcpp::Time ros_time = this->get_clock()->now();
-      img.header.frame_id = ci->header.frame_id;
-      img.header.stamp = ci->header.stamp;
-      img.encoding = "bayer_bggr8";
-      RCLCPP_INFO(this->get_logger(), "Publish Image");
-//      camera_info_pub_.publish(cv_ptr->toImageMsg(), ci);
-      camera_info_pub_.publish(img, *ci);
+      RCLCPP_INFO(this->get_logger(), "capture time : %lf sec.", cam_.getTimestampRealTime(frame_timestamp) + rclcpp::Duration(ptp_offset_, 0).seconds());
     }
     else
     {
-      RCLCPP_WARN_STREAM(this->get_logger(), "Function frameToImage returned 0. No image published.");
+      img.header.stamp = ros_time;
     }
+
+    if (image_crop_)
+    {
+      try
+      {
+        cv_bridge::CvImagePtr cv_ptr = cv_bridge::toCvCopy(img, img.encoding);
+        cv::Mat color_image;
+        cv::Mat resized_image;
+
+        cv::cvtColor(cv_ptr->image, color_image, cv::COLOR_BayerRG2RGB);
+        cv::resize(color_image, resized_image, cv::Size(640,480));
+
+        cv_bridge::CvImage cv_bridge = cv_bridge::CvImage(img.header, sensor_msgs::image_encodings::BGR8, resized_image);
+        img = *(cv_bridge.toImageMsg());
+      }
+      catch (cv::Exception & e)
+      {
+        RCLCPP_INFO(this->get_logger(), "cv_bridge exception: %s", e.what());
+      }
+    }
+
+    if (use_image_transport_)
+    {
+      // Note: getCameraInfo() doesn't fill in header frame_id or stamp
+      sensor_msgs::msg::CameraInfo::SharedPtr ci = std::make_shared<sensor_msgs::msg::CameraInfo>(cam_.getCameraInfo());
+      
+      ci->header.frame_id = img.header.frame_id;
+      ci->header.stamp = img.header.stamp;
+      ci->height = 480;
+      ci->width = 640;
+
+      camera_info_pub_.publish(img, *ci);
+      RCLCPP_INFO(this->get_logger(), "Publish image_transport image message");
+    }
+    else
+    {
+      image_publisher_->publish(img);
+      RCLCPP_INFO(this->get_logger(), "Publish sensor_msgs image message");
+    }
+
+    VmbUint64_t frame_ID;
+    vimba_frame_ptr->GetFrameID(frame_ID);
+    RCLCPP_INFO(this->get_logger(), "Frame ID : %d .", frame_ID);
   }
+  else
+  {
+    RCLCPP_WARN_STREAM(this->get_logger(), "Function frameToImage returned 0. No image published.");
+  }
+
 }
 
 void MonoCameraNode::startSrvCallback(const std::shared_ptr<rmw_request_id_t> request_header,
