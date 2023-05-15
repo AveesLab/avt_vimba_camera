@@ -107,6 +107,3 @@ ament_auto_package(INSTALL_TO_SHARE
   config
   launch
 )
-
-add_definitions(-DROS_MAX_SIZE=33554432)  # 32MB
-add_definitions(-DROS_MAX_SIZE=16777216)  # 16MB
