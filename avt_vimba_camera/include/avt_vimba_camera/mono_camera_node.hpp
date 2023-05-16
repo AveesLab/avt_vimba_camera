@@ -40,6 +40,7 @@
 #include <avt_vimba_camera_msgs/srv/detail/save_settings__struct.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/image.hpp>
+#include "sensor_msgs/msg/compressed_image.hpp"
 #include <sensor_msgs/msg/camera_info.hpp>
 #include <camera_info_manager/camera_info_manager.hpp>
 #include <image_transport/image_transport.hpp>
@@ -70,9 +71,15 @@ private:
   int32_t node_index_;
   bool use_image_transport_;
   bool image_crop_;
+  bool use_compressed_publisher_;
+
+  // use sensor_msgs::msg::Image
+  rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr raw_image_publisher_;
+
+  // use sensor_msgs::msg::CompressedImage
+  rclcpp::Publisher<sensor_msgs::msg::CompressedImage>::SharedPtr compressed_raw_image_publisher_;
 
   image_transport::CameraPublisher camera_info_pub_;
-  rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr image_publisher_;
   std::shared_ptr<camera_info_manager::CameraInfoManager> info_man_;
   
   rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr start_srv_;

@@ -50,23 +50,39 @@ namespace avt_vimba_camera
 {
 MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam_(std::shared_ptr<rclcpp::Node>(dynamic_cast<rclcpp::Node * >(this)))
 {
+  loadParams();
+
   // QoS
   rclcpp::QoS system_qos = rclcpp::QoS(rclcpp::SystemDefaultsQoS());
 
   // Set the image publisher before streaming
-  camera_info_pub_ = image_transport::create_camera_publisher(this, "~/image", rmw_qos_profile_sensor_data);
-  image_publisher_ = this->create_publisher<sensor_msgs::msg::Image>("~/raw_image", system_qos);
+  if (this->use_image_transport_)
+  {
+    this->camera_info_pub_ = image_transport::create_camera_publisher(this, "~/image", rmw_qos_profile_sensor_data);
+  }
+  else
+  {
+    if (this->use_compressed_publisher_)
+    {
+      this->compressed_raw_image_publisher_ = this->create_publisher<sensor_msgs::msg::CompressedImage>("~/compressed_raw_image", system_qos);
+    }
+    else
+    {
+      this->raw_image_publisher_ = this->create_publisher<sensor_msgs::msg::Image>("~/raw_image", system_qos);
+    }
+    
+  }
 
   // Set the frame callback
   cam_.setCallback(std::bind(&avt_vimba_camera::MonoCameraNode::frameCallback, this, _1));
 
+/* Don't use service
   start_srv_ = create_service<std_srvs::srv::Trigger>("~/start_stream", std::bind(&MonoCameraNode::startSrvCallback, this, _1, _2, _3));
   stop_srv_ = create_service<std_srvs::srv::Trigger>("~/stop_stream", std::bind(&MonoCameraNode::stopSrvCallback, this, _1, _2, _3));
 
   load_srv_ = create_service<avt_vimba_camera_msgs::srv::LoadSettings>("~/load_settings", std::bind(&MonoCameraNode::loadSrvCallback, this, _1, _2, _3));
   save_srv_ = create_service<avt_vimba_camera_msgs::srv::SaveSettings>("~/save_settings", std::bind(&MonoCameraNode::saveSrvCallback, this, _1, _2, _3));
-
-  loadParams();
+*/
 }
 
 MonoCameraNode::~MonoCameraNode()
@@ -86,6 +102,7 @@ void MonoCameraNode::loadParams()
   node_index_ = this->declare_parameter("node_index", 0);
   use_image_transport_ = this->declare_parameter("use_image_transport", true);
   image_crop_ = this->declare_parameter("image_crop", false);
+  use_compressed_publisher_ = this->declare_parameter("use_compressed_publisher", false);
 
   RCLCPP_INFO(this->get_logger(), "Parameters loaded");
 }
@@ -100,6 +117,27 @@ void MonoCameraNode::start()
   cam_.startImaging();
 }
 
+void RGB2BayerRG(cv::Mat& rgb, cv::Mat& bayerbg)
+{
+	if (bayerbg.empty() || bayerbg.rows != rgb.rows || bayerbg.cols != rgb.cols)
+		bayerbg = cv::Mat(rgb.rows, rgb.cols, CV_8UC1);
+
+	for (int height = 0; height < rgb.rows; height++)
+	{
+		for (int width = 0; width < rgb.cols; width++)
+		{
+			cv::Vec3b pix = rgb.at<cv::Vec3b>(height, width);
+			if ((height % 2 == 1) && (width % 2 == 1))
+				bayerbg.at<uchar>(height, width) = pix[0];
+			else if (((height % 2 == 1) && (width % 2 == 0)) ||
+				((height % 2 == 0) && (width % 2 == 1)))
+				bayerbg.at<uchar>(height, width) = pix[1];
+			else
+				bayerbg.at<uchar>(height, width) = pix[2];
+		}
+	}
+}
+
 void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
 {
   rclcpp::Time ros_time = this->get_clock()->now();
@@ -109,10 +147,9 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
   sensor_msgs::msg::Image img;
   if (api_.frameToImage(vimba_frame_ptr, img))
   {
+    // Set time stamp
     if (use_measurement_time_)
     {
-      img.header.frame_id = std::to_string(this->node_index_);
-
       VmbUint64_t frame_timestamp;
       vimba_frame_ptr->GetTimestamp(frame_timestamp);
       img.header.stamp = rclcpp::Time(cam_.getTimestampRealTime(frame_timestamp) * 1.0e+9) + rclcpp::Duration(ptp_offset_, 0);
@@ -124,6 +161,10 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
       img.header.stamp = ros_time;
     }
 
+    // Set frame_id (= node index)
+    img.header.frame_id = std::to_string(this->node_index_);
+
+    cv_bridge::CvImage cv_bridge;
     if (image_crop_)
     {
       try
@@ -131,11 +172,14 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
         cv_bridge::CvImagePtr cv_ptr = cv_bridge::toCvCopy(img, img.encoding);
         cv::Mat color_image;
         cv::Mat resized_image;
+        cv::Mat resized_bayer_rggb8_image;
 
+        RCLCPP_INFO(this->get_logger(), "Image crop to 640x480");
         cv::cvtColor(cv_ptr->image, color_image, cv::COLOR_BayerRG2RGB);
         cv::resize(color_image, resized_image, cv::Size(640,480));
+        RGB2BayerRG(resized_image, resized_bayer_rggb8_image);
 
-        cv_bridge::CvImage cv_bridge = cv_bridge::CvImage(img.header, sensor_msgs::image_encodings::BGR8, resized_image);
+        cv_bridge = cv_bridge::CvImage(img.header, sensor_msgs::image_encodings::BAYER_RGGB8, resized_bayer_rggb8_image);
         img = *(cv_bridge.toImageMsg());
       }
       catch (cv::Exception & e)
@@ -151,16 +195,27 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
       
       ci->header.frame_id = img.header.frame_id;
       ci->header.stamp = img.header.stamp;
-      ci->height = 480;
-      ci->width = 640;
+      if (image_crop_)
+      {
+        ci->height = 480;
+        ci->width = 640;
+      }
 
       camera_info_pub_.publish(img, *ci);
       RCLCPP_INFO(this->get_logger(), "Publish image_transport image message");
     }
     else
     {
-      image_publisher_->publish(img);
-      RCLCPP_INFO(this->get_logger(), "Publish sensor_msgs image message");
+      if (use_compressed_publisher_)
+      {
+        compressed_raw_image_publisher_->publish(*(cv_bridge.toCompressedImageMsg()));
+        RCLCPP_INFO(this->get_logger(), "Publish sensor_msgs image message");
+      }
+      else
+      {
+        raw_image_publisher_->publish(img);
+        RCLCPP_INFO(this->get_logger(), "Publish sensor_msgs image message");
+      }
     }
 
     VmbUint64_t frame_ID;
