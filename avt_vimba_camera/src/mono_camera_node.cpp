@@ -53,6 +53,7 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
   loadParams();
 
   // QoS
+  const auto QOS_RKL10V = rclcpp::QoS(rclcpp::KeepLast(10)).reliable().durability_volatile();
   rclcpp::QoS system_qos = rclcpp::QoS(rclcpp::SystemDefaultsQoS());
 
   // Set the image publisher before streaming
@@ -64,11 +65,11 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
   {
     if (this->use_compressed_publisher_)
     {
-      this->compressed_raw_image_publisher_ = this->create_publisher<sensor_msgs::msg::CompressedImage>("~/compressed_raw_image", system_qos);
+      this->compressed_raw_image_publisher_ = this->create_publisher<sensor_msgs::msg::CompressedImage>("~/compressed_raw_image", QOS_RKL10V);
     }
     else
     {
-      this->raw_image_publisher_ = this->create_publisher<sensor_msgs::msg::Image>("~/raw_image", system_qos);
+      this->raw_image_publisher_ = this->create_publisher<sensor_msgs::msg::Image>("~/raw_image", QOS_RKL10V);
     }
     
   }
