@@ -84,12 +84,16 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
   load_srv_ = create_service<avt_vimba_camera_msgs::srv::LoadSettings>("~/load_settings", std::bind(&MonoCameraNode::loadSrvCallback, this, _1, _2, _3));
   save_srv_ = create_service<avt_vimba_camera_msgs::srv::SaveSettings>("~/save_settings", std::bind(&MonoCameraNode::saveSrvCallback, this, _1, _2, _3));
 */
+
+  this->benchmark();
 }
 
 MonoCameraNode::~MonoCameraNode()
 {
   cam_.stop();
   camera_info_pub_.shutdown();
+
+  this->finish_benchmark();
 }
 
 void MonoCameraNode::loadParams()
@@ -165,6 +169,12 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     // Set frame_id (= node index)
     img.header.frame_id = std::to_string(this->node_index_);
 
+    if (use_benchmark_) {
+      this->file_ << static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0) << ",";
+      this->file_ << static_cast<long long int>(ros_time.seconds() * 1000000.0) << ",";
+      this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
+    }
+
     cv_bridge::CvImage cv_bridge;
     if (image_crop_)
     {
@@ -187,6 +197,10 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
       {
         RCLCPP_INFO(this->get_logger(), "cv_bridge exception: %s", e.what());
       }
+    }
+
+    if (use_benchmark_) {
+      this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
     }
 
     if (use_image_transport_)
@@ -217,6 +231,10 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
         raw_image_publisher_->publish(img);
         RCLCPP_INFO(this->get_logger(), "Publish sensor_msgs image message");
       }
+    }
+
+    if (use_benchmark_) {
+      this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << "\n";
     }
 
     VmbUint64_t frame_ID;
@@ -288,4 +306,33 @@ void MonoCameraNode::saveSrvCallback(const std::shared_ptr<rmw_request_id_t> req
     res->result = cam_.saveCameraSettings(req->output_path);
   }
 }
+
+void MonoCameraNode::benchmark()
+{
+  use_benchmark_ = this->declare_parameter("use_benchmark", false);
+
+  if (use_benchmark_)
+  {
+    time_t raw_time;
+    struct tm* pTime_info;
+
+    raw_time = time(NULL);
+    pTime_info = localtime(&raw_time);
+
+    std::string simulation_time = std::to_string(pTime_info->tm_mon + 1) + "_" + std::to_string(pTime_info->tm_mday) + "_" + std::to_string(pTime_info->tm_hour) + "_" + std::to_string(pTime_info->tm_min) + "_" + std::to_string(pTime_info->tm_sec);
+    std::string directory = "./data/avt_vimba_camera/" + simulation_time + ".csv";
+
+    this->file_.open(directory.c_str(), std::ios_base::out | std::ios_base::app);
+  }
+}
+
+void MonoCameraNode::finish_benchmark()
+{
+  if (use_benchmark_)
+  {
+    this->file_.close();
+    RCLCPP_INFO(this->get_logger(), "Saving benchmark result is successful.");
+  }
+}
+
 }  // namespace avt_vimba_camera

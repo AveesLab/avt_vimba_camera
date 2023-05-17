@@ -48,6 +48,11 @@
 #include <avt_vimba_camera_msgs/srv/load_settings.hpp>
 #include <avt_vimba_camera_msgs/srv/save_settings.hpp>
 
+// benchmark
+#include <string>
+#include <ctime>
+#include <fstream>
+
 
 namespace avt_vimba_camera
 {
@@ -103,6 +108,12 @@ private:
   void saveSrvCallback(const std::shared_ptr<rmw_request_id_t> request_header,
                        const avt_vimba_camera_msgs::srv::SaveSettings::Request::SharedPtr req,
                        avt_vimba_camera_msgs::srv::SaveSettings::Response::SharedPtr res);
+
+  // benchmark
+  bool use_benchmark_;
+  std::fstream file_;
+  void benchmark();
+  void finish_benchmark();
 };
 }  // namespace avt_vimba_camera
 #endif
