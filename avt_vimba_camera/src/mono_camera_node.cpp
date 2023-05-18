@@ -323,6 +323,8 @@ void MonoCameraNode::benchmark()
     std::string directory = "./data/avt_vimba_camera/" + simulation_time + ".csv";
 
     this->file_.open(directory.c_str(), std::ios_base::out | std::ios_base::app);
+
+    this->file_ << "timestamp,nodestartpoint,getimagepoint,afterimagecroppoint,afterpublishpoint\n";
   }
 }
 
