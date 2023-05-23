@@ -58,6 +58,9 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
   // Inference
   this->dummy_inference_ = std::make_shared<Yolov7>(this->inference_model_path_);
 
+  // Can Sender
+  this->pcan_sender_ = std::make_shared<ObjectDetectionsSender>(this->can_id_, this->time_interval_);
+
   // QoS
   const auto QOS_RKL10V = rclcpp::QoS(rclcpp::KeepLast(10)).reliable().durability_volatile();
   rclcpp::QoS system_qos = rclcpp::QoS(rclcpp::SystemDefaultsQoS());
@@ -97,6 +100,11 @@ void MonoCameraNode::loadParams()
   // Inference
   inference_model_path_ = this->declare_parameter("inference_model_path", "/home/avees/ros2_ws/weights/yolov7.engine");
 
+  // Pcan
+  use_can_ = this->declare_parameter("use_can", true);
+  can_id_ = this->declare_parameter("can_id", 101);
+  time_interval_ = this->declare_parameter("time_interval", 1000);
+
   RCLCPP_INFO(this->get_logger(), "Parameters loaded");
 }
 
@@ -132,7 +140,7 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     }
 
     // Set frame_id (= node index)
-    img.header.frame_id = this->node_index_top;
+    img.header.frame_id = this->node_index_;
 
     if (use_benchmark_) {
       this->file_ << static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0) << ",";
@@ -183,42 +191,47 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
       this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
     }
 
-    // TODO : Can send
-
-    
-    // Debug : rtx_msgs publish
-    rtx_msg_interface::msg::BoundingBoxes bounding_box_message;
-    bounding_box_message.image_header = img.header;
-    bounding_box_message.header.stamp = ros_time;
-
     VmbUint64_t frame_ID;
     vimba_frame_ptr->GetFrameID(frame_ID);
-    bounding_box_message.header.frame_id = static_cast<int>(frame_ID);
+    RCLCPP_INFO(this->get_logger(), "Frame ID : %d .", frame_ID);
 
-    if (detections.size() != 0)
+    if (use_can_)
     {
-      for(size_t i = 0; i < detections.size(); i++)
-      {
-        rtx_msg_interface::msg::BoundingBox bounding_box;
+      // Can send
+      this->pcan_sender_->WriteMessages(rclcpp::Time(img.header.stamp).seconds(), detections);
+    }
+    else
+    {
+      // Ethernet send : rtx_msgs publish
+      rtx_msg_interface::msg::BoundingBoxes bounding_box_message;
+      bounding_box_message.image_header = img.header;
+      bounding_box_message.header.stamp = ros_time;
+      bounding_box_message.header.frame_id = static_cast<int>(frame_ID);
 
-        bounding_box.left = detections[i].center_x;
-        bounding_box.right = detections[i].center_y;
-        bounding_box.top = detections[i].width_half;
-        bounding_box.bot = detections[i].height_half;
-        bounding_box.id  = static_cast<float>(detections[i].id);
-        bounding_box_message.bounding_boxes.push_back(bounding_box);
+      if (detections.size() != 0)
+      {
+        for(size_t i = 0; i < detections.size(); i++)
+        {
+          rtx_msg_interface::msg::BoundingBox bounding_box;
+
+          bounding_box.left = static_cast<float>(detections[i].center_x);
+          bounding_box.right = static_cast<float>(detections[i].center_y);
+          bounding_box.top = static_cast<float>(detections[i].width_half);
+          bounding_box.bot = static_cast<float>(detections[i].height_half);
+          bounding_box.id  = static_cast<float>(detections[i].id);
+          bounding_box_message.bounding_boxes.push_back(bounding_box);
+        }
       }
+
+      this->bounding_boxes_publisher_->publish(bounding_box_message);
     }
 
-    this->bounding_boxes_publisher_->publish(bounding_box_message);
+    RCLCPP_INFO(this->get_logger(), "Publish.");
 
     // benchmark
     if (use_benchmark_) {
       this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << "\n";
     }
-
-
-    RCLCPP_INFO(this->get_logger(), "Frame ID : %d .", frame_ID);
   }
   else
   {

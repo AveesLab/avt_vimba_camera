@@ -56,6 +56,9 @@
 // Inference
 #include "dummy_inference/yolov7.hpp"
 
+// Pcan Senser
+#include "pcan/ObjectDetectionsSender.hpp"
+
 // benchmark
 #include <string>
 #include <ctime>
@@ -78,6 +81,9 @@ private:
   // Inference
   std::shared_ptr<Yolov7> dummy_inference_;
 
+  // Pcan Senser
+  std::shared_ptr<ObjectDetectionsSender> pcan_sender_;
+
   AvtVimbaApi api_;
   AvtVimbaCamera cam_;
 
@@ -94,6 +100,10 @@ private:
   int interval_;
 
   std::string inference_model_path_;
+
+  bool use_can_;
+  int can_id_;
+  int time_interval_;
 
   // use sensor_msgs::msg::CompressedImage
   rclcpp::Publisher<rtx_msg_interface::msg::BoundingBoxes>::SharedPtr bounding_boxes_publisher_;

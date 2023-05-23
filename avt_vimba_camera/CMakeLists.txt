@@ -44,8 +44,8 @@ find_package(cv_bridge REQUIRED)
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 include_directories(include)
-include_directories(include/dummy_inference/include/tensorrtx/yolov7/include)
-include_directories(include/dummy_inference/include/tensorrtx/yolov7/plugin)
+include_directories(include/dummy_inference/include/yolov7/include)
+include_directories(include/dummy_inference/include/yolov7/plugin)
 
 ament_auto_find_build_dependencies()
 
@@ -85,23 +85,25 @@ ament_auto_add_library(mono_camera_node SHARED
   src/avt_vimba_camera.cpp
   src/frame_observer.cpp
   include/cluster_inference/cluster_inference.cpp
-  #include/dummy_inference/yolov7.cpp
+  include/dummy_inference/yolov7.cpp
+  include/pcan/ObjectDetectionsSender.cpp
 )
 ament_target_dependencies(mono_camera_node
   rtx_msg_interface
 )
 add_library(tensorrt_plugins SHARED
-  include/dummy_inference/include/tensorrtx/yolov7/plugin/yololayer.cu
-  include/dummy_inference/include/tensorrtx/yolov7/src/block.cpp
-  include/dummy_inference/include/tensorrtx/yolov7/src/calibrator.cpp
-  include/dummy_inference/include/tensorrtx/yolov7/src/model.cpp
-  include/dummy_inference/include/tensorrtx/yolov7/src/postprocess.cpp
-  include/dummy_inference/include/tensorrtx/yolov7/src/preprocess.cu
+  include/dummy_inference/include/yolov7/plugin/yololayer.cu
+  include/dummy_inference/include/yolov7/src/block.cpp
+  include/dummy_inference/include/yolov7/src/calibrator.cpp
+  include/dummy_inference/include/yolov7/src/model.cpp
+  include/dummy_inference/include/yolov7/src/postprocess.cpp
+  include/dummy_inference/include/yolov7/src/preprocess.cu
 )
 target_link_libraries(mono_camera_node
   nvinfer
   cudart
   tensorrt_plugins
+  pcanbasic
 )
 add_dependencies_and_linkings(mono_camera_node)
 

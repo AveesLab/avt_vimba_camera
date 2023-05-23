@@ -1,5 +1,7 @@
 #include "dummy_inference/yolov7.hpp"
 
+// TensorRT's main
+#include "dummy_inference/include/yolov7/main.cpp"
 
 using namespace nvinfer1;
 
@@ -34,19 +36,6 @@ Yolov7::~Yolov7()
     std::cout << "[Inference] : Destruction Finish." << std::endl;
 }
 
-void Yolov7::initialize_model(std::string model_path)
-{
-    // Deserialize the engine from file
-    deserialize_engine(model_path, &runtime_, &engine_, &context_);
-
-    CUDA_CHECK(cudaStreamCreate(&stream_));
-
-    cuda_preprocess_init(kMaxInputImageSize);
-
-    // Prepare cpu and gpu buffers
-    prepare_buffer(engine_, &device_buffers_[0], &device_buffers_[1], &output_buffer_host_);
-}
-
 std::vector<ObjectDetection> Yolov7::get_detections(cv::Mat& image)
 {
     std::vector<cv::Mat> image_batch;
@@ -62,6 +51,19 @@ std::vector<ObjectDetection> Yolov7::get_detections(cv::Mat& image)
     detections = this->convert_detections(image, result_batch);
 
     return detections;
+}
+
+void Yolov7::initialize_model(std::string model_path)
+{
+    // Deserialize the engine from file
+    deserialize_engine(model_path, &runtime_, &engine_, &context_);
+
+    CUDA_CHECK(cudaStreamCreate(&stream_));
+
+    cuda_preprocess_init(kMaxInputImageSize);
+
+    // Prepare cpu and gpu buffers
+    prepare_buffer(engine_, &device_buffers_[0], &device_buffers_[1], &output_buffer_host_);
 }
 
 std::vector<std::vector<Detection>> Yolov7::inference(std::vector<cv::Mat>& image_batch)
@@ -119,10 +121,10 @@ std::vector<ObjectDetection> Yolov7::convert_detections(cv::Mat& image, std::vec
             }
 
             detection.id = result_batch[0][i].class_id;
-            detection.center_x = (r + l) / 2.f;
-            detection.center_y = (b + t) / 2.f;
-            detection.width_half = (r - l) / 2.f;
-            detection.height_half = (b - t) / 2.f;
+            detection.center_x = static_cast<int>((r + l) / 2.f);
+            detection.center_y = static_cast<int>((b + t) / 2.f);
+            detection.width_half = static_cast<int>((r - l) / 2.f);
+            detection.height_half = static_cast<int>((b - t) / 2.f);
             detections.push_back(detection);
         }
     }
