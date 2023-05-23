@@ -87,6 +87,12 @@ ament_auto_add_library(mono_camera_node SHARED
   include/cluster_inference/cluster_inference.cpp
   include/dummy_inference/yolov7.cpp
   include/pcan/ObjectDetectionsSender.cpp
+  include/dummy_inference/include/yolov7/plugin/yololayer.cu
+  include/dummy_inference/include/yolov7/src/block.cpp
+  include/dummy_inference/include/yolov7/src/calibrator.cpp
+  include/dummy_inference/include/yolov7/src/model.cpp
+  include/dummy_inference/include/yolov7/src/postprocess.cpp
+  include/dummy_inference/include/yolov7/src/preprocess.cu
 )
 ament_target_dependencies(mono_camera_node
   rtx_msg_interface
