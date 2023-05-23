@@ -40,13 +40,21 @@
 #include <avt_vimba_camera_msgs/srv/detail/save_settings__struct.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/image.hpp>
-#include "sensor_msgs/msg/compressed_image.hpp"
+#include <sensor_msgs/msg/compressed_image.hpp>
 #include <sensor_msgs/msg/camera_info.hpp>
 #include <camera_info_manager/camera_info_manager.hpp>
 #include <image_transport/image_transport.hpp>
 #include <std_srvs/srv/trigger.hpp>
 #include <avt_vimba_camera_msgs/srv/load_settings.hpp>
 #include <avt_vimba_camera_msgs/srv/save_settings.hpp>
+#include "rtx_msg_interface/msg/bounding_box.hpp"
+#include "rtx_msg_interface/msg/bounding_boxes.hpp"
+
+// Cluster
+#include "cluster_inference/cluster_inference.hpp"
+
+// Inference
+#include "dummy_inference/yolov7.hpp"
 
 // benchmark
 #include <string>
@@ -64,6 +72,12 @@ public:
   void start();
 
 private:
+  // Cluster
+  std::shared_ptr<ClusterManager> cluster_manager_;
+
+  // Inference
+  std::shared_ptr<Yolov7> dummy_inference_;
+
   AvtVimbaApi api_;
   AvtVimbaCamera cam_;
 
@@ -74,40 +88,18 @@ private:
   bool use_measurement_time_;
   int32_t ptp_offset_;
   int32_t node_index_;
-  bool use_image_transport_;
   bool image_crop_;
-  bool use_compressed_publisher_;
 
-  // use sensor_msgs::msg::Image
-  rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr raw_image_publisher_;
+  int number_of_nodes_;
+  int interval_;
+
+  std::string inference_model_path_;
 
   // use sensor_msgs::msg::CompressedImage
-  rclcpp::Publisher<sensor_msgs::msg::CompressedImage>::SharedPtr compressed_raw_image_publisher_;
-
-  image_transport::CameraPublisher camera_info_pub_;
-  std::shared_ptr<camera_info_manager::CameraInfoManager> info_man_;
-  
-  rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr start_srv_;
-  rclcpp::Service<std_srvs::srv::Trigger>::SharedPtr stop_srv_;
-
-  rclcpp::Service<avt_vimba_camera_msgs::srv::LoadSettings>::SharedPtr load_srv_;
-  rclcpp::Service<avt_vimba_camera_msgs::srv::SaveSettings>::SharedPtr save_srv_;
-
+  rclcpp::Publisher<rtx_msg_interface::msg::BoundingBoxes>::SharedPtr bounding_boxes_publisher_;
 
   void loadParams();
   void frameCallback(const FramePtr& vimba_frame_ptr);
-  void startSrvCallback(const std::shared_ptr<rmw_request_id_t> request_header,
-                        const std_srvs::srv::Trigger::Request::SharedPtr req,
-                        std_srvs::srv::Trigger::Response::SharedPtr res);
-  void stopSrvCallback(const std::shared_ptr<rmw_request_id_t> request_header,
-                       const std_srvs::srv::Trigger::Request::SharedPtr req,
-                       std_srvs::srv::Trigger::Response::SharedPtr res);
-  void loadSrvCallback(const std::shared_ptr<rmw_request_id_t> request_header,
-                       const avt_vimba_camera_msgs::srv::LoadSettings::Request::SharedPtr req,
-                       avt_vimba_camera_msgs::srv::LoadSettings::Response::SharedPtr res);
-  void saveSrvCallback(const std::shared_ptr<rmw_request_id_t> request_header,
-                       const avt_vimba_camera_msgs::srv::SaveSettings::Request::SharedPtr req,
-                       avt_vimba_camera_msgs::srv::SaveSettings::Response::SharedPtr res);
 
   // benchmark
   bool use_benchmark_;
