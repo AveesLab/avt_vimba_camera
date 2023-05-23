@@ -102,7 +102,7 @@ private:
   std::string inference_model_path_;
 
   bool use_can_;
-  int can_id_;
+  unsigned int can_id_;
   int time_interval_;
 
   // use sensor_msgs::msg::CompressedImage

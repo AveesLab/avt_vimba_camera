@@ -1,0 +1,68 @@
+from launch_ros.substitutions import FindPackageShare
+from ament_index_python import get_package_share_directory
+
+from launch import LaunchDescription
+from launch.actions import IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from launch.substitutions import LaunchConfiguration
+from launch_ros.actions import Node
+
+import os
+
+
+prenamespace = "master"
+index = 0
+
+def generate_launch_description():
+    avt_vimba_camera_pkg_prefix = get_package_share_directory('avt_vimba_camera')
+
+    avt_vimba_camera_params_file = os.path.join(
+        avt_vimba_camera_pkg_prefix, 'config/params.yaml')
+    avt_vimba_camera_calibration_file = os.path.join(
+        avt_vimba_camera_pkg_prefix, 'calibrations/calibration_example.yaml')
+
+    avt_vimba_camera_params = DeclareLaunchArgument(
+        'avt_vimba_camera_params_file',
+        default_value = avt_vimba_camera_params_file,
+        description = 'Path to config file for avt_vimba_camera'
+    )
+    avt_vimba_camera_calibration = DeclareLaunchArgument(
+        'avt_vimba_camera_calibration_file',
+        default_value = avt_vimba_camera_calibration_file,
+        description = 'Path to calibration file for avt_vimba_camera'
+    )
+
+    sensor = Node(
+        package = 'avt_vimba_camera',
+        namespace = prenamespace,
+        executable = 'mono_camera_exec',
+        name = 'camera',
+        output = 'screen',
+        parameters = [
+            LaunchConfiguration('avt_vimba_camera_params_file'),
+            {"name": "camera"},
+            {"frame_id": "camera"},
+            {"ip": "169.254.100.66"},
+            {"guid": ""},
+            {"use_measurement_time": True},
+            {"ptp_offset": 0},
+            {"node_index": index},
+            {"camera_info_url": avt_vimba_camera_calibration_file},
+            {"use_image_transport": False},
+            {"image_crop": False},
+            {"use_benchmark": False},
+            {"number_of_nodes": 4},
+            {"interval": 10},
+            {"model_name": "/home/avees/engine/yolov7.engine"},
+            {"use_can": True},
+            {"can_id": index + 101},
+            {"time_interval": 500},
+        ]
+    )
+    
+    return LaunchDescription([
+        avt_vimba_camera_params,
+        avt_vimba_camera_calibration,
+        sensor
+    ])

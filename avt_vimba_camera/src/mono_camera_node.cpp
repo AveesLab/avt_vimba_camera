@@ -103,7 +103,7 @@ void MonoCameraNode::loadParams()
   // Pcan
   use_can_ = this->declare_parameter("use_can", true);
   can_id_ = this->declare_parameter("can_id", 101);
-  time_interval_ = this->declare_parameter("time_interval", 1000);
+  time_interval_ = this->declare_parameter("time_interval", 500);
 
   RCLCPP_INFO(this->get_logger(), "Parameters loaded");
 }

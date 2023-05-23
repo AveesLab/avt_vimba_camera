@@ -56,7 +56,7 @@ private:
 public:
 	// ObjectDetectionsSender constructor
 	//
-	ObjectDetectionsSender(int can_id, int time_interval);
+	ObjectDetectionsSender(unsigned int can_id, int time_interval);
 
 	// ObjectDetectionsSender destructor
 	//

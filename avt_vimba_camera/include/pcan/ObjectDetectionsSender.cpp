@@ -1,6 +1,6 @@
 #include "ObjectDetectionsSender.hpp"
 
-ObjectDetectionsSender::ObjectDetectionsSender(int can_id, int time_interval) : can_id_(can_id), time_interval_(time_interval)
+ObjectDetectionsSender::ObjectDetectionsSender(unsigned int can_id, int time_interval) : can_id_(can_id), time_interval_(time_interval)
 {
 	ShowCurrentConfiguration(); // Shows the current parameters configuration
 
@@ -53,10 +53,13 @@ TPCANStatus ObjectDetectionsSender::WriteMessage(double time_stamp, std::vector<
 	msgCanMessage.LEN = (BYTE)8;
 	msgCanMessage.MSGTYPE = PCAN_MESSAGE_EXTENDED;
 
+	int remaked_time_stamp = static_cast<int>(time_stamp * 1000.0) % 60000;
+
+	std::cerr << "time_stamp  : " << remaked_time_stamp << "\n";
+	std::cerr << "object size : " << detections.size() << "\n";
+
 	for (size_t index = 0; index < detections.size(); index++)
 	{
-		int remaked_time_stamp = static_cast<int>(time_stamp) % 60000;
-
 		msgCanMessage.DATA[0] = remaked_time_stamp >> 8;
 		msgCanMessage.DATA[1] = remaked_time_stamp;
 		msgCanMessage.DATA[2] = detections[index].id;
