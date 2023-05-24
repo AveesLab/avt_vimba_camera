@@ -78,6 +78,21 @@ TPCANStatus ObjectDetectionsSender::WriteMessage(double time_stamp, std::vector<
 
 		usleep(this->time_interval_);
 	}
+
+	TPCANMsg msgCanMessage2;
+	msgCanMessage2.ID = this->can_id_;
+	msgCanMessage2.LEN = (BYTE)2;
+	msgCanMessage2.MSGTYPE = PCAN_MESSAGE_EXTENDED;
+
+	msgCanMessage2.DATA[0] = remaked_time_stamp >> 8;
+	msgCanMessage2.DATA[1] = remaked_time_stamp;
+
+	TPCANStatus stsResult = CAN_Write(PcanHandle, &msgCanMessage2);
+
+	if (stsResult != PCAN_ERROR_OK)
+	{
+		return stsResult;
+	}
 }
 
 TPCANStatus ObjectDetectionsSender::WriteMessageFD(double time_stamp, std::vector<ObjectDetection>& detections)
