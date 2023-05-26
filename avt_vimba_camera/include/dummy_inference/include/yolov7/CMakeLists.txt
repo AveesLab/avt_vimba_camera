@@ -5,7 +5,6 @@ project(yolov7)
 add_definitions(-std=c++11)
 add_definitions(-DAPI_EXPORTS)
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_BUILD_TYPE Debug)
 
 set(CMAKE_CUDA_COMPILER /usr/local/cuda/bin/nvcc)
 enable_language(CUDA)
@@ -36,10 +35,10 @@ find_package(OpenCV)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 file(GLOB_RECURSE SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp ${PROJECT_SOURCE_DIR}/src/*.cu)
-add_executable(yolov7 main.cpp ${SRCS})
+
+add_library(yolov7 SHARED ${SRCS})
 
 target_link_libraries(yolov7 nvinfer)
 target_link_libraries(yolov7 cudart)
 target_link_libraries(yolov7 myplugins)
 target_link_libraries(yolov7 ${OpenCV_LIBS})
-

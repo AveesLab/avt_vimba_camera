@@ -12,13 +12,13 @@
 #include <opencv2/opencv.hpp>
 
 // TensorRT
-#include "config.h"
-#include "model.h"
-#include "cuda_utils.h"
-#include "logging.h"
-#include "utils.h"
-#include "preprocess.h"
-#include "postprocess.h"
+#include "dummy_inference/include/yolov7/include/config.h"
+#include "dummy_inference/include/yolov7/include/model.h"
+#include "dummy_inference/include/yolov7/include/cuda_utils.h"
+#include "dummy_inference/include/yolov7/include/logging.h"
+#include "dummy_inference/include/yolov7/include/utils.h"
+#include "dummy_inference/include/yolov7/include/preprocess.h"
+#include "dummy_inference/include/yolov7/include/postprocess.h"
 
 // OpenCV
 #include <opencv2/opencv.hpp>

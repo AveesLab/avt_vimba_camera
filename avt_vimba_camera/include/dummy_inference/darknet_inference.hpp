@@ -26,7 +26,7 @@ public:
   Darknet();
   ~Darknet();
 
-  void inference(cv::Mat& image);
+  std::vector<ObjectDetection> get_detections(cv::Mat& image);
 
 private:
   static char **demo_names;
@@ -37,8 +37,6 @@ private:
   static detection *dets = NULL;
 
   static network net;
-  static image in_s ;
-  static image det_s;
 
   static cap_cv *cap;
   static float fps = 0;
@@ -52,10 +50,6 @@ private:
   static int avg_frames;
   static int demo_index = 0;
   static mat_cv** cv_images;
-
-  mat_cv* in_img;
-  mat_cv* det_img;
-  mat_cv* show_img;
 
   static volatile int flag_exit;
   static int letter_box = 0;
