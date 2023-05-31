@@ -100,6 +100,8 @@ private:
   int interval_;
 
   std::string inference_model_path_;
+  std::string inference_cfg_path_;
+  std::string inference_weight_path_;
 
   bool use_can_;
   unsigned int can_id_;
