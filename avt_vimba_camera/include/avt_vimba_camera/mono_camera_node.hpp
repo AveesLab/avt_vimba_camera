@@ -51,10 +51,10 @@
 #include "rtx_msg_interface/msg/bounding_boxes.hpp"
 
 // Cluster
-#include "cluster_inference/cluster_inference.hpp"
+#include "cluster/cluster.hpp"
 
 // Inference
-#include "dummy_inference/yolov7.hpp"
+#include "inference/inference.hpp"
 
 // Pcan Senser
 #include "pcan/ObjectDetectionsSender.hpp"
@@ -79,7 +79,7 @@ private:
   std::shared_ptr<ClusterManager> cluster_manager_;
 
   // Inference
-  std::shared_ptr<Yolov7> dummy_inference_;
+  std::shared_ptr<Darknet> dummy_inference_;
 
   // Pcan Senser
   std::shared_ptr<ObjectDetectionsSender> pcan_sender_;

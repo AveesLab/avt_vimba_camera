@@ -11,9 +11,6 @@ if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_STANDARD 14)
 endif()
 
-set(CMAKE_CUDA_COMPILER /usr/local/cuda/bin/nvcc)
-enable_language(CUDA)
-
 # Find required packages
 find_package(OpenCV 4 REQUIRED)
 find_package(ament_cmake REQUIRED)
@@ -60,20 +57,35 @@ function(add_dependencies_and_linkings arg)
   endif()
 endfunction(add_dependencies_and_linkings)
 
+# Path to * project folder.
+set(DARKNET_PATH ${PROJECT_SOURCE_DIR}/include/inference/darknet)
+
+# Give a custom name to shared library which is provided by * when the one compiled.
+set(DARKNET_LIB_NAME libdarknet)
+
+# Link * library' include folder.
+include_directories(${DARKNET_PATH}/include)
+
+# Define * library' shared library.
+add_library(${DARKNET_LIB_NAME} SHARED IMPORTED)
+
+# Set a path to * library' shared library
+set_property(TARGET ${DARKNET_LIB_NAME} PROPERTY IMPORTED_LOCATION "${DARKNET_PATH}/libdarknet.so")
+
 # Nodes
 ament_auto_add_library(mono_camera_node SHARED
   src/mono_camera_node.cpp
   src/avt_vimba_camera.cpp
   src/frame_observer.cpp
-  include/cluster_inference/cluster_inference.cpp
-  include/dummy_inference/yolov7.cpp
+  include/cluster/cluster.cpp
+  include/inference/inference.cpp
   include/pcan/ObjectDetectionsSender.cpp
 )
 ament_target_dependencies(mono_camera_node
   rtx_msg_interface
 )
-target_link_libraries(mono_camera_node STATIC pcanbasic)
-target_link_libraries(mono_camera_node PRIVATE yolov7)
+target_link_libraries(mono_camera_node pcanbasic)
+target_link_libraries(mono_camera_node ${DARKNET_LIB_NAME})
 add_dependencies_and_linkings(mono_camera_node)
 
 ament_auto_add_library(trigger_node SHARED

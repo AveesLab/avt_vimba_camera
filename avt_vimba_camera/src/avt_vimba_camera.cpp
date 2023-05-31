@@ -166,7 +166,7 @@ void AvtVimbaCamera::startImaging()
     // Start streaming
     if (access_type_ == VmbAccessModeFull)
     {
-      err = vimba_camera_ptr_->StartContinuousImageAcquisition(3, IFrameObserverPtr(frame_obs_ptr_));
+      err = vimba_camera_ptr_->StartContinuousImageAcquisition(1, IFrameObserverPtr(frame_obs_ptr_));
  
       if (err == VmbErrorSuccess)
       {

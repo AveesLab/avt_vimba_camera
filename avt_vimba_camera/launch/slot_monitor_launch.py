@@ -52,7 +52,7 @@ def generate_launch_description():
             {"use_image_transport": False},
             {"image_crop": False},
             {"use_benchmark": False},
-            {"number_of_nodes": 4},
+            {"number_of_nodes": 1},
             {"interval": 10},
             {"model_name": "/home/avees/engine/yolov7.engine"},
             {"use_can": True},

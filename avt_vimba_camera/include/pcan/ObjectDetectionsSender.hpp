@@ -26,7 +26,7 @@
 #include "PCANBasic.h"
 
 #include <vector>
-#include "dummy_inference/yolov7.hpp"
+#include "inference/types.h"
 
 class ObjectDetectionsSender
 {

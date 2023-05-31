@@ -56,7 +56,9 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
   this->cluster_manager_ = std::make_shared<ClusterManager>(static_cast<int>(this->node_index_), this->number_of_nodes_, this->interval_);
 
   // Inference
-  this->dummy_inference_ = std::make_shared<Yolov7>(this->inference_model_path_);
+  std::string cfg_path = "/home/avees/rebuild_ws/src/clustering_sensor/avt_vimba_camera/include/inference/darknet/cfg/yolov4-p6.cfg";
+  std::string weight_path = "/home/avees/rebuild_ws/src/clustering_sensor/avt_vimba_camera/include/inference/darknet/yolov4-p6.weights";
+  this->dummy_inference_ = std::make_shared<Darknet>(0.2, const_cast<char*>(cfg_path.c_str()), const_cast<char*>(weight_path.c_str()));
 
   // Can Sender
   this->pcan_sender_ = std::make_shared<ObjectDetectionsSender>(this->can_id_, this->time_interval_);
@@ -76,6 +78,10 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
 
 MonoCameraNode::~MonoCameraNode()
 {
+  this->dummy_inference_.reset();
+
+  this->cluster_manager_.reset();
+
   cam_.stop();
   //camera_info_pub_.shutdown();
 
