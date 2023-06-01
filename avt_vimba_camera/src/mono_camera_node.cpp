@@ -148,9 +148,15 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     // Set frame_id (= node index)
     img.header.frame_id = this->node_index_;
 
+    // benchmark
     if (use_benchmark_) {
+      // image time stamp
       this->file_ << static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0) << ",";
+
+      // node start point
       this->file_ << static_cast<long long int>(ros_time.seconds() * 1000000.0) << ",";
+
+      // after get image
       this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
     }
 
@@ -160,6 +166,11 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     cv::Mat color_image;
 
     cv::cvtColor(cv_ptr->image, color_image, cv::COLOR_BayerRG2RGB);
+
+    // benchmark
+    if (use_benchmark_) {
+      this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
+    }
 
     // Image Crop
     if (image_crop_)
@@ -205,6 +216,8 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     {
       // Can send
       this->pcan_sender_->WriteMessages(rclcpp::Time(img.header.stamp).seconds(), detections);
+
+      RCLCPP_INFO(this->get_logger(), "Can send.");
     }
     else
     {
@@ -230,13 +243,13 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
       }
 
       this->bounding_boxes_publisher_->publish(bounding_box_message);
-    }
 
-    RCLCPP_INFO(this->get_logger(), "Publish.");
+      RCLCPP_INFO(this->get_logger(), "Publish.");
+    }
 
     // benchmark
     if (use_benchmark_) {
-      this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << "\n";
+      this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
     }
   }
   else
@@ -244,6 +257,10 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     RCLCPP_WARN_STREAM(this->get_logger(), "Function frameToImage returned 0. No image published.");
   }
 
+  // benchmark
+  if (use_benchmark_) {
+    this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << "\n";
+  }
 }
 
 void MonoCameraNode::benchmark()
@@ -263,7 +280,7 @@ void MonoCameraNode::benchmark()
 
     this->file_.open(directory.c_str(), std::ios_base::out | std::ios_base::app);
 
-    this->file_ << "timestamp,nodestartpoint,getimagepoint,afterimagecroppoint,afterpublishpoint\n";
+    this->file_ << "timestamp,startpoint,aftergetimage,afterimagedecoding,afterimagecrop,aftercluster,afterinference,afterpublish,endpoint\n";
   }
 }
 
