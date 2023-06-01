@@ -193,7 +193,26 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     }
 
     // Cluster
-    if (this->cluster_manager_->is_self_order(rclcpp::Time(img.header.stamp).seconds()) == false) return;
+    if (this->cluster_manager_->is_self_order(rclcpp::Time(img.header.stamp).seconds()) == false)
+    {
+      // benchmark
+      if (use_benchmark_) {
+        this->file_ << static_cast<long long int>(0) << ",";
+        this->file_ << static_cast<long long int>(0) << ",";
+        this->file_ << static_cast<long long int>(0) << ",";
+        this->file_ << static_cast<long long int>(0) << ",";
+        this->file_ << static_cast<long long int>(0) << "\n";
+      }
+
+      return;
+    }
+    else
+    {
+      // benchmark
+      if (use_benchmark_) {
+        this->file_ << static_cast<long long int>(1) << ",";
+      }
+    }
 
     // benchmark
     if (use_benchmark_) {

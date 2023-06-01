@@ -51,7 +51,7 @@ def generate_launch_description():
             {"camera_info_url": avt_vimba_camera_calibration_file},
             {"use_image_transport": False},
             {"image_crop": False},
-            {"use_benchmark": False},
+            {"use_benchmark": True},
             {"number_of_nodes": 4},
             {"interval": 10},
             {"inference_model_path": "/home/avees/engine/yolov7.engine"},
