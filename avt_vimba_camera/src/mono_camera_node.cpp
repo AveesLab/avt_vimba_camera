@@ -197,10 +197,6 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     {
       // benchmark
       if (use_benchmark_) {
-        this->file_ << static_cast<long long int>(0) << ",";
-        this->file_ << static_cast<long long int>(0) << ",";
-        this->file_ << static_cast<long long int>(0) << ",";
-        this->file_ << static_cast<long long int>(0) << ",";
         this->file_ << static_cast<long long int>(0) << "\n";
       }
 
@@ -299,7 +295,7 @@ void MonoCameraNode::benchmark()
 
     this->file_.open(directory.c_str(), std::ios_base::out | std::ios_base::app);
 
-    this->file_ << "timestamp,startpoint,aftergetimage,afterimagedecoding,afterimagecrop,aftercluster,afterinference,afterpublish,endpoint\n";
+    this->file_ << "timestamp,startpoint,aftergetimage,afterimagedecoding,afterimagecrop,ismyframe,aftercluster,afterinference,afterpublish,endpoint\n";
   }
 }
 
