@@ -53,7 +53,7 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
   loadParams();
 
   // Cluster
-  this->cluster_manager_ = std::make_shared<ClusterManager>(static_cast<int>(this->node_index_), this->number_of_nodes_, this->interval_);
+  this->cluster_manager_ = std::make_shared<ClusterManager>(static_cast<int>(this->node_index_), this->number_of_nodes_, this->camera_fps_, this->inference_fps_);
 
   // Inference
   this->dummy_inference_ = std::make_shared<Darknet>(0.2, const_cast<char*>(inference_cfg_path_.c_str()), const_cast<char*>(inference_weight_path_.c_str()));
@@ -99,7 +99,8 @@ void MonoCameraNode::loadParams()
   // Cluster
   node_index_ = this->declare_parameter("node_index", 0);
   number_of_nodes_ = this->declare_parameter("number_of_nodes", 1);
-  interval_ = this->declare_parameter("interval", 10);
+  camera_fps_ = this->declare_parameter("camera_fps", 30.0);
+  inference_fps_ = this->declare_parameter("inference_fps", 5.0);
 
   // Inference
   inference_model_path_ = this->declare_parameter("inference_model_path", "/home/avees/ros2_ws/weights/yolov7.engine");

@@ -97,7 +97,8 @@ private:
   bool image_crop_;
 
   int number_of_nodes_;
-  int interval_;
+  double camera_fps_;
+  double inference_fps_;
 
   std::string inference_model_path_;
   std::string inference_cfg_path_;

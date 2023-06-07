@@ -16,7 +16,7 @@ struct ClusterNode
 class ClusterManager
 {
 public:
-  ClusterManager(int node_index, int number_of_nodes, int fps);
+  ClusterManager(int node_index, int number_of_nodes, double fps, double process_fps);
   ~ClusterManager();
 
   bool is_self_order(double timestamp);
