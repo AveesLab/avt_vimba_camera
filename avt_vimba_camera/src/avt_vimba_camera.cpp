@@ -187,7 +187,7 @@ void AvtVimbaCamera::startImaging()
     {
       FeaturePtr pFeature;
       VmbInt64_t nPLS;
-      vimba_frames_.resize(3);
+      vimba_frames_.resize(1);
 
       err = vimba_camera_ptr_->GetFeatureByName("PayloadSize", pFeature);
 

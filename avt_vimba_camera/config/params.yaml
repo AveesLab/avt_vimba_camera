@@ -6,7 +6,7 @@
 /**:
   ros__parameters:
     feature/AcquisitionFrameCount: 1
-    feature/AcquisitionFrameRateAbs: 20.
+    feature/AcquisitionFrameRateAbs: 33.
     # feature/AcquisitionMode: Continuous
     feature/ActionDeviceKey: 0
     feature/ActionGroupKey: 0
@@ -47,7 +47,7 @@
     # feature/ExposureAutoRate: 100
     # feature/ExposureAutoTarget: 50
     # feature/ExposureMode: Timed
-    feature/ExposureTimeAbs: 15000.0
+    # feature/ExposureTimeAbs: 15000.0
     # feature/GVCPCmdRetries: 5
     # feature/GVCPCmdTimeout: 250
     # feature/GVSPBurstSize: 1
@@ -106,7 +106,7 @@
     # feature/SyncOutSelector: SyncOut1
     # feature/SyncOutSource: Exposing
     # feature/TriggerActivation: RisingEdge
-    feature/TriggerDelayAbs: 0.0
+    # feature/TriggerDelayAbs: 0.0
     feature/TriggerMode: 'Off'
     # feature/TriggerOverlap: 'Off'
     feature/TriggerSelector: FrameStart
