@@ -40,12 +40,18 @@
 #include <avt_vimba_camera_msgs/srv/detail/save_settings__struct.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <sensor_msgs/msg/image.hpp>
+#include "sensor_msgs/msg/compressed_image.hpp"
 #include <sensor_msgs/msg/camera_info.hpp>
 #include <camera_info_manager/camera_info_manager.hpp>
 #include <image_transport/image_transport.hpp>
 #include <std_srvs/srv/trigger.hpp>
 #include <avt_vimba_camera_msgs/srv/load_settings.hpp>
 #include <avt_vimba_camera_msgs/srv/save_settings.hpp>
+
+// benchmark
+#include <string>
+#include <ctime>
+#include <fstream>
 
 
 namespace avt_vimba_camera
@@ -68,6 +74,15 @@ private:
   bool use_measurement_time_;
   int32_t ptp_offset_;
   int32_t node_index_;
+  bool use_image_transport_;
+  bool image_crop_;
+  bool use_compressed_publisher_;
+
+  // use sensor_msgs::msg::Image
+  rclcpp::Publisher<sensor_msgs::msg::Image>::SharedPtr raw_image_publisher_;
+
+  // use sensor_msgs::msg::CompressedImage
+  rclcpp::Publisher<sensor_msgs::msg::CompressedImage>::SharedPtr compressed_raw_image_publisher_;
 
   image_transport::CameraPublisher camera_info_pub_;
   std::shared_ptr<camera_info_manager::CameraInfoManager> info_man_;
@@ -93,6 +108,12 @@ private:
   void saveSrvCallback(const std::shared_ptr<rmw_request_id_t> request_header,
                        const avt_vimba_camera_msgs::srv::SaveSettings::Request::SharedPtr req,
                        avt_vimba_camera_msgs::srv::SaveSettings::Response::SharedPtr res);
+
+  // benchmark
+  bool use_benchmark_;
+  std::fstream file_;
+  void benchmark();
+  void finish_benchmark();
 };
 }  // namespace avt_vimba_camera
 #endif

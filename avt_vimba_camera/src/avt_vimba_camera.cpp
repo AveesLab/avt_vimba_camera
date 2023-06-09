@@ -166,7 +166,7 @@ void AvtVimbaCamera::startImaging()
     // Start streaming
     if (access_type_ == VmbAccessModeFull)
     {
-      err = vimba_camera_ptr_->StartContinuousImageAcquisition(3, IFrameObserverPtr(frame_obs_ptr_));
+      err = vimba_camera_ptr_->StartContinuousImageAcquisition(7, IFrameObserverPtr(frame_obs_ptr_));
  
       if (err == VmbErrorSuccess)
       {
@@ -187,7 +187,7 @@ void AvtVimbaCamera::startImaging()
     {
       FeaturePtr pFeature;
       VmbInt64_t nPLS;
-      vimba_frames_.resize(3);
+      vimba_frames_.resize(7);
 
       err = vimba_camera_ptr_->GetFeatureByName("PayloadSize", pFeature);
 
