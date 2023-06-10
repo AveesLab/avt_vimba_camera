@@ -216,12 +216,29 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
       this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
     }
 
-    // Inference
-    std::vector<ObjectDetection> detections = this->dummy_inference_->get_detections(cv_bridge.image);
+    // Preprocess
+    this->dummy_inference_->preprocess(cv_bridge.image);
 
     // benchmark
     if (use_benchmark_) {
       this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
+    }
+
+    // Inference
+    this->dummy_inference_->inference();
+
+    // benchmark
+    if (use_benchmark_) {
+      this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
+    }
+
+    // Postprocess
+    std::vector<ObjectDetection> detections = this->dummy_inference_->postprocess();
+
+    // benchmark
+    if (use_benchmark_) {
+      this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
+      this->file_ << static_cast<int>(detections.size()) << ",";
     }
 
     VmbUint64_t frame_ID;
@@ -296,7 +313,7 @@ void MonoCameraNode::benchmark()
 
     this->file_.open(directory.c_str(), std::ios_base::out | std::ios_base::app);
 
-    this->file_ << "timestamp,startpoint,aftergetimage,afterimagedecoding,afterimagecrop,ismyframe,aftercluster,afterinference,afterpublish,endpoint\n";
+    this->file_ << "timestamp,startpoint,aftergetimage,afterimagedecoding,afterimagecrop,ismyframe,aftercluster,afterpreprocess,afterinference,afterpostprocess,numberofobject,afterpublish,endpoint\n";
   }
 }
 

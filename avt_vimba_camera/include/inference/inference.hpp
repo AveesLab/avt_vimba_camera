@@ -16,18 +16,27 @@ public:
 
   std::vector<ObjectDetection> get_detections(cv::Mat& image);
 
+  void preprocess(cv::Mat& input_image);
+  void inference();
+  std::vector<ObjectDetection> postprocess();
+
 private:
-  void inference(cv::Mat& input_image);
   image get_image_from_mat(cv::Mat& image, int width, int height, int channel);
-  std::vector<ObjectDetection> convert_detections(cv::Mat& image);
+  std::vector<ObjectDetection> convert_detections();
   image mat_to_image(cv::Mat mat);
 
   char **demo_names;
   image **demo_alphabet;
   int demo_classes;
 
+  image det_s_;
+  int image_cols_;
+  int image_rows_;
+
   int nboxes = 0;
   detection *dets = NULL;
+
+  layer l;
 
   network net;
 

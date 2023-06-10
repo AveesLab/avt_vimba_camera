@@ -55,9 +55,6 @@ TPCANStatus ObjectDetectionsSender::WriteMessage(double time_stamp, std::vector<
 
 	int remaked_time_stamp = static_cast<int>(time_stamp * 1000.0) % 60000;
 
-	std::cerr << "time_stamp  : " << remaked_time_stamp << "\n";
-	std::cerr << "object size : " << detections.size() << "\n";
-
 	for (size_t index = 0; index < detections.size(); index++)
 	{
 		msgCanMessage.DATA[0] = remaked_time_stamp >> 8;

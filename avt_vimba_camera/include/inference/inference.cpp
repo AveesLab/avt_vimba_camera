@@ -24,7 +24,7 @@ Darknet::Darknet(float thresh, char *cfg_file, char *weight_file)
     calculate_binary_weights(net);
     srand(2222222);
 
-    layer l = net.layers[net.n-1];
+    l = net.layers[net.n-1];
 
     demo_classes = l.classes;
     printf("l.classes : %d\n", l.classes);
@@ -49,46 +49,45 @@ Darknet::~Darknet()
     free_network(net);
 }
 
-std::vector<ObjectDetection> Darknet::get_detections(cv::Mat& input_image)
+void Darknet::preprocess(cv::Mat& input_image)
 {
-    std::vector<ObjectDetection> result;
+    // cv::Mat to darknet::image
+    this->det_s_ = get_image_from_mat(input_image, net.w, net.h, net.c);
 
-    this->inference(input_image);
-
-    result = this->convert_detections(input_image);
-
-    free(dets);
-    nboxes = 0;
-
-    return result;
+    this->image_cols_ = input_image.cols;
+    this->image_rows_ = input_image.rows;
 }
 
-void Darknet::inference(cv::Mat& input_image)
+void Darknet::inference()
+{
+    // inference
+    float *X = this->det_s_.data;
+    network_predict(net, X);
+}
+
+std::vector<ObjectDetection> Darknet::postprocess()
 {
     const float nms = .45;    // 0.4F
 
-    // cv::Mat to darknet::image
-    image det_s = get_image_from_mat(input_image, net.w, net.h, net.c);
-
-    // inference
-    layer l = net.layers[net.n - 1];
-    float *X = det_s.data;
-    network_predict(net, X);
+    std::vector<ObjectDetection> result;
 
     dets = get_network_boxes(&net, net.w, net.h, demo_thresh, demo_thresh, 0, 1, &nboxes, 0);
-
-    printf("before nms : %d\n", nboxes);
 
     if (nms) {
         if (l.nms_kind == DEFAULT_NMS) do_nms_sort(dets, nboxes, l.classes, nms);
         else diounms_sort(dets, nboxes, l.classes, nms, l.nms_kind, l.beta_nms);
     }
 
-    printf("after nms : %d\n", nboxes);
-
     if (l.embedding_size) set_track_id(dets, nboxes, demo_thresh, l.sim_thresh, l.track_ciou_norm, l.track_history_size, l.dets_for_track, l.dets_for_show);
 
-    free_image(det_s);
+    result = this->convert_detections();
+
+    free_image(this->det_s_);
+    free(dets);
+
+    nboxes = 0;
+
+    return result;
 }
 
 image Darknet::get_image_from_mat(cv::Mat& input_image, int width, int height, int channel)
@@ -106,7 +105,7 @@ image Darknet::get_image_from_mat(cv::Mat& input_image, int width, int height, i
     return im;
 }
 
-std::vector<ObjectDetection> Darknet::convert_detections(cv::Mat& image)  // 'dets' is pointer
+std::vector<ObjectDetection> Darknet::convert_detections()  // 'dets' is pointer
 {
     std::vector<ObjectDetection> detections;
 
@@ -119,10 +118,10 @@ std::vector<ObjectDetection> Darknet::convert_detections(cv::Mat& image)  // 'de
                 ObjectDetection detection;
 
                 detection.id = j;
-                detection.center_x = static_cast<float>(image.cols) * ((dets[i].bbox.x < 1) ? dets[i].bbox.x : 1);
-                detection.center_y = static_cast<float>(image.rows) * ((dets[i].bbox.y < 1) ? dets[i].bbox.y : 1);
-                detection.width_half = static_cast<float>(image.cols) * ((dets[i].bbox.w < 1) ? dets[i].bbox.w / 2.0 : 0.5f);
-                detection.height_half = static_cast<float>(image.rows) * ((dets[i].bbox.h < 1) ? dets[i].bbox.h / 2.0 : 0.5f);
+                detection.center_x = static_cast<float>(image_cols_) * ((dets[i].bbox.x < 1) ? dets[i].bbox.x : 1);
+                detection.center_y = static_cast<float>(image_rows_) * ((dets[i].bbox.y < 1) ? dets[i].bbox.y : 1);
+                detection.width_half = static_cast<float>(image_cols_) * ((dets[i].bbox.w < 1) ? dets[i].bbox.w / 2.0 : 0.5f);
+                detection.height_half = static_cast<float>(image_rows_) * ((dets[i].bbox.h < 1) ? dets[i].bbox.h / 2.0 : 0.5f);
                 detections.push_back(detection);
 
                 break;
