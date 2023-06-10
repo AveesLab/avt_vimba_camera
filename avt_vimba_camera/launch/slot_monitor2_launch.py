@@ -60,7 +60,7 @@ def generate_launch_description():
             {"inference_weight_path": "/home/avees/ros2_ws/weights/yolov7.weights"},
             {"use_can": True},
             {"can_id": index + 101},
-            {"time_interval": 500},
+            {"time_interval": 1000},
         ]
     )
     
