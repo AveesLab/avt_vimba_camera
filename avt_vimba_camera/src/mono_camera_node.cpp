@@ -161,38 +161,6 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
       this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
     }
 
-    // sensor_msgs::msg::image to cv::Mat
-    cv_bridge::CvImagePtr cv_ptr = cv_bridge::toCvCopy(img, img.encoding);
-    cv_bridge::CvImage cv_bridge;
-    cv::Mat color_image;
-
-    cv::cvtColor(cv_ptr->image, color_image, cv::COLOR_BayerRG2RGB);
-
-    // benchmark
-    if (use_benchmark_) {
-      this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
-    }
-
-    // Image Crop
-    if (image_crop_)
-    {
-      RCLCPP_INFO(this->get_logger(), "Image crop to 640x480");
-
-      cv::Mat resized_image;
-      cv::resize(color_image, resized_image, cv::Size(640,480));
-
-      cv_bridge = cv_bridge::CvImage(img.header, sensor_msgs::image_encodings::RGB8, resized_image);
-    }
-    else
-    {
-      cv_bridge = cv_bridge::CvImage(img.header, sensor_msgs::image_encodings::RGB8, color_image);
-    }
-
-    // benchmark
-    if (use_benchmark_) {
-      this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
-    }
-
     // Cluster
     if (this->cluster_manager_->is_self_order(rclcpp::Time(img.header.stamp).seconds()) == false)
     {
@@ -214,6 +182,28 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     // benchmark
     if (use_benchmark_) {
       this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
+    }
+
+    // sensor_msgs::msg::image to cv::Mat
+    cv_bridge::CvImagePtr cv_ptr = cv_bridge::toCvCopy(img, img.encoding);
+    cv_bridge::CvImage cv_bridge;
+    cv::Mat color_image;
+
+    cv::cvtColor(cv_ptr->image, color_image, cv::COLOR_BayerRG2RGB);
+
+    // Image Crop
+    if (image_crop_)
+    {
+      RCLCPP_INFO(this->get_logger(), "Image crop to 640x480");
+
+      cv::Mat resized_image;
+      cv::resize(color_image, resized_image, cv::Size(640,480));
+
+      cv_bridge = cv_bridge::CvImage(img.header, sensor_msgs::image_encodings::RGB8, resized_image);
+    }
+    else
+    {
+      cv_bridge = cv_bridge::CvImage(img.header, sensor_msgs::image_encodings::RGB8, color_image);
     }
 
     // Preprocess
@@ -313,7 +303,7 @@ void MonoCameraNode::benchmark()
 
     this->file_.open(directory.c_str(), std::ios_base::out | std::ios_base::app);
 
-    this->file_ << "timestamp,startpoint,aftergetimage,afterimagedecoding,afterimagecrop,ismyframe,aftercluster,afterpreprocess,afterinference,afterpostprocess,numberofobject,afterpublish,endpoint\n";
+    this->file_ << "timestamp,startpoint,aftergetimage,ismyframe,aftercluster,afterpreprocess,afterinference,afterpostprocess,numberofobject,afterpublish,endpoint\n";
   }
 }
 
