@@ -235,10 +235,11 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     // Postprocess
     std::vector<ObjectDetection> detections = this->dummy_inference_->postprocess();
 
+    int tmp_number_of_object = static_cast<int>(detections.size());
+
     // benchmark
     if (use_benchmark_) {
       this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
-      this->file_ << static_cast<int>(detections.size()) << ",";
     }
 
     VmbUint64_t frame_ID;
@@ -250,7 +251,8 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
       // Can send
       if (this->pcan_benchmark_)
       {
-        this->pcan_sender_->WriteMessagesWithBenchmark(rclcpp::Time(img.header.stamp).seconds(), detections);
+        tmp_number_of_object = this->pcan_sender_->WriteMessagesWithBenchmark(rclcpp::Time(img.header.stamp).seconds(), detections);
+        RCLCPP_INFO(this->get_logger(), "[Benchmark] Number of object : %d .", tmp_number_of_object);
       }
       else
       {
@@ -289,6 +291,7 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
 
     // benchmark
     if (use_benchmark_) {
+      this->file_ << static_cast<int>(tmp_number_of_object) << ",";
       this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
     }
   }
