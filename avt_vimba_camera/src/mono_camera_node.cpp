@@ -120,7 +120,7 @@ void MonoCameraNode::loadParams()
   // Pcan
   pcan_benchmark_ = this->declare_parameter("pcan_benchmark", false);
   pcan_benchmark_start_stamp_ = this->declare_parameter("pcan_benchmark_start_stamp", 0.0);
-  pcan_benchmark_stamp_interval_ = this->declare_parameter("pcan_benchmark_stamp_interval_", 0.0);
+  pcan_benchmark_stamp_interval_ = this->declare_parameter("pcan_benchmark_stamp_interval", 0.0);
 
   RCLCPP_INFO(this->get_logger(), "Parameters loaded");
 }

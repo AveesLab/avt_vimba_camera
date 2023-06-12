@@ -62,7 +62,7 @@ int ObjectDetectionsSender::WriteMessagesWithBenchmark(double time_stamp, std::v
 		{
 			if (detections.size())
 			{
-				int number_of_object = (time_stamp - this->pcan_benchmark_start_stamp_) / this->pcan_benchmark_stamp_interval_; 
+				int number_of_object = static_cast<int>((time_stamp - this->pcan_benchmark_start_stamp_)) / static_cast<int>(this->pcan_benchmark_stamp_interval_); 
 				
 				// Sends a CAN message with extended ID, and 8 data bytes
 				TPCANMsg msgCanMessage;
