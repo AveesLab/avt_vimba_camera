@@ -53,6 +53,10 @@ private:
 	unsigned int can_id_;
 	int time_interval_;
 
+	bool pcan_benchmark_;
+	double pcan_benchmark_start_stamp_;
+	double pcan_benchmark_stamp_interval_;
+
 public:
 	// ObjectDetectionsSender constructor
 	//
@@ -66,6 +70,11 @@ public:
 	/// Function for writing PCAN-Basic messages
 	/// </summary>
 	void WriteMessages(double time_stamp, std::vector<ObjectDetection>& detections);
+
+	void SetBenchmark(double pcan_benchmark_start_stamp, double pcan_benchmark_stamp_interval);
+
+	int WriteMessagesWithBenchmark(double time_stamp, std::vector<ObjectDetection>& detections);
+
 
 private:
 	/// <summary>

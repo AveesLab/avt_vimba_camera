@@ -72,6 +72,11 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
   cam_.setCallback(std::bind(&avt_vimba_camera::MonoCameraNode::frameCallback, this, _1));
 
   this->benchmark();
+
+  if (pcan_benchmark_)
+  {
+    this->pcan_sender_->SetBenchmark(pcan_benchmark_start_stamp_, pcan_benchmark_stamp_interval_);
+  }
 }
 
 MonoCameraNode::~MonoCameraNode()
@@ -111,6 +116,11 @@ void MonoCameraNode::loadParams()
   use_can_ = this->declare_parameter("use_can", true);
   can_id_ = this->declare_parameter("can_id", 101);
   time_interval_ = this->declare_parameter("time_interval", 500);
+
+  // Pcan
+  pcan_benchmark_ = this->declare_parameter("pcan_benchmark", false);
+  pcan_benchmark_start_stamp_ = this->declare_parameter("pcan_benchmark_start_stamp", 0.0);
+  pcan_benchmark_stamp_interval_ = this->declare_parameter("pcan_benchmark_stamp_interval_", 0.0);
 
   RCLCPP_INFO(this->get_logger(), "Parameters loaded");
 }
@@ -161,23 +171,23 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
       this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
     }
 
-    // // Cluster
-    // if (this->cluster_manager_->is_self_order(rclcpp::Time(img.header.stamp).seconds()) == false)
-    // {
-    //   // benchmark
-    //   if (use_benchmark_) {
-    //     this->file_ << static_cast<long long int>(0) << "\n";
-    //   }
+    // Cluster
+    if (this->cluster_manager_->is_self_order(rclcpp::Time(img.header.stamp).seconds()) == false)
+    {
+      // benchmark
+      if (use_benchmark_) {
+        this->file_ << static_cast<long long int>(0) << "\n";
+      }
 
-    //   return;
-    // }
-    // else
-    // {
-    //   // benchmark
-    //   if (use_benchmark_) {
-    //     this->file_ << static_cast<long long int>(1) << ",";
-    //   }
-    // }
+      return;
+    }
+    else
+    {
+      // benchmark
+      if (use_benchmark_) {
+        this->file_ << static_cast<long long int>(1) << ",";
+      }
+    }
 
     // benchmark
     if (use_benchmark_) {
@@ -238,7 +248,14 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     if (use_can_)
     {
       // Can send
-      this->pcan_sender_->WriteMessages(rclcpp::Time(img.header.stamp).seconds(), detections);
+      if (this->pcan_benchmark_)
+      {
+        this->pcan_sender_->WriteMessagesWithBenchmark(rclcpp::Time(img.header.stamp).seconds(), detections);
+      }
+      else
+      {
+        this->pcan_sender_->WriteMessages(rclcpp::Time(img.header.stamp).seconds(), detections);
+      }
 
       RCLCPP_INFO(this->get_logger(), "Can send.");
     }

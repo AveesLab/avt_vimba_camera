@@ -20,6 +20,8 @@ ObjectDetectionsSender::ObjectDetectionsSender(unsigned int can_id, int time_int
 		return;
 	}
 
+	this->pcan_benchmark_ = false;
+
 	// Writing messages...
 	std::cout << "Successfully initialized.\n";
 }
@@ -43,6 +45,69 @@ void ObjectDetectionsSender::WriteMessages(double time_stamp, std::vector<Object
 		ShowStatus(stsResult);
 	else
 		std::cerr << "Message was successfully SENT\n";
+}
+
+void ObjectDetectionsSender::SetBenchmark(double pcan_benchmark_start_stamp, double pcan_benchmark_stamp_interval)
+{
+	this->pcan_benchmark_ = true;
+	this->pcan_benchmark_start_stamp_ = pcan_benchmark_start_stamp;
+	this->pcan_benchmark_stamp_interval_ = pcan_benchmark_stamp_interval;
+}
+
+int ObjectDetectionsSender::WriteMessagesWithBenchmark(double time_stamp, std::vector<ObjectDetection>& detections)
+{
+	if (this->pcan_benchmark_)
+	{
+		if ((time_stamp - this->pcan_benchmark_start_stamp_) > 0)
+		{
+			if (detections.size())
+			{
+				int number_of_object = (time_stamp - this->pcan_benchmark_start_stamp_) / this->pcan_benchmark_stamp_interval_; 
+				
+				// Sends a CAN message with extended ID, and 8 data bytes
+				TPCANMsg msgCanMessage;
+				msgCanMessage.ID = this->can_id_;
+				msgCanMessage.LEN = (BYTE)8;
+				msgCanMessage.MSGTYPE = PCAN_MESSAGE_EXTENDED;
+
+				int remaked_time_stamp = static_cast<int>(time_stamp * 1000.0) % 60000;
+
+				msgCanMessage.DATA[0] = remaked_time_stamp >> 8;
+				msgCanMessage.DATA[1] = remaked_time_stamp;
+				msgCanMessage.DATA[2] = detections[0].id;
+				msgCanMessage.DATA[3] = detections[0].center_x  >> 3;
+				msgCanMessage.DATA[4] = ((detections[0].center_x  & 7) << 5 ) | (detections[0].center_y >>5);
+				msgCanMessage.DATA[5] = ((detections[0].center_y & 31) << 3) |  (detections[0].width_half >> 7);
+				msgCanMessage.DATA[6] = ((detections[0].width_half & 127) << 1) | (detections[0].height_half>> 8);
+				msgCanMessage.DATA[7] =  detections[0].height_half;
+
+				for (int index = 0; index < number_of_object; index++)
+				{
+					TPCANStatus stsResult = CAN_Write(PcanHandle, &msgCanMessage);
+
+					usleep(this->time_interval_);
+				}
+
+				TPCANMsg msgCanMessage2;
+				msgCanMessage2.ID = this->can_id_;
+				msgCanMessage2.LEN = (BYTE)2;
+				msgCanMessage2.MSGTYPE = PCAN_MESSAGE_EXTENDED;
+
+				msgCanMessage2.DATA[0] = remaked_time_stamp >> 8;
+				msgCanMessage2.DATA[1] = remaked_time_stamp;
+
+				TPCANStatus stsResult = CAN_Write(PcanHandle, &msgCanMessage2);
+
+				return number_of_object;
+			}
+
+			return -3;
+		}
+
+		return -2;
+	}
+
+	return -1;
 }
 
 TPCANStatus ObjectDetectionsSender::WriteMessage(double time_stamp, std::vector<ObjectDetection>& detections)

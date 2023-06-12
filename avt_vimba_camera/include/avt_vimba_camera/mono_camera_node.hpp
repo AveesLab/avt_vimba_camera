@@ -108,6 +108,10 @@ private:
   unsigned int can_id_;
   int time_interval_;
 
+  bool pcan_benchmark_;
+  double pcan_benchmark_start_stamp_;
+  double pcan_benchmark_stamp_interval_;
+
   // use sensor_msgs::msg::CompressedImage
   rclcpp::Publisher<rtx_msg_interface::msg::BoundingBoxes>::SharedPtr bounding_boxes_publisher_;
 
