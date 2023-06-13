@@ -249,7 +249,7 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     if (use_can_)
     {
       // Can send
-      if (this->pcan_benchmark_)
+      if ((this->pcan_benchmark_) && (rclcpp::Time(img.header.stamp).seconds() > this->pcan_benchmark_start_stamp_))
       {
         tmp_number_of_object = this->pcan_sender_->WriteMessagesWithBenchmark(rclcpp::Time(img.header.stamp).seconds(), detections);
         RCLCPP_INFO(this->get_logger(), "[Benchmark] Number of object : %d .", tmp_number_of_object);
