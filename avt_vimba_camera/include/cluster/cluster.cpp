@@ -19,13 +19,15 @@ ClusterManager::~ClusterManager()
 
 void ClusterManager::register_base_timestamp(double timestamp)
 {
-  this->base_timestamp_ = timestamp;
+  this->base_timestamp_ = timestamp * 1000.0;
 }
 
 bool ClusterManager::is_self_order(double timestamp)
 {
   if (this->base_timestamp_ != -1.0)
   {
+    timestamp *= 1000.0;
+    
     if (this->pretimestamp_ != -1)
     {
       return this->is_in_range(timestamp, this->pretimestamp_, this->pretimestamp_);
@@ -48,7 +50,7 @@ bool ClusterManager::is_in_range(double timestamp, double min_base_timestamp, do
 {
   int cnt = 0;
 
-  while (max_base_timestamp > timestamp)
+  while (timestamp > max_base_timestamp)
   {
     max_base_timestamp += this->max_camera_cycle_time_ * this->frame_interval_ * this->number_of_nodes_ * ++cnt;
   }
