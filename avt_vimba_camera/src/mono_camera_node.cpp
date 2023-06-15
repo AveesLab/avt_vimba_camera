@@ -202,9 +202,10 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     {
       if (this->node_index_ == 0)
       {
-        if (this->cnt_ > this->convert_frame_)
+        this->cnt_ += 1;
+
+        if (this->cnt_ == this->convert_frame_)
         {
-          this->cnt_ += 1;
           std_msgs::msg::Header initializer;
           initializer.stamp = img.header.stamp;
           initializer.frame_id = this->node_index_;
