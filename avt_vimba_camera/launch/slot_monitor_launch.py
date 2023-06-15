@@ -61,7 +61,7 @@ def generate_launch_description():
             {"use_can": True},
             {"can_id": index + 101},
             {"time_interval": 1000},
-            {"pcan_benchmark": True},
+            {"pcan_benchmark": False},
             {"pcan_benchmark_start_stamp": 10180.0},
             {"pcan_benchmark_stamp_interval": 14.0},
         ]

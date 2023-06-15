@@ -58,7 +58,7 @@ void ObjectDetectionsSender::ClusterSyncRequest()
 {
 	// Sends a CAN message with extended ID, and 8 data bytes
 	TPCANMsg msgCanMessage;
-	msgCanMessage.ID = this->can_id_;
+	msgCanMessage.ID = -2;
 	msgCanMessage.LEN = (BYTE)1;
 	msgCanMessage.MSGTYPE = PCAN_MESSAGE_EXTENDED;
 

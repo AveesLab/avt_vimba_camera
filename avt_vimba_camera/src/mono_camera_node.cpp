@@ -67,7 +67,7 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
 
   // Set the result publisher
   this->bounding_boxes_publisher_ = this->create_publisher<rtx_msg_interface::msg::BoundingBoxes>("/cluster/result", QOS_RKL10V);
-
+  this->ClusterSync();
   // Set the frame callback
   cam_.setCallback(std::bind(&avt_vimba_camera::MonoCameraNode::frameCallback, this, _1));
 
@@ -106,8 +106,8 @@ void MonoCameraNode::loadParams()
   number_of_nodes_ = this->declare_parameter("number_of_nodes", 1);
   camera_fps_ = this->declare_parameter("camera_fps", 30.0);
   inference_fps_ = this->declare_parameter("inference_fps", 5.0);
-  max_camera_cycle_time_ = this->declare_parameter("max_camera_cycle_time", 33.45);
-  min_camera_cycle_time_ = this->declare_parameter("min_camera_cycle_time", 33.005);
+  max_camera_cycle_time_ = this->declare_parameter("max_camera_cycle_time", 33.5);
+  min_camera_cycle_time_ = this->declare_parameter("min_camera_cycle_time", 33.0);
 
   // Inference
   inference_model_path_ = this->declare_parameter("inference_model_path", "/home/avees/ros2_ws/weights/yolov7.engine");
@@ -134,7 +134,9 @@ void MonoCameraNode::ClusterSync()
 
   this->pcan_sender_->ClusterSyncRequest();
 
-  while (1)
+  int cnt = 0;
+
+  while (cnt < 3)
   {
     int index = -1;
     int time = -1;
@@ -143,7 +145,8 @@ void MonoCameraNode::ClusterSync()
 
     if (index != -1)
     {
-      base_timestamp[index] = time;
+      base_timestamp[index] = (time == 0) ? -1 : time;
+      cnt++;
     }
 
     usleep(500);

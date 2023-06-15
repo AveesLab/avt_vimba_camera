@@ -9,6 +9,8 @@ ClusterManager::ClusterManager(int node_index, int number_of_nodes, double fps, 
     timestamp = -1;
   }
 
+  this->pretimestamp_ = -1;
+
   this->frame_interval_ = fps / process_fps / this->number_of_nodes_;
 
   this->max_camera_cycle_time_ = max_camera_cycle_time;
@@ -45,14 +47,14 @@ bool ClusterManager::is_self_order(double timestamp)
 
     if (exist_flag == false)
     {
-      this->pretimestamp_ = timestamp;
+      this->pretimestamp_ = remaked_timestamp;
       return true;
     }
     else
     {
       if (this->is_set_timestamp(remaked_timestamp))
       {
-        this->pretimestamp_ = timestamp;
+        this->pretimestamp_ = remaked_timestamp;
         return true;
       }
     }
@@ -72,6 +74,7 @@ bool ClusterManager::is_self_order(double timestamp)
 
 bool ClusterManager::is_in_range(int remaked_timestamp, int & reserved_timestamp)
 {
+  int origin_remaked_timestamp = remaked_timestamp;
   if (remaked_timestamp < reserved_timestamp)
   {
     remaked_timestamp += 60000;
@@ -91,7 +94,7 @@ bool ClusterManager::is_in_range(int remaked_timestamp, int & reserved_timestamp
 
   if (remaked_timestamp > min_predict_timestamp)
   {
-    reserved_timestamp = remaked_timestamp;
+    reserved_timestamp = origin_remaked_timestamp;
     return true;
   }
   else
