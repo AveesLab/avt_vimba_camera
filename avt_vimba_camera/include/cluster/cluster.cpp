@@ -32,8 +32,8 @@ bool ClusterManager::is_self_order(double timestamp)
     }
     else
     {
-      double min_base_timestamp = this->base_timestamp_ + this->min_camera_cycle_time_ * this->frame_interval_ * this->node_index_;
-      double max_base_timestamp = this->base_timestamp_ + this->max_camera_cycle_time_ * this->frame_interval_ * this->node_index_;
+      double min_base_timestamp = this->base_timestamp_ - this->max_camera_cycle_time_ * this->frame_interval_ * this->node_index_;
+      double max_base_timestamp = this->base_timestamp_ - this->min_camera_cycle_time_ * this->frame_interval_ * this->node_index_;
       return this->is_in_range(timestamp, min_base_timestamp, max_base_timestamp);
     }
   }
@@ -48,7 +48,7 @@ bool ClusterManager::is_in_range(double timestamp, double min_base_timestamp, do
 {
   int cnt = 0;
 
-  while (max_base_timestamp < timestamp)
+  while (max_base_timestamp > timestamp)
   {
     max_base_timestamp += this->max_camera_cycle_time_ * this->frame_interval_ * this->number_of_nodes_ * ++cnt;
   }
