@@ -106,8 +106,11 @@ MonoCameraNode::~MonoCameraNode()
 
 void MonoCameraNode::ClusterSynchronize(std_msgs::msg::Header::SharedPtr time)
 {
-  this->cluster_manager_->register_base_timestamp(rclcpp::Time(time->stamp).seconds());
-  this->cluster_flag_ = true;
+  if (rclcpp::Time(time->stamp).seconds())
+  {
+    this->cluster_manager_->register_base_timestamp(rclcpp::Time(time->stamp).seconds());
+    this->cluster_flag_ = true;
+  }
 }
 
 void MonoCameraNode::loadParams()
