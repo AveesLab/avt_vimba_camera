@@ -48,7 +48,7 @@ bool ClusterManager::is_in_range(double timestamp, double min_base_timestamp, do
 {
   int cnt = 0;
 
-  while (max_base_timestamp > timestamp)
+  while (max_base_timestamp < timestamp)
   {
     max_base_timestamp += this->max_camera_cycle_time_ * this->frame_interval_ * this->number_of_nodes_ * ++cnt;
   }
