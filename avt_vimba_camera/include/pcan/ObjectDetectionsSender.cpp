@@ -54,6 +54,38 @@ void ObjectDetectionsSender::SetBenchmark(double pcan_benchmark_start_stamp, dou
 	this->pcan_benchmark_stamp_interval_ = pcan_benchmark_stamp_interval;
 }
 
+void ObjectDetectionsSender::ClusterSyncRequest()
+{
+	// Sends a CAN message with extended ID, and 8 data bytes
+	TPCANMsg msgCanMessage;
+	msgCanMessage.ID = this->can_id_;
+	msgCanMessage.LEN = (BYTE)1;
+	msgCanMessage.MSGTYPE = PCAN_MESSAGE_EXTENDED;
+
+	msgCanMessage.DATA[0] = 0;
+
+	TPCANStatus stsResult = CAN_Write(PcanHandle, &msgCanMessage);
+}
+
+void ObjectDetectionsSender::ReadMessage(int& index, int& time)
+{
+	TPCANMsg CANMsg;
+	TPCANTimestamp CANTimeStamp;
+
+	// We execute the "Read" function of the PCANBasic
+	TPCANStatus stsResult = CAN_Read(PcanHandle, &CANMsg, &CANTimeStamp);
+
+	if (stsResult != PCAN_ERROR_QRCVEMPTY)
+	{
+		if (CANMsg.LEN == 3)
+		{
+			// Convert received message to informations
+			index = CANMsg.DATA[0];
+			time = (CANMsg.DATA[1] << 8) | CANMsg.DATA[2];
+		}
+	}
+}
+
 int ObjectDetectionsSender::WriteMessagesWithBenchmark(double time_stamp, std::vector<ObjectDetection>& detections)
 {
 	if (this->pcan_benchmark_)

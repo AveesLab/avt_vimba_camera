@@ -75,6 +75,10 @@ public:
 
 	int WriteMessagesWithBenchmark(double time_stamp, std::vector<ObjectDetection>& detections);
 
+	void ClusterSyncRequest();
+
+	void ReadMessage(int& index, int& time);
+
 
 private:
 	/// <summary>

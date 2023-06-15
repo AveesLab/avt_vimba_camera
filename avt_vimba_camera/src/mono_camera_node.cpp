@@ -53,7 +53,7 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
   loadParams();
 
   // Cluster
-  this->cluster_manager_ = std::make_shared<ClusterManager>(static_cast<int>(this->node_index_), this->number_of_nodes_, this->camera_fps_, this->inference_fps_);
+  this->cluster_manager_ = std::make_shared<ClusterManager>(static_cast<int>(this->node_index_), this->number_of_nodes_, this->camera_fps_, this->inference_fps_, this->max_camera_cycle_time_, this->min_camera_cycle_time_);
 
   // Inference
   this->dummy_inference_ = std::make_shared<Darknet>(0.2, const_cast<char*>(inference_cfg_path_.c_str()), const_cast<char*>(inference_weight_path_.c_str()));
@@ -106,6 +106,8 @@ void MonoCameraNode::loadParams()
   number_of_nodes_ = this->declare_parameter("number_of_nodes", 1);
   camera_fps_ = this->declare_parameter("camera_fps", 30.0);
   inference_fps_ = this->declare_parameter("inference_fps", 5.0);
+  max_camera_cycle_time_ = this->declare_parameter("max_camera_cycle_time", 33.45);
+  min_camera_cycle_time_ = this->declare_parameter("min_camera_cycle_time", 33.005);
 
   // Inference
   inference_model_path_ = this->declare_parameter("inference_model_path", "/home/avees/ros2_ws/weights/yolov7.engine");
@@ -123,6 +125,34 @@ void MonoCameraNode::loadParams()
   pcan_benchmark_stamp_interval_ = this->declare_parameter("pcan_benchmark_stamp_interval", 0.0);
 
   RCLCPP_INFO(this->get_logger(), "Parameters loaded");
+}
+
+void MonoCameraNode::ClusterSync()
+{
+  std::vector<int> base_timestamp;
+  base_timestamp.resize(this->number_of_nodes_);
+
+  this->pcan_sender_->ClusterSyncRequest();
+
+  while (1)
+  {
+    int index = -1;
+    int time = -1;
+
+    this->pcan_sender_->ReadMessage(index, time);
+
+    if (index != -1)
+    {
+      base_timestamp[index] = time;
+    }
+
+    usleep(500);
+  }
+
+  for (int i = 0; i < static_cast<int>(base_timestamp.size()); i++)
+  {
+    this->cluster_manager_->register_base_timestamp(i, base_timestamp[i]);
+  }
 }
 
 void MonoCameraNode::start()

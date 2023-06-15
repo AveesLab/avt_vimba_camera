@@ -112,11 +112,16 @@ private:
   double pcan_benchmark_start_stamp_;
   double pcan_benchmark_stamp_interval_;
 
+  double max_camera_cycle_time_;
+  double min_camera_cycle_time_;
+
   // use sensor_msgs::msg::CompressedImage
   rclcpp::Publisher<rtx_msg_interface::msg::BoundingBoxes>::SharedPtr bounding_boxes_publisher_;
 
   void loadParams();
   void frameCallback(const FramePtr& vimba_frame_ptr);
+
+  void ClusterSync();
 
   // benchmark
   bool use_benchmark_;
