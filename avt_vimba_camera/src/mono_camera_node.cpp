@@ -85,11 +85,6 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
   {
     this->pcan_sender_->SetBenchmark(pcan_benchmark_start_stamp_, pcan_benchmark_stamp_interval_);
   }
-
-  std_msgs::msg::Header initializer;
-  initializer.stamp = rclcpp::Time(0);
-  initializer.frame_id = this->node_index_;
-  this->cluster_synchronize_publisher_->publish(initializer); // ros2 don't receive first data
 }
 
 MonoCameraNode::~MonoCameraNode()

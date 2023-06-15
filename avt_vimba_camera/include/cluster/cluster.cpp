@@ -27,15 +27,15 @@ bool ClusterManager::is_self_order(double timestamp)
   if (this->base_timestamp_ != -1.0)
   {
     timestamp *= 1000.0;
-    
+
     if (this->pretimestamp_ != -1)
     {
       return this->is_in_range(timestamp, this->pretimestamp_, this->pretimestamp_);
     }
     else
     {
-      double min_base_timestamp = this->base_timestamp_ - this->max_camera_cycle_time_ * this->frame_interval_ * this->node_index_;
-      double max_base_timestamp = this->base_timestamp_ - this->min_camera_cycle_time_ * this->frame_interval_ * this->node_index_;
+      double min_base_timestamp = this->base_timestamp_ + this->max_camera_cycle_time_ * this->frame_interval_ * this->node_index_;
+      double max_base_timestamp = this->base_timestamp_ + this->min_camera_cycle_time_ * this->frame_interval_ * this->node_index_;
       return this->is_in_range(timestamp, min_base_timestamp, max_base_timestamp);
     }
   }
