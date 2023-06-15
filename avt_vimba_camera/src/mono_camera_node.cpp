@@ -72,10 +72,12 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
   cam_.setCallback(std::bind(&avt_vimba_camera::MonoCameraNode::frameCallback, this, _1));
 
   // Set the result publisher
-  this->cluster_synchronize_publisher_ = this->create_publisher<std_msgs::msg::Header>("/cluster/result", QOS_RKL10V);
+  this->cluster_synchronize_publisher_ = this->create_publisher<std_msgs::msg::Header>("/cluster/synchronize", QOS_RKL10V);
   this->cluster_synchronize_subscriber_ = this->create_subscription<std_msgs::msg::Header>("/cluster/synchronize", QOS_RKL10V, std::bind(&MonoCameraNode::ClusterSynchronize, this, _1));
 
   this->cnt_ = 0;
+
+  this->cluster_flag_ = false;
 
   this->benchmark();
 
@@ -100,6 +102,7 @@ MonoCameraNode::~MonoCameraNode()
 void MonoCameraNode::ClusterSynchronize(std_msgs::msg::Header::SharedPtr time)
 {
   this->cluster_manager_->register_base_timestamp(rclcpp::Time(time->stamp).seconds());
+  this->cluster_flag_ = true;
 }
 
 void MonoCameraNode::loadParams()
@@ -188,12 +191,20 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     // Cluster
     if (this->cluster_manager_->is_self_order(rclcpp::Time(img.header.stamp).seconds()) == false)
     {
+      // benchmark
+      if (use_benchmark_) {
+        this->file_ << static_cast<long long int>(0) << "\n";
+      }
+
+      return;
+    }
+    else
+    {
       if (this->node_index_ == 0)
       {
-        this->cnt_ += 1;
-
         if (this->cnt_ > this->convert_frame_)
         {
+          this->cnt_ += 1;
           std_msgs::msg::Header initializer;
           initializer.stamp = img.header.stamp;
           initializer.frame_id = this->node_index_;
@@ -204,16 +215,16 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
 
       // benchmark
       if (use_benchmark_) {
-        this->file_ << static_cast<long long int>(0) << "\n";
+        this->file_ << static_cast<long long int>(1) << ",";
       }
 
-      return;
-    }
-    else
-    {
-      // benchmark
-      if (use_benchmark_) {
-        this->file_ << static_cast<long long int>(1) << ",";
+      if (this->cluster_flag_)
+      {
+        RCLCPP_INFO(this->get_logger(), "Cluster Sorted");
+      }
+      else
+      {
+        RCLCPP_INFO(this->get_logger(), "Cluster Non-sorted");
       }
     }
 

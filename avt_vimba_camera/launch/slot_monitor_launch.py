@@ -66,7 +66,7 @@ def generate_launch_description():
             {"pcan_benchmark_stamp_interval": 14.0},
             {"max_camera_cycle_time": 33.5},
             {"min_camera_cycle_time": 33.0},
-            {"convert_frame": 20}, 
+            {"convert_frame": 100}, 
         ]
     )
     

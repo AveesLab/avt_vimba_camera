@@ -119,6 +119,8 @@ private:
   int convert_frame_;
   int cnt_;
 
+  bool cluster_flag_;
+
   // use sensor_msgs::msg::CompressedImage
   rclcpp::Publisher<rtx_msg_interface::msg::BoundingBoxes>::SharedPtr bounding_boxes_publisher_;
   rclcpp::Publisher<std_msgs::msg::Header>::SharedPtr cluster_synchronize_publisher_;
