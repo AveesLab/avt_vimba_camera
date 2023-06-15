@@ -39,6 +39,7 @@
 #include <avt_vimba_camera_msgs/srv/detail/load_settings__struct.hpp>
 #include <avt_vimba_camera_msgs/srv/detail/save_settings__struct.hpp>
 #include <rclcpp/rclcpp.hpp>
+#include <std_msgs/msg/header.hpp>
 #include <sensor_msgs/msg/image.hpp>
 #include <sensor_msgs/msg/compressed_image.hpp>
 #include <sensor_msgs/msg/camera_info.hpp>
@@ -115,13 +116,17 @@ private:
   double max_camera_cycle_time_;
   double min_camera_cycle_time_;
 
+  int convert_frame_;
+  int cnt_;
+
   // use sensor_msgs::msg::CompressedImage
   rclcpp::Publisher<rtx_msg_interface::msg::BoundingBoxes>::SharedPtr bounding_boxes_publisher_;
+  rclcpp::Publisher<std_msgs::msg::Header>::SharedPtr cluster_synchronize_publisher_;
+  rclcpp::Subscription<std_msgs::msg::Header>::SharedPtr cluster_synchronize_subscriber_;
 
   void loadParams();
   void frameCallback(const FramePtr& vimba_frame_ptr);
-
-  void ClusterSync();
+  void ClusterSynchronize(std_msgs::msg::Header::SharedPtr time);
 
   // benchmark
   bool use_benchmark_;
