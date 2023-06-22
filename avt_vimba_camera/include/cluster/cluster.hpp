@@ -20,8 +20,8 @@ private:
   bool is_in_range(double timestamp, double min_base_timestamp, double max_base_timestamp);
 
   int base_node_index_;
-  int min_pretimestamp_;
-  int max_pretimestamp_;
+  double min_pretimestamp_;
+  double max_pretimestamp_;
 
   double fps_;
   const int number_of_nodes_;
