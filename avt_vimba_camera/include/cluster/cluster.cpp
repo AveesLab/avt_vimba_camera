@@ -28,6 +28,11 @@ void ClusterManager::register_base_timestamp(double timestamp, int node_index)
 
     this->min_pretimestamp_ = timestamp * 1000.0 + this->min_camera_cycle_time_ * this->frame_interval_ * (((this->node_index_ - this->base_node_index_) >= 0) ? (this->node_index_ - this->base_node_index_) : this->number_of_nodes_ + (this->node_index_ - this->base_node_index_));
     this->max_pretimestamp_ = timestamp * 1000.0 + this->max_camera_cycle_time_ * this->frame_interval_ * (((this->node_index_ - this->base_node_index_) >= 0) ? (this->node_index_ - this->base_node_index_) : this->number_of_nodes_ + (this->node_index_ - this->base_node_index_));
+
+    std::cerr << "base node index : " << node_index << "\n";
+    std::cerr << std::setprecision(12) << "timestamp : " << timestamp << "\n";
+    std::cerr << std::setprecision(12) << "min_pretimestamp : " << min_pretimestamp_ << "\n";
+    std::cerr << std::setprecision(12) << "max_pretimestamp : " << max_pretimestamp_ << "\n";
   }
 }
 
@@ -52,7 +57,7 @@ bool ClusterManager::is_in_range(double timestamp, double min_base_timestamp, do
 
   std::cerr << std::setprecision(12) << "timestamp : " << timestamp << "\n";
   std::cerr << std::setprecision(12) << "min_pretimestamp : " << min_base_timestamp << "\n";
-  std::cerr << std::setprecision(12) << "max_pretimestamp : " << min_base_timestamp << "\n";
+  std::cerr << std::setprecision(12) << "max_pretimestamp : " << max_base_timestamp << "\n";
 
   while (timestamp > max_base_timestamp)
   {
@@ -62,7 +67,7 @@ bool ClusterManager::is_in_range(double timestamp, double min_base_timestamp, do
   min_base_timestamp += this->min_camera_cycle_time_ * this->frame_interval_ * this->number_of_nodes_ * cnt;
 
   std::cerr << std::setprecision(12) << "min_current_timestamp : " << min_base_timestamp << "\n";
-  std::cerr << std::setprecision(12) << "max_current_timestamp : " << min_base_timestamp << "\n";
+  std::cerr << std::setprecision(12) << "max_current_timestamp : " << max_base_timestamp << "\n";
 
   if (timestamp > min_base_timestamp)
   {
