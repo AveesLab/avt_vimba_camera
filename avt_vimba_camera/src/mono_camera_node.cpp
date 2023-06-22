@@ -228,7 +228,7 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
       {
         std_msgs::msg::Header initializer;
         initializer.stamp = img.header.stamp;
-        initializer.frame_id = this->node_index_;
+        initializer.frame_id = std::to_string(this->node_index_);
         this->cluster_synchronize_publisher_->publish(initializer);
       }
       else
