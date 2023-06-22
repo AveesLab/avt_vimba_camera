@@ -1,4 +1,5 @@
 #include "cluster/cluster.hpp"
+#include <iostream>
 
 
 ClusterManager::ClusterManager(int node_index, int number_of_nodes, double fps, double process_fps, double max_camera_cycle_time, double min_camera_cycle_time) : number_of_nodes_(number_of_nodes), fps_(fps), node_index_(node_index)
@@ -24,8 +25,8 @@ void ClusterManager::register_base_timestamp(double timestamp, int node_index)
   {
     this->base_node_index_ = node_index;
 
-    this->min_pretimestamp_ = timestamp * 1000.0 + this->min_camera_cycle_time_ * this->frame_interval_ * ((this->node_index_ - this->base_node_index_) >= 0) ? (this->node_index_ - this->base_node_index_) : this->number_of_nodes_ + (this->node_index_ - this->base_node_index_);
-    this->max_pretimestamp_ = timestamp * 1000.0 + this->max_camera_cycle_time_ * this->frame_interval_ * ((this->node_index_ - this->base_node_index_) >= 0) ? (this->node_index_ - this->base_node_index_) : this->number_of_nodes_ + (this->node_index_ - this->base_node_index_);
+    this->min_pretimestamp_ = timestamp * 1000.0 + this->min_camera_cycle_time_ * this->frame_interval_ * (((this->node_index_ - this->base_node_index_) >= 0) ? (this->node_index_ - this->base_node_index_) : this->number_of_nodes_ + (this->node_index_ - this->base_node_index_));
+    this->max_pretimestamp_ = timestamp * 1000.0 + this->max_camera_cycle_time_ * this->frame_interval_ * (((this->node_index_ - this->base_node_index_) >= 0) ? (this->node_index_ - this->base_node_index_) : this->number_of_nodes_ + (this->node_index_ - this->base_node_index_));
   }
 }
 
