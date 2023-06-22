@@ -73,11 +73,7 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
 
   // Set the result publisher
   this->cluster_synchronize_publisher_ = this->create_publisher<std_msgs::msg::Header>("/cluster/synchronize", QOS_RKL10V);
-
-  if (this->node_index_ == 0)
-  {
-    this->cluster_synchronize_subscriber_ = this->create_subscription<std_msgs::msg::Header>("/cluster/synchronize", QOS_RKL10V, std::bind(&MonoCameraNode::ClusterSynchronize, this, _1));
-  }
+  this->cluster_synchronize_subscriber_ = this->create_subscription<std_msgs::msg::Header>("/cluster/synchronize", QOS_RKL10V, std::bind(&MonoCameraNode::ClusterSynchronize, this, _1));
   
   this->cnt_ = 0;
 
