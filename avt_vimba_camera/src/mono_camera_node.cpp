@@ -73,8 +73,12 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
 
   // Set the result publisher
   this->cluster_synchronize_publisher_ = this->create_publisher<std_msgs::msg::Header>("/cluster/synchronize", QOS_RKL10V);
-  this->cluster_synchronize_subscriber_ = this->create_subscription<std_msgs::msg::Header>("/cluster/synchronize", QOS_RKL10V, std::bind(&MonoCameraNode::ClusterSynchronize, this, _1));
 
+  if (this->node_index_ == 0)
+  {
+    this->cluster_synchronize_subscriber_ = this->create_subscription<std_msgs::msg::Header>("/cluster/synchronize", QOS_RKL10V, std::bind(&MonoCameraNode::ClusterSynchronize, this, _1));
+  }
+  
   this->cnt_ = 0;
 
   this->cluster_flag_ = false;
@@ -101,10 +105,21 @@ MonoCameraNode::~MonoCameraNode()
 
 void MonoCameraNode::ClusterSynchronize(std_msgs::msg::Header::SharedPtr time)
 {
-  if (rclcpp::Time(time->stamp).seconds())
+  if (!(this->cluster_flag_))
   {
-    this->cluster_manager_->register_base_timestamp(rclcpp::Time(time->stamp).seconds());
+    this->cluster_manager_->register_base_timestamp(rclcpp::Time(time->stamp).seconds(), this->node_index_);
+
+    this->cnt_ = this->convert_frame_;
     this->cluster_flag_ = true;
+  }
+  else
+  {
+    if (std::stoi(time->frame_id) < this->node_index_)
+    {
+      this->cluster_manager_->register_base_timestamp(rclcpp::Time(time->stamp).seconds(), this->node_index_);
+
+      this->cnt_ = this->convert_frame_;
+    }
   }
 }
 
@@ -191,7 +206,7 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
       this->file_ << static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0) << ",";
     }
 
-    // Cluster
+    // Image Selector
     if (this->cluster_manager_->is_self_order(rclcpp::Time(img.header.stamp).seconds()) == false)
     {
       // benchmark
@@ -203,31 +218,31 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
     }
     else
     {
-      if (this->node_index_ == 0)
-      {
-        this->cnt_ += 1;
-
-        if (this->cnt_ == this->convert_frame_)
-        {
-          std_msgs::msg::Header initializer;
-          initializer.stamp = img.header.stamp;
-          initializer.frame_id = this->node_index_;
-          this->cluster_synchronize_publisher_->publish(initializer);
-        }
-      }
-
       // benchmark
       if (use_benchmark_) {
         this->file_ << static_cast<long long int>(1) << ",";
       }
 
-      if (this->cluster_flag_)
+      // Synchronization
+      if (this->cnt_ == this->convert_frame_)
       {
-        RCLCPP_INFO(this->get_logger(), "Cluster Sorted");
+        std_msgs::msg::Header initializer;
+        initializer.stamp = img.header.stamp;
+        initializer.frame_id = this->node_index_;
+        this->cluster_synchronize_publisher_->publish(initializer);
       }
       else
       {
-        RCLCPP_INFO(this->get_logger(), "Cluster Non-sorted");
+        this->cnt_ += 1;
+      }
+
+      if (this->cluster_flag_)
+      {
+        RCLCPP_INFO(this->get_logger(), "[Node %d] Cluster mode", this->node_index_ + 1);
+      }
+      else
+      {
+        RCLCPP_INFO(this->get_logger(), "[Node %d] Local mode", this->node_index_ + 1);
       }
     }
 

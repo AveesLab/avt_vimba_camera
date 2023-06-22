@@ -3,9 +3,10 @@
 
 ClusterManager::ClusterManager(int node_index, int number_of_nodes, double fps, double process_fps, double max_camera_cycle_time, double min_camera_cycle_time) : number_of_nodes_(number_of_nodes), fps_(fps), node_index_(node_index)
 {
-  this->base_timestamp_ = -1.0;
+  this->base_node_index_ = this->number_of_nodes_;
 
-  this->pretimestamp_ = -1;
+  this->min_pretimestamp_ = -1;
+  this->max_pretimestamp_ = -1;
 
   this->frame_interval_ = fps / process_fps / this->number_of_nodes_;
 
@@ -17,27 +18,24 @@ ClusterManager::~ClusterManager()
 {
 }
 
-void ClusterManager::register_base_timestamp(double timestamp)
+void ClusterManager::register_base_timestamp(double timestamp, int node_index)
 {
-  this->base_timestamp_ = timestamp * 1000.0;
+  if (this->base_node_index_ > node_index)
+  {
+    this->base_node_index_ = node_index;
+
+    this->min_pretimestamp_ = timestamp * 1000.0 + this->min_camera_cycle_time_ * this->frame_interval_ * ((this->node_index_ - this->base_node_index_) > 0) ? (this->node_index_ - this->base_node_index_) : this->number_of_nodes_ + (this->node_index_ - this->base_node_index_);
+    this->max_pretimestamp_ = timestamp * 1000.0 + this->max_camera_cycle_time_ * this->frame_interval_ * ((this->node_index_ - this->base_node_index_) > 0) ? (this->node_index_ - this->base_node_index_) : this->number_of_nodes_ + (this->node_index_ - this->base_node_index_);
+  }
 }
 
 bool ClusterManager::is_self_order(double timestamp)
 {
-  if (this->base_timestamp_ != -1.0)
+  if (this->base_node_index_ != this->number_of_nodes_)
   {
     timestamp *= 1000.0;
 
-    if (this->pretimestamp_ != -1)
-    {
-      return this->is_in_range(timestamp, this->pretimestamp_, this->pretimestamp_);
-    }
-    else
-    {
-      double min_base_timestamp = this->base_timestamp_ + this->min_camera_cycle_time_ * this->frame_interval_ * this->node_index_;
-      double max_base_timestamp = this->base_timestamp_ + this->max_camera_cycle_time_ * this->frame_interval_ * this->node_index_;
-      return this->is_in_range(timestamp, min_base_timestamp, max_base_timestamp);
-    }
+    return this->is_in_range(timestamp, this->min_pretimestamp_, this->max_pretimestamp_);
   }
   else
   {
@@ -59,7 +57,8 @@ bool ClusterManager::is_in_range(double timestamp, double min_base_timestamp, do
 
   if (timestamp > min_base_timestamp)
   {
-    this->pretimestamp_ = timestamp;
+    this->min_pretimestamp_ = timestamp;
+    this->max_pretimestamp_ = timestamp;
     return true;
   }
   else
