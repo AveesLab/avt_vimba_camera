@@ -168,6 +168,7 @@ void MonoCameraNode::frameCallback(const FramePtr& vimba_frame_ptr)
       vimba_frame_ptr->GetTimestamp(frame_timestamp);
       img.header.stamp = rclcpp::Time(cam_.getTimestampRealTime(frame_timestamp) * 1.0e+9) + rclcpp::Duration(ptp_offset_, 0);
 
+      RCLCPP_INFO(this->get_logger(), "=====================================");
       RCLCPP_INFO(this->get_logger(), "capture time : %lf sec.", cam_.getTimestampRealTime(frame_timestamp) + rclcpp::Duration(ptp_offset_, 0).seconds());
     }
     else
