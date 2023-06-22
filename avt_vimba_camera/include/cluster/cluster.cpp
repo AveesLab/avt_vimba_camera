@@ -1,5 +1,6 @@
 #include "cluster/cluster.hpp"
 #include <iostream>
+#include <iomanip>
 
 
 ClusterManager::ClusterManager(int node_index, int number_of_nodes, double fps, double process_fps, double max_camera_cycle_time, double min_camera_cycle_time) : number_of_nodes_(number_of_nodes), fps_(fps), node_index_(node_index)
@@ -49,9 +50,9 @@ bool ClusterManager::is_in_range(double timestamp, double min_base_timestamp, do
 {
   int cnt = 0;
 
-  std::cerr << std::fixed << "timestamp : " << timestamp << "\n";
-  std::cerr << std::fixed << "min_pretimestamp : " << min_base_timestamp << "\n";
-  std::cerr << std::fixed << "max_pretimestamp : " << min_base_timestamp << "\n";
+  std::cerr << std::setprecision(12) << "timestamp : " << timestamp << "\n";
+  std::cerr << std::setprecision(12) << "min_pretimestamp : " << min_base_timestamp << "\n";
+  std::cerr << std::setprecision(12) << "max_pretimestamp : " << min_base_timestamp << "\n";
 
   while (timestamp > max_base_timestamp)
   {
@@ -60,8 +61,8 @@ bool ClusterManager::is_in_range(double timestamp, double min_base_timestamp, do
 
   min_base_timestamp += this->min_camera_cycle_time_ * this->frame_interval_ * this->number_of_nodes_ * cnt;
 
-  std::cerr << std::fixed << "min_current_timestamp : " << min_base_timestamp << "\n";
-  std::cerr << std::fixed << "max_current_timestamp : " << min_base_timestamp << "\n";
+  std::cerr << std::setprecision(12) << "min_current_timestamp : " << min_base_timestamp << "\n";
+  std::cerr << std::setprecision(12) << "max_current_timestamp : " << min_base_timestamp << "\n";
 
   if (timestamp > min_base_timestamp)
   {
