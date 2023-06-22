@@ -49,9 +49,9 @@ bool ClusterManager::is_in_range(double timestamp, double min_base_timestamp, do
 {
   int cnt = 0;
 
-  std::cerr << "timestamp : " << timestamp << "\n";
-  std::cerr << "min_pretimestamp : " << min_base_timestamp << "\n";
-  std::cerr << "max_pretimestamp : " << min_base_timestamp << "\n";
+  std::cerr << std::fixed << "timestamp : " << timestamp << "\n";
+  std::cerr << std::fixed << "min_pretimestamp : " << min_base_timestamp << "\n";
+  std::cerr << std::fixed << "max_pretimestamp : " << min_base_timestamp << "\n";
 
   while (timestamp > max_base_timestamp)
   {
@@ -60,8 +60,8 @@ bool ClusterManager::is_in_range(double timestamp, double min_base_timestamp, do
 
   min_base_timestamp += this->min_camera_cycle_time_ * this->frame_interval_ * this->number_of_nodes_ * cnt;
 
-  std::cerr << "min_current_timestamp : " << min_base_timestamp << "\n";
-  std::cerr << "max_current_timestamp : " << min_base_timestamp << "\n";
+  std::cerr << std::fixed << "min_current_timestamp : " << min_base_timestamp << "\n";
+  std::cerr << std::fixed << "max_current_timestamp : " << min_base_timestamp << "\n";
 
   if (timestamp > min_base_timestamp)
   {
