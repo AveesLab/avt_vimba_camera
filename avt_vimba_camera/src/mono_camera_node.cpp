@@ -103,7 +103,7 @@ void MonoCameraNode::ClusterSynchronize(std_msgs::msg::Header::SharedPtr time)
 {
   if (!(this->cluster_flag_))
   {
-    this->cluster_manager_->register_base_timestamp(rclcpp::Time(time->stamp).seconds(), this->node_index_);
+    this->cluster_manager_->register_base_timestamp(rclcpp::Time(time->stamp).seconds(), std::stoi(time->frame_id));
 
     this->cnt_ = this->convert_frame_;
     this->cluster_flag_ = true;
@@ -112,7 +112,7 @@ void MonoCameraNode::ClusterSynchronize(std_msgs::msg::Header::SharedPtr time)
   {
     if (std::stoi(time->frame_id) < this->node_index_)
     {
-      this->cluster_manager_->register_base_timestamp(rclcpp::Time(time->stamp).seconds(), this->node_index_);
+      this->cluster_manager_->register_base_timestamp(rclcpp::Time(time->stamp).seconds(), std::stoi(time->frame_id));
 
       this->cnt_ = this->convert_frame_;
     }
