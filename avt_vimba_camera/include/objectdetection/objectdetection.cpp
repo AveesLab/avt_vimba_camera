@@ -1,4 +1,4 @@
-#include "inference/inference.hpp"
+#include "objectdetection/objectdetection.hpp"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -6,6 +6,7 @@
 
 Darknet::Darknet(float thresh, char *cfg_file, char *weight_file)
 {
+    // Darknet init (from darknet/cpp/demo.cpp)
     demo_thresh = thresh;
 
     net = parse_network_cfg_custom(cfg_file, 1, 1);    // set batch=1
@@ -44,33 +45,40 @@ Darknet::Darknet(float thresh, char *cfg_file, char *weight_file)
 Darknet::~Darknet()
 {
     // free memory
-    // TODO : free memory, if pointers have data
     free_detections(dets, nboxes);
     free_network(net);
 }
 
-void Darknet::preprocess(cv::Mat& input_image)
+void Darknet::Preprocess(cv::Mat& input_image)
 {
     // cv::Mat to darknet::image
-    this->det_s_ = get_image_from_mat(input_image, net.w, net.h, net.c);
+    int channel = net.c ? net.c : 3;
+    cv::Mat new_image = cv::Mat(net.h, net.w, CV_8UC(channel));
 
+    cv::resize(input_image, new_image, new_image.size(), 0, 0, cv::INTER_LINEAR);
+
+    if (channel > 1)
+    {
+        cv::cvtColor(new_image, new_image, cv::COLOR_RGB2BGR);
+    }
+
+    this->det_s_ = this->MatToImage(new_image);
     this->image_cols_ = input_image.cols;
     this->image_rows_ = input_image.rows;
 }
 
-void Darknet::inference()
+void Darknet::Inference()
 {
     // inference
     float *X = this->det_s_.data;
     network_predict(net, X);
 }
 
-std::vector<ObjectDetection> Darknet::postprocess()
+std::vector<ObjectDetection> Darknet::Postprocess()
 {
     const float nms = .45;    // 0.4F
 
-    std::vector<ObjectDetection> result;
-
+    nboxes = 0;
     dets = get_network_boxes(&net, net.w, net.h, demo_thresh, demo_thresh, 0, 1, &nboxes, 0);
 
     if (nms) {
@@ -80,32 +88,16 @@ std::vector<ObjectDetection> Darknet::postprocess()
 
     if (l.embedding_size) set_track_id(dets, nboxes, demo_thresh, l.sim_thresh, l.track_ciou_norm, l.track_history_size, l.dets_for_track, l.dets_for_show);
 
-    result = this->convert_detections();
+    std::vector<ObjectDetection> detections;
+    detections = this->ConvertDetections();
 
     free_image(this->det_s_);
     free(dets);
 
-    nboxes = 0;
-
-    return result;
+    return detections;
 }
 
-image Darknet::get_image_from_mat(cv::Mat& input_image, int width, int height, int channel)
-{
-    channel = channel ? channel : 3;
-
-    cv::Mat new_image = cv::Mat(height, width, CV_8UC(channel));
-    cv::resize(input_image, new_image, new_image.size(), 0, 0, cv::INTER_LINEAR);
-    if (channel > 1)
-    {
-        cv::cvtColor(new_image, new_image, cv::COLOR_RGB2BGR);
-    }
-
-    image im = mat_to_image(new_image);
-    return im;
-}
-
-std::vector<ObjectDetection> Darknet::convert_detections()  // 'dets' is pointer
+std::vector<ObjectDetection> Darknet::ConvertDetections()  // 'dets' is pointer
 {
     std::vector<ObjectDetection> detections;
 
@@ -132,7 +124,7 @@ std::vector<ObjectDetection> Darknet::convert_detections()  // 'dets' is pointer
     return detections;
 }
 
-image Darknet::mat_to_image(cv::Mat mat)
+image Darknet::MatToImage(cv::Mat mat)
 {
     int w = mat.cols;
     int h = mat.rows;

@@ -58,7 +58,7 @@ function(add_dependencies_and_linkings arg)
 endfunction(add_dependencies_and_linkings)
 
 # Path to * project folder.
-set(DARKNET_PATH ${PROJECT_SOURCE_DIR}/include/inference/darknet)
+set(DARKNET_PATH ${PROJECT_SOURCE_DIR}/include/objectdetection/darknet)
 
 # Give a custom name to shared library which is provided by * when the one compiled.
 set(DARKNET_LIB_NAME libdarknet)
@@ -77,9 +77,9 @@ ament_auto_add_library(mono_camera_node SHARED
   src/mono_camera_node.cpp
   src/avt_vimba_camera.cpp
   src/frame_observer.cpp
-  include/cluster/cluster.cpp
-  include/inference/inference.cpp
-  include/pcan/ObjectDetectionsSender.cpp
+  include/imageselection/imageselection.cpp
+  include/objectdetection/objectdetection.cpp
+  include/can/cansender.cpp
 )
 ament_target_dependencies(mono_camera_node
   rtx_msg_interface

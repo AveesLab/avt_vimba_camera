@@ -1,15 +1,13 @@
-#include "ObjectDetectionsSender.hpp"
+#include "cansender.hpp"
 
-ObjectDetectionsSender::ObjectDetectionsSender(unsigned int can_id, int time_interval) : can_id_(can_id), time_interval_(time_interval)
+CanSender::CanSender(int node_index, int time_interval) : time_interval_(time_interval)
 {
-	ShowCurrentConfiguration(); // Shows the current parameters configuration
+	this->can_id_ = static_cast<unsigned int>(node_index + 100);
 
 	TPCANStatus stsResult;
+
 	// Initialization of the selected channel
-	if (IsFD)
-		stsResult = CAN_InitializeFD(PcanHandle, BitrateFD);
-	else
-		stsResult = CAN_Initialize(PcanHandle, Bitrate);
+	stsResult = CAN_Initialize(PcanHandle, Bitrate);
 
 	if (stsResult != PCAN_ERROR_OK)
 	{
@@ -19,42 +17,26 @@ ObjectDetectionsSender::ObjectDetectionsSender(unsigned int can_id, int time_int
 		std::cout << "Closing...\n";
 		return;
 	}
-
-	this->pcan_benchmark_ = false;
-
-	// Writing messages...
-	std::cout << "Successfully initialized.\n";
 }
 
-ObjectDetectionsSender::~ObjectDetectionsSender()
+CanSender::~CanSender()
 {
 	CAN_Uninitialize(PCAN_NONEBUS);
 }
 
-void ObjectDetectionsSender::WriteMessages(double time_stamp, std::vector<ObjectDetection>& detections)
+void CanSender::WriteMessages(double time_stamp, std::vector<ObjectDetection>& detections)
 {
 	TPCANStatus stsResult;
 
-	if (IsFD)
-		stsResult = WriteMessageFD(time_stamp, detections);
-	else
-		stsResult = WriteMessage(time_stamp, detections);
+	stsResult = WriteMessage(time_stamp, detections);
 
-	// Checks if the message was sent
+	// Checks message
 	if (stsResult != PCAN_ERROR_OK)
 		ShowStatus(stsResult);
-	else
-		std::cerr << "Message was successfully SENT\n";
 }
 
-void ObjectDetectionsSender::SetBenchmark(double pcan_benchmark_start_stamp, double pcan_benchmark_stamp_interval)
-{
-	this->pcan_benchmark_ = true;
-	this->pcan_benchmark_start_stamp_ = pcan_benchmark_start_stamp;
-	this->pcan_benchmark_stamp_interval_ = pcan_benchmark_stamp_interval;
-}
 
-void ObjectDetectionsSender::ClusterSyncRequest()
+void CanSender::ClusterSyncRequest()
 {
 	// Sends a CAN message with extended ID, and 8 data bytes
 	TPCANMsg msgCanMessage;
@@ -67,7 +49,7 @@ void ObjectDetectionsSender::ClusterSyncRequest()
 	TPCANStatus stsResult = CAN_Write(PcanHandle, &msgCanMessage);
 }
 
-void ObjectDetectionsSender::ReadMessage(int& index, int& time)
+void CanSender::ReadMessage(int& index, int& time)
 {
 	TPCANMsg CANMsg;
 	TPCANTimestamp CANTimeStamp;
@@ -86,63 +68,7 @@ void ObjectDetectionsSender::ReadMessage(int& index, int& time)
 	}
 }
 
-int ObjectDetectionsSender::WriteMessagesWithBenchmark(double time_stamp, std::vector<ObjectDetection>& detections)
-{
-	if (this->pcan_benchmark_)
-	{
-		if ((time_stamp - this->pcan_benchmark_start_stamp_) > 0)
-		{
-			if (detections.size())
-			{
-				int number_of_object = static_cast<int>((time_stamp - this->pcan_benchmark_start_stamp_)) / static_cast<int>(this->pcan_benchmark_stamp_interval_); 
-				
-				// Sends a CAN message with extended ID, and 8 data bytes
-				TPCANMsg msgCanMessage;
-				msgCanMessage.ID = this->can_id_;
-				msgCanMessage.LEN = (BYTE)8;
-				msgCanMessage.MSGTYPE = PCAN_MESSAGE_EXTENDED;
-
-				int remaked_time_stamp = static_cast<int>(time_stamp * 1000.0) % 60000;
-
-				msgCanMessage.DATA[0] = remaked_time_stamp >> 8;
-				msgCanMessage.DATA[1] = remaked_time_stamp;
-				msgCanMessage.DATA[2] = detections[0].id;
-				msgCanMessage.DATA[3] = detections[0].center_x  >> 3;
-				msgCanMessage.DATA[4] = ((detections[0].center_x  & 7) << 5 ) | (detections[0].center_y >>5);
-				msgCanMessage.DATA[5] = ((detections[0].center_y & 31) << 3) |  (detections[0].width_half >> 7);
-				msgCanMessage.DATA[6] = ((detections[0].width_half & 127) << 1) | (detections[0].height_half>> 8);
-				msgCanMessage.DATA[7] =  detections[0].height_half;
-
-				for (int index = 0; index < number_of_object; index++)
-				{
-					TPCANStatus stsResult = CAN_Write(PcanHandle, &msgCanMessage);
-
-					usleep(this->time_interval_);
-				}
-
-				TPCANMsg msgCanMessage2;
-				msgCanMessage2.ID = this->can_id_;
-				msgCanMessage2.LEN = (BYTE)2;
-				msgCanMessage2.MSGTYPE = PCAN_MESSAGE_EXTENDED;
-
-				msgCanMessage2.DATA[0] = remaked_time_stamp >> 8;
-				msgCanMessage2.DATA[1] = remaked_time_stamp;
-
-				TPCANStatus stsResult = CAN_Write(PcanHandle, &msgCanMessage2);
-
-				return number_of_object;
-			}
-
-			return -3;
-		}
-
-		return -2;
-	}
-
-	return -1;
-}
-
-TPCANStatus ObjectDetectionsSender::WriteMessage(double time_stamp, std::vector<ObjectDetection>& detections)
+TPCANStatus CanSender::WriteMessage(double time_stamp, std::vector<ObjectDetection>& detections)
 {
 	// Sends a CAN message with extended ID, and 8 data bytes
 	TPCANMsg msgCanMessage;
@@ -189,33 +115,7 @@ TPCANStatus ObjectDetectionsSender::WriteMessage(double time_stamp, std::vector<
 	}
 }
 
-TPCANStatus ObjectDetectionsSender::WriteMessageFD(double time_stamp, std::vector<ObjectDetection>& detections)
-{
-	// Sends a CAN-FD message with standard ID, 64 data bytes, and bitrate switch
-	TPCANMsgFD msgCanMessageFD;
-	msgCanMessageFD.ID = this->can_id_;
-	msgCanMessageFD.DLC = 15;
-	msgCanMessageFD.MSGTYPE = PCAN_MESSAGE_FD | PCAN_MESSAGE_BRS;
-
-	for (size_t index = 0; index < detections.size(); index++)
-	{
-		for (BYTE i = 0; i < 8; i++)
-		{
-			msgCanMessageFD.DATA[i] = i;
-		}
-
-		TPCANStatus stsResult = CAN_WriteFD(PcanHandle, &msgCanMessageFD);
-
-		if (stsResult != PCAN_ERROR_OK)
-		{
-			return stsResult;
-		}
-
-		usleep(this->time_interval_);
-	}
-}
-
-void ObjectDetectionsSender::ShowCurrentConfiguration()
+void CanSender::ShowCurrentConfiguration()
 {
 	std::cout << "Parameter values used\n";
 	std::cout << "----------------------\n";
@@ -232,7 +132,7 @@ void ObjectDetectionsSender::ShowCurrentConfiguration()
 	std::cout << "\n";
 }
 
-void ObjectDetectionsSender::ShowStatus(TPCANStatus status)
+void CanSender::ShowStatus(TPCANStatus status)
 {
 	std::cerr << "=========================================================================================\n";
 	char buffer[MAX_PATH];
@@ -241,7 +141,7 @@ void ObjectDetectionsSender::ShowStatus(TPCANStatus status)
 	std::cerr << "=========================================================================================\n";
 }
 
-void ObjectDetectionsSender::FormatChannelName(TPCANHandle handle, LPSTR buffer, bool isFD)
+void CanSender::FormatChannelName(TPCANHandle handle, LPSTR buffer, bool isFD)
 {
 	TPCANDevice devDevice;
 	BYTE byChannel;
@@ -267,7 +167,7 @@ void ObjectDetectionsSender::FormatChannelName(TPCANHandle handle, LPSTR buffer,
 		sprintf_s(buffer, MAX_PATH, "%s %d (%Xh)", handleBuffer, byChannel, handle);
 }
 
-void ObjectDetectionsSender::GetTPCANHandleName(TPCANHandle handle, LPSTR buffer)
+void CanSender::GetTPCANHandleName(TPCANHandle handle, LPSTR buffer)
 {
 	strcpy_s(buffer, MAX_PATH, "PCAN_NONE");
 	switch (handle)
@@ -335,7 +235,7 @@ void ObjectDetectionsSender::GetTPCANHandleName(TPCANHandle handle, LPSTR buffer
 	}
 }
 
-void ObjectDetectionsSender::GetFormattedError(TPCANStatus error, LPSTR buffer)
+void CanSender::GetFormattedError(TPCANStatus error, LPSTR buffer)
 {
 	// Gets the text using the GetErrorText API function. If the function success, the translated error is returned.
 	// If it fails, a text describing the current error is returned.
@@ -343,7 +243,7 @@ void ObjectDetectionsSender::GetFormattedError(TPCANStatus error, LPSTR buffer)
 		sprintf_s(buffer, MAX_PATH, "An error occurred. Error-code's text (%Xh) couldn't be retrieved", error);
 }
 
-void ObjectDetectionsSender::ConvertBitrateToString(TPCANBaudrate bitrate, LPSTR buffer)
+void CanSender::ConvertBitrateToString(TPCANBaudrate bitrate, LPSTR buffer)
 {
 	switch (bitrate)
 	{

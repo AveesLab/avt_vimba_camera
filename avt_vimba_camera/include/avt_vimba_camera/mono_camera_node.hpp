@@ -36,6 +36,12 @@
 #include "avt_vimba_camera/avt_vimba_camera.hpp"
 #include "avt_vimba_camera/avt_vimba_api.hpp"
 
+// Basic Libraries
+#include <string>
+#include <thread>
+#include <cmath>
+
+// ROS
 #include <avt_vimba_camera_msgs/srv/detail/load_settings__struct.hpp>
 #include <avt_vimba_camera_msgs/srv/detail/save_settings__struct.hpp>
 #include <rclcpp/rclcpp.hpp>
@@ -51,19 +57,14 @@
 #include "rtx_msg_interface/msg/bounding_box.hpp"
 #include "rtx_msg_interface/msg/bounding_boxes.hpp"
 
-// Cluster
-#include "cluster/cluster.hpp"
+// Image Selection
+#include "imageselection/imageselection.hpp"
 
-// Inference
-#include "inference/inference.hpp"
+// DNN Inference
+#include "objectdetection/objectdetection.hpp"
 
-// Pcan Senser
-#include "pcan/ObjectDetectionsSender.hpp"
-
-// benchmark
-#include <string>
-#include <ctime>
-#include <fstream>
+// Pcan
+#include "can/cansender.hpp"
 
 
 namespace avt_vimba_camera
@@ -73,18 +74,15 @@ class MonoCameraNode : public rclcpp::Node
 public:
   MonoCameraNode();
   ~MonoCameraNode();
-  void start();
+
+  void Start();
 
 private:
-  // Cluster
-  std::shared_ptr<ClusterManager> cluster_manager_;
+  void LoadParams();
+  void FrameCallback(const FramePtr& vimba_frame_ptr);
+  void ImageSelectionSynchronize(std_msgs::msg::Header::SharedPtr base_timestamp);
 
-  // Inference
-  std::shared_ptr<Darknet> dummy_inference_;
-
-  // Pcan Senser
-  std::shared_ptr<ObjectDetectionsSender> pcan_sender_;
-
+  // GigE Camera
   AvtVimbaApi api_;
   AvtVimbaCamera cam_;
 
@@ -92,49 +90,34 @@ private:
   std::string guid_;
   std::string camera_info_url_;
   std::string frame_id_;
-  bool use_measurement_time_;
   int32_t ptp_offset_;
-  int32_t node_index_;
-  bool image_crop_;
 
+  // Cluster System Information
+  int node_index_;
+
+  // Image Selection
+  std::shared_ptr<ImageSelection> image_selection_;
   int number_of_nodes_;
   double camera_fps_;
-  double inference_fps_;
+  double local_inference_fps_;
+  double timestamp_margin_milisecond_;
 
-  std::string inference_model_path_;
-  std::string inference_cfg_path_;
-  std::string inference_weight_path_;
-
-  bool use_can_;
-  unsigned int can_id_;
-  int time_interval_;
-
-  bool pcan_benchmark_;
-  double pcan_benchmark_start_stamp_;
-  double pcan_benchmark_stamp_interval_;
-
-  double max_camera_cycle_time_;
-  double min_camera_cycle_time_;
-
+  // Image Selection : Synchronize
   int convert_frame_;
-  int cnt_;
-
+  int synchronization_cnt_;
   bool cluster_flag_;
-
-  // use sensor_msgs::msg::CompressedImage
-  rclcpp::Publisher<rtx_msg_interface::msg::BoundingBoxes>::SharedPtr bounding_boxes_publisher_;
   rclcpp::Publisher<std_msgs::msg::Header>::SharedPtr cluster_synchronize_publisher_;
   rclcpp::Subscription<std_msgs::msg::Header>::SharedPtr cluster_synchronize_subscriber_;
 
-  void loadParams();
-  void frameCallback(const FramePtr& vimba_frame_ptr);
-  void ClusterSynchronize(std_msgs::msg::Header::SharedPtr time);
+  // Object Detection
+  std::shared_ptr<Darknet> inference_;
+  std::string dnn_model_path_;
+  std::string dnn_cfg_path_;
+  std::string dnn_weight_path_;
 
-  // benchmark
-  bool use_benchmark_;
-  std::fstream file_;
-  void benchmark();
-  void finish_benchmark();
+  // CAN
+  std::shared_ptr<CanSender> can_;
+  int can_send_time_interval_microsecond_;
 };
 }  // namespace avt_vimba_camera
 #endif

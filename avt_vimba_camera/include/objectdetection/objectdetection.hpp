@@ -5,7 +5,7 @@
 #include <string>
 
 #include "darknet.h"
-#include "inference/types.h"
+#include "objectdetection/types.h"
 
 
 class Darknet
@@ -14,16 +14,13 @@ public:
   Darknet(float thresh, char *cfg_file, char *weight_file);
   ~Darknet();
 
-  std::vector<ObjectDetection> get_detections(cv::Mat& image);
-
-  void preprocess(cv::Mat& input_image);
-  void inference();
-  std::vector<ObjectDetection> postprocess();
+  void Preprocess(cv::Mat& input_image);
+  void Inference();
+  std::vector<ObjectDetection> Postprocess();
 
 private:
-  image get_image_from_mat(cv::Mat& image, int width, int height, int channel);
-  std::vector<ObjectDetection> convert_detections();
-  image mat_to_image(cv::Mat mat);
+  std::vector<ObjectDetection> ConvertDetections();
+  image MatToImage(cv::Mat mat);
 
   char **demo_names;
   image **demo_alphabet;
