@@ -40,13 +40,13 @@ bool ImageSelection::IsInRange(double timestamp, double estimated_timestamp)
 
   if ((max_estimated_timestamp < timestamp))
   {
-    estimated_timestamp = timestamp + this->number_of_nodes_ * this->inverse_of_fps_;
+    estimated_timestamp += this->number_of_nodes_ * this->inverse_of_fps_;
     return this->IsInRange(timestamp, estimated_timestamp);
   }
 
   if ((max_estimated_timestamp >= timestamp) && (timestamp >= min_estimated_timestamp))
   {
-    this->estimated_timestamp_ = timestamp + this->number_of_nodes_ * this->inverse_of_fps_;
+    this->estimated_timestamp_ += this->number_of_nodes_ * this->inverse_of_fps_;
     return true;
   }
   else
