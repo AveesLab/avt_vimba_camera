@@ -15,6 +15,11 @@ ImageSelection::~ImageSelection()
 {
 }
 
+double ImageSelection::GetEstimatedTimestamp()
+{
+  return this->estimated_timestamp_ / 1000.0;
+}
+
 void ImageSelection::RegisterBaseTimestamp(double init_timestamp)
 {
   this->estimated_timestamp_ = init_timestamp * 1000.0 + (this->node_index_ - 1) * this->inverse_of_fps_;

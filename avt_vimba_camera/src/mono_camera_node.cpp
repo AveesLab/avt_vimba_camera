@@ -135,7 +135,6 @@ void MonoCameraNode::Start()
 
 void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
 {
-  RCLCPP_INFO(this->get_logger(), "\033[2J");
   RCLCPP_INFO(this->get_logger(), "=== AVEES - Cluster-based Object Detection System with Scalable Performance for Autonomous Driving ===");
 
   rclcpp::Time node_start_time = this->get_clock()->now();
@@ -151,14 +150,15 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
 
     if (this->cluster_flag_)
     {
-      RCLCPP_INFO(this->get_logger(), "[Node %d] Cluster mode", this->node_index_);
+      RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Image selection : Cluster mode", this->node_index_);
     }
     else
     {
-      RCLCPP_INFO(this->get_logger(), "[Node %d] Local mode", this->node_index_);
+      RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Image selection : Local mode", this->node_index_);
     }
 
     // Image Selection
+    RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Expect timestamp : %lf sec.", this->node_index_, this->image_selection_->GetEstimatedTimestamp());
     if (this->image_selection_->IsSelfOrder(rclcpp::Time(img.header.stamp).seconds()) == true)
     {
       // Synchronization
@@ -176,9 +176,12 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
           this->synchronization_cnt_ += 1;
         }
       }
+
+      RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Image selection : Take this image", this->node_index_);
     }
     else
     {
+      RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Image selection : Drop this image", this->node_index_);
       return;  // terminate this iteration
     }
 
@@ -203,6 +206,8 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
   {
     RCLCPP_WARN_STREAM(this->get_logger(), "Function frameToImage returned 0. No image published.");
   }
+
+  RCLCPP_INFO(this->get_logger(), "======================================================================================================\n");
 }
 
 }  // namespace avt_vimba_camera

@@ -1,5 +1,10 @@
 # Yolo v4, v3 and v2 for Windows and Linux
 
+* Read the FAQ:  https://www.ccoderun.ca/programming/darknet_faq/
+* Join the Darknet/YOLO Discord:  https://discord.gg/zSq8rtW
+* Recommended GitHub repo for Darknet/YOLO:  https://github.com/hank-ai/darknetcv/
+* Hank.ai and Darknet/YOLO:  https://hank.ai/darknet-welcomes-hank-ai-as-official-sponsor-and-commercial-entity/
+
 ## (neural networks for object detection)
 
 * Paper **YOLOv7**: https://arxiv.org/abs/2207.02696
@@ -59,8 +64,6 @@ Manual: https://github.com/AlexeyAB/darknet/wiki
 
 Discussion:
 
-- [Reddit](https://www.reddit.com/r/MachineLearning/comments/gydxzd/p_yolov4_the_most_accurate_realtime_neural/)
-- [Google-groups](https://groups.google.com/forum/#!forum/darknet)
 - [Discord](https://discord.gg/zSq8rtW)
 
 About Darknet framework: http://pjreddie.com/darknet/

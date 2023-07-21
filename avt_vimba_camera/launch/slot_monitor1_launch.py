@@ -11,7 +11,7 @@ from launch_ros.actions import Node
 import os
 
 
-prenamespace = "monitor1"
+prenamespace = "node1"
 index = 1
 
 def generate_launch_description():
@@ -42,31 +42,19 @@ def generate_launch_description():
         parameters = [
             LaunchConfiguration('avt_vimba_camera_params_file'),
             {"name": "camera"},
-            {"frame_id": "camera"},
             {"ip": "169.254.100.66"},
             {"guid": ""},
-            {"use_measurement_time": True},
+            {"camera_info_url": avt_vimba_camera_calibration_file},
+            {"frame_id": "camera"},
             {"ptp_offset": 0},
             {"node_index": index},
-            {"camera_info_url": avt_vimba_camera_calibration_file},
-            {"use_image_transport": False},
-            {"image_crop": False},
-            {"use_benchmark": True},
-            {"number_of_nodes": 3},
-            {"camera_fps": 30.},
-            {"inference_fps": 5.},
-            {"inference_model_path": "/home/avees/engine/yolov7.engine"},
-            {"inference_cfg_path": "/home/avees/ros2_ws/weights/yolov7.cfg"},
-            {"inference_weight_path": "/home/avees/ros2_ws/weights/yolov7.weights"},
-            {"use_can": True},
-            {"can_id": index + 101},
-            {"time_interval": 1000},
-            {"pcan_benchmark": False},
-            {"pcan_benchmark_start_stamp": 10180.0},
-            {"pcan_benchmark_stamp_interval": 14.0},
-            {"max_camera_cycle_time": 33.5},
-            {"min_camera_cycle_time": 33.0},
-            {"convert_frame": 50}, 
+            {"number_of_nodes": 4},
+            {"local_inference_fps": 5.},
+            {"timestamp_margin_milisecond_": 0.05},
+            {"convert_frame": 50},
+            {"dnn_cfg_path": "/home/avees/ros2_ws/weights/yolov4.cfg"},
+            {"dnn_weight_path": "/home/avees/ros2_ws/weights/yolov4.weights"},
+            {"can_send_time_interval_microsecond": 1000},
         ]
     )
     

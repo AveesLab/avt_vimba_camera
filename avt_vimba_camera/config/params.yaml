@@ -6,7 +6,7 @@
 /**:
   ros__parameters:
     feature/AcquisitionFrameCount: 1
-    feature/AcquisitionFrameRateAbs: 33.
+    feature/AcquisitionFrameRateAbs: 30.
     # feature/AcquisitionMode: Continuous
     feature/ActionDeviceKey: 0
     feature/ActionGroupKey: 0
