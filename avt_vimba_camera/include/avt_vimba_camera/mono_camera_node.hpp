@@ -54,17 +54,14 @@
 #include <std_srvs/srv/trigger.hpp>
 #include <avt_vimba_camera_msgs/srv/load_settings.hpp>
 #include <avt_vimba_camera_msgs/srv/save_settings.hpp>
-#include "rtx_msg_interface/msg/bounding_box.hpp"
-#include "rtx_msg_interface/msg/bounding_boxes.hpp"
+#include <vision_msgs/msg/detection2_d_array.hpp>
+#include <vision_msgs/msg/detection2_d.hpp>
 
 // Image Selection
 #include "imageselection/imageselection.hpp"
 
 // DNN Inference
 #include "objectdetection/objectdetection.hpp"
-
-// Pcan
-#include "can/cansender.hpp"
 
 
 namespace avt_vimba_camera
@@ -108,16 +105,13 @@ private:
   bool cluster_flag_;
   rclcpp::Publisher<std_msgs::msg::Header>::SharedPtr cluster_synchronize_publisher_;
   rclcpp::Subscription<std_msgs::msg::Header>::SharedPtr cluster_synchronize_subscriber_;
+  rclcpp::Publisher<vision_msgs::msg::Detection2DArray>::SharedPtr detections_publisher_;
 
   // Object Detection
   std::shared_ptr<Darknet> inference_;
   std::string dnn_model_path_;
   std::string dnn_cfg_path_;
   std::string dnn_weight_path_;
-
-  // CAN
-  std::shared_ptr<CanSender> can_;
-  int can_send_time_interval_microsecond_;
 };
 }  // namespace avt_vimba_camera
 #endif

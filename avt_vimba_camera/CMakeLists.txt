@@ -17,8 +17,8 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(vision_msgs REQUIRED)
 find_package(image_transport REQUIRED)
-find_package(rtx_msg_interface REQUIRED)
 find_package(ament_cmake_auto REQUIRED)
 find_package(cv_bridge REQUIRED)
 
@@ -79,12 +79,7 @@ ament_auto_add_library(mono_camera_node SHARED
   src/frame_observer.cpp
   include/imageselection/imageselection.cpp
   include/objectdetection/objectdetection.cpp
-  include/can/cansender.cpp
 )
-ament_target_dependencies(mono_camera_node
-  rtx_msg_interface
-)
-target_link_libraries(mono_camera_node pcanbasic)
 target_link_libraries(mono_camera_node ${DARKNET_LIB_NAME})
 add_dependencies_and_linkings(mono_camera_node)
 

@@ -57,9 +57,6 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
 
   // Object Detection
   this->inference_ = std::make_shared<Darknet>(0.2, const_cast<char*>(dnn_cfg_path_.c_str()), const_cast<char*>(dnn_weight_path_.c_str()));
-
-  // CAN
-  this->can_ = std::make_shared<CanSender>(this->node_index_, this->can_send_time_interval_microsecond_);
   
   // ROS2 : QoS
   const rclcpp::QoS system_qos = rclcpp::QoS(rclcpp::KeepLast(10)).reliable().durability_volatile();
@@ -67,6 +64,9 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
   // ROS2 : Image Selection Synchronize
   this->cluster_synchronize_publisher_ = this->create_publisher<std_msgs::msg::Header>("/cluster/synchronize", system_qos);
   this->cluster_synchronize_subscriber_ = this->create_subscription<std_msgs::msg::Header>("/cluster/synchronize", system_qos, std::bind(&MonoCameraNode::ImageSelectionSynchronize, this, _1));
+
+  // ROS2 : Publish detections to monitor
+  this->detections_publisher_ = this->create_publisher<vision_msgs::msg::Detection2DArray>("/detections", system_qos);
 
   // Image Selection : Synchronize
   this->synchronization_cnt_ = 0;
@@ -116,9 +116,6 @@ void MonoCameraNode::LoadParams()
   // Object Detection
   dnn_cfg_path_ = this->declare_parameter("dnn_cfg_path", "/home/avees/ros2_ws/weights/yolov4-p6.cfg");
   dnn_weight_path_ = this->declare_parameter("dnn_weight_path", "/home/avees/ros2_ws/weights/yolov4-p6.weights");
-
-  // CAN
-  can_send_time_interval_microsecond_ = this->declare_parameter("can_send_time_interval_microsecond", 500);
 
   RCLCPP_INFO(this->get_logger(), "[Initialize] Parameters loaded");
 }
@@ -199,8 +196,21 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
     // Object Detection - Postprocess
     std::vector<ObjectDetection> detections = this->inference_->Postprocess();
 
-    // CAN
-    this->can_->WriteMessages(rclcpp::Time(img.header.stamp).seconds(), detections);
+    // Ethernet Publisher
+    vision_msgs::msg::Detection2DArray detections_ros2_msg;
+    detections_ros2_msg.header = img.header;
+    for (size_t i = 0; i < detections.size(); i++)
+    {
+      vision_msgs::msg::Detection2D detection_ros2_msg;
+      detection_ros2_msg.tracking_id = std::to_string(detections[i].id);
+      detection_ros2_msg.bbox.center.x = detections[i].center_x;
+      detection_ros2_msg.bbox.center.y = detections[i].center_y;
+      detection_ros2_msg.bbox.size_x = detections[i].width_half;
+      detection_ros2_msg.bbox.size_y = detections[i].height_half;
+
+      detections_ros2_msg.detections.push_back(detection_ros2_msg);
+    }
+    this->detections_publisher_->publish(detections_ros2_msg);
   }
   else
   {
