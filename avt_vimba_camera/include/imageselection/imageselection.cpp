@@ -15,6 +15,16 @@ ImageSelection::~ImageSelection()
 {
 }
 
+bool ImageSelection::isClusterMode()
+{
+  return (this->estimated_timestamp_ > 0.0);
+}
+
+double ImageSelection::getComputingTime()
+{
+  return ((1000.0 / this->local_fps_) - (1000.0 / 30.0)) / 1000.0;
+}
+
 double ImageSelection::GetEstimatedTimestamp()
 {
   return this->estimated_timestamp_ / 1000.0;
