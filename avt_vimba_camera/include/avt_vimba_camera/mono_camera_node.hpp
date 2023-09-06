@@ -64,6 +64,11 @@
 // Pcan
 #include "can/cansender.hpp"
 
+// benchmark
+#include <string>
+#include <ctime>
+#include <fstream>
+
 
 namespace avt_vimba_camera
 {

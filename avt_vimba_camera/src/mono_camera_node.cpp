@@ -247,7 +247,7 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
   RCLCPP_INFO(this->get_logger(), "======================================================================================================\n");
 
   long long int bench_endpoint = static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0);
-  this->file_ << bench_timestamp << "," << bench_startpoint << "," << bench_aftergetimage << "," << bench_ismyframe << "," << bench_aftercluster << "," << bench_afterpreprocess << "," << bench_afterinference << "," << bench_afterpostprocess << "," << bench_numberofobject << "," << bench_afterpublish << "," << bench_endpoint;
+  this->file_ << bench_timestamp << "," << bench_startpoint << "," << bench_aftergetimage << "," << bench_ismyframe << "," << bench_aftercluster << "," << bench_afterpreprocess << "," << bench_afterinference << "," << bench_afterpostprocess << "," << bench_numberofobject << "," << bench_afterpublish << "," << bench_endpoint << "\n";
 }
 
 }  // namespace avt_vimba_camera
