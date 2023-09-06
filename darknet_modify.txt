@@ -1,0 +1,18 @@
+// _____________For Clustering Functions_______________
+
+// utils.h
+void *xcalloc_location(const size_t nmemb, const size_t size, const char * const filename, const char * const funcname, const int line);
+#define DARKNET_LOC __FILE__, __func__, __LINE__
+#define xcalloc(m, s)   xcalloc_location(m, s, DARKNET_LOC)
+
+// data.h
+
+// image_opencv.h
+typedef void* mat_cv;
+typedef void* cap_cv;
+
+// parser.c
+LIB_API network parse_network_cfg_custom(char *filename, int batch, int time_steps);
+LIB_API void load_weights(network *net, char *filename);
+
+// ____________________________________________________
