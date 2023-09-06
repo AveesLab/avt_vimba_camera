@@ -233,7 +233,19 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
 
     this->bench_afterpostprocess = static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0);
 
-    // CAN
+    // Regular Output
+    if (this->image_selection_->isClusterMode())
+    {
+      double computing_time = this->image_selection_->getComputingTime();
+      double can_send_time = (static_cast<double>(detections.size()) * 0.001) + 0.005;  // add threshold
+
+      while ((computing_time - can_send_time) > (this->get_clock()->now().seconds() - node_start_time.seconds()))
+      {
+        std::this_thread::sleep_for(std::chrono::milliseconds(1));
+      }
+    }
+    
+    // CAN  
     this->can_->WriteMessages(rclcpp::Time(img.header.stamp).seconds(), detections);
 
     this->bench_numberofobject = static_cast<long long int>(detections.size());
