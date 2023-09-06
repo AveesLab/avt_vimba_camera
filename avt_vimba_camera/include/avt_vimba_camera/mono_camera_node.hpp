@@ -40,6 +40,7 @@
 #include <string>
 #include <thread>
 #include <cmath>
+#include <chrono>
 
 // ROS
 #include <avt_vimba_camera_msgs/srv/detail/load_settings__struct.hpp>
