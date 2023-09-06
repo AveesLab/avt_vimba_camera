@@ -124,6 +124,17 @@ private:
 
   // Benchmark
   std::fstream file_;
+  long long int bench_startpoint;
+  long long int bench_timestamp;
+  long long int bench_aftergetimage;
+  long long int bench_ismyframe;
+  long long int bench_aftercluster;
+  long long int bench_afterpreprocess;
+  long long int bench_afterinference;
+  long long int bench_afterpostprocess;
+  long long int bench_numberofobject;
+  long long int bench_afterpublish;
+  long long int bench_endpoint;
 };
 }  // namespace avt_vimba_camera
 #endif
