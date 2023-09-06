@@ -16,6 +16,8 @@ public:
   void RegisterBaseTimestamp(double init_timestamp);
   bool IsSelfOrder(double timestamp);
   double GetEstimatedTimestamp();
+  bool isClusterMode();
+  double getComputingTime();
 
 private:
   bool IsInRange(double timestamp, double estimated_timestamp);
