@@ -211,7 +211,7 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
       return;  // terminate this iteration
     }
 
-    this->bench_aftercluster = static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0);
+    this->bench_aftercluster = static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0);
 
     // sensor_msgs::msg::image to cv::Mat
     cv_bridge::CvImagePtr cv_ptr = cv_bridge::toCvCopy(img, img.encoding);
@@ -221,23 +221,23 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
     // Object Detection - Preprocess
     this->inference_->Preprocess(color_image);
 
-    this->bench_afterpreprocess = static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0);
+    this->bench_afterpreprocess = static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0);
     
     // Object Detection - DNN Inference
     this->inference_->Inference();
 
-    this->bench_afterinference = static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0);
+    this->bench_afterinference = static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0);
 
     // Object Detection - Postprocess
     std::vector<ObjectDetection> detections = this->inference_->Postprocess();
 
-    this->bench_afterpostprocess = static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0);
+    this->bench_afterpostprocess = static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0);
 
     // CAN
     this->can_->WriteMessages(rclcpp::Time(img.header.stamp).seconds(), detections);
 
     this->bench_numberofobject = static_cast<long long int>(detections.size());
-    this->bench_afterpublish = static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0);
+    this->bench_afterpublish = static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0);
   }
   else
   {
@@ -246,7 +246,7 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
 
   RCLCPP_INFO(this->get_logger(), "======================================================================================================\n");
 
-  this->bench_endpoint = static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0);
+  this->bench_endpoint = static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0);
   this->file_ << bench_timestamp << "," << bench_startpoint << "," << bench_aftergetimage << "," << bench_ismyframe << "," << bench_aftercluster << "," << bench_afterpreprocess << "," << bench_afterinference << "," << bench_afterpostprocess << "," << bench_numberofobject << "," << bench_afterpublish << "," << bench_endpoint << "\n";
 }
 
