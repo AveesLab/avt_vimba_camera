@@ -1,7 +1,7 @@
 #!/bin/bash
 # configure.sh
 
-mkdir ~/ros2_ws/data
+mkdir -p ~/ros2_ws/data/computing
 mkdir ~/ros2_ws/weights
 
 cd ~/ros2_ws/src/clustering_sensor/avt_vimba_camera/launch
