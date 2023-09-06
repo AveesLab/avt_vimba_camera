@@ -54,8 +54,6 @@
 #include <std_srvs/srv/trigger.hpp>
 #include <avt_vimba_camera_msgs/srv/load_settings.hpp>
 #include <avt_vimba_camera_msgs/srv/save_settings.hpp>
-#include "rtx_msg_interface/msg/bounding_box.hpp"
-#include "rtx_msg_interface/msg/bounding_boxes.hpp"
 
 // Image Selection
 #include "imageselection/imageselection.hpp"
