@@ -80,7 +80,7 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
   pTime_info = localtime(&raw_time);
 
   std::string simulation_time = std::to_string(pTime_info->tm_mon + 1) + "_" + std::to_string(pTime_info->tm_mday) + "_" + std::to_string(pTime_info->tm_hour) + "_" + std::to_string(pTime_info->tm_min) + "_" + std::to_string(pTime_info->tm_sec);
-  std::string directory = "/home/avees/ros2_ws/data/avt_vimba_camera/" + simulation_time + ".csv";
+  std::string directory = "/home/avees/ros2_ws/data/computing/Computing{NODE_ID}" + simulation_time + ".csv";
 
   this->file_.open(directory.c_str(), std::ios_base::out | std::ios_base::app);
 
