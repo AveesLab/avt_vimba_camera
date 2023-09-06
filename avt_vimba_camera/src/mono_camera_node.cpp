@@ -71,10 +71,27 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
   // Image Selection : Synchronize
   this->synchronization_cnt_ = 0;
   this->cluster_flag_ = false;
+
+  // Benchmark
+  time_t raw_time;
+  struct tm* pTime_info;
+
+  raw_time = time(NULL);
+  pTime_info = localtime(&raw_time);
+
+  std::string simulation_time = std::to_string(pTime_info->tm_mon + 1) + "_" + std::to_string(pTime_info->tm_mday) + "_" + std::to_string(pTime_info->tm_hour) + "_" + std::to_string(pTime_info->tm_min) + "_" + std::to_string(pTime_info->tm_sec);
+  std::string directory = "/home/avees/ros2_ws/data/avt_vimba_camera/" + simulation_time + ".csv";
+
+  this->file_.open(directory.c_str(), std::ios_base::out | std::ios_base::app);
+
+  this->file_ << "timestamp,startpoint,aftergetimage,ismyframe,aftercluster,afterpreprocess,afterinference,afterpostprocess,numberofobject,afterpublish,endpoint\n";
 }
 
 MonoCameraNode::~MonoCameraNode()
 {
+  this->file_.close();
+  RCLCPP_INFO(this->get_logger(), "Saving benchmark result is successful.");
+
   cam_.stop();
 }
 
@@ -135,6 +152,8 @@ void MonoCameraNode::Start()
 
 void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
 {
+  long long int bench_startpoint = static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0);
+
   RCLCPP_INFO(this->get_logger(), "=== AVEES - Cluster-based Object Detection System with Scalable Performance for Autonomous Driving ===");
 
   rclcpp::Time node_start_time = this->get_clock()->now();
@@ -146,7 +165,6 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
     VmbUint64_t frame_timestamp;
     vimba_frame_ptr->GetTimestamp(frame_timestamp);
     img.header.stamp = rclcpp::Time(cam_.getTimestampRealTime(frame_timestamp) * 1.0e+9) + rclcpp::Duration(ptp_offset_, 0);
-    RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Image timestamp : %lf sec.", this->node_index_, rclcpp::Time(img.header.stamp).seconds());
 
     if (this->cluster_flag_)
     {
@@ -157,8 +175,12 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
       RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Image selection : Local mode", this->node_index_);
     }
 
+    long long int bench_timestamp = static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0);
+    long long int bench_aftergetimage = static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0);
+
     // Image Selection
-    RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Expect timestamp : %lf sec.", this->node_index_, this->image_selection_->GetEstimatedTimestamp());
+    RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Image timestamp : %lf sec.", this->node_index_, rclcpp::Time(img.header.stamp).seconds());
+    long long int bench_ismyframe = 1ll;
     if (this->image_selection_->IsSelfOrder(rclcpp::Time(img.header.stamp).seconds()) == true)
     {
       // Synchronization
@@ -177,13 +199,19 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
         }
       }
 
+      RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Expect timestamp : %lf sec.", this->node_index_, this->image_selection_->GetEstimatedTimestamp());
       RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Image selection : Take this image", this->node_index_);
     }
     else
     {
+      RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Expect timestamp : %lf sec.", this->node_index_, this->image_selection_->GetEstimatedTimestamp());
       RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Image selection : Drop this image", this->node_index_);
+      bench_ismyframe = 0ll;
+      this->file_ << bench_timestamp << "," << bench_startpoint << "," << bench_aftergetimage << "," << bench_ismyframe << "\n";
       return;  // terminate this iteration
     }
+
+    long long int bench_aftercluster = static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0);
 
     // sensor_msgs::msg::image to cv::Mat
     cv_bridge::CvImagePtr cv_ptr = cv_bridge::toCvCopy(img, img.encoding);
@@ -193,14 +221,23 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
     // Object Detection - Preprocess
     this->inference_->Preprocess(color_image);
 
+    long long int bench_afterpreprocess = static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0);
+    
     // Object Detection - DNN Inference
     this->inference_->Inference();
+
+    long long int bench_afterinference = static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0);
 
     // Object Detection - Postprocess
     std::vector<ObjectDetection> detections = this->inference_->Postprocess();
 
+    long long int bench_afterpostprocess = static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0);
+
     // CAN
     this->can_->WriteMessages(rclcpp::Time(img.header.stamp).seconds(), detections);
+
+    long long int bench_numberofobject = static_cast<long long int>(detections.size());
+    long long int bench_afterpublish = static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0);
   }
   else
   {
@@ -208,6 +245,9 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
   }
 
   RCLCPP_INFO(this->get_logger(), "======================================================================================================\n");
+
+  long long int bench_endpoint = static_cast<long long int>(rclcpp::Time(img.header.stamp).seconds() * 1000000.0);
+  this->file_ << bench_timestamp << "," << bench_startpoint << "," << bench_aftergetimage << "," << bench_ismyframe << "," << bench_aftercluster << "," << bench_afterpreprocess << "," << bench_afterinference << "," << bench_afterpostprocess << "," << bench_numberofobject << "," << bench_afterpublish << "," << bench_endpoint;
 }
 
 }  // namespace avt_vimba_camera

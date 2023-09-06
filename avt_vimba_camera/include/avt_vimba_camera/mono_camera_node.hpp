@@ -116,6 +116,9 @@ private:
   // CAN
   std::shared_ptr<CanSender> can_;
   int can_send_time_interval_microsecond_;
+
+  // Benchmark
+  std::fstream file_;
 };
 }  // namespace avt_vimba_camera
 #endif
