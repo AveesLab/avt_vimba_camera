@@ -24,11 +24,11 @@ CanSender::~CanSender()
 	CAN_Uninitialize(PCAN_NONEBUS);
 }
 
-void CanSender::WriteMessages(double time_stamp, std::vector<ObjectDetection>& detections)
+void CanSender::WriteMessages(double time_stamp, std::vector<ObjectDetection>& detections, int limits)
 {
 	TPCANStatus stsResult;
 
-	stsResult = WriteMessage(time_stamp, detections);
+	stsResult = WriteMessage(time_stamp, detections, limits);
 
 	// Checks message
 	if (stsResult != PCAN_ERROR_OK)
@@ -102,9 +102,9 @@ TPCANStatus CanSender::WriteMessage(double time_stamp, std::vector<ObjectDetecti
 	}
 
 	TPCANMsg msgCanMessage_empty;
-	msgCanMessage.ID = this->can_id_;
-	msgCanMessage.LEN = (BYTE)7;
-	msgCanMessage.MSGTYPE = PCAN_MESSAGE_EXTENDED;
+	msgCanMessage_empty.ID = this->can_id_;
+	msgCanMessage_empty.LEN = (BYTE)7;
+	msgCanMessage_empty.MSGTYPE = PCAN_MESSAGE_EXTENDED;
 	for (size_t index = 0; index < (limits - number_of_send_detections); index++)
 	{
 		msgCanMessage_empty.DATA[0] = remaked_time_stamp >> 8;
