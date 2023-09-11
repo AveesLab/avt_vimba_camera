@@ -236,17 +236,26 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
     // Regular Output
     if (this->image_selection_->isClusterMode())
     {
+      int limits = 8;
+      
       double computing_time = this->image_selection_->getComputingTime();
-      double can_send_time = (static_cast<double>(detections.size()) * 0.001) + 0.005;  // add threshold
+      double can_send_time = static_cast<double>(limits) * 0.001 + 0.001 + 0.005;  // Detections Message + End Message + Threshold
+      double limit_time = computing_time - can_send_time;
 
-      while ((computing_time - can_send_time) > (this->get_clock()->now().seconds() - node_start_time.seconds()))
+      if ((limit_time) < (this->get_clock()->now().seconds() - node_start_time.seconds()))
+      {
+        limits = static_cast<int>((limit_time - (this->get_clock()->now().seconds() - node_start_time.seconds())) * 1000.0);
+        limits = (limits > 0) ? limits : 0;
+      }
+      
+      while ((limit_time) > (this->get_clock()->now().seconds() - node_start_time.seconds()))
       {
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
       }
     }
     
     // CAN  
-    this->can_->WriteMessages(rclcpp::Time(img.header.stamp).seconds(), detections);
+    this->can_->WriteMessages(rclcpp::Time(img.header.stamp).seconds(), detections, limits);
 
     this->bench_numberofobject = static_cast<long long int>(detections.size());
     this->bench_afterpublish = static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0);
