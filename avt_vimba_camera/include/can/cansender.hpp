@@ -19,7 +19,7 @@ public:
 	CanSender(int node_index, int time_interval);
 	~CanSender();
 
-	void WriteMessages(double time_stamp, std::vector<ObjectDetection>& detections);
+	void WriteMessages(double time_stamp, std::vector<ObjectDetection>& detections, int limits);
 	void ClusterSyncRequest();
 	void ReadMessage(int& index, int& time);
 
