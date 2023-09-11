@@ -68,7 +68,7 @@ void CanSender::ReadMessage(int& index, int& time)
 	}
 }
 
-TPCANStatus CanSender::WriteMessage(double time_stamp, std::vector<ObjectDetection>& detections)
+TPCANStatus CanSender::WriteMessage(double time_stamp, std::vector<ObjectDetection>& detections, int limits)
 {
 	// Sends a CAN message with extended ID, and 8 data bytes
 	TPCANMsg msgCanMessage;
@@ -77,8 +77,10 @@ TPCANStatus CanSender::WriteMessage(double time_stamp, std::vector<ObjectDetecti
 	msgCanMessage.MSGTYPE = PCAN_MESSAGE_EXTENDED;
 
 	int remaked_time_stamp = static_cast<int>(time_stamp * 1000.0) % 60000;
+	size_t number_of_detections = detections.size();
+	size_t number_of_send_detections = (number_of_detections < limits) ? number_of_detections : limits;
 
-	for (size_t index = 0; index < detections.size(); index++)
+	for (size_t index = 0; index < number_of_send_detections; index++)
 	{
 		msgCanMessage.DATA[0] = remaked_time_stamp >> 8;
 		msgCanMessage.DATA[1] = remaked_time_stamp;
@@ -90,6 +92,30 @@ TPCANStatus CanSender::WriteMessage(double time_stamp, std::vector<ObjectDetecti
 		msgCanMessage.DATA[7] =  detections[index].height_half;
 
 		TPCANStatus stsResult = CAN_Write(PcanHandle, &msgCanMessage);
+
+		if (stsResult != PCAN_ERROR_OK)
+		{
+			return stsResult;
+		}
+
+		usleep(this->time_interval_);
+	}
+
+	TPCANMsg msgCanMessage_empty;
+	msgCanMessage.ID = this->can_id_;
+	msgCanMessage.LEN = (BYTE)7;
+	msgCanMessage.MSGTYPE = PCAN_MESSAGE_EXTENDED;
+	for (size_t index = 0; index < (limits - number_of_send_detections); index++)
+	{
+		msgCanMessage_empty.DATA[0] = remaked_time_stamp >> 8;
+		msgCanMessage_empty.DATA[1] = remaked_time_stamp;
+		msgCanMessage_empty.DATA[2] = 0;
+		msgCanMessage_empty.DATA[3] = 0;
+		msgCanMessage_empty.DATA[4] = 0;
+		msgCanMessage_empty.DATA[5] = 0;
+		msgCanMessage_empty.DATA[6] = 0;
+
+		TPCANStatus stsResult = CAN_Write(PcanHandle, &msgCanMessage_empty);
 
 		if (stsResult != PCAN_ERROR_OK)
 		{
