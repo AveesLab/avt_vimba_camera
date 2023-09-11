@@ -233,11 +233,10 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
 
     this->bench_afterpostprocess = static_cast<long long int>(this->get_clock()->now().seconds() * 1000000.0);
 
+    int limits = 8;
     // Regular Output
     if (this->image_selection_->isClusterMode())
-    {
-      int limits = 8;
-      
+    {     
       double computing_time = this->image_selection_->getComputingTime();
       double can_send_time = static_cast<double>(limits) * 0.001 + 0.001 + 0.005;  // Detections Message + End Message + Threshold
       double limit_time = computing_time - can_send_time;
