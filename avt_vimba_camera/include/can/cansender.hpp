@@ -24,7 +24,7 @@ public:
 	void ReadMessage(int& index, int& time);
 
 private:
-	TPCANStatus WriteMessage(double time_stamp, std::vector<ObjectDetection>& detections);
+	TPCANStatus WriteMessage(double time_stamp, std::vector<ObjectDetection>& detections, int limits);
 	void ShowCurrentConfiguration();
 	void ShowStatus(TPCANStatus status);
 	void FormatChannelName(TPCANHandle handle, LPSTR buffer, bool isFD);
