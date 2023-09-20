@@ -111,6 +111,7 @@ private:
   int convert_frame_;
   int synchronization_cnt_;
   bool cluster_flag_;
+  bool emergency_flag_;
   rclcpp::Publisher<std_msgs::msg::Header>::SharedPtr cluster_synchronize_publisher_;
   rclcpp::Subscription<std_msgs::msg::Header>::SharedPtr cluster_synchronize_subscriber_;
 

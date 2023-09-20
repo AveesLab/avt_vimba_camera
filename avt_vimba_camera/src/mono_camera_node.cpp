@@ -71,6 +71,7 @@ MonoCameraNode::MonoCameraNode() : Node("camera"), api_(this->get_logger()), cam
   // Image Selection : Synchronize
   this->synchronization_cnt_ = 0;
   this->cluster_flag_ = false;
+  this->emergency_flag_ = false;
 }
 
 MonoCameraNode::~MonoCameraNode()
@@ -80,6 +81,11 @@ MonoCameraNode::~MonoCameraNode()
 
 void MonoCameraNode::ImageSelectionSynchronize(std_msgs::msg::Header::SharedPtr base_timestamp)
 {
+  if (std::stoi(base_timestamp->frame_id) == 0 && !this->emergency_flag_)
+  {
+    this->emergency_flag_ = true;
+  }
+
   try {
     if (std::stoi(base_timestamp->frame_id) == 1)  // get only node 1's timestamp 
     {
@@ -139,6 +145,7 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
     VmbUint64_t frame_timestamp;
     vimba_frame_ptr->GetTimestamp(frame_timestamp);
     img.header.stamp = rclcpp::Time(cam_.getTimestampRealTime(frame_timestamp) * 1.0e+9) + rclcpp::Duration(ptp_offset_, 0);
+    img.header.frame_id = std::to_string(node_index_);
 
     if (this->cluster_flag_)
     {
@@ -154,19 +161,12 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
     if (this->image_selection_->IsSelfOrder(rclcpp::Time(img.header.stamp).seconds()) == true)
     {
       // Synchronization
-      if (this->node_index_ == 1)
+      if (this->node_index_ == 1 && !this->cluster_flag_ && this->emergency_flag_)
       {
-        if (this->synchronization_cnt_ == this->convert_frame_)
-        {
           std_msgs::msg::Header base_timestamp;
           base_timestamp.stamp = img.header.stamp;
           base_timestamp.frame_id = std::to_string(this->node_index_);
           this->cluster_synchronize_publisher_->publish(base_timestamp);
-        }
-        else if (this->synchronization_cnt_ < this->convert_frame_)
-        {
-          this->synchronization_cnt_ += 1;
-        }
       }
 
       // RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Expect timestamp : %lf sec.", this->node_index_, this->image_selection_->GetEstimatedTimestamp());
@@ -175,8 +175,11 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
     else
     {
       // RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Expect timestamp : %lf sec.", this->node_index_, this->image_selection_->GetEstimatedTimestamp());
-      RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Image selection : Drop this image", this->node_index_);
-      return;  // terminate this iteration
+      if (this->node_index_ != 1)
+      {
+        RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Image selection : Drop this image", this->node_index_);
+        return;  // terminate this iteration
+      }
     }
 
     // sensor_msgs::msg::image to cv::Mat
@@ -191,7 +194,7 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
     this->inference_->Inference(color_image_ptr->toImageMsg(), poses);
     RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Number of pose : %u", this->node_index_, poses.poses.size());
 
-    this->inference_->Showoverlay(color_image_ptr->image, poses);
+    // this->inference_->Showoverlay(color_image_ptr->image, poses);
 
     RCLCPP_INFO(this->get_logger(), "[Computing Node %d] End of inference time : %lf", this->node_index_, this->get_clock()->now().seconds() - node_start_time.seconds());
 
@@ -209,6 +212,7 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
     }
 
     // Topic publish
+    poses.header = img.header;
     this->poses_publisher_->publish(poses);
 
     RCLCPP_INFO(this->get_logger(), "[Computing Node %d] End of total time : %lf", this->node_index_, this->get_clock()->now().seconds() - node_start_time.seconds());
