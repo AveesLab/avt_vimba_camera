@@ -41,8 +41,8 @@
     feature/ExposureAuto: 'Continuous'
     # feature/ExposureAutoAdjustTol: 5
     # feature/ExposureAutoAlg: Mean
-    # feature/ExposureAutoMax: 499997
-    # feature/ExposureAutoMin: 29
+    feature/ExposureAutoMax: 32000
+    feature/ExposureAutoMin: 29
     # feature/ExposureAutoOutliers: 0
     # feature/ExposureAutoRate: 100
     # feature/ExposureAutoTarget: 50
@@ -110,7 +110,7 @@
     feature/TriggerMode: 'Off'
     # feature/TriggerOverlap: 'Off'
     feature/TriggerSelector: FrameStart
-    feature/TriggerSource: Freerun
+    feature/TriggerSource: FixedRate
     # feature/UserSetDefaultSelector: Default
     # feature/UserSetSelector: Default
     # feature/Width: 2064
