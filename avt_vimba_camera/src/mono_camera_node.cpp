@@ -153,7 +153,11 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
     }
     else
     {
-      RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Image selection : Local mode", this->node_index_);
+      if (this->node_index_ != 1)
+      {
+        RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Image selection : Waiting mode", this->node_index_);
+        return;
+      }
     }
 
     // Image Selection
@@ -175,11 +179,8 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
     else
     {
       // RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Expect timestamp : %lf sec.", this->node_index_, this->image_selection_->GetEstimatedTimestamp());
-      if (this->node_index_ != 1)
-      {
-        RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Image selection : Drop this image", this->node_index_);
-        return;  // terminate this iteration
-      }
+      RCLCPP_INFO(this->get_logger(), "[Computing Node %d] Image selection : Drop this image", this->node_index_);
+      return;  // terminate this iteration
     }
 
     // sensor_msgs::msg::image to cv::Mat
@@ -199,16 +200,13 @@ void MonoCameraNode::FrameCallback(const FramePtr& vimba_frame_ptr)
     RCLCPP_INFO(this->get_logger(), "[Computing Node %d] End of inference time : %lf", this->node_index_, this->get_clock()->now().seconds() - node_start_time.seconds());
 
     // Regular Output
-    if (this->image_selection_->isClusterMode())
-    {     
-      double computing_time = this->image_selection_->getComputingTime();
-      double result_send_time = 0.02;  // Detections Message + End Message + Threshold
-      double limit_time = computing_time - result_send_time;
-     
-      while ((limit_time) > (this->get_clock()->now().seconds() - node_start_time.seconds()))
-      {
-        std::this_thread::sleep_for(std::chrono::milliseconds(1));
-      }
+    double computing_time = this->image_selection_->getComputingTime();
+    double result_send_time = 0.02;  // Detections Message + End Message + Threshold
+    double limit_time = computing_time - result_send_time;
+    
+    while ((limit_time) > (this->get_clock()->now().seconds() - node_start_time.seconds()))
+    {
+      std::this_thread::sleep_for(std::chrono::milliseconds(1));
     }
 
     // Topic publish
