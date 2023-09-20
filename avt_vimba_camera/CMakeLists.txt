@@ -17,9 +17,17 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
-find_package(image_transport REQUIRED)
+find_package(vision_msgs REQUIRED)
 find_package(ament_cmake_auto REQUIRED)
 find_package(cv_bridge REQUIRED)
+find_package(posenet_msgs REQUIRED)
+find_package(jetson-utils REQUIRED)
+find_package(jetson-inference REQUIRED)
+find_package(CUDA REQUIRED)
+
+find_package(ament_cmake QUIET)
+
+include_directories(${CUDA_INCLUDE_DIRS})
 
 include_directories(${OpenCV_INCLUDE_DIRS})
 include_directories(include)
@@ -30,6 +38,9 @@ ament_auto_find_build_dependencies()
 set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include(TargetArchitecture)
 target_architecture(ARCH)
+
+find_package(VPI 2.0)
+link_directories(/usr/lib/aarch64-linux-gnu/tegra)
 
 ###########
 ## Build ##
@@ -56,20 +67,6 @@ function(add_dependencies_and_linkings arg)
   endif()
 endfunction(add_dependencies_and_linkings)
 
-# Path to * project folder.
-set(DARKNET_PATH ${PROJECT_SOURCE_DIR}/include/objectdetection/darknet)
-
-# Give a custom name to shared library which is provided by * when the one compiled.
-set(DARKNET_LIB_NAME libdarknet)
-
-# Link * library' include folder.
-include_directories(${DARKNET_PATH}/include)
-
-# Define * library' shared library.
-add_library(${DARKNET_LIB_NAME} SHARED IMPORTED)
-
-# Set a path to * library' shared library
-set_property(TARGET ${DARKNET_LIB_NAME} PROPERTY IMPORTED_LOCATION "${DARKNET_PATH}/libdarknet.so")
 
 # Nodes
 ament_auto_add_library(mono_camera_node SHARED
@@ -77,12 +74,12 @@ ament_auto_add_library(mono_camera_node SHARED
   src/avt_vimba_camera.cpp
   src/frame_observer.cpp
   include/imageselection/imageselection.cpp
-  include/objectdetection/objectdetection.cpp
-  include/can/cansender.cpp
+  include/poseestimation/ros_compat.cpp
+  include/poseestimation/image_converter.cpp
+  include/poseestimation/node_posenet.cpp
 )
 
-target_link_libraries(mono_camera_node pcanbasic)
-target_link_libraries(mono_camera_node ${DARKNET_LIB_NAME})
+target_link_libraries(mono_camera_node jetson-inference)
 add_dependencies_and_linkings(mono_camera_node)
 
 ament_auto_add_library(trigger_node SHARED

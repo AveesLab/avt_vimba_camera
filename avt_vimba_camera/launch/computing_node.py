@@ -11,8 +11,8 @@ from launch_ros.actions import Node
 import os
 
 
-prenamespace = "node{NODE_ID}"
-index = {NODE_ID}
+prenamespace = "node1"
+index = 1
 
 def generate_launch_description():
     avt_vimba_camera_pkg_prefix = get_package_share_directory('avt_vimba_camera')

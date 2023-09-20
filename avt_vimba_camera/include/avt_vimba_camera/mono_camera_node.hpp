@@ -55,15 +55,16 @@
 #include <std_srvs/srv/trigger.hpp>
 #include <avt_vimba_camera_msgs/srv/load_settings.hpp>
 #include <avt_vimba_camera_msgs/srv/save_settings.hpp>
+#include <posenet_msgs/msg/keypoints.hpp>
+#include <posenet_msgs/msg/links.hpp>
+#include <posenet_msgs/msg/objectpose.hpp>
+#include <posenet_msgs/msg/poses.hpp>
 
 // Image Selection
 #include "imageselection/imageselection.hpp"
 
 // DNN Inference
-#include "objectdetection/objectdetection.hpp"
-
-// Pcan
-#include "can/cansender.hpp"
+#include "poseestimation/node_posenet.hpp"
 
 // benchmark
 #include <string>
@@ -113,15 +114,11 @@ private:
   rclcpp::Publisher<std_msgs::msg::Header>::SharedPtr cluster_synchronize_publisher_;
   rclcpp::Subscription<std_msgs::msg::Header>::SharedPtr cluster_synchronize_subscriber_;
 
-  // Object Detection
-  std::shared_ptr<Darknet> inference_;
-  std::string dnn_model_path_;
-  std::string dnn_cfg_path_;
-  std::string dnn_weight_path_;
+  // Publisher : Result
+  rclcpp::Publisher<posenet_msgs::msg::Poses>::SharedPtr poses_publisher_;
 
-  // CAN
-  std::shared_ptr<CanSender> can_;
-  int can_send_time_interval_microsecond_;
+  // Pose Estimation
+  std::shared_ptr<PoseNet> inference_;
 
   // Benchmark
   std::fstream file_;
