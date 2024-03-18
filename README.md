@@ -114,6 +114,7 @@ Setting the `use_measurement_time` parameter will set the ROS header timestamp t
 See the links below for more details on PTP sync.
 
 ## Execute
+The system can be fully operational by executing the nodes in the following order.
 
 ### Master Node
 cd ~/ros2_ws
