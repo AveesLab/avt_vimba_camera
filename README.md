@@ -117,20 +117,27 @@ See the links below for more details on PTP sync.
 The system can be fully operational by executing the nodes in the following order.
 
 ### Master Node
+```
 cd ~/ros2_ws
 source install/setup.bash
 ros2 launch avt_vimba_camera mono_camera.launch.xml
+```
 
 ### Computing Node
+```
 cd ~/ros2_ws
 source install/setup.bash
 ros2 launch avt_vimba_camera slot_monitorX(node_num)_launch.py
+```
 
 ### Master Node
+```
 open another terminal
 cd ~/ros2_ws
 source install/setup.bash
 ros2 run monitor demo_node
+```
+
 
 ## Useful Technical References and Application Notes
 
