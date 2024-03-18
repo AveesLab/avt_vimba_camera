@@ -131,8 +131,8 @@ ros2 launch avt_vimba_camera slot_monitorX(node_num)_launch.py
 ```
 
 ### Master Node
-```
 open another terminal
+```
 cd ~/ros2_ws
 source install/setup.bash
 ros2 run monitor demo_node
