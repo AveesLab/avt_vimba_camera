@@ -1,4 +1,8 @@
-# NO USE
+# NO LONGER IN USE
+
+**Note: This repository is no longer maintained or in use. The code is kept here for archival purposes only. For current development, please refer to the updated version or alternative solutions.**
+
+---
 
 # avt_vimba_camera (ROS2)
 
