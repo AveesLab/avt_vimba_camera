@@ -3,6 +3,8 @@
 
 We introduce a prototype of a cluster-based object detection system for autonomous driving, surpassing the limitations of single-node systems by clustering multiple compute nodes interconnected through Ethernet and CAN buses. A distributed consensus scheme based on image timestamps allows for efficient image selection by each node. Experimental results demonstrate that the system achieves linear scalability in performance with the addition of nodes without incurring extra delay, maintaining real-time capabilities.
 
+## Branches
+
 main branch -> contains code that sends the results of bounding boxes inferred using YOLO to CAN.  
 
 ethernet branch -> contains code that sends the results of bounding boxes inferred using YOLO to Ethernet.  
