@@ -1,3 +1,5 @@
+<img width="940" alt="cluster system" src="https://github.com/AveesLab/cluster-object-detection/assets/125881959/c13142cd-47e0-41e1-b4ec-26cf8a86712b">
+
 # avt_vimba_camera (ROS2)
 
 This repo contains a ROS2 driver for cameras manufactured by [Allied Vision Technologies](https://www.alliedvision.com).
