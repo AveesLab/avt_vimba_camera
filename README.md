@@ -1,3 +1,4 @@
+# System Architecture
 <img width="940" alt="cluster system" src="https://github.com/AveesLab/cluster-object-detection/assets/125881959/c13142cd-47e0-41e1-b4ec-26cf8a86712b">
 
 We introduce a prototype of a cluster-based object detection system for autonomous driving, surpassing the limitations of single-node systems by clustering multiple compute nodes interconnected through Ethernet and CAN buses. A distributed consensus scheme based on image timestamps allows for efficient image selection by each node. Experimental results demonstrate that the system achieves linear scalability in performance with the addition of nodes without incurring extra delay, maintaining real-time capabilities.
