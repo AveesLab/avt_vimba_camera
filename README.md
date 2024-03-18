@@ -118,6 +118,7 @@ See the links below for more details on PTP sync.
 
 ## Execute
 The system can be fully operational by executing the nodes in the following order.
+The code for outputting the results received from each Computing node by the Monitoring Node exists within the merger-can folder.
 
 ### Master Node
 ```
