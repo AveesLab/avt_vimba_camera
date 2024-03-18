@@ -1,3 +1,9 @@
+# NO LONGER IN USE
+
+**Note: This repository is no longer maintained or in use. The code is kept here for archival purposes only. For current development, please refer to the updated version or alternative solutions.**
+
+---
+
 # avt_vimba_camera (ROS2)
 
 This repo contains a ROS2 driver for cameras manufactured by [Allied Vision Technologies](https://www.alliedvision.com).
